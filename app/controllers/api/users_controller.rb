@@ -1,8 +1,16 @@
 class Api::UsersController < ApplicationController
 
+  def index
+    if current_user.admin
+      @users = User.all
+      render 'api/users/index'
+    end
+  end
+
   def create
     @user = User.create(user_params)
     if @user.save
+      # @user.update_attribute(cart_id: Cart.new({user_id: @user.id}).id)
       puts @user
     else
       puts @user.errors.full_messages
@@ -22,6 +30,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def destroy
