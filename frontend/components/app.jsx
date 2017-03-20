@@ -5,6 +5,7 @@ const App =({ children }) => {
     return(
       <section>
         <nav>
+          <div>fffff</div>
           { children }
         </nav>
       </section>
