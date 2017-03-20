@@ -6,7 +6,7 @@ const initialState = {
   errors: []
 };
 
-const sessionReducer = (state = initialState, action) => {
+const SessionReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
@@ -16,4 +16,4 @@ const sessionReducer = (state = initialState, action) => {
   }
 };
 
-export default sessionReducer;
+export default SessionReducer;
