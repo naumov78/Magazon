@@ -8,15 +8,13 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    debugger
     @user = User.create(user_params)
     if @user.save
       # @user.update_attribute(cart_id: Cart.new({user_id: @user.id}).id)
       login(@user)
       render "api/users/show"
-      puts @user
     else
-      puts @user.errors.full_messages
+      render json: @user.errors.full_messages, status: 422
     end
   end
 

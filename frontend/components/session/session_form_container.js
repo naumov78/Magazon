@@ -5,8 +5,10 @@ import { signup } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
   let loggedIn;
+    debugger
   return {
     loggedIn: Boolean(state.session.currentUser),
+    errors: state.session.signUpErrors
   };
 };
 

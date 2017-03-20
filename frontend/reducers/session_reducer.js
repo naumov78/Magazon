@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 const initialState = {
   currentUser: null,
-  errors: []
+  signUpErrors: []
 };
 
 const SessionReducer = (state = initialState, action) => {
@@ -11,6 +11,9 @@ const SessionReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, { currentUser: action.currentUser });
+    case RECEIVE_ERRORS:
+      let errors = action.errors.responseJSON;
+      return merge({}, state, { signUpErrors: errors });
     default:
       return state;
   }

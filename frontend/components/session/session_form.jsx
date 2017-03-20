@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -9,6 +10,7 @@ class SessionForm extends React.Component {
       email: '',
       password: '',
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,13 +18,27 @@ class SessionForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup(user);
+    this.props.signup(user).then(() => {
+      this.props.router.push("/");
+    });
   }
 
   handleChange(field){
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
+  }
+
+  renderSignUpErrors(){
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -47,7 +63,10 @@ class SessionForm extends React.Component {
             placeholder="password"/><br />
         </form>
         <button onClick={this.handleSubmit}>Sign Up</button>
-      </section>
+        <div>
+          { this.renderSignUpErrors() }
+        </div>
+    </section>
     );
   }
 }
