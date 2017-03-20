@@ -1,17 +1,15 @@
 import React from 'react';
 
 
-class App extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
-  render(){
+const App =({ children }) => {
     return(
       <section>
         <nav>
+          { children }
         </nav>
       </section>
     );
-  }
-}
+  };
+
+
+export default App;

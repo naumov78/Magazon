@@ -1,12 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
-import SessionForm from './session/session_form';
+import { HashRouter as Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
+import SessionFormContainer from './session/session_form_container';
+import App from './app';
 
 const Root = ({ store }) => {
-  return (
+  debugger
+    return (
     <Provider store={ store }>
-      <Route path='/welcome' component={ SessionForm } ></Route>
+      <Router history={ hashHistory }>
+        <Route path='/' component={ App } ></Route>
+      </Router>
     </Provider>
   );
 };
