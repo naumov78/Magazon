@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       last_name: '',
       email: '',
       password: '',
+      qMark: '?',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -31,10 +32,10 @@ class SessionForm extends React.Component {
 
   renderSignUpErrors(){
     return(
-      <ul>
+      <ul className="signup-errors">
         {this.props.errors.map((error, i) => (
-          <li key={`${i}`}>
-            {error}
+          <li className="errors-li" key={`${i}`}>
+            *{error}
           </li>
         ))}
       </ul>
@@ -45,7 +46,10 @@ class SessionForm extends React.Component {
     return (
       <section className='signup-container'>
         <img src={ window.asset.logo } className="signup-logo"/>
-        <div className="signup-form">
+          <div >
+            { this.renderSignUpErrors() }
+          </div>
+      <div className="signup-form">
           <h1 className="signup-header">Sign Up</h1>
             <form>
             <label className="form-labels">First Name</label>
@@ -72,9 +76,15 @@ class SessionForm extends React.Component {
             <button onClick={this.handleSubmit} className="signup-submit">
               Create Your Magazon Account
             </button>
-            <div>
-              { this.renderSignUpErrors() }
-            </div>
+              <div className="signup-divider">
+                <h5>
+                  Already have an account{this.state.qMark}
+                </h5>
+              </div>
+              <button className="signup-submit signin-submit">
+                Sign In
+              </button>
+
         </div>
     </section>
     );

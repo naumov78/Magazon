@@ -13,7 +13,7 @@
 
 .signup-form {
   font-family: Arial, sans-serif;
-  height: 340px;
+  height: 410px;
   width: 296px;
   padding: 20px 42px 20px 26px;
   margin: 0 auto;
@@ -39,6 +39,7 @@
 
 .form-inputs {
   height: 23px;
+  font-size: 13px;
   width: 100%;
   padding: 3px 7px;
   line-height: normal;
@@ -54,6 +55,7 @@
   background: linear-gradient(to bottom,
     #f7dfa5, #f0c14b);
   border-radius: 3px;
+  border-color: #adb1b8 #a2a6ac #8d9096;
   border-top-color: rgb(173, 177, 184);
   border-right-color: rgb(162, 166, 172);
   border-bottom-color: rgb(141, 144, 150);
@@ -75,4 +77,46 @@
   border-right-color: rgb(156, 126, 49);
   border-bottom-color: rgb(132, 106, 41);
   border-left-color: rgb(156, 126, 49);
+}
+
+.signin-submit {
+  background: linear-gradient(to bottom,
+    #f7f8fa, #e7e9ec);
+}
+
+.signin-submit:hover {
+  background: linear-gradient(to bottom,
+    #e7eaf0, #d9dce1);
+  border-color: #a2a6ac #979aa1 #82858a;
+  border-top-color: rgb(162, 166, 172);
+  border-right-color: rgb(151, 154, 161);
+  border-bottom-color: rgb(130, 133, 138);
+  border-left-color: rgb(151, 154, 161);
+}
+
+.signup-divider {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  line-height: 1;
+  font-size: 12px;
+  color: #767676;
+  font-weight: 400;
+  padding: 0 8px 0 7px;
+  display: inline-block;
+  padding-top: 1px;
+  margin: 14px 0 14px 0;
+}
+
+.signup-errors {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  color: red;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.errors-li {
+  padding-bottom: 3px;
 }
