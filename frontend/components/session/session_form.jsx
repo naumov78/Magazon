@@ -44,6 +44,8 @@ class SessionForm extends React.Component {
   render() {
     return (
       <section>
+        <img src={ window.asset.logo }/>
+        <h2>Sign Up</h2>
         <form>
           <input type="text"
             onChange={this.handleChange("first_name")}
