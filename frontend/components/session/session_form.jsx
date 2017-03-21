@@ -69,7 +69,9 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 className="form-inputs"/><br />
             </form>
-            <button onClick={this.handleSubmit}>Sign Up</button>
+            <button onClick={this.handleSubmit} className="signup-submit">
+              Create Your Magazon Account
+            </button>
             <div>
               { this.renderSignUpErrors() }
             </div>
