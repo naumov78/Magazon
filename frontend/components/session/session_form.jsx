@@ -43,30 +43,36 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <section>
-        <img src={ window.asset.logo }/>
-        <h2>Sign Up</h2>
-        <form>
-          <input type="text"
-            onChange={this.handleChange("first_name")}
-            value={this.state.first_name}
-            placeholder="First Name"/><br />
-          <input type="text"
-            onChange={this.handleChange("last_name")}
-            value={this.state.last_name}
-            placeholder="Last Name"/><br />
-          <input type="text"
-            onChange={this.handleChange("email")}
-            value={this.state.email}
-            placeholder="Email"></input><br />
-          <input type="password"
-            onChange={this.handleChange("password")}
-            value={this.state.password}
-            placeholder="password"/><br />
-        </form>
-        <button onClick={this.handleSubmit}>Sign Up</button>
-        <div>
-          { this.renderSignUpErrors() }
+      <section className='signup-container'>
+        <img src={ window.asset.logo } className="signup-logo"/>
+        <div className="signup-form">
+          <h1 className="signup-header">Sign Up</h1>
+            <form>
+            <label className="form-labels">First Name</label>
+              <input type="text"
+                onChange={this.handleChange("first_name")}
+                value={this.state.first_name}
+                className="form-inputs"/><br />
+              <label className="form-labels">Last Name</label>
+              <input type="text"
+                onChange={this.handleChange("last_name")}
+                value={this.state.last_name}
+                className="form-inputs"/><br />
+              <label className="form-labels">Email</label>
+              <input type="text"
+                onChange={this.handleChange("email")}
+                value={this.state.email}
+                className="form-inputs"></input><br />
+              <label className="form-labels">Password</label>
+              <input type="password"
+                onChange={this.handleChange("password")}
+                value={this.state.password}
+                className="form-inputs"/><br />
+            </form>
+            <button onClick={this.handleSubmit}>Sign Up</button>
+            <div>
+              { this.renderSignUpErrors() }
+            </div>
         </div>
     </section>
     );
