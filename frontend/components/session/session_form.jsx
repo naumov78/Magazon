@@ -20,7 +20,8 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
-      this.props.router.push("/");
+      let id = this.props.currentUser.id;
+      this.props.router.push(`/users/${id}`);
     });
   }
 
