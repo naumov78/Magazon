@@ -3,7 +3,9 @@
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
   <% end %>
-
+  window.asset = {
+    logo: "<%= image_path("magazon_logo")%>"
+  }
   </script>
 
-<main id='root'><p>Something Broke</p></main>
+<main id='root'><p>Something Broke :( </p></main>

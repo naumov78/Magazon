@@ -11,6 +11,8 @@ const Root = ({ store }) => {
         <Route path='/' component={ App } >
           <Route path='/login' component={ SessionFormContainer } />
         </Route>
+        <Route path='/' component={ App } />
+        <Route path='/signup' component={ SessionFormContainer} />
       </Router>
     </Provider>
   );

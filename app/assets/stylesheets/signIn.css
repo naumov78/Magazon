@@ -1,0 +1,122 @@
+.signup-container {
+  height: 600px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.signup-logo {
+  height: 120px;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.signup-form {
+  font-family: Arial, sans-serif;
+  height: 410px;
+  width: 296px;
+  padding: 20px 42px 20px 26px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.signup-header {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  padding-bottom: 4px;
+}
+
+.form-labels {
+  display: block;
+  padding: 5px 0 5px 0;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.form-inputs {
+  height: 23px;
+  font-size: 13px;
+  width: 100%;
+  padding: 3px 7px;
+  line-height: normal;
+  border: 1px solid #a6a6a6;
+  border-top-color: #949494;
+  border-radius: 3px;
+}
+
+.signup-submit {
+  cursor: pointer;
+  height: 31px;
+  width: 316px;
+  background: linear-gradient(to bottom,
+    #f7dfa5, #f0c14b);
+  border-radius: 3px;
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-top-color: rgb(173, 177, 184);
+  border-right-color: rgb(162, 166, 172);
+  border-bottom-color: rgb(141, 144, 150);
+  border-left-color: rgb(162, 166, 172);
+  border-width: 1px;
+  display: inline-block;
+  text-align: center;
+  padding: 2px 6px 3px;
+  font-size: 13px;
+  line-height: 19px;
+  margin-top: 12px;
+}
+
+.signup-submit:hover {
+  background: linear-gradient(to bottom,
+    #f5d78e, #eeb933);
+  border-color: #a88734 #9c7e31 #846a29;
+  border-top-color: rgb(168, 135, 52);
+  border-right-color: rgb(156, 126, 49);
+  border-bottom-color: rgb(132, 106, 41);
+  border-left-color: rgb(156, 126, 49);
+}
+
+.signin-submit {
+  background: linear-gradient(to bottom,
+    #f7f8fa, #e7e9ec);
+}
+
+.signin-submit:hover {
+  background: linear-gradient(to bottom,
+    #e7eaf0, #d9dce1);
+  border-color: #a2a6ac #979aa1 #82858a;
+  border-top-color: rgb(162, 166, 172);
+  border-right-color: rgb(151, 154, 161);
+  border-bottom-color: rgb(130, 133, 138);
+  border-left-color: rgb(151, 154, 161);
+}
+
+.signup-divider {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  line-height: 1;
+  font-size: 12px;
+  color: #767676;
+  font-weight: 400;
+  padding: 0 8px 0 7px;
+  display: inline-block;
+  padding-top: 1px;
+  margin: 14px 0 14px 0;
+}
+
+.signup-errors {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  color: red;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.errors-li {
+  padding-bottom: 3px;
+}
