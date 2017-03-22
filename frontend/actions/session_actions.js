@@ -21,3 +21,12 @@ export function signup(user){
     );
   };
 }
+
+export function signin(user){
+  return (dispatch) => {
+    return APIUtil.signin(user).then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+      (errors) => dispatch(receiveErrors(errors))
+    );
+  };
+}

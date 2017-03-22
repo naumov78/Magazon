@@ -5,3 +5,11 @@ export const signup = (user) => {
     data: { user }
   });
 };
+
+export const signin = (user) => {
+  return $.ajax({
+    method: "POST",
+    url: "api/session",
+    data: { user }
+  });
+};
