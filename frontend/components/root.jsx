@@ -10,12 +10,10 @@ const Root = ({ store }) => {
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path='/' component={ App } >
-          <Route path='/login' component={ SessionFormContainer } />
+            <Route path='/signup' component={ SessionFormContainer} />
+            <Route path='/signin' component={ SessionFormContainer } />
+            <Route path='/users/:id' component={ UserContainer }/>
         </Route>
-        <Route path='/' component={ App } />
-        <Route path='/signup' component={ SessionFormContainer} />
-        <Route path='/signin' component={ SessionFormContainer } />
-        <Route path='/users/:id' component={ UserContainer }/>
       </Router>
     </Provider>
   );

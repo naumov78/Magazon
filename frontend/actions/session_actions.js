@@ -30,3 +30,12 @@ export function signin(user){
     );
   };
 }
+
+export function logout(){
+  return (dispatch) => {
+    return APIUtil.logout().then(
+      (currentUser) => dispatch(receiveCurrentUser(null)),
+      (errors) => dispatch(receiveErrors(errors))
+    );
+  };
+}

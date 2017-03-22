@@ -13,3 +13,10 @@ export const signin = (user) => {
     data: { user }
   });
 };
+
+export const logout = () => {
+  return $.ajax({
+    method: "DELETE",
+    url: "api/session"
+  });
+};
