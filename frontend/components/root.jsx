@@ -10,6 +10,7 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Route path='/' component={ App } />
         <Route path='/signup' component={ SessionFormContainer} />
+        <Route path='/signin' component={ SessionFormContainer } />
       </Router>
     </Provider>
   );
