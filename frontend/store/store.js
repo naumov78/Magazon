@@ -7,12 +7,12 @@ const middleware = [];
 
 middleware.push(thunkMiddleware);
 
-const configureStore = (preloadedState = {}) => (
-  createStore(
+const configureStore = (preloadedState = {}) => {
+  return createStore(
     rootReducer,
     preloadedState,
     applyMiddleware(...middleware)
-  )
-);
+  );
+};
 
 export default configureStore;
