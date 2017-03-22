@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true
 
+  has_one :cart
+  has_many :products, through: :cart
+
   attr_reader :password
   after_initialize :ensure_session_token
 
