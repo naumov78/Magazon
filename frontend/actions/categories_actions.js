@@ -12,31 +12,27 @@ export const receiveCategories = ({categories}) => {
 
 export const receiveCategory = ({category}) => {
   return {
-    type: RECEIVE_CATEGORy,
+    type: RECEIVE_CATEGORY,
     category
-  }
-}
+  };
+};
 
 
 export const fetchAllCategories = () => {
   return (dispatch) => {
     return APIUtil.fetchAllCategories().then((categories) => {
       return dispatch(receiveCategories(categories));
-<<<<<<< HEAD
+
     });
   };
 };
-=======
-    })
-  }
-}
+
 
 
 export const fetchCategory = (id) => {
   return (dispatch) => {
     return APIUtil.fetchCategory(id).then((category) => {
       return dispatch(receiveCategory(category));
-    })
-  }
-}
->>>>>>> 009c106e883c46fa9192256499e0fab90ce3680f
+    });
+  };
+};
