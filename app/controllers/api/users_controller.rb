@@ -10,7 +10,8 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      # @user.update_attribute(cart_id: Cart.new({user_id: @user.id}).id)
+      cart = Cart.create!(user_id: @user.id)
+      @user.update_attribute(:cart_id, cart.id)
       login(@user)
       render "api/users/show"
     else
