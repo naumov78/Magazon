@@ -5,7 +5,7 @@ class Api::CartProductsController < ApplicationController
 
 
 def create
-  cart_product = current_user.cart.products.new(cart_products_params)
+  cart_product = current_user.cart.cart_products.new(cart_products_params)
   if cart_product.save
     @user = current_user
     render 'api/users/show'
