@@ -22,6 +22,10 @@
   border: 1px solid #ddd;
 }
 
+.signin-form {
+  height: 310px;
+}
+
 .signup-header {
   font-weight: 400;
   font-size: 28px;

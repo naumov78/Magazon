@@ -21,3 +21,21 @@ export function signup(user){
     );
   };
 }
+
+export function signin(user){
+  return (dispatch) => {
+    return APIUtil.signin(user).then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+      (errors) => dispatch(receiveErrors(errors))
+    );
+  };
+}
+
+export function logout(){
+  return (dispatch) => {
+    return APIUtil.logout().then(
+      (currentUser) => dispatch(receiveCurrentUser(null)),
+      (errors) => dispatch(receiveErrors(errors))
+    );
+  };
+}
