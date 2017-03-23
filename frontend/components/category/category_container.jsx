@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Category from './category';
-// import { fetchAllCategories } from '../../actions/categories_actions';
+import { fetchCategory } from '../../actions/categories_actions';
 
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-
+    fetchCategory: (id) => dispatch(fetchCategory(id))
   });
 }
 

@@ -11,21 +11,19 @@ class StoreFront extends React.Component {
   }
 
   componentWillMount() {
-    debugger
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchAllCategories()
   }
 
   componentWillReceiveProps(newProps) {
+    debugger
     this.setState(newProps.categories)
   }
 
   getCategoriesList() {
     const categories = this.state.categories
-    debugger
     return (
       <ul>
         {categories.map((category, i) => {
@@ -42,7 +40,6 @@ class StoreFront extends React.Component {
   }
 
   render() {
-    debugger
     if (this.state.categories) {
       return (
         <div>{this.getCategoriesList()}</div>

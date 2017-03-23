@@ -7,15 +7,56 @@ class Category extends React.Component {
 
   constructor(props) {
   super(props);
+  this.state = { products: null }
   }
 
 
-  render() {
+  componentDidMount() {
+    debugger
+    this.props.fetchCategory(this.props.params.id).then((result) => {
+      this.setState({ products: result.products })
+    })
+    // const products = store.getState().category.products
+    // debugger
+    // this.setState({ products: products })
+  }
+
+  // componentWillReceiveProps(newProps) {
+  //   debugger
+  //   this.setState(newProps.category.products)
+  // }
+
+  getProductsList() {
+    const products = this.state.products
+    debugger
     return (
-      <div>Category</div>
+      <ul>
+        {products.map((product, i) => {
+          return (
+            <li key={`${i}`}>
+              <p>+++++++++++++++++++++++++++++++++++</p>
+              <Link to={`/products/${product.id}`} >
+                {product.title}
+              </Link>
+              <p>------------</p>
+                {product.full_description}
+                {product.price}
+            </li>
+          );
+        })}
+      </ul>
     )
   }
 
+  render() {
+    if (this.state.products) {
+    return (
+      <div>{this.getProductsList()}</div>
+    );
+    } else {
+      return null;
+    }
+  }
 
 }
 
