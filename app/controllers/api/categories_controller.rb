@@ -9,8 +9,5 @@ class Api::CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
-  private
-
-
 
 end
