@@ -24,6 +24,10 @@ class Product extends React.Component {
     }
   }
 
+  addToCart(e, id) {
+    e.preventDefault()
+    this.props.addToCart(id)
+  }
 
   render() {
     debugger
@@ -32,6 +36,7 @@ class Product extends React.Component {
         <div>{this.state.title}</div>
         <div>{this.state.full_description}</div>
         <div>{this.state.price}</div>
+        <div><button onClick={(e) => this.addToCart(e, this.state.id)}>Add to cart</button></div>
       </div>
     );
   }

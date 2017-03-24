@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/cart_products_api_util';
+import * as APIUtil from '../util/cart_api_util';
 
 
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
@@ -18,9 +18,9 @@ export const receiveErrors = (errors) => {
   }
 }
 
-export const addToCart = (user, product_id) => {
+export const addToCart = (product_id) => {
   return (dispatch) => {
-    return APIUtil.addToCart(user, product_id).then((user) => {
+    return APIUtil.addToCart(product_id).then((user) => {
       return dispatch(receiveUser(user));
     },
     ({ responseJSON }) => {
@@ -30,9 +30,9 @@ export const addToCart = (user, product_id) => {
   }
 }
 
-export const removeFromCart = (user, product_id) => {
+export const removeFromCart = (product_id) => {
   return (dispatch) => {
-    return APIUtil.removeFromCart(user, product_id).then((user) => {
+    return APIUtil.removeFromCart(product_id).then((user) => {
       return dispatch(receiveUser(user));
     },
     ({ responseJSON }) => {

@@ -22,8 +22,7 @@ class SessionStatus extends React.Component {
     }
     return (
       <div>
-        HIIII
-        <p>{ statusButton}</p>
+        <p>{statusButton}</p>
       </div>
     );
   }
