@@ -33,10 +33,15 @@ class Product extends React.Component {
     debugger
     return (
       <div>
-        <div>{this.state.title}</div>
-        <div>{this.state.full_description}</div>
-        <div>{this.state.price}</div>
-        <div><button onClick={(e) => this.addToCart(e, this.state.id)}>Add to cart</button></div>
+        <div className="product-info">
+          <div>{this.state.title}</div>
+          <div>{this.state.full_description}</div>
+          <div>{this.state.price}</div>
+        </div>
+        <div className="product-order">
+          <span><button onClick={(e) => this.addToCart(e, this.state.id)}>Add to cart</button></span>
+          <span id="cart"><Link to={`/users/${this.props.currentUser.id}/cart`} >Check your cart</Link></span>
+        </div>
       </div>
     );
   }

@@ -33,13 +33,17 @@ class Category extends React.Component {
         {products.map((product, i) => {
           return (
             <li key={`${i}`}>
-              <p>+++++++++++++++++++++++++++++++++++</p>
-              <Link to={`/categories/${product.category_id}/products/${product.id}`} >
-                {product.title}
-              </Link>
-              <p>------------</p>
-                {product.full_description}
-                {product.price}
+              <div className="product-list">
+                <div>
+                <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                  <span className="product-title">{product.title}</span>
+                </Link>
+                </div>
+                <div className="product-descr">
+                  {product.full_description}
+                  {product.price}
+                </div>
+              </div>
             </li>
           );
         })}

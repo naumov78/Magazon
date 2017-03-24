@@ -6,7 +6,7 @@ import { addToCart } from '../../actions/cart_actions';
 
 const mapStateToProps = (state) => {
   return ({
-
+    currentUser: state.session.currentUser
   })
 }
 

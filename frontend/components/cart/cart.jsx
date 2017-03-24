@@ -17,12 +17,14 @@ class Cart extends React.Component {
         {products.map((product, i) => {
           return (
             <li key={`${i}`}>
+              <div className="cart-product">
               <Link to={`/categories/${product.category_id}/products/${product.id}`} >
                 This product: {product.title} is in your cart
               </Link>
               <p>------------</p>
                 {product.full_description}
                 {product.price}
+                </div>
             </li>
           )
         })}

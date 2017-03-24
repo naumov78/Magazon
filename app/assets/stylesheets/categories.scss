@@ -1,3 +1,16 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.product-list {
+  background-color: #e6e6e6;
+  border: 1px solid blue;
+  padding: 20px;
+}
+
+
+.product-title {
+color: red;
+text-decoration: underline;
+}
