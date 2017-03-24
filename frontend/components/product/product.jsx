@@ -20,8 +20,15 @@ class Product extends React.Component {
 
 
   render() {
-    debugger
+    const productId = (store.getState().product ? store.getState().product.id : null)
+    const title = (store.getState().product ? store.getState().product.title : null)
+    const briefDescription = (store.getState().product ? store.getState().product.brief_description : null)
+    const fullDescription = (store.getState().product ? store.getState().product.full_description : null)
+    const price = (store.getState().product ? store.getState().product.price : null)
+    const discount = (store.getState().product ? store.getState().product.title : null)
+    const onSale = (store.getState().product ? store.getState().product.on_sale : null)
     return (
+      
       <div>This is the product</div>
     );
   }

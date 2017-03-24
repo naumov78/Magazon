@@ -2,7 +2,7 @@ import * as APIUtil from '../util/product_api_util';
 
 export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
 
-export const receiveProduct = ({product}) => {
+export const receiveProduct = (product) => {
   return {
     type: RECEIVE_PRODUCT,
     product

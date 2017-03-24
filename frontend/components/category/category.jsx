@@ -11,6 +11,16 @@ class Category extends React.Component {
   }
 
 
+  componentWillReceiveProps(nextProps) {
+    debugger
+    let id = nextProps.params.id
+    if (id !== this.props.params.id) {
+      this.props.fetchCategory(id).then((result) => {
+        this.setState({ products: result.products })
+    });
+    }
+  }
+
   componentDidMount() {
     debugger
     this.props.fetchCategory(this.props.params.id).then((result) => {
