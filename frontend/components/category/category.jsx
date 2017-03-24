@@ -12,7 +12,6 @@ class Category extends React.Component {
 
 
   componentWillReceiveProps(nextProps) {
-    debugger
     let id = nextProps.params.id
     if (id !== this.props.params.id) {
       this.props.fetchCategory(id).then((result) => {
@@ -26,15 +25,7 @@ class Category extends React.Component {
     this.props.fetchCategory(this.props.params.id).then((result) => {
       this.setState({ products: result.products })
     })
-    // const products = store.getState().category.products
-    // debugger
-    // this.setState({ products: products })
   }
-
-  // componentWillReceiveProps(newProps) {
-  //   debugger
-  //   this.setState(newProps.category.products)
-  // }
 
   getProductsList() {
     const products = this.state.products
