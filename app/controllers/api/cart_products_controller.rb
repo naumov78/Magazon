@@ -16,9 +16,11 @@ end
 
 
 def destroy
-  cart_product = CartProduct.where(cart_id: current_user.cart_id).where(product_id: cart_products_params).last
+  # debugger
+  cart_product = CartProduct.where(cart_id: current_user.cart_id).where(product_id: cart_products_params[:product_id]).last
   if cart_product.delete
     @user = current_user
+    # debugger
     render 'api/users/show'
   else
     render json: ['no such product in the cart'], status: 404

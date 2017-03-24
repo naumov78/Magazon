@@ -5,6 +5,7 @@ import { addToCart, removeFromCart } from '../../actions/cart_actions';
 
 
 const mapStateToProps = (state) => {
+  debugger
   return ({
     currentUser: state.session.currentUser
   })

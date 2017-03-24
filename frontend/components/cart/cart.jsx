@@ -7,6 +7,7 @@ class Cart extends React.Component {
 
   constructor(props) {
   super(props);
+  // this.state = { products: null }
   }
 
   getProductsList() {
@@ -24,12 +25,20 @@ class Cart extends React.Component {
               <p>------------</p>
                 {product.full_description}
                 {product.price}
+                  <div>
+                    <button onClick={(e) => this.removeFromCart(e, product.id)} >Remove from Cart</button>
+                  </div>
                 </div>
             </li>
           )
         })}
       </ul>
     )
+  }
+
+  removeFromCart(e, id) {
+    e.preventDefault()
+    this.props.removeFromCart(id)
   }
 
   render() {
