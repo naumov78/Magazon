@@ -11,6 +11,6 @@ export const fetchProduct = (id) => {
 export const fetchProductFromCategory = (category_id, product_id) => {
   return $.ajax({
     method: "GET",
-    url: `/api/categories/${category_id}/products/${id}`
+    url: `/api/categories/${category_id}/products/${product_id}`
   })
 }

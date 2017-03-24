@@ -20,8 +20,10 @@ export const fetchProduct = (id) => {
 
 
 export const fetchProductFromCategory = (category_id, product_id) => {
+  debugger
   return (dispatch) => {
     return APIUtil.fetchProductFromCategory(category_id, product_id).then((product) => {
+      debugger
       return dispatch(receiveProduct(product));
     });
   };

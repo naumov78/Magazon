@@ -7,7 +7,6 @@ class Product extends React.Component {
 
   constructor(props) {
   super(props);
-  // this.state = { productId: null, title: null, briefDescription: null, fullDescription: null, price: null, discount: null, onSale: null }
   this.state = {}
   }
 
@@ -18,7 +17,8 @@ class Product extends React.Component {
         this.setState(result.product)
       })
     } else {
-      this.props.fetchProductFromCategory(Number(this.props.params.category_id), Number(this.props.params.id)).then((result) => {
+      debugger
+      this.props.fetchProductFromCategory(Number(this.props.params.id[0]), Number(this.props.params.id[1])).then((result) => {
         this.setState(result.product)
       })
     }
@@ -27,13 +27,6 @@ class Product extends React.Component {
 
   render() {
     debugger
-    // const productId = this.state.id : null)
-    // const title = (store.getState().product ? store.getState().product.title : null)
-    // const briefDescription = (store.getState().product ? store.getState().product.brief_description : null)
-    // const fullDescription = (store.getState().product ? store.getState().product.full_description : null)
-    // const price = (store.getState().product ? store.getState().product.price : null)
-    // const discount = (store.getState().product ? store.getState().product.title : null)
-    // const onSale = (store.getState().product ? store.getState().product.on_sale : null)
     return (
       <div>
         <div>{this.state.title}</div>

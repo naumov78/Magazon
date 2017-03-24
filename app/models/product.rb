@@ -6,6 +6,7 @@
 #  title             :string           not null
 #  brief_description :string
 #  full_description  :string
+#  category_id       :integer          not null
 #  price             :integer          not null
 #  discount          :integer          default("0")
 #  on_sale           :boolean

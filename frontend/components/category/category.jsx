@@ -21,7 +21,6 @@ class Category extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchCategory(this.props.params.id).then((result) => {
       this.setState({ products: result.products })
     })
@@ -29,14 +28,13 @@ class Category extends React.Component {
 
   getProductsList() {
     const products = this.state.products
-    debugger
     return (
       <ul>
         {products.map((product, i) => {
           return (
             <li key={`${i}`}>
               <p>+++++++++++++++++++++++++++++++++++</p>
-              <Link to={`/products/${product.id}`} >
+              <Link to={`/categories/${product.category_id}/products/${product.id}`} >
                 {product.title}
               </Link>
               <p>------------</p>

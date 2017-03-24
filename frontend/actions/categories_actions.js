@@ -11,7 +11,6 @@ export const receiveCategories = ({categories}) => {
 };
 
 export const receiveCategory = ({products}) => {
-  debugger
   return {
     type: RECEIVE_CATEGORY,
     products
@@ -31,10 +30,8 @@ export const fetchAllCategories = () => {
 
 
 export const fetchCategory = (id) => {
-  debugger
   return (dispatch) => {
     return APIUtil.fetchCategory(id).then((category) => {
-      debugger
       return dispatch(receiveCategory(category));
     });
   };

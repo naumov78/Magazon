@@ -24,7 +24,6 @@ class StoreFront extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    debugger
     this.setState(newProps.categories)
   }
 
