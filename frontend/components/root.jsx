@@ -5,6 +5,7 @@ import SessionFormContainer from './session/session_form_container';
 import UserContainer from './user/user_container';
 import CategoryContainer from './category/category_container';
 import ProductContainer from './product/product_container';
+import CartContainer from './cart/cart_container';
 import App from './app';
 
 const Root = ({ store }) => {
@@ -14,7 +15,7 @@ const Root = ({ store }) => {
       replace('/');
     }
   };
-
+  debugger
     return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
@@ -25,6 +26,7 @@ const Root = ({ store }) => {
             <Route path='/categories/:id' component={ CategoryContainer } />
             <Route path='/products/:id' component={ ProductContainer } />
             <Route path='/categories/:id/products/:id' component={ ProductContainer } />
+            <Route path='/users/:id/cart' component={ CartContainer } />
         </Route>
       </Router>
     </Provider>
