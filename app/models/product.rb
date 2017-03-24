@@ -15,17 +15,19 @@
 
 class Product < ActiveRecord::Base
 
-  has_many :product_categories,
-  class_name: "ProductCategory",
-  primary_key: :id,
-  foreign_key: :product_id
+  # has_many :product_categories,
+  # class_name: "ProductCategory",
+  # primary_key: :id,
+  # foreign_key: :product_id
+
+  belongs_to :category
 
   has_many :cart_products,
   class_name: "CartProduct",
   primary_key: :id,
   foreign_key: :product_id
 
-  has_many :categories, through: :product_categories
+  # has_many :categories, through: :product_categories
   has_many :carts, through: :cart_products
 
 end

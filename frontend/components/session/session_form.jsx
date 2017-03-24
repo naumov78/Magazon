@@ -32,11 +32,7 @@ class SessionForm extends React.Component {
   }
 
   renderSignUpErrors(){
-<<<<<<< HEAD
-    if (this.props.errors) {
-=======
     if (this.props.errors){
->>>>>>> 9dcda6812a25ee8e407a71ed5b75dca4e64bcd18
     return(
       <ul className="signup-errors">
         {this.props.errors.map((error, i) => (

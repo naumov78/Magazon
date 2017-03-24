@@ -11,17 +11,14 @@ class StoreFront extends React.Component {
   }
 
   componentWillMount() {
-<<<<<<< HEAD
-  }
-
-  componentDidMount() {
-=======
-
   }
 
   componentDidMount() {
 
->>>>>>> 9dcda6812a25ee8e407a71ed5b75dca4e64bcd18
+  }
+
+  componentDidMount() {
+
     this.props.fetchAllCategories()
   }
 
@@ -32,10 +29,6 @@ class StoreFront extends React.Component {
 
   getCategoriesList() {
     const categories = this.state.categories
-<<<<<<< HEAD
-=======
-
->>>>>>> 9dcda6812a25ee8e407a71ed5b75dca4e64bcd18
     return (
       <ul>
         {categories.map((category, i) => {
@@ -52,10 +45,6 @@ class StoreFront extends React.Component {
   }
 
   render() {
-<<<<<<< HEAD
-=======
-  
->>>>>>> 9dcda6812a25ee8e407a71ed5b75dca4e64bcd18
     if (this.state.categories) {
       return (
         <div>{this.getCategoriesList()}</div>

@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-rou
 import SessionFormContainer from './session/session_form_container';
 import UserContainer from './user/user_container';
 import CategoryContainer from './category/category_container';
+import ProductContainer from './product/product_container';
 import App from './app';
 
 const Root = ({ store }) => {
@@ -22,6 +23,8 @@ const Root = ({ store }) => {
             <Route path='/signin' component={ SessionFormContainer} onEnter={ _redirectIfLoggedIn }/>
             <Route path='/users/:id' component={ UserContainer }/>
             <Route path='/categories/:id' component={ CategoryContainer } />
+            <Route path='/products/:id' component={ ProductContainer } />
+            <Route path='/categories/:id/products/:id' component={ ProductContainer } />
         </Route>
       </Router>
     </Provider>

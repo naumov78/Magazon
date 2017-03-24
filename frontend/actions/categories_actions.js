@@ -14,15 +14,9 @@ export const receiveCategory = ({products}) => {
   debugger
   return {
     type: RECEIVE_CATEGORY,
-<<<<<<< HEAD
     products
   }
 }
-=======
-    category
-  };
-};
->>>>>>> 9dcda6812a25ee8e407a71ed5b75dca4e64bcd18
 
 
 export const fetchAllCategories = () => {
