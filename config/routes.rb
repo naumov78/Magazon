@@ -5,11 +5,12 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :users, except: [:new] do
       resources :cart, only: [:index, :update, :destroy] do
-        
+
       end
     end
 
     resources :cart_products, only: [:create, :destroy]
+    resources :carts, only: [:show]
 
     resources :products, only: [:show]
 

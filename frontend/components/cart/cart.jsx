@@ -55,7 +55,7 @@ class Cart extends React.Component {
                   <tr>
                     <td colSpan="4">
                       <div>
-                        <button onClick={(e) => this.removeFromCart(e, product.id)} >Remove from Cart</button>
+                        <button onClick={() => this.removeFromCart(product.id)} >Remove from Cart</button>
                       </div>
                     </td>
                   </tr>
@@ -68,9 +68,12 @@ class Cart extends React.Component {
     )
   }
 
-  removeFromCart(e, id) {
-    e.preventDefault()
+  removeFromCart(id) {
     this.props.removeFromCart(id)
+  }
+
+  addToCart(id) {
+
   }
 
   render() {
