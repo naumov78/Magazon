@@ -26,6 +26,10 @@ class Category extends React.Component {
     })
   }
 
+  addToCart(id) {
+    this.props.addToCart(id)
+  }
+
   getProductsList() {
     const products = this.state.products
     return (
@@ -38,6 +42,7 @@ class Category extends React.Component {
                 <Link to={`/categories/${product.category_id}/products/${product.id}`} >
                   <span className="product-title">{product.title}</span>
                 </Link>
+                <span><button onClick={() => this.addToCart(product.id)}>Add to cart</button></span>
                 </div>
                 <div className="product-descr">
                   {product.full_description}

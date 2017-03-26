@@ -16,47 +16,46 @@ class Cart extends React.Component {
     })
   }
 
+  getProductTotal(price, quantaty) {
+    return quantaty * price
+  }
 
   getProductsList() {
     if (!this.props.currentUser) { return null }
     const products = this.state.products
     return (
-      <ul>
+      <ul className="cart-table">
         <li>
-          <table>
+          <table className="single-product-in-cart">
             <tbody>
               <tr>
-                <td>Product name</td>
-                <td>Description</td>
-                <td>Price</td>
-                <td>quantaty</td>
-                <td>Total</td>
+                <td className="cart-product-title product-title-header">Product</td>
+                <td className="cart-product-price">Price</td>
+                <td className="cart-product-quantaty">Quantaty</td>
+                <td className="cart-product-total">Total</td>
               </tr>
             </tbody>
           </table>
         </li>
         {products.map((product, i) => {
           return (
-            <li key={`${i}`}>
-              <table>
+            <li key={`${i}`} className="cart-product-line">
+              <table className="single-product-in-cart">
                 <tbody>
                   <tr className="cart-product">
-                    <td>
+                    <td className="cart-product-title">
                       <Link to={`/categories/${product.category_id}/products/${product.id}`} >
                         This product: {product.title} is in your cart
                       </Link>
                     </td>
-                    <td>
-                      {product.brief_description}
-                    </td>
-                    <td>
+                    <td className="cart-product-price">
                       {product.price}
                     </td>
-                    <td>
+                    <td className="cart-product-quantaty">
                       {product.quantaty}
                     </td>
-                    <td>
-                      total
+                    <td className="cart-product-total">
+                      {this.getProductTotal(product.price, product.quantaty)}
                     </td>
                   </tr>
                   <tr>
@@ -95,9 +94,9 @@ class Cart extends React.Component {
   render() {
     debugger
     return (
-      <div>
-      ho-ho-ho
-      {this.getProductsList()}
+      <div className="cart-title">
+      <h2>Cart page</h2>
+        <div className="cart-product-list">{this.getProductsList()}</div>
       </div>
     )
   }

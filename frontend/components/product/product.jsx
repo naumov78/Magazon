@@ -24,8 +24,7 @@ class Product extends React.Component {
     }
   }
 
-  addToCart(e, id) {
-    e.preventDefault()
+  addToCart(id) {
     this.props.addToCart(id)
   }
 
@@ -39,7 +38,7 @@ class Product extends React.Component {
           <div>{this.state.price}</div>
         </div>
         <div className="product-order">
-          <span><button onClick={(e) => this.addToCart(e, this.state.id)}>Add to cart</button></span>
+          <span><button onClick={() => this.addToCart(this.state.id)}>Add to cart</button></span>
           <span id="cart"><Link to={`/users/${this.props.currentUser.id}/cart`} >Check your cart</Link></span>
         </div>
       </div>
