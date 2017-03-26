@@ -121,19 +121,22 @@ class Cart extends React.Component {
     debugger
     if (this.total > 0) {
     return (
-      <div className="cart-title">
+      <div className="cart-container">
       <h2>Cart page</h2>
         <div className="cart-product-list">{this.getProductsList()}</div>
-        <div>
+        <div className="total-cart-amount">
           <span className="order-total-title">Total order amount:</span>
           <span className="order-total-amount">{Math.round(this.total * 100) / 100}</span>
+        </div>
+        <div className="cart-buttons">
           <span><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>
+          <span><button>Checkout</button></span>
         </div>
       </div>
     )
   } else {
     return (
-      <div className="cart-title">
+      <div className="cart-container">
       <h2>Cart page</h2>
         <div className="cart-product-list">You cart is empty!</div>
       </div>

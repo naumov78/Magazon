@@ -16,7 +16,10 @@ class SessionStatus extends React.Component {
   render(){
     let statusButton;
     if (this.props.loggedIn){
-      statusButton = <button onClick={this.logout}>Logout</button>;
+      statusButton = <div>
+        <span><button onClick={this.logout}>Logout</button></span>
+        <span><Link to={`/users/${this.props.currentUser.cart_id}/cart`}><button>Cart</button></Link></span>
+      </div>
     } else {
       statusButton=<Link to={`/signin`}><button>Sign In</button></Link>;
     }
