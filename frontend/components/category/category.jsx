@@ -33,21 +33,24 @@ class Category extends React.Component {
   getProductsList() {
     const products = this.state.products
     return (
-      <ul>
+      <ul className="category-list">
         {products.map((product, i) => {
-          debugger
           return (
-            <li key={`${i}`}>
+            <li key={i} className="product-line">
               <div className="product-list">
                 <div>
                 <Link to={`/categories/${product.category_id}/products/${product.id}`} >
                   <span className="product-title">{product.title}</span>
                 </Link>
-                <span><button onClick={() => this.addToCart(product.id)}>Add to cart</button></span>
                 </div>
                 <div className="product-descr">
-                  {product.full_description}
-                  {product.price}
+                  Description: {product.full_description}
+                </div>
+                <div className="product-price">
+                  Price: ${product.price}
+                </div>
+                <div className="addToCart-button">
+                  <button onClick={() => this.addToCart(product.id)}>Add to cart</button>
                 </div>
               </div>
             </li>
@@ -60,7 +63,7 @@ class Category extends React.Component {
   render() {
     if (this.state.products) {
     return (
-      <div>{this.getProductsList()}</div>
+      <div className="category-container">{this.getProductsList()}</div>
     );
     } else {
       return null;

@@ -24,5 +24,3 @@ Rails.application.routes.draw do
 
   end
 end
-
-# get "carts/:id/unsorted", to: "carts#quantaty_changed"

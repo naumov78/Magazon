@@ -31,15 +31,15 @@ class Product extends React.Component {
   render() {
     debugger
     return (
-      <div>
+      <div className="product-container">
         <div className="product-info">
-          <div>{this.state.title}</div>
-          <div>{this.state.full_description}</div>
-          <div>{this.state.price}</div>
+          <div className="product-product-title">{this.state.title}</div>
+          <div className="product-product-descr">{this.state.full_description}</div>
+          <div className="product-product-price">Price: ${this.state.price}</div>
         </div>
         <div className="product-order">
-          <span><button onClick={() => this.addToCart(this.state.id)}>Add to cart</button></span>
-          <span id="cart"><Link to={`/users/${this.props.currentUser.id}/cart`} >Check your cart</Link></span>
+          <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.id)}>Add to cart</button></span>
+          <span className="check-card"><Link to={`/users/${this.props.currentUser.id}/cart`}><button>Cart</button></Link></span>
         </div>
       </div>
     );

@@ -55,7 +55,7 @@ class Cart extends React.Component {
         {products.map((product, i) => {
           if (product.quantaty > 0) {
           return (
-            <li key={`${i}`} className="cart-product-line">
+            <li key={i} className="cart-product-line">
               <table className="single-product-in-cart">
                 <tbody>
                   <tr className="cart-product">
@@ -70,13 +70,13 @@ class Cart extends React.Component {
                       </div>
                     </td>
                     <td className="cart-product-price">
-                      {product.price}
+                      ${product.price}
                     </td>
                     <td className="cart-product-quantaty">
                       {product.quantaty}
                     </td>
                     <td className="cart-product-total">
-                      {this.getProductTotal(product.price, product.quantaty)}
+                      ${this.getProductTotal(product.price, product.quantaty)}
                     </td>
                   </tr>
                   <tr>
@@ -126,7 +126,7 @@ class Cart extends React.Component {
         <div className="cart-product-list">{this.getProductsList()}</div>
         <div className="total-cart-amount">
           <span className="order-total-title">Total order amount:</span>
-          <span className="order-total-amount">{Math.round(this.total * 100) / 100}</span>
+          <span className="order-total-amount">${Math.round(this.total * 100) / 100}</span>
         </div>
         <div className="cart-buttons">
           <span><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>

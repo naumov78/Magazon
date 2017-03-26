@@ -6,6 +6,8 @@
 .product-info {
   background-color: #e2e2e2;
   padding: 25px;
+  border-bottom: 2px solid #006600;
+  border-top: 1px solid #006600;
 }
 
 .product-order {
@@ -14,4 +16,35 @@
 
 #cart {
   margin-left: 10px;
+}
+
+// ===================
+
+.product-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+.product-product-title {
+  color: #660066;
+  font-size: 1.3em;
+}
+
+.product-product-descr {
+  padding: 10px 0 0 0;
+  color: #777;
+  font-size: .95em
+}
+
+.product-product-price {
+  padding: 5px 0 0 0;
+}
+
+.addToCart-button {
+  padding: 10px 0 0 0;
+}
+
+.check-card {
+  padding: 10px 0 0 20px;;
 }

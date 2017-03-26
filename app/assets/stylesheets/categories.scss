@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.category-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.product-line {
+  padding: 5px 0 5px 0;
+}
 
 .product-list {
   background-color: #e6e6e6;
@@ -11,6 +19,25 @@
 
 
 .product-title {
-color: red;
-text-decoration: underline;
+  color: #660066;
+  font-size: 1.3em;
+}
+
+.product-title:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.product-descr {
+  padding: 10px 0 0 0;
+  color: #777;
+  font-size: .95em
+}
+
+.product-price {
+  padding: 5px 0 0 0;
+}
+
+.addToCart-button {
+  padding: 10px 0 0 0;
 }
