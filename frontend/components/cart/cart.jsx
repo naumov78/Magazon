@@ -53,7 +53,7 @@ class Cart extends React.Component {
                       {product.price}
                     </td>
                     <td>
-                      quantaty
+                      {product.quantaty}
                     </td>
                     <td>
                       total
@@ -62,7 +62,8 @@ class Cart extends React.Component {
                   <tr>
                     <td colSpan="4">
                       <div>
-                        <button onClick={() => this.removeFromCart(product.id)} >Remove from Cart</button>
+                        <button onClick={() => this.removeFromCart(product.id)}>Remove from Cart</button>
+                        <button onClick={() => this.addToCart(product.id)}>Add one more</button>
                       </div>
                     </td>
                   </tr>
@@ -84,7 +85,11 @@ class Cart extends React.Component {
   }
 
   addToCart(id) {
-
+    this.props.addToCart(id).then(() => {
+      this.props.fetchCart(this.props.currentUser.cart_id).then((result) => {
+        this.setState({ products: result.cart })
+      })
+    })
   }
 
   render() {
