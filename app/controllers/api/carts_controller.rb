@@ -2,29 +2,56 @@
 class Api::CartsController < ApplicationController
 
   def show
-    @cart = Cart.find(current_user.cart_id)
-    reversed = @cart.products.reverse
-    @product_quantaty = reversed.each_with_object(Hash.new(0)) {|el, h| h[el] += 1 }
+    # @cart = Cart.find(current_user.cart_id)
+    # @product_quantaty = @cart.products.reverse.each_with_object(Hash.new(0)) {|el, h| h[el] += 1 }
+    @product_quantaty = Hash.new(0)
+    cart_product = CartProduct.all.where(cart_id: current_user.cart_id).order(created_at: :desc)
     # debugger
+    cart_product.each do |pr|
+      product = Product.find(pr.product_id)
+      @product_quantaty[product] += 1
+    end
+
   end
 
-  def quantaty_changed
-    debugger
-    last = @cart.products.pop
-    i = @cart.products.length - 1
-    while i >= 0
-      idx = i if @cart.products[i].id == last.id
-      i -= 1
-    end
-    j = @cart.products.length - 1
-    until j >= idx
-      @cart.products[j + 1] = @cart.products[j]
-      j -= 1
-      @cart.products[j + 1] = last if j == idx
-    end
+  def create
+    @cart = Cart.find(current_user.cart_id)
     @product_quantaty = @cart.products.each_with_object(Hash.new(0)) {|el, h| h[el] += 1 }
-    render 'api/carts/show'
-    # debugger
+    cart_product = current_user.cart.cart_products.new(cart_params)
+    if cart_product.save
+      product = Product.find(cart_params[:product_id])
+      @product_quantaty[product] += 1
+    else
+      render cart_product.errors.full_messages, status: 422
+    end
+    render '/api/carts/show'
+  end
+
+
+  def destroy
+    @cart = Cart.find(current_user.cart_id)
+    @product_quantaty = @cart.products.each_with_object(Hash.new(0)) {|el, h| h[el] += 1 }
+    cart_product = CartProduct.where(cart_id: current_user.cart_id).where(product_id: cart_params[:product_id]).last
+    if cart_product.delete
+      product = Product.find(cart_params[:product_id])
+      @product_quantaty[product] -= 1
+    else
+      render json: ['no such product in the cart'], status: 404
+    end
+    render '/api/carts/show'
+  end
+
+  def delete_all
+    CartProduct.delete_all
+    @product_quantaty = Hash.new(0)
+    render '/api/carts/show'
+  end
+
+
+  private
+
+  def cart_params
+    params.require(:cart).permit(:product_id)
   end
 
 

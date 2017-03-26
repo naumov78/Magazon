@@ -53,6 +53,7 @@ class Cart extends React.Component {
           </table>
         </li>
         {products.map((product, i) => {
+          if (product.quantaty > 0) {
           return (
             <li key={`${i}`} className="cart-product-line">
               <table className="single-product-in-cart">
@@ -90,32 +91,35 @@ class Cart extends React.Component {
               </table>
             </li>
           )
-        })}
+        }})}
       </ul>
     )
   }
 
   removeFromCart(id, price) {
     this.total -= price;
-    this.props.removeFromCart(id).then(() => {
-      this.props.fetchCartAfterQuantatyChange(this.props.currentUser.cart_id).then((result) => {
+    this.props.removeFromCartFromCart(this.props.currentUser.cart_id, id).then((result) => {
         this.setState({ products: result.cart })
       })
-    })
   }
 
   addToCart(id, price) {
-    debugger
     this.total += Number(price);
-    this.props.addToCart(id).then(() => {
-      this.props.fetchCartAfterQuantatyChange(this.props.currentUser.cart_id).then((result) => {
+    this.props.addProductFromCart(id).then((result) => {
         this.setState({ products: result.cart })
       })
-    })
+  }
+
+  emptyCart(cart_id) {
+    this.total = 0
+    this.props.emptyCart(cart_id).then((result) => {
+        this.setState({ products: result.cart, total: 0 })
+      })
   }
 
   render() {
     debugger
+    if (this.total > 0) {
     return (
       <div className="cart-title">
       <h2>Cart page</h2>
@@ -123,9 +127,18 @@ class Cart extends React.Component {
         <div>
           <span className="order-total-title">Total order amount:</span>
           <span className="order-total-amount">{Math.round(this.total * 100) / 100}</span>
+          <span><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>
         </div>
       </div>
     )
+  } else {
+    return (
+      <div className="cart-title">
+      <h2>Cart page</h2>
+        <div className="cart-product-list">You cart is empty!</div>
+      </div>
+    )
+  }
   }
 
 

@@ -10,12 +10,9 @@ Rails.application.routes.draw do
     end
 
     resources :cart_products, only: [:create, :destroy]
-    resources :carts, only: [:show]
-    # get ':carts/:unsorted/:id', :to => 'carts#quantaty_changed'
+    resources :carts, only: [:show, :create, :destroy]
 
-    resources :carts do
-      get 'quantaty_changed'
-    end
+    get "carts/:id/delete_all", to: "carts#delete_all"
 
     resources :products, only: [:show]
 
@@ -27,3 +24,5 @@ Rails.application.routes.draw do
 
   end
 end
+
+# get "carts/:id/unsorted", to: "carts#quantaty_changed"

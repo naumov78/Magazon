@@ -26,9 +26,26 @@ export const fetchCart = (id) => {
 }
 
 
-export const fetchCartAfterQuantatyChange = (id) => {
+export const addProductFromCart = (id) => {
+  return $.ajax({
+    method: "POST",
+    url: `/api/carts`,
+    data: {cart: {product_id: id}}
+  })
+}
+
+
+export const removeFromCartFromCart = (cart_id, product_id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/carts/${cart_id}`,
+    data: { cart: { product_id: product_id }}
+  })
+}
+
+export const emptyCart = (cart_id) => {
   return $.ajax({
     method: "GET",
-    url: `/api/carts/${id}/quantaty_changed`
+    url: `/api/carts/${cart_id}/delete_all`
   })
 }

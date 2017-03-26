@@ -60,9 +60,27 @@ export const fetchCart = (cart_id) => {
 }
 
 
-export const fetchCartAfterQuantatyChange = (cart_id) => {
+export const addProductFromCart = (product_id) => {
   return (dispatch) => {
-    return APIUtil.fetchCart(cart_id).then((cart) => {
+    return APIUtil.addProductFromCart(product_id).then((cart) => {
+      return dispatch(receiveCart(cart));
+    })
+  }
+}
+
+
+export const removeFromCartFromCart = (cart_id, product_id) => {
+  return (dispatch) => {
+    return APIUtil.removeFromCartFromCart(cart_id, product_id).then((cart) => {
+      return dispatch(receiveCart(cart));
+    })
+  }
+}
+
+
+export const emptyCart = (cart_id) => {
+  return (dispatch) => {
+    return APIUtil.emptyCart(cart_id).then((cart) => {
       return dispatch(receiveCart(cart));
     })
   }
