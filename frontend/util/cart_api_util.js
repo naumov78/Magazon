@@ -24,3 +24,11 @@ export const fetchCart = (id) => {
     url: `/api/carts/${id}`
   })
 }
+
+
+export const fetchCartAfterQuantatyChange = (id) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/carts/${id}/quantaty_changed`
+  })
+}

@@ -17,12 +17,12 @@ class SessionStatus extends React.Component {
     let statusButton;
     if (this.props.loggedIn){
       statusButton = <button onClick={this.logout}>Logout</button>;
-    }else {
+    } else {
       statusButton=<Link to={`/signin`}><button>Sign In</button></Link>;
     }
     return (
       <div>
-        <p>{statusButton}</p>
+        <span>{statusButton}</span>
       </div>
     );
   }

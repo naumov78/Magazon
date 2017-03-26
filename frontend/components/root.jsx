@@ -15,7 +15,6 @@ const Root = ({ store }) => {
       replace('/');
     }
   };
-  debugger
     return (
     <Provider store={ store }>
       <Router history={ hashHistory }>

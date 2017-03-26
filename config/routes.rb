@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
     resources :cart_products, only: [:create, :destroy]
     resources :carts, only: [:show]
+    # get ':carts/:unsorted/:id', :to => 'carts#quantaty_changed'
+
+    resources :carts do
+      get 'quantaty_changed'
+    end
 
     resources :products, only: [:show]
 

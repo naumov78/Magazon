@@ -12,7 +12,6 @@ class Cart extends React.Component {
   }
 
   componentWillMount() {
-    console.log("component will mount");
     this.props.fetchCart(this.props.currentUser.cart_id).then((result) => {
       debugger
       this.setState({ products: result.cart })
@@ -21,10 +20,6 @@ class Cart extends React.Component {
     })
   }
 
-  componentDidMount() {
-    console.log("component did mount");
-    debugger
-  }
 
   updateTotal() {
     debugger
@@ -37,7 +32,7 @@ class Cart extends React.Component {
   }
 
   getProductTotal(price, quantaty) {
-    return quantaty * price
+    return Math.round(quantaty * price * 100) / 100
   }
 
   getProductsList() {
@@ -51,8 +46,8 @@ class Cart extends React.Component {
               <tr>
                 <td className="cart-product-title product-title-header">Product</td>
                 <td className="cart-product-price">Price</td>
-                <td className="cart-product-quantaty">Quantaty</td>
-                <td className="cart-product-total">Total</td>
+                <td className="cart-product-quantaty cart-header">Quantaty</td>
+                <td className="cart-product-total cart-header">Total</td>
               </tr>
             </tbody>
           </table>
@@ -63,10 +58,15 @@ class Cart extends React.Component {
               <table className="single-product-in-cart">
                 <tbody>
                   <tr className="cart-product">
-                    <td className="cart-product-title">
-                      <Link to={`/categories/${product.category_id}/products/${product.id}`} >
-                        {product.title}
-                      </Link>
+                    <td>
+                      <div className="cart-product-title">
+                        <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                          {product.title}
+                        </Link>
+                      </div>
+                      <div className="product-cart-descr">
+                        {product.brief_description}
+                      </div>
                     </td>
                     <td className="cart-product-price">
                       {product.price}
@@ -81,8 +81,8 @@ class Cart extends React.Component {
                   <tr>
                     <td colSpan="4" >
                       <div className="cart-product-buttons">
-                        <span id="remove-btn"><button onClick={() => this.removeFromCart(product.id, product.price)}>Remove from Cart</button></span>
-                        <span id="add-btn"><button onClick={() => this.addToCart(product.id, product.price)}>Add one more</button></span>
+                        <span id="remove-btn"><button onClick={() => this.removeFromCart(product.id, product.price)}>Remove item</button></span>
+                        <span id="add-btn"><button onClick={() => this.addToCart(product.id, product.price)}>Add item</button></span>
                       </div>
                     </td>
                   </tr>
@@ -98,16 +98,17 @@ class Cart extends React.Component {
   removeFromCart(id, price) {
     this.total -= price;
     this.props.removeFromCart(id).then(() => {
-      this.props.fetchCart(this.props.currentUser.cart_id).then((result) => {
+      this.props.fetchCartAfterQuantatyChange(this.props.currentUser.cart_id).then((result) => {
         this.setState({ products: result.cart })
       })
     })
   }
 
   addToCart(id, price) {
-    this.total += price;
+    debugger
+    this.total += Number(price);
     this.props.addToCart(id).then(() => {
-      this.props.fetchCart(this.props.currentUser.cart_id).then((result) => {
+      this.props.fetchCartAfterQuantatyChange(this.props.currentUser.cart_id).then((result) => {
         this.setState({ products: result.cart })
       })
     })
@@ -119,7 +120,10 @@ class Cart extends React.Component {
       <div className="cart-title">
       <h2>Cart page</h2>
         <div className="cart-product-list">{this.getProductsList()}</div>
-        <div>{this.total}</div>
+        <div>
+          <span className="order-total-title">Total order amount:</span>
+          <span className="order-total-amount">{Math.round(this.total * 100) / 100}</span>
+        </div>
       </div>
     )
   }

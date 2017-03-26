@@ -58,3 +58,12 @@ export const fetchCart = (cart_id) => {
     })
   }
 }
+
+
+export const fetchCartAfterQuantatyChange = (cart_id) => {
+  return (dispatch) => {
+    return APIUtil.fetchCart(cart_id).then((cart) => {
+      return dispatch(receiveCart(cart));
+    })
+  }
+}

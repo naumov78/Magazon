@@ -35,6 +35,7 @@ class Category extends React.Component {
     return (
       <ul>
         {products.map((product, i) => {
+          debugger
           return (
             <li key={`${i}`}>
               <div className="product-list">

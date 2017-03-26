@@ -7,10 +7,10 @@ const App =({ children }) => {
     return(
       <section>
         <nav>
-          { children }
           <SessionStatusContainer />
-          <StoreFrontContainer />
         </nav>
+        <StoreFrontContainer />
+        { children }
       </section>
     );
   };
