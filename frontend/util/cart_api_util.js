@@ -16,3 +16,11 @@ export const removeFromCart = (id) => {
     data: { cart_product: { product_id: id }}
   })
 }
+
+
+export const fetchCart = (id) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/carts/${id}`
+  })
+}

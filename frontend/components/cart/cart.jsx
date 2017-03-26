@@ -7,12 +7,19 @@ class Cart extends React.Component {
 
   constructor(props) {
   super(props);
-  // this.state = { products: null }
+  this.state = { products: [] }
   }
+
+  componentWillMount() {
+    this.props.fetchCart(this.props.currentUser.cart_id).then((result) => {
+      this.setState({ products: result.cart })
+    })
+  }
+
 
   getProductsList() {
     if (!this.props.currentUser) { return null }
-    const products = this.props.currentUser.cart
+    const products = this.state.products
     return (
       <ul>
         <li>
@@ -69,7 +76,11 @@ class Cart extends React.Component {
   }
 
   removeFromCart(id) {
-    this.props.removeFromCart(id)
+    this.props.removeFromCart(id).then(() => {
+      this.props.fetchCart(this.props.currentUser.cart_id).then((result) => {
+        this.setState({ products: result.cart })
+      })
+    })
   }
 
   addToCart(id) {
