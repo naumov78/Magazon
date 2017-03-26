@@ -39,12 +39,13 @@
   padding: 20px;
 }
 
-.product-title-header {
-  text-align: center;
-}
-
 .cart-product-title {
   width: 500px;
+  text-align: left;
+}
+
+.product-title-header {
+  text-align: center;
 }
 
 .cart-product-price {
@@ -64,4 +65,16 @@
   width: 150px;
   margin-left: 0 auto;
   text-align: center;
+}
+
+.cart-product-buttons {
+  float: left;
+  padding: 10px 10px;
+}
+
+#remove-btn {
+}
+
+#add-btn {
+  padding-left: 10px;
 }
