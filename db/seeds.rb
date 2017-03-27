@@ -1,11 +1,64 @@
 
-
+State.delete_all
+Address.delete_all
 User.delete_all
 CartProduct.delete_all
 Cart.delete_all
 Category.delete_all
 ProductCategory.delete_all
 Product.delete_all
+
+Alabama = State.create!(state: "Alabama")
+Alaska = State.create!(state: "Alaska")
+Arizona = State.create!(state: "Arizona")
+Arkansas = State.create!(state: "Arkansas")
+California = State.create!(state: "California")
+Colorado = State.create!(state: "Colorado")
+Connecticut = State.create!(state: "Connecticut")
+Delaware = State.create!(state: "Delaware")
+Florida = State.create!(state: "Florida")
+Georgia = State.create!(state: "Georgia")
+Hawaii = State.create!(state: "Hawaii")
+Idaho = State.create!(state: "Idaho")
+Illinois = State.create!(state: "Illinois")
+Indiana = State.create!(state: "Indiana")
+Iowa = State.create!(state: "Iowa")
+Kansas = State.create!(state: "Kansas")
+Kentucky = State.create!(state: "Kentucky")
+Louisiana = State.create!(state: "Louisiana")
+Maine = State.create!(state: "Maine")
+Maryland = State.create!(state: "Maryland")
+Massachusetts = State.create!(state: "Massachusetts")
+Michigan = State.create!(state: "Michigan")
+Minnesota = State.create!(state: "Minnesota")
+Mississippi = State.create!(state: "Mississippi")
+Missouri = State.create!(state: "Missouri")
+Montana = State.create!(state: "Montana")
+Nebraska = State.create!(state: "Nebraska")
+Nevada = State.create!(state: "Nevada")
+NewHampshire = State.create!(state: "New Hampshire")
+NewJersey = State.create!(state: "New Jersey")
+NewMexico = State.create!(state: "New Mexico")
+NewYork = State.create!(state: "New York")
+NorthCarolina = State.create!(state: "North Carolina")
+NorthDakota = State.create!(state: "North Dakota")
+Ohio = State.create!(state: "Ohio")
+Oklahoma = State.create!(state: "Oklahoma")
+Oregon = State.create!(state: "Oregon")
+Pennsylvania = State.create!(state: "Pennsylvania")
+RhodeIsland = State.create!(state: "Rhode Island")
+SouthCarolina = State.create!(state: "South Carolina")
+SouthDakota = State.create!(state: "South Dakota")
+Tennessee = State.create!(state: "Tennessee")
+Texas = State.create!(state: "Texas")
+Utah = State.create!(state: "Utah")
+Vermont = State.create!(state: "Vermont")
+Virginia = State.create!(state: "Virginia")
+Washington = State.create!(state: "Washington")
+WestVirginia = State.create!(state: "West Virginia")
+Wisconsin = State.create!(state: "Wisconsin")
+Wyoming = State.create!(state: "Wyoming")
+
 
 
 books = Category.create!(title: 'Books')

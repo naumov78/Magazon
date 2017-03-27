@@ -4,11 +4,11 @@
 #
 #  id                :integer          not null, primary key
 #  title             :string           not null
-#  brief_description :string
-#  full_description  :string
 #  category_id       :integer          not null
-#  price             :integer          not null
-#  discount          :integer          default("0")
+#  brief_description :text
+#  full_description  :text
+#  price             :decimal(, )      not null
+#  discount          :decimal(, )      default("0")
 #  on_sale           :boolean
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
