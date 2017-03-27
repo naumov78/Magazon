@@ -15,7 +15,7 @@
 
 class Payment < ActiveRecord::Base
 
-  has_one :network
+  belongs_to :network
 
   belongs_to :user
 
