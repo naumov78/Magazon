@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326231712) do
+ActiveRecord::Schema.define(version: 20170327034350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,23 @@ ActiveRecord::Schema.define(version: 20170326231712) do
   end
 
   add_index "categories", ["title"], name: "index_categories_on_title", using: :btree
+
+  create_table "networks", force: :cascade do |t|
+    t.string   "network",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "network_id",  null: false
+    t.string   "cardholder",  null: false
+    t.string   "card_number", null: false
+    t.date     "expires",     null: false
+    t.string   "cvv",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "product_categories", force: :cascade do |t|
     t.integer  "category_id", null: false

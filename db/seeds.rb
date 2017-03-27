@@ -1,5 +1,7 @@
 
 State.delete_all
+Payment.delete_all
+Network.delete_all
 Address.delete_all
 User.delete_all
 CartProduct.delete_all
@@ -60,6 +62,11 @@ Wisconsin = State.create!(state: "Wisconsin")
 Wyoming = State.create!(state: "Wyoming")
 
 
+AmericanExpress = Network.create!(network: "AmericanExpress")
+Discover = Network.create!(network: "Discover")
+MasterCard = Network.create!(network: "MasterCard")
+Visa = Network.create!(network: "Visa")
+
 
 books = Category.create!(title: 'Books')
 movies = Category.create!(title: 'Movies')
@@ -75,8 +82,11 @@ tools = Category.create!(title: 'Tools')
 
 user1 = User.create!(first_name: "Bob", last_name: "Smith", email: "z@z.z", password: "123456")
 address1 = Address.create!(user_id: user1.id, street: "2755 East 21st St.", street2: "Apt. #3", city: "Brooklyn", state_id: NewYork.id, zip: 11235)
+payment1 = Payment.create!(user_id: user1.id, network_id: Visa.id, cardholder: "Bob Smith", card_number: "1234567890123456", cvv: "953", expires: 20200401)
 user1.address_id = address1.id
+user1.payment_id = payment1.id
 user1.save
+
 
 product1 = Product.create!(
 title: 'Cracking the Coding Interview: 189 Programming Questions and Solutions',
