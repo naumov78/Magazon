@@ -72,7 +72,11 @@ garden = Category.create!(title: 'Garden')
 tools = Category.create!(title: 'Tools')
 
 
-user1 = User.create!(first_name: "Bob", last_name: "Smith", email: "smith@gmail.com", password: "123456")
+
+user1 = User.create!(first_name: "Bob", last_name: "Smith", email: "z@z.z", password: "123456")
+address1 = Address.create!(user_id: user1.id, street: "2755 East 21st St.", street2: "Apt. #3", city: "Brooklyn", state_id: NewYork.id, zip: 11235)
+user1.address_id = address1.id
+user1.save
 
 product1 = Product.create!(
 title: 'Cracking the Coding Interview: 189 Programming Questions and Solutions',
