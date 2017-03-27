@@ -26,8 +26,8 @@ class Category extends React.Component {
     })
   }
 
-  addToCart(id) {
-    this.props.addToCart(id)
+  addToCart(id, quantity) {
+    this.props.addToCart(id, quantity)
   }
 
   getProductsList() {
@@ -50,7 +50,7 @@ class Category extends React.Component {
                   Price: ${product.price}
                 </div>
                 <div className="addToCart-button">
-                  <button onClick={() => this.addToCart(product.id)}>Add to cart</button>
+                  <button onClick={() => this.addToCart(product.id, 1)}>Add to cart</button>
                 </div>
               </div>
             </li>

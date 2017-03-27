@@ -1,18 +1,26 @@
 
 
-// export const addToCart = (user, product_id) => {
-//   return $.ajax({
-//     method: "POST",
-//     url: `/api/users/${user.id}/cart/${user.cart_id}/cart_products`,
-//     data: { cart_product: { product_id: product_id }}
-//   })
-// }
-//
-//
-// export const removeFromCart = (user, product_id) => {
-//   return $.ajax({
-//     method: "DELETE",
-//     url: `/api/users/${user.id}/cart/${user.cart_id}/cart_products/${product_id}`,
-//     data: { cart_product: { product_id: product_id }}
-//   })
-// }
+export const addToCart = (product_id, quantity) => {
+  return $.ajax({
+    method: "POST",
+    url: `/api/cart_products`,
+    data: { cart_product: { product_id: product_id, quantity: quantity }}
+  })
+}
+
+export const updateCartProduct = (product_id, quantity) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/cart_products/${product_id}`,
+    data: { cart_product: { product_id: product_id, quantity: quantity }}
+  })
+}
+
+
+export const removeFromCart = (product_id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/cart_products/${product_id}`,
+    data: { cart_product: { product_id: product_id }}
+  })
+}

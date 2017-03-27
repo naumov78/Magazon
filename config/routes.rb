@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :cart_products, only: [:create, :destroy]
+    resources :cart_products, only: [:create, :update, :destroy]
     resources :carts, only: [:show, :create, :destroy]
 
     get "carts/:id/delete_all", to: "carts#delete_all"

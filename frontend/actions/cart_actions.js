@@ -1,4 +1,5 @@
-import * as APIUtil from '../util/cart_api_util';
+import * as APIUtilCart from '../util/cart_api_util';
+import * as APIUtil from '../util/cart_products_api_util';
 
 
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
@@ -13,6 +14,7 @@ export const receiveUser = (user) => {
 }
 
 export const receiveCart = (cart) => {
+  debugger
   return {
     type: RECEIVE_CART,
     cart: cart.products
@@ -26,10 +28,10 @@ export const receiveErrors = (errors) => {
   }
 }
 
-export const addToCart = (product_id) => {
+export const addToCart = (product_id, quantity) => {
   return (dispatch) => {
-    return APIUtil.addToCart(product_id).then((user) => {
-      return dispatch(receiveUser(user));
+    return APIUtil.addToCart(product_id, quantity).then((cart) => {
+      return dispatch(receiveCart(cart));
     },
     ({ responseJSON }) => {
       return dispatch(receiveErrors(responseJSON));
@@ -38,10 +40,22 @@ export const addToCart = (product_id) => {
   }
 }
 
-export const removeFromCart = (product_id) => {
+export const updateCartProduct = (product_id, quantity) => {
   return (dispatch) => {
-    return APIUtil.removeFromCart(product_id).then((user) => {
-      return dispatch(receiveUser(user));
+    return APIUtil.updateCartProduct(product_id, quantity).then((cart) => {
+      return dispatch(receiveCart(cart));
+    },
+    ({ responseJSON }) => {
+      return dispatch(receiveErrors(responseJSON));
+    }
+    )
+  }
+}
+
+export const removeFromCart = (product_id, quantity) => {
+  return (dispatch) => {
+    return APIUtil.removeFromCart(product_id, quantity).then((cart) => {
+      return dispatch(receiveCart(cart));
     },
     ({ responseJSON }) => {
       return dispatch(receiveErrors(responseJSON));
@@ -53,7 +67,7 @@ export const removeFromCart = (product_id) => {
 
 export const fetchCart = (cart_id) => {
   return (dispatch) => {
-    return APIUtil.fetchCart(cart_id).then((cart) => {
+    return APIUtilCart.fetchCart(cart_id).then((cart) => {
       return dispatch(receiveCart(cart));
     })
   }
@@ -62,7 +76,7 @@ export const fetchCart = (cart_id) => {
 
 export const addProductFromCart = (product_id) => {
   return (dispatch) => {
-    return APIUtil.addProductFromCart(product_id).then((cart) => {
+    return APIUtilCart.addProductFromCart(product_id).then((cart) => {
       return dispatch(receiveCart(cart));
     })
   }
@@ -71,7 +85,7 @@ export const addProductFromCart = (product_id) => {
 
 export const removeFromCartFromCart = (cart_id, product_id) => {
   return (dispatch) => {
-    return APIUtil.removeFromCartFromCart(cart_id, product_id).then((cart) => {
+    return APIUtilCart.removeFromCartFromCart(cart_id, product_id).then((cart) => {
       return dispatch(receiveCart(cart));
     })
   }
@@ -80,7 +94,7 @@ export const removeFromCartFromCart = (cart_id, product_id) => {
 
 export const emptyCart = (cart_id) => {
   return (dispatch) => {
-    return APIUtil.emptyCart(cart_id).then((cart) => {
+    return APIUtilCart.emptyCart(cart_id).then((cart) => {
       return dispatch(receiveCart(cart));
     })
   }
