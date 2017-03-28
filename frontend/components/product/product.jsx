@@ -11,21 +11,13 @@ class Product extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.location.pathname[1] === 'p') {
-      this.props.fetchProduct(Number(this.props.params.id)).then((result) => {
-        debugger
+      this.props.fetchProduct(Number(this.props.params.id[0]), Number(this.props.params.id[1])).then((result) => {
         this.setState(result.product)
       })
-    } else {
-      debugger
-      this.props.fetchProductFromCategory(Number(this.props.params.id[0]), Number(this.props.params.id[1])).then((result) => {
-        this.setState(result.product)
-      })
-    }
   }
 
-  addToCart(id) {
-    this.props.addToCart(id)
+  addToCart(id, quantity) {
+    this.props.addToCart(id, quantity)
   }
 
   render() {
@@ -38,7 +30,7 @@ class Product extends React.Component {
           <div className="product-product-price">Price: ${this.state.price}</div>
         </div>
         <div className="product-order">
-          <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.id)}>Add to cart</button></span>
+          <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.id, 1)}>Add to cart</button></span>
           <span className="check-card"><Link to={`/users/${this.props.currentUser.id}/cart`}><button>Cart</button></Link></span>
         </div>
       </div>

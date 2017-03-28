@@ -90,13 +90,13 @@ class Cart extends React.Component {
                       </div>
                     </td>
                     <td className="cart-product-price">
-                      ${product.product.price}
+                      ${Number(product.product.price).toFixed(2)}
                     </td>
                     <td className="cart-product-quantity">
                       {product.quantity}
                     </td>
                     <td className="cart-product-total">
-                      ${product.total_price}
+                      ${product.total_price.toFixed(2)}
                     </td>
                   </tr>
                   <tr>
@@ -131,6 +131,7 @@ class Cart extends React.Component {
 
   emptyCart(cart_id) {
     this.props.emptyCart(cart_id).then((result) => {
+      debugger
         this.setState({ products: result.cart })
       })
   }
@@ -144,7 +145,7 @@ class Cart extends React.Component {
         <div className="cart-product-list">{this.getProductsList()}</div>
         <div className="total-cart-amount">
           <span className="order-total-title">Total order amount:</span>
-          <span className="order-total-amount">${this.getTotal()}</span>
+          <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
         </div>
         <div className="cart-buttons">
           <span><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>

@@ -6,17 +6,12 @@ Rails.application.routes.draw do
     resources :users, except: [:new] do
       resources :addresses, only: [:create, :update]
       resources :payments, only: [:create, :update, :destroy]
-      resources :carts, only: [:index, :update, :destroy] do
-
-      end
     end
 
     resources :cart_products, only: [:create, :update, :destroy]
-    resources :carts, only: [:show, :create, :destroy]
+    resources :carts, only: [:show]
 
     get "carts/:id/delete_all", to: "carts#delete_all"
-
-    resources :products, only: [:show]
 
     resources :categories, only: [:index, :show] do
       resources :products, only: [:show]

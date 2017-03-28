@@ -10,20 +10,9 @@ export const receiveProduct = (product) => {
 };
 
 
-export const fetchProduct = (id) => {
+export const fetchProduct = (category_id, product_id) => {
   return (dispatch) => {
-    return APIUtil.fetchProduct(id).then((product) => {
-      return dispatch(receiveProduct(product));
-    });
-  };
-};
-
-
-export const fetchProductFromCategory = (category_id, product_id) => {
-  debugger
-  return (dispatch) => {
-    return APIUtil.fetchProductFromCategory(category_id, product_id).then((product) => {
-      debugger
+    return APIUtil.fetchProduct(category_id, product_id).then((product) => {
       return dispatch(receiveProduct(product));
     });
   };

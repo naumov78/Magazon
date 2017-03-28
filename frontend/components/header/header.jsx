@@ -17,7 +17,7 @@ class Header extends React.Component {
 
   getProductsInCart() {
     let total = 0
-    const cart = store.getState().cart
+    const cart = store.getState().cart.cart
     debugger
     let i = 0
     while (typeof cart[i] !== "undefined") {
