@@ -9,7 +9,7 @@ class SessionForm extends React.Component {
       last_name: '',
       email: '',
       password: '',
-      qMark: '?',
+
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,22 +32,30 @@ class SessionForm extends React.Component {
   }
 
   renderSignUpErrors(){
-    if (this.props.errors){
+    //if (this.props.errors){
+
     return(
       <ul className="signup-errors">
         {this.props.errors.map((error, i) => (
           <li className="errors-li" key={`${i}`}>
-            *{error}
+            {error}
           </li>
         ))}
       </ul>
     );
-  } else {
-    return null;
-  }
+  // } else {
+  //   return null;
+  // }
   }
 
+  // componentDidUpdate(prevProps, prevState){
+  //   if (this.props.errors !== prevProps.errors){
+  //     this.renderSignUpErrors();
+  //   }
+  // }
+
   render() {
+
     const link = (this.props.formType === 'signup' ? 'signin' : 'signup');
     if (this.props.formType === 'signup'){
     return (
@@ -85,7 +93,7 @@ class SessionForm extends React.Component {
             </button>
               <div className="signup-divider">
                 <h5>
-                  Already have an account{this.state.qMark}
+                  Already have an account
                 </h5>
               </div>
               <button className="signup-submit signin-submit">
@@ -99,6 +107,9 @@ class SessionForm extends React.Component {
     return (
       <section className='signup-container'>
         <img src={ window.asset.logo } className="signup-logo"/>
+          <div >
+            { this.renderSignUpErrors() }
+          </div>
           <div className="signup-form signin-form">
               <h1 className="signup-header">Sign In</h1>
                 <form>
@@ -118,7 +129,7 @@ class SessionForm extends React.Component {
                 </button>
                   <div className="signup-divider">
                     <h5>
-                      Don't have an account{this.state.qMark}
+                      Don't have an account
                     </h5>
                   </div>
                   <button className="signup-submit signin-submit">

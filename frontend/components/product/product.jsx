@@ -21,7 +21,6 @@ class Product extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="product-container">
         <div className="product-info">

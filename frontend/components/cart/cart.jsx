@@ -13,7 +13,6 @@ class Cart extends React.Component {
 
   componentWillMount() {
     this.props.fetchCart(this.props.currentUser.cart_id).then((result) => {
-      debugger
       this.setState({ products: result.cart })
     })
   }
@@ -21,13 +20,11 @@ class Cart extends React.Component {
 // =======================new================================= //
 
   getTotal() {
-    debugger
     if (this.state.products.length === 0) {
       return null;
     } else {
       let total = 0;
       for(let i = 0; i < this.state.products.length; i++) {
-        debugger
         total += this.state.products[i].total_price
       }
       return total;
@@ -56,8 +53,7 @@ class Cart extends React.Component {
 
   getProductsList() {
     if (!this.props.currentUser) { return null }
-    const products = this.state.products
-    debugger
+    const products = this.state.products;
     return (
       <ul className="cart-table">
         <li>
@@ -124,20 +120,17 @@ class Cart extends React.Component {
 
   addToCart(id, quantity) {
     this.props.updateCartProduct(id, quantity).then((result) => {
-      debugger
         this.setState({ products: result.cart })
       })
   }
 
   emptyCart(cart_id) {
     this.props.emptyCart(cart_id).then((result) => {
-      debugger
         this.setState({ products: result.cart })
       })
   }
 
   render() {
-    debugger
     if (this.getTotal() > 0) {
     return (
       <div className="cart-container">

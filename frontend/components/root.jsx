@@ -18,8 +18,9 @@ const Root = ({ store }) => {
     return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path='/signup' component={ SessionFormContainer} onEnter={ _redirectIfLoggedIn }/>
-        <Route path='/signin' component={ SessionFormContainer} onEnter={ _redirectIfLoggedIn }/>
+        <Route path='/signup' component={ SessionFormContainer} onEnter={ _redirectIfLoggedIn }>
+          <Route path='/signin' component={ SessionFormContainer} />
+        </Route>
         <Route path='/' component={ App } >
             <Route path='/users/:id' component={ UserContainer }/>
             <Route path='/categories/:id' component={ CategoryContainer } />

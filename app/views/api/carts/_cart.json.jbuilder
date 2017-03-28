@@ -1,4 +1,4 @@
-# debugger
+
 unless cart.nil?
   json.products cart.each do |cart_product|
     json.product Product.find(cart_product.product_id)

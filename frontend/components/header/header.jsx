@@ -11,25 +11,21 @@ class Header extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     this.getProductsInCart()
   }
 
   getProductsInCart() {
     let total = 0
     const cart = store.getState().cart.cart
-    debugger
     let i = 0
     while (typeof cart[i] !== "undefined") {
         total += cart[i].quantity
         i++;
       }
-    debugger
     this.setState({ productsInCart: total })
   }
 
   render() {
-    debugger
     return (
       <div>Products in cart: { this.state.productsInCart }</div>
     )

@@ -8,7 +8,6 @@ class User extends React.Component {
 
 
   render(){
-    debugger
     return (
       <section>
         <span><h1>Hello, {this.props.user.first_name} {this.props.user.last_name}!</h1></span>

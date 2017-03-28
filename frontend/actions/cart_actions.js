@@ -14,7 +14,6 @@ export const receiveUser = (user) => {
 }
 
 export const receiveCart = (cart) => {
-  debugger
   return {
     type: RECEIVE_CART,
     cart: cart.products
@@ -95,7 +94,6 @@ export const fetchCart = (cart_id) => {
 export const emptyCart = (cart_id) => {
   return (dispatch) => {
     return APIUtilCart.emptyCart(cart_id).then((cart) => {
-      debugger
       return dispatch(receiveCart(cart));
     })
   }
