@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
+// import CategoryContainer from '../category/category_container';
 
 
 
@@ -11,6 +12,9 @@ class StoreFront extends React.Component {
   }
 
   componentWillMount() {
+  }
+
+  componentDidMount() {
 
   }
 
@@ -25,7 +29,6 @@ class StoreFront extends React.Component {
 
   getCategoriesList() {
     const categories = this.state.categories
-
     return (
       <ul>
         {categories.map((category, i) => {
@@ -42,7 +45,6 @@ class StoreFront extends React.Component {
   }
 
   render() {
-  
     if (this.state.categories) {
       return (
         <div>{this.getCategoriesList()}</div>

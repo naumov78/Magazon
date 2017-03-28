@@ -1,9 +1,9 @@
-import { RECEIVE_CATEGORIES } from '../actions/categories_actions';
+import { RECEIVE_CATEGORIES,  RECEIVE_CATEGORY } from '../actions/categories_actions';
 import merge from 'lodash/merge';
 
 const initialState = {
-    categories: []
-};
+  categories: []
+}
 
 
 const CategoriesReducer = (state = initialState, action) => {

@@ -24,14 +24,18 @@ class SessionStatus extends React.Component {
     let g = document.getElementById('greeting');
     let statusButton;
     if (this.props.loggedIn){
-      statusButton = <button onClick={this.logout}>Logout</button>;
-    }else {
+      statusButton = <div>
+        <span className="header-logout-button"><button onClick={this.logout}>Logout</button></span>
+        <span className="header-cart-button"><Link to={`/users/${this.props.currentUser.cart_id}/cart`}><button>Cart</button></Link></span>
+      </div>
+    } else {
       statusButton=<Link to={`/signin`}><button>Sign In</button></Link>;
     }
     return (
       <div>
         <span onMouseOver={this.revealer} className="greeting">Hello. Sign In</span>
         <p id="showButton" className="show-button">{ statusButton }</p>
+        <span>{statusButton}</span>
       </div>
     );
   }

@@ -15,15 +15,20 @@
 #
 
 class User < ActiveRecord::Base
+
+  VALID_EMAIL_REGEX = /\A[\w+\-._]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :password_digest, presence: true
   validates :session_token, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 
   has_one :cart
   has_many :products, through: :cart
+  has_one :address
+  has_one :payment
 
   attr_reader :password
   after_initialize :ensure_session_token

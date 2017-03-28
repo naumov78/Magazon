@@ -10,12 +10,12 @@ export const receiveCategories = ({categories}) => {
   };
 };
 
-export const receiveCategory = ({category}) => {
+export const receiveCategory = ({products}) => {
   return {
     type: RECEIVE_CATEGORY,
-    category
-  };
-};
+    products
+  }
+}
 
 
 export const fetchAllCategories = () => {

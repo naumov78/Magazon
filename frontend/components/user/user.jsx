@@ -8,12 +8,13 @@ class User extends React.Component {
 
 
   render(){
+    debugger
     return (
       <section>
-        <h1>Hello, {this.props.user.first_name} {this.props.user.last_name}!</h1>
+        <span><h1>Hello, {this.props.user.first_name} {this.props.user.last_name}!</h1></span>
       </section>
     );
   }
 }
 
-export default User;
+export default withRouter(User);
