@@ -1,0 +1,11 @@
+.greeting {
+  cursor: pointer;
+}
+
+.greeting:hover {
+  color: #f0c14b;
+}
+
+.show-button {
+  display: none;
+}
