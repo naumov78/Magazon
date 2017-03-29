@@ -17,7 +17,6 @@ class SessionStatus extends React.Component {
   revealer(){
     let btn = document.getElementById("showButton");
     btn.className -= 'show-button';
-    console.log(btn);
   }
 
   render(){
@@ -34,8 +33,7 @@ class SessionStatus extends React.Component {
     return (
       <div>
         <span onMouseOver={this.revealer} className="greeting">Hello. Sign In</span>
-        <p id="showButton" className="show-button">{ statusButton }</p>
-        <span>{statusButton}</span>
+        <div id="showButton" className="show-button">{ statusButton }</div>
       </div>
     );
   }

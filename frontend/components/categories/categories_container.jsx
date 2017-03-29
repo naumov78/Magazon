@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import StoreFront from './storefront';
+import Categories from './categories';
 import { fetchAllCategories } from '../../actions/categories_actions';
 
 
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(StoreFront);
+)(Categories);

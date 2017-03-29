@@ -4,7 +4,7 @@ import { withRouter, Link } from 'react-router';
 
 
 
-class StoreFront extends React.Component {
+class Categories extends React.Component {
 
   constructor(props) {
   super(props);
@@ -56,4 +56,4 @@ class StoreFront extends React.Component {
 
 }
 
-export default withRouter(StoreFront)
+export default withRouter(Categories)
