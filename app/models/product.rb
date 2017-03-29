@@ -10,6 +10,7 @@
 #  price             :decimal(, )      not null
 #  discount          :decimal(, )      default("0")
 #  on_sale           :boolean
+#  storefront        :boolean          default("false")
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
