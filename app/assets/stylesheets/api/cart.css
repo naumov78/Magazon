@@ -130,3 +130,42 @@
 .cart-buttons span {
   padding: 0 10px 0 10px;
 }
+
+.address-table, .payment-table {
+  width: 98%;
+}
+
+/*.address-line {
+  width: 100%;
+  padding: 10px;
+}*/
+
+.placeorder-titles {
+  width: 25%;
+  padding: 0 10px 10px 10px;
+  font-size: 1.05em;
+  font-weight: bold;
+}
+
+
+.place-order-existing-address, .place-order-existing-payment  {
+  width: 900px;
+  margin: 0 auto;
+  padding: 20px 0 10px 0;
+}
+
+#place-order-num {
+  width: 5%;
+  text-align: left;
+}
+
+#place-order-title {
+  width: 20%;
+  text-align: left;
+}
+
+.customer-info {
+  width: 80%;
+  text-align: left;
+  font-size: 1.05em;
+}

@@ -91,8 +91,8 @@ class PlaceOrder extends React.Component {
       return (
         <div className="cart-container">
           <h2>Place order</h2>
-          <div><CartAddressContainer /></div>
-          <div><CartPaymentContainer /></div>
+          <div className="place-order-existing-address"><CartAddressContainer /></div>
+          <div className="place-order-existing-payment"><CartPaymentContainer /></div>
 
           <div className="cart-product-list">{this.getProductsList()}</div>
 
