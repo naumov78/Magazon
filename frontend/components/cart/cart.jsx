@@ -121,7 +121,7 @@ class Cart extends React.Component {
         </div>
         <div className="cart-buttons">
           <span><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>
-          <span><button>Checkout</button></span>
+          <span><Link to={'/cart_address'}><button>Checkout</button></Link></span>
         </div>
       </div>
     )

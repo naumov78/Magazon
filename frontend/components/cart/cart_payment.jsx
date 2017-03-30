@@ -1,9 +1,9 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
-import AddressContainer from '../address/address_container';
+import PaymentContainer from '../payment/payment_container';
 
 
-class CartAddress extends React.Component {
+class CartPayment extends React.Component {
 
   constructor(props) {
   super(props);
@@ -12,14 +12,14 @@ class CartAddress extends React.Component {
 
   render() {
     if (this.props.currentUser) {
-      if (this.props.currentUser.address_id) {
+      if (this.props.currentUser.payment_id) {
         return (
           <div>
-            Excisting address
+            Excisting card information
           </div>
         )
       } else {
-        return <AddressContainer />
+        return <PaymentContainer />
       }
     } else {
       return null;
@@ -29,4 +29,4 @@ class CartAddress extends React.Component {
 
 }
 
-export default withRouter(CartAddress);
+export default withRouter(CartPayment);

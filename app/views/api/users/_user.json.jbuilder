@@ -17,3 +17,7 @@ end
 json.states State.all do |state|
   json.extract! state, :id, :state
 end
+
+json.networks Network.all do |network|
+  json.extract! network, :id, :network
+end

@@ -50,7 +50,7 @@ class WatchedProducts extends React.Component {
                   Price: ${product.price}
                 </div>
                 <div className="addToCart-button">
-                  <button onClick={() => this.addToCart(product.id, 1)}>Add to cart</button>
+                  <button onClick={() => this.props.addToCart(product.id, 1)}>Add to cart</button>
                 </div>
               </div>
             </li>

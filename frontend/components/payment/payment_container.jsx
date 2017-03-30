@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CartAddress from './cart_address';
-
+import Payment from './payment';
+import { createPayment } from '../../actions/payments_actions';
 
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    // addToCart: (product_id, quantity) => dispatch(addToCart(product_id, quantity))
+    createPayment: (payment) => dispatch(createPayment(payment))
   });
 }
 
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CartAddress);
+)(Payment);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CartAddress from './cart_address';
+import CartPayment from './cart_payment';
 
 
 
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CartAddress);
+)(CartPayment);

@@ -34,7 +34,6 @@ class Product extends React.Component {
         </div>
         <div className="product-order">
           <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.id, 1)}>Add to cart</button></span>
-          <span className="check-card"><Link to={`/users/${this.props.currentUser.id}/cart`}><button>Cart</button></Link></span>
         </div>
       </div>
     );

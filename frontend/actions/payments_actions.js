@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/address_api_util';
+import * as APIUtil from '../util/payments_api_util';
 
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
@@ -19,10 +19,10 @@ export const receiveErrors = (errors) => {
 }
 
 
-export const createAddress = (address) => {
+export const createPayment = (payment) => {
   debugger
   return (dispatch) => {
-    return APIUtil.createAddress(address).then((user) => {
+    return APIUtil.createPayment(payment).then((user) => {
       debugger
       return dispatch(receiveUser(user));
     });
