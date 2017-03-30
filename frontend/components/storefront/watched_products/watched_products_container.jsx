@@ -5,7 +5,6 @@ import { getWatchedProducts } from '../../../actions/watched_products_actions';
 
 
 const mapStateToProps = (state) => {
-  debugger
   return ({
     watchedProducts: state.watchedProducts.watchedProducts
   })

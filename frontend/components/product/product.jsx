@@ -10,6 +10,10 @@ class Product extends React.Component {
   this.state = {}
   }
 
+  componentWillMount() {
+    this.props.getWatchedProducts()
+  }
+
   componentDidMount() {
       this.props.fetchProduct(Number(this.props.params.id[0]), Number(this.props.params.id[1])).then((result) => {
         this.setState(result.product)

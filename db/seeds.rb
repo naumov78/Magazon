@@ -80,9 +80,11 @@ tools = Category.create!(title: 'Tools')
 
 
 
-user1 = User.create!(first_name: "Bob", last_name: "Smith", email: "z@z.z", password: "123456")
+user1 = User.create!(first_name: "Bob", last_name: "Smith", email: "smith@gmail.com", password: "123456")
 address1 = Address.create!(user_id: user1.id, street: "2755 East 21st St.", street2: "Apt. #3", city: "Brooklyn", state_id: NewYork.id, zip: 11235)
 payment1 = Payment.create!(user_id: user1.id, network_id: Visa.id, cardholder: "Bob Smith", card_number: "1234567890123456", cvv: "953", expires: 20200401)
+watched_list1 = WatchedList.create!(user_id: user1.id)
+user1.watched_list_id = watched_list1.id
 user1.address_id = address1.id
 user1.payment_id = payment1.id
 user1.save

@@ -11,24 +11,23 @@ class WatchedProducts extends React.Component {
   }
 
 
-  // componentWillReceiveProps(nextProps) {
-  //   let id = nextProps.params.id
-  //   if (id !== this.props.params.id) {
-  //     this.props.fetchCategory(id).then((result) => {
-  //       this.setState({ products: result.products })
-  //   });
-  //   }
-  // }
-
   componentDidMount() {
     this.props.getWatchedProducts().then((result) => {
-      debugger
       this.setState({ products: result.watchedProducts })
     })
   }
 
+  updateState() {
+    this.props.getWatchedProducts().then((result) => {
+      this.setState({ products: result.watchedProducts })
+    })
+  }
+
+
   getProductsList() {
-    const products = this.state.products
+    this.updateState()
+    const products = this.state.products.slice(0, 5)
+    debugger
     if (products.length > 4) {
     return (
       <ul className="storefront-list">
@@ -65,7 +64,7 @@ class WatchedProducts extends React.Component {
     debugger
     if (this.state.products && this.props.location.pathname == "/") {
     return (
-      <div className="storefront-container">
+      <div className="watched-products-container">
         {this.getProductsList()}
       </div>
     );

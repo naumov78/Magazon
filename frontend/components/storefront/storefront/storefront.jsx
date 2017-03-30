@@ -28,7 +28,6 @@ class Storefront extends React.Component {
 
   getProductsList() {
     const products = this.state.products
-    debugger
     return (
       <ul className="storefront-list">
         {products.map((product, i) => {
@@ -58,7 +57,6 @@ class Storefront extends React.Component {
   }
 
   render() {
-    debugger
     if (this.state.products && this.props.location.pathname == "/") {
     return (
       <div className="storefront-container">{this.getProductsList()}</div>

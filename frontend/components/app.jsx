@@ -7,7 +7,6 @@ import WatchedProductsContainer from './storefront/watched_products/watched_prod
 
 const App =({ children }) => {
   const a = children
-  debugger
     return(
       <section>
         <nav>
