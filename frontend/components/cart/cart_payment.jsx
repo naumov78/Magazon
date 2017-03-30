@@ -7,8 +7,12 @@ class CartPayment extends React.Component {
 
   constructor(props) {
   super(props);
+  this.state = { showPaymentForm: false }
   }
 
+  togglePaymentForm() {
+    this.setState({ showPaymentForm: !this.state.showPaymentForm })
+  }
 
   render() {
     if (this.props.currentUser) {
@@ -19,7 +23,16 @@ class CartPayment extends React.Component {
           </div>
         )
       } else {
-        return <PaymentContainer />
+        if (this.state.showPaymentForm) {
+          return <PaymentContainer />
+        } else {
+          return (
+            <div>
+              We don't have your payment method on file yet.
+              <button onClick={() => this.togglePaymentForm()}>Add Payment Method</button>
+            </div>
+          )
+        }
       }
     } else {
       return null;

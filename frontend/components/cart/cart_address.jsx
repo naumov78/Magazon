@@ -7,8 +7,12 @@ class CartAddress extends React.Component {
 
   constructor(props) {
   super(props);
+  this.state = { showAddressForm: false }
   }
 
+  toggleAddressForm() {
+    this.setState({ showAddressForm: !this.state.showAddressForm })
+  }
 
   render() {
     if (this.props.currentUser) {
@@ -19,7 +23,16 @@ class CartAddress extends React.Component {
           </div>
         )
       } else {
-        return <AddressContainer />
+        if (this.state.showAddressForm) {
+          return <AddressContainer />
+        } else {
+          return (
+            <div>
+              We don't have your address on file yet.
+              <button onClick={() => this.toggleAddressForm()}>Add Address</button>
+            </div>
+          )
+        }
       }
     } else {
       return null;

@@ -1,9 +1,11 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
+import CartAddressContainer from './cart_address_container';
+import CartPaymentContainer from './cart_payment_container';
 
 
 
-class Cart extends React.Component {
+class PlaceOrder extends React.Component {
 
   constructor(props) {
   super(props);
@@ -16,7 +18,6 @@ class Cart extends React.Component {
     })
   }
 
-
   getTotal() {
     if (this.state.products.length === 0) {
       return null;
@@ -25,14 +26,14 @@ class Cart extends React.Component {
       for(let i = 0; i < this.state.products.length; i++) {
         total += this.state.products[i].total_price
       }
+      debugger
       return total;
     }
   }
 
-
   getProductsList() {
     if (!this.props.currentUser) { return null }
-    const products = this.state.products;
+    const products = this.state.products
     return (
       <ul className="cart-table">
         <li>
@@ -48,7 +49,7 @@ class Cart extends React.Component {
           </table>
         </li>
         {products.map((product, i) => {
-
+          debugger
           return (
             <li key={i} className="cart-product-line">
               <table className="single-product-in-cart">
@@ -74,14 +75,6 @@ class Cart extends React.Component {
                       ${product.total_price.toFixed(2)}
                     </td>
                   </tr>
-                  <tr>
-                    <td colSpan="4" >
-                      <div className="cart-product-buttons">
-                        <span id="remove-btn"><button onClick={() => this.removeFromCart(product.product.id, -1)}>Remove item</button></span>
-                        <span id="add-btn"><button onClick={() => this.addToCart(product.product.id, 1)}>Add item</button></span>
-                      </div>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </li>
@@ -91,52 +84,53 @@ class Cart extends React.Component {
     )
   }
 
-  removeFromCart(id, quantity) {
-    this.props.updateCartProduct(id, quantity).then((result) => {
-        this.setState({ products: result.cart })
-      })
-  }
-
-  addToCart(id, quantity) {
-    this.props.updateCartProduct(id, quantity).then((result) => {
-        this.setState({ products: result.cart })
-      })
-  }
-
-  emptyCart(cart_id) {
-    this.props.emptyCart(cart_id).then((result) => {
-        this.setState({ products: result.cart })
-      })
-  }
 
   render() {
+    debugger
     if (this.getTotal() > 0) {
-    return (
-      <div className="cart-container">
-      <h2>Cart page</h2>
-        <div className="cart-product-list">{this.getProductsList()}</div>
-        <div className="total-cart-amount">
-          <span className="order-total-title">Total order amount:</span>
-          <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+      return (
+        <div className="cart-container">
+          <h2>Place order</h2>
+          <div><CartAddressContainer /></div>
+          <div><CartPaymentContainer /></div>
+
+          <div className="cart-product-list">{this.getProductsList()}</div>
+
+          <div className="total-cart-amount">
+            <span className="order-total-title">Total order amount:</span>
+            <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+          </div>
+          <div className="cart-buttons">
+            <span><Link to={'/place_order'}><button>Place order</button></Link></span>
+          </div>
         </div>
-        <div className="cart-buttons">
-          <span><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>
-          <span><Link to={'/place_order'}><button>Checkout</button></Link></span>
-        </div>
-      </div>
-    )
-  } else {
-    return (
-      <div className="cart-container">
-      <h2>Cart page</h2>
-        <div className="cart-product-list">You cart is empty!</div>
-      </div>
-    )
-  }
+      )
+    } else {
+        return (
+          <div className="cart-container">
+          <h2>Cart page</h2>
+            <div className="cart-product-list">You cart is empty!</div>
+          </div>
+        )
+    }
   }
 
 
 }
 
 
-export default withRouter(Cart)
+export default withRouter(PlaceOrder);
+
+
+
+
+
+//
+// <tr>
+//   <td colSpan="4" >
+//     <div className="cart-product-buttons">
+//       <span id="remove-btn"><button onClick={() => this.removeFromCart(product.product.id, -1)}>Remove item</button></span>
+//       <span id="add-btn"><button onClick={() => this.addToCart(product.product.id, 1)}>Add item</button></span>
+//     </div>
+//   </td>
+// </tr>
