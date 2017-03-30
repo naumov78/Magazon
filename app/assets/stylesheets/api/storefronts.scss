@@ -1,0 +1,31 @@
+// Place all the styles related to the storefronts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.storefront-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.storefront-list {
+  display: flex;
+  height: 205px;
+}
+
+
+.product-block {
+  // display: block;
+  width: 33%;
+  height: 200px;
+  margin-left: 10px;
+}
+
+
+
+
+.frontstore-product {
+  height: 200px;
+  border: 1px solid #e6e6e6;
+  padding: 10px;
+}
