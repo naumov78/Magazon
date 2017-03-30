@@ -12,6 +12,8 @@ class Api::UsersController < ApplicationController
     if @user.save
       cart = Cart.create!(user_id: @user.id)
       @user.update_attribute(:cart_id, cart.id)
+      watched_list = WatchedList.create(user_id: @user.id)
+      @user.update_attribute(:watched_list_id, watched_list.id)
       login(@user)
       render "api/users/show"
     else

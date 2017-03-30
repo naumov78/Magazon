@@ -12,6 +12,7 @@
 #  cart_id         :integer
 #  payment_id      :integer
 #  address_id      :integer
+#  watched_list_id :integer
 #
 
 class User < ActiveRecord::Base

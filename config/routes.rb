@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :cart_products, only: [:create, :update, :destroy]
     resources :carts, only: [:show]
     resources :storefronts, only: [:index]
+    resources :watched_products, only: [:index]
 
     get "carts/:id/delete_all", to: "carts#delete_all"
 
