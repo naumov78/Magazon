@@ -24,6 +24,11 @@ class Product < ActiveRecord::Base
 
   belongs_to :category
 
+  has_many :watched_products_lists,
+  class_name: "WatchedProductsList",
+  primary_key: :id,
+  foreign_key: :product_id
+
   has_many :cart_products,
   class_name: "CartProduct",
   primary_key: :id,
@@ -31,5 +36,7 @@ class Product < ActiveRecord::Base
 
   # has_many :categories, through: :product_categories
   has_many :carts, through: :cart_products
+  has_many :watched_lists, through: :watched_products_lists
+
 
 end

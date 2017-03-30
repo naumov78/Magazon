@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
   has_many :products, through: :cart
   has_one :address
   has_one :payment
+  has_one :watched_list
+  has_many :watched_products, through: :watched_list
 
   attr_reader :password
   after_initialize :ensure_session_token
