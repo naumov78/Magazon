@@ -10,6 +10,10 @@ class WatchedProducts extends React.Component {
   this.state = { products: [] }
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ products: nextProps.watchedProducts })
+  }
+
 
   componentDidMount() {
     this.props.getWatchedProducts().then((result) => {
@@ -17,15 +21,8 @@ class WatchedProducts extends React.Component {
     })
   }
 
-  updateState() {
-    this.props.getWatchedProducts().then((result) => {
-      this.setState({ products: result.watchedProducts })
-    })
-  }
-
 
   getProductsList() {
-    this.updateState()
     const products = this.state.products.slice(0, 5)
     debugger
     if (products.length > 4) {

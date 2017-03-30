@@ -10,7 +10,7 @@ class Product extends React.Component {
   this.state = {}
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
     this.props.getWatchedProducts()
   }
 
