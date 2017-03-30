@@ -13,3 +13,7 @@ unless user.payment_id.nil?
   json.payment Payment.find(user.payment_id), :cardholder, :card_number, :expires
   json.card_network Payment.find(user.payment_id).network, :id, :network
 end
+
+json.states State.all do |state|
+  json.extract! state, :id, :state
+end

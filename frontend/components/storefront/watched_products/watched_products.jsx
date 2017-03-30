@@ -21,6 +21,12 @@ class WatchedProducts extends React.Component {
     })
   }
 
+  updateDescrLength(str) {
+    if (str && str.length > 200) {
+      return str.slice(0, 197) + "..."
+    }
+    return str;
+  }
 
   getProductsList() {
     const products = this.state.products.slice(0, 5)
@@ -38,7 +44,7 @@ class WatchedProducts extends React.Component {
                 </Link>
                 </div>
                 <div className="product-descr">
-                  Description: {product.full_description}
+                  {this.updateDescrLength(product.brief_description)}
                 </div>
                 <div className="product-price">
                   Price: ${product.price}

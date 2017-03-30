@@ -8,7 +8,6 @@ class Cart extends React.Component {
   constructor(props) {
   super(props);
   this.state = { products: [] }
-  // this.getTotal = this.getTotal.bind(this);
   }
 
   componentWillMount() {
@@ -17,7 +16,6 @@ class Cart extends React.Component {
     })
   }
 
-// =======================new================================= //
 
   getTotal() {
     if (this.state.products.length === 0) {
@@ -31,25 +29,6 @@ class Cart extends React.Component {
     }
   }
 
-
-
-
-
-// ========================new================================ //
-
-  // updateTotal() {
-  //   debugger
-  //   for (let i = 0; i < this.state.products.length; i++) {
-  //     const product = this.state.products[i]
-  //     const productTotal = product.price * product.quantity
-  //     this.total += productTotal;
-  //     debugger
-  //   }
-  // }
-
-  // getProductTotal(price, quantity) {
-  //   return Math.round(quantity * price * 100) / 100
-  // }
 
   getProductsList() {
     if (!this.props.currentUser) { return null }

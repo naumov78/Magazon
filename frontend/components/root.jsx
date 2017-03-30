@@ -6,6 +6,7 @@ import UserContainer from './user/user_container';
 import CategoryContainer from './category/category_container';
 import ProductContainer from './product/product_container';
 import CartContainer from './cart/cart_container';
+import CartAddressContainer from './cart/cart_address_container';
 import App from './app';
 
 const Root = ({ store }) => {
@@ -26,6 +27,7 @@ const Root = ({ store }) => {
             <Route path='/categories/:id' component={ CategoryContainer } />
             <Route path='/categories/:id/products/:id' component={ ProductContainer } />
             <Route path='/users/:id/cart' component={ CartContainer } />
+            <Route path='/address' component={ CartAddressContainer } />
         </Route>
       </Router>
     </Provider>
