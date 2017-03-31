@@ -9,6 +9,7 @@ import CartContainer from './cart/cart_container';
 import CartAddressContainer from './cart/cart_address_container';
 import CartPaymentContainer from './cart/cart_payment_container';
 import PlaceOrderContainer from './cart/place_order_container';
+import OrderContainer from './orders/order_container';
 import App from './app';
 
 const Root = ({ store }) => {
@@ -32,6 +33,7 @@ const Root = ({ store }) => {
             <Route path='/cart_address' component={ CartAddressContainer } />
             <Route path='/cart_payment' component={ CartPaymentContainer } />
             <Route path='/place_order' component={ PlaceOrderContainer } />
+            <Route path='/orders/:id' component={ OrderContainer } />
         </Route>
       </Router>
     </Provider>

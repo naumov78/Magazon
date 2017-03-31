@@ -31,6 +31,15 @@ class PlaceOrder extends React.Component {
     }
   }
 
+  createOrder(e) {
+    e.preventDefault();
+    debugger
+    this.props.createOrder().then((result) => {
+      debugger
+      this.props.router.push(`/orders/${result.order[0].order_id}`)
+    });
+  }
+
   getProductsList() {
     if (!this.props.currentUser) { return null }
     const products = this.state.products
@@ -101,7 +110,7 @@ class PlaceOrder extends React.Component {
             <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
           </div>
           <div className="cart-buttons">
-            <span><Link to={'/place_order'}><button>Place order</button></Link></span>
+            <span><button onClick={(e) => this.createOrder(e)}>Place order</button></span>
           </div>
         </div>
       )

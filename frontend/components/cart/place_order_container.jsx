@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PlaceOrder from './place_order';
 import { fetchCart } from '../../actions/cart_actions';
+import { createOrder } from '../../actions/order_actions';
 
 
 const mapStateToProps = (state) => {
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchCart: (cart_id) => dispatch(fetchCart(cart_id))
+    fetchCart: (cart_id) => dispatch(fetchCart(cart_id)),
+    createOrder: () => dispatch(createOrder())
   });
 }
 

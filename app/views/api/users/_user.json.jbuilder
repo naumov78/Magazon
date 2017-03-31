@@ -5,13 +5,16 @@ json.cart Cart.find(user.cart_id).products do |product|
 end
 
 unless user.address_id.nil?
-  json.address Address.find(user.address_id), :street, :street2, :city, :zip
-  json.state State.find(Address.find(user.address_id).state_id), :id, :state
+  address = Address.find(user.address_id)
+  state = State.find(address.state_id)
+  json.address address, :street, :street2, :city, :zip
+  json.state state, :id, :state
 end
 
 unless user.payment_id.nil?
-  json.payment Payment.find(user.payment_id), :cardholder, :card_number, :expires
-  json.card_network Payment.find(user.payment_id).network, :id, :network
+  payment = Payment.find(user.payment_id)
+  json.payment payment, :cardholder, :card_number, :expires
+  json.card_network payment.network, :id, :network
 end
 
 json.states State.all do |state|

@@ -6,6 +6,7 @@ import ProductReducer from './product_reducer';
 import CartReducer from './cart_reducer';
 import StorefrontReducer from './storefront_reducer';
 import WatchedProductsReducer from './watched_products_reducer';
+import OrderReducer from './order_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -14,7 +15,8 @@ const RootReducer = combineReducers({
   product: ProductReducer,
   cart: CartReducer,
   storefront: StorefrontReducer,
-  watchedProducts: WatchedProductsReducer
+  watchedProducts: WatchedProductsReducer,
+  order: OrderReducer
 });
 
 export default RootReducer;
