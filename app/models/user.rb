@@ -33,6 +33,13 @@ class User < ActiveRecord::Base
   has_one :watched_list
   has_many :watched_products, through: :watched_list
 
+  has_many :orders,
+  class_name: "Order",
+  primary_key: :id,
+  foreign_key: :user_id
+
+  has_many :ordered_products, through: :orders, source: :products
+
   attr_reader :password
   after_initialize :ensure_session_token
 

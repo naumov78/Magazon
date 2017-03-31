@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       resources :payments, only: [:create, :update, :destroy]
     end
 
+    resources :order_products, only: [:create]
+    resources :orders, except: [:new, :destroy]
     resources :cart_products, only: [:create, :update, :destroy]
     resources :carts, only: [:show]
     resources :storefronts, only: [:index]
@@ -19,7 +21,7 @@ Rails.application.routes.draw do
       resources :products, only: [:show]
     end
 
-    
+
 
   end
 end
