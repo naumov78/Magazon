@@ -34,9 +34,15 @@ class Product < ActiveRecord::Base
   primary_key: :id,
   foreign_key: :product_id
 
-  # has_many :categories, through: :product_categories
   has_many :carts, through: :cart_products
   has_many :watched_lists, through: :watched_products_lists
+
+  has_many :order_products,
+  class_name: "OrderProduct",
+  primary_key: :id,
+  foreign_key: :product_id
+
+  has_many :orders, through: :order_products
 
 
 end
