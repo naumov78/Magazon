@@ -16,3 +16,12 @@ export const fetchOrder = (id) => {
     url: `/api/orders/${id}`
   })
 }
+
+
+export const fetchAllOrders = () => {
+  debugger
+  return $.ajax({
+    method: "GET",
+    url: '/api/orders'
+  })
+}

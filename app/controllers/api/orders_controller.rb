@@ -2,8 +2,7 @@ class Api::OrdersController < ApplicationController
 
 
   def index
-    @orders = current_user.orders.all.includes(:product)
-    debugger
+    @orders = current_user.orders.all
   end
 
 
@@ -16,10 +15,13 @@ class Api::OrdersController < ApplicationController
     received = OrderStatus.first.id
     order = current_user.orders.create!(status_id: received)
     cart.each do |product_in_cart|
+      product = Product.find(product_in_cart.product_id)
       OrderProduct.create!(order_id: order.id,
-      product_id: product_in_cart.product_id,
+      product_id: product.id,
       quantity: product_in_cart.quantity)
+      order.total_amount += (product.price * product_in_cart.quantity)
     end
+    order.save
     cart.each do |cart_product|
       cart_product.delete
     end
