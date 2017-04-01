@@ -29,8 +29,9 @@ class Orders extends React.Component {
         <ul>
           {orders.map((order, i) => {
             return (
-              <li key={i}>
+              <li key={i} className="single-order-block">
                 <OrderDetails order={order} />
+                <p>-------- order end ---------</p>
               </li>
             )
           })}

@@ -26,6 +26,7 @@ class SessionStatus extends React.Component {
       statusButton = <div>
         <span className="header-logout-button"><button onClick={this.logout}>Logout</button></span>
         <span className="header-cart-button"><Link to={`/cart`}><button>Cart</button></Link></span>
+        <span className="header-cart-button"><Link to={`/orders`}><button>Orders</button></Link></span>
         <span className="header-cart-button"><Link to={`/`}><button>Home</button></Link></span>
       </div>
     } else {
