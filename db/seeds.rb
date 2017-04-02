@@ -165,15 +165,33 @@ full_description: 'Contrary to popular belief, Lorem Ipsum is not simply random 
 price: 52.94,
 category_id: games.id)
 
-product9 = Product.create!(
+product10 = Product.create!(
 title: 'Product 5',
 brief_description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
 full_description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.',
 price: 31.40,
 category_id: computers.id)
 
+product11 = Product.create!(
+title: 'Weber 46510001 Spirit E310 Liquid Propane Gas Grill, Black',
+brief_description: 'Redesigned in 2013, the new Spirit E-310 LP gas grill is complete with all the essential features a griller could want in an affordable package.',
+full_description: 'Redesigned in 2013, the new Spirit E-310 LP gas grill is complete with all the essential features a griller could want in an affordable package. With the control panel conveniently moved to the front, two full-use stainless steel tables allow for food platters and prep. The grill offers enough room to cook a 20-pound turkey or roast meats and vegetables at the same time. Porcelain-enameled cast-iron cooking grates provide superior heat retention and clean up easily, and the durable porcelain-enameled shroud will not fade, peel or rust. An Electronic Crossover ignition system lights the three burners with just one touch of the igniter button, and an easy-to-read fuel gauge accurately measures the amount of LP gas in the tank.',
+price: 499.00,
+category_id: garden.id
+)
 
-
+picture11_1 = ProductPicture.create!(product_id: product11.id)
+picture11_1.image = File.open('app/assets/images/001.jpg')
+picture11_1.save!
+picture11_2 = ProductPicture.create!(product_id: product11.id)
+picture11_2.image = File.open('app/assets/images/002.jpg')
+picture11_2.save!
+picture11_3 = ProductPicture.create!(product_id: product11.id)
+picture11_3.image = File.open('app/assets/images/003.jpg')
+picture11_3.save!
+picture11_4 = ProductPicture.create!(product_id: product11.id)
+picture11_4.image = File.open('app/assets/images/004.jpg')
+picture11_4.save!
 
 
 cart1 = Cart.create!(user_id: user1.id)
