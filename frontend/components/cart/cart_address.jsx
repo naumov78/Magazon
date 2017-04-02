@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
 import AddressContainer from '../address/address_container';
-import ExistingAddress from '../address/existing_address';
+import ExistingAddressContainer from '../address/existing_address_container';
 
 
 class CartAddress extends React.Component {
@@ -20,7 +20,7 @@ class CartAddress extends React.Component {
       if (this.props.currentUser.address_id) {
         return (
           <div>
-            <ExistingAddress currentUser={this.props.currentUser} />
+            <ExistingAddressContainer />
           </div>
         )
       } else {

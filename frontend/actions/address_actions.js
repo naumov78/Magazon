@@ -20,10 +20,17 @@ export const receiveErrors = (errors) => {
 
 
 export const createAddress = (address) => {
-  debugger
   return (dispatch) => {
     return APIUtil.createAddress(address).then((user) => {
-      debugger
+      return dispatch(receiveUser(user));
+    });
+  };
+}
+
+
+export const updateAddress = (address, address_id) => {
+  return (dispatch) => {
+    return APIUtil.updateAddress(address, address_id).then((user) => {
       return dispatch(receiveUser(user));
     });
   };

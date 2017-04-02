@@ -43,7 +43,7 @@ const OrderDetails = (props) => {
 
   return (
     <div>
-      <div>Order #: {order_id * 6532497 + ' - ' + order_id * 165}</div>
+      <div><Link to={`/orders/${order_id}`}>Order #: {order_id * 6532497 + ' - ' + order_id * 165}</Link></div>
       <div>Posted: {posted}</div>
       <div>Status: <span className={getStatusStyle()}>{status}</span></div>
       <ul>
