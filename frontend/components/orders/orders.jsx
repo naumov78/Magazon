@@ -31,7 +31,6 @@ class Orders extends React.Component {
             return (
               <li key={i} className="single-order-block">
                 <OrderDetails order={order} />
-                <p>-------- order end ---------</p>
               </li>
             )
           })}

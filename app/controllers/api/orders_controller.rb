@@ -2,11 +2,16 @@ class Api::OrdersController < ApplicationController
 
 
   def index
+    orders_to_update = current_user.orders.where.not(status_id: OrderStatus.where(status: "Delivered").first.id)
+    orders_to_update.ids.each do |id|
+      update_status(id)
+    end
     @orders = current_user.orders.all.order(created_at: :desc)
   end
 
 
   def show
+    update_status(params[:id])
     @order = Order.find(params[:id]).order_products
   end
 
@@ -44,8 +49,32 @@ class Api::OrdersController < ApplicationController
     params.require(:order).permit(:status_id)
   end
 
+  def update_status(id)
+    order = Order.find(id)
+    time_now = Time.now
+    diff = time_now - order.created_at
+    case diff
+    when 0...3600 then
+      return
+    when 3600...86400 then
+      status = get_correct_status("Pending")
+      order.update_attribute("status_id", status) if order.status_id != status
+    when 86400...259200 then
+      status = get_correct_status("Unshipped")
+      order.update_attribute("status_id", status) if order.status_id != status
+    when 259200...864000 then
+      status = get_correct_status("Shipped")
+      order.update_attribute("status_id", status) if order.status_id != status
+    else
+      status = get_correct_status("Delivered")
+      order.update_attribute("status_id", status) if order.status_id != status
+    end
+  end
 
-
+  def get_correct_status(status)
+    new_status = OrderStatus.where(status: status)
+    new_status.first.id
+  end
 
 
 end

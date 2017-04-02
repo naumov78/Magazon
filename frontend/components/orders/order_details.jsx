@@ -7,7 +7,6 @@ import { withRouter, Link } from 'react-router';
 
 const OrderDetails = (props) => {
   const posted = getDate(props.order.posted)
-  const updated = getDate(props.order.updated)
   const order_id = props.order.order_id
   const total_amount = props.order.total_amount
   const status = props.order.status
@@ -23,38 +22,54 @@ const OrderDetails = (props) => {
       return `${Mon} ${Day}, ${Yr}`
   }
 
+  function getStatusStyle() {
+    switch (status) {
+    case "Received":
+      return "received-order"
+    case "Pending":
+      return "pending-order"
+    case "Unshipped":
+      return "unshipped-order"
+    case "Shipped":
+      return "shipped-order"
+    case "Delivered":
+      return "delivered-order"
+    case "Canceled":
+      return "canceled-order"
+    default:
+      return
+    }
+  }
 
   return (
     <div>
       <div>Order #: {order_id * 6532497 + ' - ' + order_id * 165}</div>
       <div>Posted: {posted}</div>
-      <div>Status: {status}</div>
-      <div>Last updated: {updated}</div>
+      <div>Status: <span className={getStatusStyle()}>{status}</span></div>
       <ul>
         {products.map((product, i) => {
           return (
-            <li key={i} className="cart-product-line">
-              <table className="single-product-in-cart">
+            <li key={i} className="">
+              <table className="">
                 <tbody>
-                  <tr className="cart-product">
-                    <td>
+                  <tr className="">
+                    <td className="product-title-descr">
                       <div className="cart-product-title">
                         <Link to={`/categories/${product.category_id}/products/${product.id}`} >
                           {product.title}
                         </Link>
                       </div>
                       <div className="product-cart-descr">
-                        {product.brief_description}
+                        ${Number(product.price).toFixed(2)}<br />
+                        Qty: {product.quantity}
                       </div>
                     </td>
-                    <td className="cart-product-price">
-                      ${Number(product.price).toFixed(2)}
-                    </td>
-                    <td className="cart-product-quantity">
-                      {product.quantity}
-                    </td>
-                    <td className="cart-product-total">
-                      ${product.total_price.toFixed(2)}
+                  </tr>
+                  <tr>
+                    <td>
+                      <div>
+                        Order total: $ {props.order.total_amount}
+                      </div>
                     </td>
                   </tr>
                 </tbody>
