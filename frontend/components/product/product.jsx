@@ -21,6 +21,7 @@ class Product extends React.Component {
   }
 
   addToCart(id, quantity) {
+    debugger
     this.props.addToCart(id, quantity)
   }
 
@@ -35,12 +36,13 @@ class Product extends React.Component {
     if (this.state.product.title) {
     return (
       <div className="product-container">
-        <div>
+
+        <div className="alt-images">
           <ul>
             {this.state.product.product_pictures.map((picture, i) => {
               return (
                 <li key={i}>
-                  <a onClick={(e) => this.changeMainPicture(e, i)}>
+                  <a onMouseOver={(e) => this.changeMainPicture(e, i)}>
                     <img width="40" height="40" src={picture.image_url} />
                   </a>
                 </li>
@@ -48,15 +50,22 @@ class Product extends React.Component {
             })}
           </ul>
         </div>
-        <div> <img width="522" height="522" src={this.state.main_picture.image_url} /> </div>
+
+        <div className="main-image">
+          <img width="522" height="522" src={this.state.main_picture.image_url} />
+        </div>
+
         <div className="product-info">
 
           <div className="product-product-title">{this.state.product.title}</div>
           <div className="product-product-descr">{this.state.product.full_description}</div>
-          <div className="product-product-price">Price: ${this.state.product.price}</div>
-        </div>
-        <div className="product-order">
-          <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.product.id, 1)}>Add to cart</button></span>
+          <div className="product-product-price">
+            <span className="price-title">Price: </span>
+            <span className="price">${Number(this.state.product.price).toFixed(2)}</span>
+          </div>
+          <div className="product-order">
+            <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.product.id, 1)}>Add to Cart</button></span>
+          </div>
         </div>
       </div>
     );

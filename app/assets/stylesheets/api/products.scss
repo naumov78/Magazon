@@ -3,16 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.product-info {
-  background-color: #e2e2e2;
-  padding: 25px;
-  border-bottom: 2px solid #006600;
-  border-top: 1px solid #006600;
+
+
+@mixin gradient {
+    background: #eeb72b;
+    background: -webkit-linear-gradient(#eeb72b, #f0c14b);
+    background: -o-linear-gradient(#eeb72b, #f0c14b);
+    background: -moz-linear-gradient(#eeb72b, #f0c14b);
+    background: linear-gradient(#eeb72b, #f0c14b);
 }
 
-.product-order {
-  padding: 10px;
+@mixin hovered-gradient {
+    background: #f5d789;
+    background: -webkit-linear-gradient(#f5d789, #f0c14b);
+    background: -o-linear-gradient(#f5d789, #f0c14b);
+    background: -moz-linear-gradient(#f5d789, #f0c14b);
+    background: linear-gradient(#f5d789, #f0c14b);
 }
+
 
 #cart {
   margin-left: 10px;
@@ -22,29 +30,75 @@
 
 .product-container {
   width: 70%;
-  margin: 0 auto;
-}
+  padding-left: 1.5%;
+  display: flex;
+
+  .alt-images {
+    width: 10%;
+  }
+
+  .main-image {
+    padding: 0 25px;
+    width: 40%;
+  }
+
+  .product-info {
+    padding: 0 0 0 25px;
+    // border-bottom: 2px solid #006600;
+    // border: 1px solid #006600;
+    width: 50%;
 
 
-.product-product-title {
-  color: #660066;
-  font-size: 1.3em;
-}
+    .product-product-title {
+      font-size: 21px;
+    }
 
-.product-product-descr {
-  padding: 10px 0 0 0;
-  color: #777;
-  font-size: .95em
-}
+    .product-product-descr {
+      padding: 10px 0 0 0;
+      color: #777;
+      font-size: .95em
+    }
 
-.product-product-price {
-  padding: 5px 0 0 0;
-}
+    .product-product-price {
+      padding: 15px 0 0 0;
 
-.addToCart-button {
-  padding: 10px 0 0 0;
-}
+      .price-title {
+        font-size: 13px;
+        color: grey;
+      }
 
-.check-card {
-  padding: 10px 0 0 20px;;
+      .price {
+        font-size: 17px;
+        color: #b12704;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+    }
+
+  }
+
+  .product-order {
+    padding: 20px 0 0 0;
+
+    .addToCart-button {
+
+      button {
+        @include gradient;
+        border: 1px solid #a88734;
+        border-radius: 3px;
+        width: 140px;
+        height: 30px;
+        font-size: 14px;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: #f0c14b;
+        @include hovered-gradient;
+      }
+    }
+
+  }
+
+
 }
