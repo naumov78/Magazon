@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
 import PaymentContainer from '../payment/payment_container';
-import ExistingPayment from '../payment/existing_payment';
+import ExistingPaymentContainer from '../payment/existing_payment_container';
 
 
 class CartPayment extends React.Component {
@@ -20,7 +20,7 @@ class CartPayment extends React.Component {
       if (this.props.currentUser.payment_id) {
         return (
           <div>
-            <ExistingPayment currentUser={this.props.currentUser} />
+            <ExistingPaymentContainer />
           </div>
         )
       } else {

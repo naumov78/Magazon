@@ -36,9 +36,6 @@ class Payment extends React.Component {
     )
   }
 
-  componentWillReceiveProps(nextProps) {
-    debugger
-  }
 
   createPayment(e) {
     e.preventDefault();

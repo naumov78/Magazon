@@ -14,25 +14,25 @@ class Api::PaymentsController < ApplicationController
       @user.update_attribute("payment_id", payment.id)
       render 'api/users/show'
     else
-      render json: @payment.errors.full_messages, status: 422
+      render json: payment.errors.full_messages, status: 422
     end
   end
 
 
   def update
-    @payment = Payment.find(current_user.payment_id)
-    if @payment.update_attributes(payment_params)
+    payment = Payment.find(current_user.payment_id)
+    if payment.update_attributes(payment_params)
       @user = current_user
       render 'api/users/show'
     else
-      render json: @payment.errors.full_messages, status: 422
+      render json: payment.errors.full_messages, status: 422
     end
   end
 
 
   def destroy
-    @payment = Payment.find(current_user.payment_id)
-    if @payment.delete
+    payment = Payment.find(current_user.payment_id)
+    if payment.delete
       @user = current_user
       render 'api/users/show'
     else

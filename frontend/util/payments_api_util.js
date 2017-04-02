@@ -8,3 +8,12 @@ export const createPayment = (payment) => {
     data: {payment}
   })
 }
+
+
+export const updatePayment = (payment, payment_id) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/users/${payment.user_id}/payments/${payment_id}`,
+    data: {payment}
+  })
+}

@@ -25,3 +25,12 @@ export const createPayment = (payment) => {
     });
   };
 }
+
+
+export const updatePayment = (payment, payment_id) => {
+  return (dispatch) => {
+    return APIUtil.updatePayment(payment, payment_id).then((user) => {
+      return dispatch(receiveUser(user));
+    });
+  };
+}
