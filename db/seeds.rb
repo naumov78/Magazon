@@ -135,20 +135,34 @@ storefront: true,
 category_id: home.id)
 
 product6 = Product.create!(
-title: 'Product 1',
-brief_description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-full_description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.',
-price: 75.25,
+title: 'Convenience Concepts 2-Tier Plant Stand, Chinese Fir',
+brief_description: 'The Double Barrel Planter will bring life to any yard or garden. Featuring 2 Barrel planters and a trellis which allows plenty of room for different plants to grow and make this a charming home. Constructed from Chinese Fir Wood with a Red Cedar finish and slatted bottoms, this planter is sure to stand the test of time.',
+full_description: 'The Double Barrel Planter will bring life to any yard or garden. Featuring 2 Barrel planters and a trellis which allows plenty of room for different plants to grow and make this a charming home. Constructed from Chinese Fir Wood with a Red Cedar finish and slatted bottoms, this planter is sure to stand the test of time.',
+price: 56.31,
 storefront: true,
 category_id: garden.id)
 
+picture6_1 = ProductPicture.create!(product_id: product6.id)
+picture6_1.image = File.open('app/assets/images/006.jpg')
+picture6_1.save!
+picture6_2 = ProductPicture.create!(product_id: product6.id)
+picture6_2.image = File.open('app/assets/images/007.jpg')
+picture6_2.save!
+picture6_3 = ProductPicture.create!(product_id: product6.id)
+picture6_3.image = File.open('app/assets/images/008.jpg')
+picture6_3.save!
+
 product7 = Product.create!(
-title: 'Product 2',
-brief_description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-full_description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.',
-price: 45.85,
+title: 'Brussel\'s Golden Gate Ficus Bonsai',
+brief_description: 'Imported from China, our Golden Gate Ficus have been meticulously trained for wonderful truck movement. The Chinese have hand-wired every tree to create the trunks\’ beautiful swirl. The small dark green leaves make the Golden Ficus perfectly suited for bonsai. In the ficus family, this variety is the best for growing indoors.',
+full_description: 'Imported from China, the Golden Gate ficus’s graceful trunk is the product of meticulous training. Chinese bonsai experts hand-wire every branch, shaping them into elegant swirls. One of the best indoor growing bonsai, the small, dark-green leaved ficus is a good choice for beginners. This tree is seven years, 10 to 12 inches tall, and comes in a 12-inch rectangular pot. Every tree order includes specific growing instructions.',
+price: 46.26,
 storefront: true,
 category_id: garden.id)
+
+picture7_1 = ProductPicture.create!(product_id: product7.id)
+picture7_1.image = File.open('app/assets/images/005.jpg')
+picture7_1.save!
 
 product8 = Product.create!(
 title: 'Product 3',
@@ -192,6 +206,22 @@ picture11_3.save!
 picture11_4 = ProductPicture.create!(product_id: product11.id)
 picture11_4.image = File.open('app/assets/images/004.jpg')
 picture11_4.save!
+
+
+product12 = Product.create!(
+title: 'Amish Wagon Decorative Garden Planter, Green, Weathered',
+brief_description: 'Showcase flowers & plants and create sensational seasonal displays with our Amish Country Wagon.',
+full_description: 'Showcase flowers & plants and create sensational seasonal displays with our Amish Country Wagon. Crafted from wood with rolling iron wheels. Measures 44 1/4"L (includes handle), x 14 1/2"W x 15 1/2"H. Length of the wagon is 21.75" without the handle. Some assembly required. Specify Blue, Country Red or Green.',
+price: 19.99,
+category_id: garden.id
+)
+
+picture12_1 = ProductPicture.create!(product_id: product12.id)
+picture12_1.image = File.open('app/assets/images/009.jpg')
+picture12_1.save!
+picture12_2 = ProductPicture.create!(product_id: product12.id)
+picture12_2.image = File.open('app/assets/images/010.jpg')
+picture12_2.save!
 
 
 cart1 = Cart.create!(user_id: user1.id)
