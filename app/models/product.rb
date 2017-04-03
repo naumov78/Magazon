@@ -46,5 +46,12 @@ class Product < ActiveRecord::Base
 
   has_many :product_pictures
 
+  has_one :frequently_bought_together
+  has_many :bought_together, through: :frequently_bought_together, source: :products
+
+  has_many :bought_together_products,
+  class_name: "FrequentlyBoughtProduct",
+  primary_key: :id,
+  foreign_key: :product_id
 
 end
