@@ -59,7 +59,8 @@ class Category extends React.Component {
                     {this.updateDescrLength(product.brief_description)}
                   </div>
                   <div className="product-price">
-                    Price: ${product.price}
+                    Price:
+                    <span className="price">${Number(product.price).toFixed(2)}</span>
                   </div>
                   <div className="addToCart-button">
                     <button onClick={() => this.addToCart(product.id, 1)}>Add to cart</button>

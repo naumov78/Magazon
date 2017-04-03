@@ -316,6 +316,64 @@ picture12_2.image = File.open('app/assets/images/010.jpg')
 picture12_2.save!
 
 
+product13 = Product.create!(
+title: 'Briggs and Stratton 1696619 Dual-Stage Snow Thrower with 250cc Engine and Electric Start',
+brief_description: 'The Briggs & Stratton 1696619 Medium-Duty Dual-Stage Snow Thrower features a 27-inch wide clearing path with a 20 inch intake height for clearing snow from sidewalks and other outdoor surfaces.',
+full_description: 'The Briggs & Stratton 1696619 Medium-Duty Dual-Stage Snow Thrower features a 27-inch wide clearing path with a 20 inch intake height for clearing snow from sidewalks and other outdoor surfaces. This model has the 1150 Snow Series 250 cc Engine with 11.50 foot-pounds of torque to power through heavier snowfalls. This model comes equipped with electric start so when it\'s time to start your thrower it\'s as easy as pushing a button. Unit features a friction disc drive system with 5 forward and 2 reverse speeds and a 12 inch steel scroll auger. The Briggs & Stratton 1696619 Medium-Duty Dual-Stage Snow Thrower comes equipped with Free Hand Control and on panel deflector control. Other features include synthetic oil for easy starting, a dash mounted chute control and steel reversible skid shoes. The Briggs & Stratton 1696619 Medium-Duty Dual-Stage Snow Thrower comes with a 3-year equipment and engine warranty to protect against defects in materials and workmanship. Known for hard-working, dependable, efficient products, Briggs & Stratton is the world\'s largest producer of gasoline engines for outdoor power equipment. Briggs & Stratton products are designed, manufactured, marketed and serviced in over 100 countries on all seven continents.',
+price: 919.99,
+storefront: true,
+category_id: garden.id
+)
+
+picture13_1 = ProductPicture.create!(product_id: product13.id)
+picture13_1.image = File.open('app/assets/images/snow_removal1/001.jpg')
+picture13_1.save!
+picture13_2 = ProductPicture.create!(product_id: product13.id)
+picture13_2.image = File.open('app/assets/images/snow_removal1/002.jpg')
+picture13_2.save!
+picture13_3 = ProductPicture.create!(product_id: product13.id)
+picture13_3.image = File.open('app/assets/images/snow_removal1/003.jpg')
+picture13_3.save!
+picture13_4 = ProductPicture.create!(product_id: product13.id)
+picture13_4.image = File.open('app/assets/images/snow_removal1/004.jpg')
+picture13_4.save!
+picture13_5 = ProductPicture.create!(product_id: product13.id)
+picture13_5.image = File.open('app/assets/images/snow_removal1/005.jpg')
+picture13_5.save!
+picture13_6 = ProductPicture.create!(product_id: product13.id)
+picture13_6.image = File.open('app/assets/images/snow_removal1/006.jpg')
+picture13_6.save!
+picture13_7 = ProductPicture.create!(product_id: product13.id)
+picture13_7.image = File.open('app/assets/images/snow_removal1/007.jpg')
+picture13_7.save!
+picture13_8 = ProductPicture.create!(product_id: product13.id)
+picture13_8.image = File.open('app/assets/images/snow_removal1/008.jpg')
+picture13_8.save!
+
+
+product14 = Product.create!(
+title: 'Patio Deck Cooler Rolling Outdoor 80 Quart Solid Steel Construction Home Party',
+brief_description: 'Our convenient rolling patio deck cooler is perfect for any outdoor occasion, whether it be for a dinner party, sports party, even a simple family barbeque day.',
+full_description: 'Our convenient rolling patio deck cooler is perfect for any outdoor occasion, whether it be for a dinner party, sports party, even a simple family barbeque day. The cooler has a 80 quart capacity that holds up to 100 12oz cans and comes with a convenient drain plug for easy cleaning. Features a double lid top, convenient can opener on the side, and a hardened powder coat finish that will last you for years. We purchase our products directly from the manufacturer, so you know you\'re getting the best prices available. FEATURES: Our convenient rolling patio deck cooler is perfect for any outdoor occasion whether it be for a dinner party, sports party, or even a simple family relaxation day. The cooler has a 80 quart capacity that holds up to 100 12oz cans and comeswith a convenient drain plug for easy cleaning. Features a double lid top, a convenient can opener on the side, and a hardened powder coat finish that will last you years. The patio deck cooler will add style and functionality to your patio , backyard, or outdoor entertainment area. Overall dimensions: 15.5"(L) x 36"(W) x 33"(H), Product weight: 44 lbs SPECIFICATIONS: Overall dimensions: 15.5"(L) x 36"(W) x 33"(H) Capacity: 80 quarts Assembly required Product Weight: 44 lbs Color: Red',
+price: 143.05,
+storefront: true,
+category_id: garden.id
+)
+
+picture14_1 = ProductPicture.create!(product_id: product14.id)
+picture14_1.image = File.open('app/assets/images/deck1/001.jpg')
+picture14_1.save!
+picture14_2 = ProductPicture.create!(product_id: product14.id)
+picture14_2.image = File.open('app/assets/images/deck1/002.jpg')
+picture14_2.save!
+picture14_3 = ProductPicture.create!(product_id: product14.id)
+picture14_3.image = File.open('app/assets/images/deck1/003.jpg')
+picture14_3.save!
+picture14_4 = ProductPicture.create!(product_id: product14.id)
+picture14_4.image = File.open('app/assets/images/deck1/004.jpg')
+picture14_4.save!
+
+
 cart1 = Cart.create!(user_id: user1.id)
 user1.cart_id = cart1.id
 user1.save!
