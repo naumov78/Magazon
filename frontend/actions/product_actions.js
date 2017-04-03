@@ -17,3 +17,12 @@ export const fetchProduct = (category_id, product_id) => {
     });
   };
 };
+
+
+export const updateBoughtTogether = () => {
+  return (dispatch) => {
+    return APIUtil.updateBoughtTogether().then((product) => {
+      return dispatch(receiveProduct(product));
+    });
+  };
+};

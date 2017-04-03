@@ -31,8 +31,12 @@ class PlaceOrder extends React.Component {
     }
   }
 
+
+
   createOrder(e) {
     e.preventDefault();
+    debugger
+    this.props.updateBoughtTogether();
     debugger
     this.props.createOrder().then((result) => {
       debugger

@@ -2,17 +2,18 @@
 #
 # Table name: products
 #
-#  id                :integer          not null, primary key
-#  title             :string           not null
-#  category_id       :integer          not null
-#  brief_description :text
-#  full_description  :text
-#  price             :decimal(, )      not null
-#  discount          :decimal(, )      default("0")
-#  on_sale           :boolean
-#  storefront        :boolean          default("false")
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id                            :integer          not null, primary key
+#  title                         :string           not null
+#  category_id                   :integer          not null
+#  brief_description             :text
+#  full_description              :text
+#  price                         :decimal(, )      not null
+#  discount                      :decimal(, )      default("0")
+#  on_sale                       :boolean
+#  storefront                    :boolean          default("false")
+#  frequently_bought_together_id :integer
+#  created_at                    :datetime         not null
+#  updated_at                    :datetime         not null
 #
 
 class Product < ActiveRecord::Base

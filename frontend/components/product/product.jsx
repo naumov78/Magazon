@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
+import BoughtTogether from './bought_together';
 
 
 
@@ -67,6 +68,11 @@ class Product extends React.Component {
             <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.product.id, 1)}>Add to Cart</button></span>
           </div>
         </div>
+
+        <div>
+          <BoughtTogether product={this.state.product} />
+        </div>
+
       </div>
     );
   } else {

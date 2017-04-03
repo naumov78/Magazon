@@ -100,6 +100,10 @@ price: 26.79,
 storefront: true,
 category_id: books.id)
 
+fbt1 = FrequentlyBoughtTogether.create!(product_id: product1.id)
+product1.frequently_bought_together_id = fbt1.id
+product1.save!
+
 picture1_1 = ProductPicture.create!(product_id: product1.id)
 picture1_1.image = File.open('app/assets/images/020.jpeg')
 picture1_1.save!
@@ -110,6 +114,10 @@ full_description: 'Be our guest at the enchanted 25th Anniversary celebration of
 price: 19.99,
 storefront: true,
 category_id: movies.id)
+
+fbt2 = FrequentlyBoughtTogether.create!(product_id: product2.id)
+product2.frequently_bought_together_id = fbt2.id
+product2.save!
 
 picture2_1 = ProductPicture.create!(product_id: product2.id)
 picture2_1.image = File.open('app/assets/images/021.jpg')
@@ -122,6 +130,10 @@ full_description: 'This Product Four easy-glide drawers with safety stops .Three
 price: 85.00,
 storefront: true,
 category_id: home.id)
+
+fbt3 = FrequentlyBoughtTogether.create!(product_id: product3.id)
+product3.frequently_bought_together_id = fbt3.id
+product3.save!
 
 picture3_1 = ProductPicture.create!(product_id: product3.id)
 picture3_1.image = File.open('app/assets/images/011.jpg')
@@ -137,6 +149,10 @@ full_description: 'This 3-door cabinet is 54 inches wide, which is the ideal wid
 price: 122.48,
 storefront: true,
 category_id: home.id)
+
+fbt4 = FrequentlyBoughtTogether.create!(product_id: product4.id)
+product4.frequently_bought_together_id = fbt4.id
+product4.save!
 
 picture4_1 = ProductPicture.create!(product_id: product4.id)
 picture4_1.image = File.open('app/assets/images/013.jpg')
@@ -162,6 +178,10 @@ price: 125.35,
 storefront: true,
 category_id: home.id)
 
+fbt5 = FrequentlyBoughtTogether.create!(product_id: product5.id)
+product5.frequently_bought_together_id = fbt5.id
+product5.save!
+
 picture5_1 = ProductPicture.create!(product_id: product5.id)
 picture5_1.image = File.open('app/assets/images/018.jpg')
 picture5_1.save!
@@ -179,6 +199,10 @@ full_description: 'The Double Barrel Planter will bring life to any yard or gard
 price: 56.31,
 storefront: true,
 category_id: garden.id)
+
+fbt6 = FrequentlyBoughtTogether.create!(product_id: product6.id)
+product6.frequently_bought_together_id = fbt6.id
+product6.save!
 
 picture6_1 = ProductPicture.create!(product_id: product6.id)
 picture6_1.image = File.open('app/assets/images/006.jpg')
@@ -198,6 +222,10 @@ price: 46.26,
 storefront: true,
 category_id: garden.id)
 
+fbt7 = FrequentlyBoughtTogether.create!(product_id: product7.id)
+product7.frequently_bought_together_id = fbt7.id
+product7.save!
+
 picture7_1 = ProductPicture.create!(product_id: product7.id)
 picture7_1.image = File.open('app/assets/images/005.jpg')
 picture7_1.save!
@@ -209,6 +237,10 @@ full_description: 'Your adventurous settlers seek to tame the remote but rich is
 price: 27.49,
 storefront: true,
 category_id: games.id)
+
+fbt8 = FrequentlyBoughtTogether.create!(product_id: product8.id)
+product8.frequently_bought_together_id = fbt8.id
+product8.save!
 
 picture8_1 = ProductPicture.create!(product_id: product8.id)
 picture8_1.image = File.open('app/assets/images/catan/001.jpg')
@@ -238,6 +270,10 @@ price: 27.99,
 storefront: true,
 category_id: games.id)
 
+fbt9 = FrequentlyBoughtTogether.create!(product_id: product9.id)
+product9.frequently_bought_together_id = fbt9.id
+product9.save!
+
 picture9_1 = ProductPicture.create!(product_id: product9.id)
 picture9_1.image = File.open('app/assets/images/7wonders/001.jpg')
 picture9_1.save!
@@ -258,6 +294,10 @@ full_description: 'In the case of the Aspire VX 15, looks can kill! This soon-to
 price: 999.99,
 storefront: true,
 category_id: computers.id)
+
+fbt10 = FrequentlyBoughtTogether.create!(product_id: product10.id)
+product10.frequently_bought_together_id = fbt10.id
+product10.save!
 
 picture10_1 = ProductPicture.create!(product_id: product10.id)
 picture10_1.image = File.open('app/assets/images/laptop1/001.jpg')
@@ -285,6 +325,10 @@ storefront: true,
 category_id: garden.id
 )
 
+fbt11 = FrequentlyBoughtTogether.create!(product_id: product11.id)
+product11.frequently_bought_together_id = fbt11.id
+product11.save!
+
 picture11_1 = ProductPicture.create!(product_id: product11.id)
 picture11_1.image = File.open('app/assets/images/001.jpg')
 picture11_1.save!
@@ -308,6 +352,10 @@ storefront: true,
 category_id: garden.id
 )
 
+fbt12 = FrequentlyBoughtTogether.create!(product_id: product12.id)
+product12.frequently_bought_together_id = fbt12.id
+product12.save!
+
 picture12_1 = ProductPicture.create!(product_id: product12.id)
 picture12_1.image = File.open('app/assets/images/009.jpg')
 picture12_1.save!
@@ -324,6 +372,10 @@ price: 919.99,
 storefront: true,
 category_id: garden.id
 )
+
+fbt13 = FrequentlyBoughtTogether.create!(product_id: product13.id)
+product13.frequently_bought_together_id = fbt13.id
+product13.save!
 
 picture13_1 = ProductPicture.create!(product_id: product13.id)
 picture13_1.image = File.open('app/assets/images/snow_removal1/001.jpg')
@@ -359,6 +411,10 @@ price: 143.05,
 storefront: true,
 category_id: garden.id
 )
+
+fbt14 = FrequentlyBoughtTogether.create!(product_id: product14.id)
+product14.frequently_bought_together_id = fbt14.id
+product14.save!
 
 picture14_1 = ProductPicture.create!(product_id: product14.id)
 picture14_1.image = File.open('app/assets/images/deck1/001.jpg')
