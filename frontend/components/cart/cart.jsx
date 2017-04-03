@@ -54,14 +54,17 @@ class Cart extends React.Component {
               <table className="single-product-in-cart">
                 <tbody>
                   <tr className="cart-product">
-                    <td>
+                    <td className="product-info-picture">
                       <div className="cart-product-image">
                         <Link to={`/categories/${product.product.category_id}/products/${product.product.id}`} >
                           <span className="cart-product-img"><img src={product.product_pictures[0].image_url} /></span>
                         </Link>
                       </div>
                       <div className="cart-product-title">
-                        &nbsp;&nbsp;&nbsp;{product.product.title}
+                        {product.product.title}
+                      </div>
+                      <div className="product-cart-descr">
+                        {product.product.brief_description}
                       </div>
                     </td>
                     <td className="cart-product-price">
@@ -113,7 +116,7 @@ class Cart extends React.Component {
     if (this.getTotal() > 0) {
     return (
       <div className="cart-container">
-      <h2>Cart page</h2>
+      <h2>Your Cart</h2>
         <div className="cart-product-list">{this.getProductsList()}</div>
         <div className="total-cart-amount">
           <span className="order-total-title">Total order amount:</span>
@@ -128,7 +131,7 @@ class Cart extends React.Component {
   } else {
     return (
       <div className="cart-container">
-      <h2>Cart page</h2>
+      <h2>Your Cart</h2>
         <div className="cart-product-list">You cart is empty!</div>
       </div>
     )
@@ -139,4 +142,4 @@ class Cart extends React.Component {
 }
 
 
-export default withRouter(Cart)
+export default withRouter(Cart);

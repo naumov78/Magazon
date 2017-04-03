@@ -26,7 +26,7 @@ class Orders extends React.Component {
     if (this.state.orders.length !== 0) {
       const orders = this.state.orders
       return (
-        <ul>
+        <ul className="orders-list">
           {orders.map((order, i) => {
             return (
               <li key={i} className="single-order-block">

@@ -4,4 +4,9 @@ json.products order do |order_product|
   json.extract! product, :id, :category_id, :title, :brief_description, :full_description, :price, :discount, :on_sale, :created_at
   json.total_price (product.price * order_product.quantity).to_f
   json.quantity order_product.quantity
+
+  json.product_pictures product.product_pictures do |picture|
+    json.image_url asset_path(picture.image.url)
+  end
+
 end

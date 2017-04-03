@@ -64,11 +64,14 @@ class PlaceOrder extends React.Component {
               <table className="single-product-in-cart">
                 <tbody>
                   <tr className="cart-product">
-                    <td>
-                      <div className="cart-product-title">
+                    <td className="product-info-picture">
+                      <div className="cart-product-image">
                         <Link to={`/categories/${product.product.category_id}/products/${product.product.id}`} >
-                          {product.product.title}
+                          <span className="cart-product-img"><img src={product.product_pictures[0].image_url} /></span>
                         </Link>
+                      </div>
+                      <div className="cart-product-title">
+                        {product.product.title}
                       </div>
                       <div className="product-cart-descr">
                         {product.product.brief_description}

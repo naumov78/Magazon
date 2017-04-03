@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+.orders-list {
+  padding: 20px 0 40px 0;
+}
+
+
 .single-order-block {
   margin: 0 auto;
   width: 45%;
@@ -11,15 +17,34 @@
   margin-top: 10px;
 }
 
+.single-order-product-list {
+  padding-top: 30px;
+}
 
+.single-order-product-line {
+  margin-top: 15px;
+}
 
+.order-list-product-image {
+  float: left;
+
+  img {
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+
+}
 
 
 .product-title-descr {
   width: 500px;
 }
 
-
+.single-order-total {
+  padding-top: 30px;
+  font-weight: 700;
+}
 
 .received-order {
   font-weight: bold;

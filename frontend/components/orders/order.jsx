@@ -23,6 +23,19 @@ class Order extends React.Component {
     debugger
   }
 
+  getTotal() {
+    if (this.state.products.length === 0) {
+      return null;
+    } else {
+      let total = 0;
+      for(let i = 0; i < this.state.products.length; i++) {
+        total += this.state.products[i].total_price
+      }
+      return total;
+    }
+  }
+
+
   getProductsList() {
     if (!this.props.currentUser) { return null }
     const products = this.state.products
@@ -41,17 +54,19 @@ class Order extends React.Component {
           </table>
         </li>
         {products.map((product, i) => {
-          debugger
           return (
             <li key={i} className="cart-product-line">
               <table className="single-product-in-cart">
                 <tbody>
                   <tr className="cart-product">
-                    <td>
-                      <div className="cart-product-title">
+                    <td className="product-info-picture">
+                      <div className="cart-product-image">
                         <Link to={`/categories/${product.category_id}/products/${product.id}`} >
-                          {product.title}
+                          <span className="cart-product-img"><img src={product.product_pictures[0].image_url} /></span>
                         </Link>
+                      </div>
+                      <div className="cart-product-title">
+                        {product.title}
                       </div>
                       <div className="product-cart-descr">
                         {product.brief_description}
@@ -78,11 +93,23 @@ class Order extends React.Component {
 
 
   render() {
-    debugger
-    return <div>{this.getProductsList()}</div>
+    if (this.getTotal() > 0) {
+    return (
+      <div className="cart-container">
+      <h3>Thank you for your order! Your Order had been placed. </h3>
+        <div className="cart-product-list">{this.getProductsList()}</div>
+        <div className="total-cart-amount">
+          <span className="order-total-title">Total order amount:</span>
+          <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+        </div>
+      </div>
+    )
+  } else {
+    return null;
   }
 
 }
 
 
+}
 export default withRouter(Order);
