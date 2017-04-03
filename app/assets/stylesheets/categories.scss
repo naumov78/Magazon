@@ -2,21 +2,56 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+@mixin gradient {
+    background: #eeb72b;
+    background: -webkit-linear-gradient(#eeb72b, #f0c14b);
+    background: -o-linear-gradient(#eeb72b, #f0c14b);
+    background: -moz-linear-gradient(#eeb72b, #f0c14b);
+    background: linear-gradient(#eeb72b, #f0c14b);
+}
+
+@mixin hovered-gradient {
+    background: #f5d789;
+    background: -webkit-linear-gradient(#f5d789, #f0c14b);
+    background: -o-linear-gradient(#f5d789, #f0c14b);
+    background: -moz-linear-gradient(#f5d789, #f0c14b);
+    background: linear-gradient(#f5d789, #f0c14b);
+}
+
+
 .category-container {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
 .product-line {
   padding: 5px 0 5px 0;
+  width: 30%;
+  height: 400px;
+  float: left;
 }
 
 .product-list {
-  background-color: #e6e6e6;
-  border: 1px solid blue;
   padding: 20px;
 }
 
+.product_picture {
+  padding: 20px;
+}
+
+.category-product-img {
+
+  img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.category-product-info {
+  padding-top: 20px;
+}
 
 .product-title {
   color: #660066;
@@ -40,4 +75,20 @@
 
 .addToCart-button {
   padding: 10px 0 0 0;
+
+  button {
+    @include gradient;
+    border: 1px solid #a88734;
+    border-radius: 3px;
+    width: 110px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: #f0c14b;
+    @include hovered-gradient;
+  }
+
 }

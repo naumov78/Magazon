@@ -100,6 +100,9 @@ price: 26.79,
 storefront: true,
 category_id: books.id)
 
+picture1_1 = ProductPicture.create!(product_id: product1.id)
+picture1_1.image = File.open('app/assets/images/020.jpeg')
+picture1_1.save!
 
 product2 = Product.create!(
 title: 'Beauty and the Beast: 25th Anniversary Edition - (BD+DVD+DIGITAL HD) [Blu-ray]',
@@ -107,6 +110,10 @@ full_description: 'Be our guest at the enchanted 25th Anniversary celebration of
 price: 19.99,
 storefront: true,
 category_id: movies.id)
+
+picture2_1 = ProductPicture.create!(product_id: product2.id)
+picture2_1.image = File.open('app/assets/images/021.jpg')
+picture2_1.save!
 
 product3 = Product.create!(
 title: 'Sauder Beginnings 4-Drawer Chest, Cinnamon Cherry',
@@ -116,6 +123,13 @@ price: 85.00,
 storefront: true,
 category_id: home.id)
 
+picture3_1 = ProductPicture.create!(product_id: product3.id)
+picture3_1.image = File.open('app/assets/images/011.jpg')
+picture3_1.save!
+picture3_2 = ProductPicture.create!(product_id: product3.id)
+picture3_2image = File.open('app/assets/images/012.jpg')
+picture3_2.save!
+
 product4 = Product.create!(
 title: 'Elite 54" Wall Cabinet',
 brief_description: 'This 3-door cabinet is 54 inches wide, which is the ideal width for placement above a standard washer and dryer.',
@@ -124,7 +138,21 @@ price: 122.48,
 storefront: true,
 category_id: home.id)
 
-ProductCategory.create!(product_id: product4.id, category_id: home.id)
+picture4_1 = ProductPicture.create!(product_id: product4.id)
+picture4_1.image = File.open('app/assets/images/013.jpg')
+picture4_1.save!
+picture4_2 = ProductPicture.create!(product_id: product4.id)
+picture4_2.image = File.open('app/assets/images/014.jpg')
+picture4_2.save!
+picture4_3 = ProductPicture.create!(product_id: product4.id)
+picture4_3.image = File.open('app/assets/images/015.jpg')
+picture4_3.save!
+picture4_4 = ProductPicture.create!(product_id: product4.id)
+picture4_4.image = File.open('app/assets/images/016.jpg')
+picture4_4.save!
+picture4_5 = ProductPicture.create!(product_id: product4.id)
+picture4_5.image = File.open('app/assets/images/017.jpg')
+picture4_5.save!
 
 product5 = Product.create!(
 title: 'Elite 32" Wardrobe Cabinet',
@@ -133,6 +161,16 @@ full_description: 'This 20-inch deep Wardrobe Cabinet includes one hanging rail 
 price: 125.35,
 storefront: true,
 category_id: home.id)
+
+picture5_1 = ProductPicture.create!(product_id: product5.id)
+picture5_1.image = File.open('app/assets/images/018.jpg')
+picture5_1.save!
+picture5_2 = ProductPicture.create!(product_id: product5.id)
+picture5_2.image = File.open('app/assets/images/019.jpg')
+picture5_2.save!
+picture5_3 = ProductPicture.create!(product_id: product5.id)
+picture5_3.image = File.open('app/assets/images/017.jpg')
+picture5_3.save!
 
 product6 = Product.create!(
 title: 'Convenience Concepts 2-Tier Plant Stand, Chinese Fir',
@@ -165,32 +203,85 @@ picture7_1.image = File.open('app/assets/images/005.jpg')
 picture7_1.save!
 
 product8 = Product.create!(
-title: 'Product 3',
-brief_description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-full_description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.',
-price: 12.44,
+title: 'Catan 5th Edition',
+brief_description: 'Your adventurous settlers seek to tame the remote but rich isle of Catan. Start by revealing Catan’s many harbors and regions: pastures, fields, mountains, hills, forests, and desert. The random mix creates a different board virtually every game.',
+full_description: 'Your adventurous settlers seek to tame the remote but rich isle of Catan. Start by revealing Catan’s many harbors and regions: pastures, fields, mountains, hills, forests, and desert. The random mix creates a different board virtually every game. Guide your settlers to victory by clever trading and cunning development. Use resource combinations— grain, wool, ore, brick, and lumber—to buy handy development cards and build roads, settlements, and cities. Acquire your resources through trades, cards, or lucky dice (even outside your turn). But beware! Someone might cut off your road or buy a monopoly. And you never know when the wily robber might steal some of your precious gains!',
+price: 27.49,
 storefront: true,
 category_id: games.id)
 
+picture8_1 = ProductPicture.create!(product_id: product8.id)
+picture8_1.image = File.open('app/assets/images/catan/001.jpg')
+picture8_1.save!
+picture8_2 = ProductPicture.create!(product_id: product8.id)
+picture8_2.image = File.open('app/assets/images/catan/002.jpg')
+picture8_2.save!
+picture8_3 = ProductPicture.create!(product_id: product8.id)
+picture8_3.image = File.open('app/assets/images/catan/003.jpg')
+picture8_3.save!
+picture8_4 = ProductPicture.create!(product_id: product8.id)
+picture8_4.image = File.open('app/assets/images/catan/004.jpg')
+picture8_4.save!
+picture8_5 = ProductPicture.create!(product_id: product8.id)
+picture8_5.image = File.open('app/assets/images/catan/005.jpg')
+picture8_5.save!
+picture8_6 = ProductPicture.create!(product_id: product8.id)
+picture8_6.image = File.open('app/assets/images/catan/006.jpg')
+picture8_6.save!
+
+
 product9 = Product.create!(
-title: 'Product 4',
-brief_description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-full_description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.',
-price: 52.94,
+title: '7 Wonders',
+brief_description: 'You are the leader of one of the 7 great cities of the Ancient World. Gather resources, develop commercial routes and affirm your military supremacy. Build your city and erect an architectural wonder which will transcend future times.',
+full_description: 'You are the leader of one of the 7 great cities of the Ancient World. Gather resources, develop commercial routes and affirm your military supremacy. Build your city and erect an architectural wonder which will transcend future times.',
+price: 27.99,
+storefront: true,
 category_id: games.id)
 
+picture9_1 = ProductPicture.create!(product_id: product9.id)
+picture9_1.image = File.open('app/assets/images/7wonders/001.jpg')
+picture9_1.save!
+picture9_2 = ProductPicture.create!(product_id: product9.id)
+picture9_2.image = File.open('app/assets/images/7wonders/002.jpg')
+picture9_2.save!
+picture9_3 = ProductPicture.create!(product_id: product9.id)
+picture9_3.image = File.open('app/assets/images/7wonders/003.jpg')
+picture9_3.save!
+picture9_4 = ProductPicture.create!(product_id: product9.id)
+picture9_4.image = File.open('app/assets/images/7wonders/004.jpg')
+picture9_4.save!
+
 product10 = Product.create!(
-title: 'Product 5',
-brief_description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
-full_description: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.',
-price: 31.40,
+title: 'Acer Aspire VX 15 Gaming Laptop, 7th Gen Intel Core i7, NVIDIA GeForce GTX 1050 Ti, 15.6 Full HD, 16GB DDR4, 256GB SSD, VX5-591G-75RM',
+brief_description: 'Acer Aspire VX 15 VX5-591G-75RM Gaming Notebook comes with these high level specs: 7th Generation Intel Core i7-7700HQ Processor 2.8GHz with Turbo Boost Technology up to 3.8GHz, 15.6" Full HD (1920 x 1080) widescreen LED-backlit IPS display, NVIDIA GeForce GTX 1050 Ti with 4 GB of dedicated GDDR5 VRAM, 16GB DDR4 2400MHz Memory, 256GB SSD, Acer True Harmony Technology, Two Built-in Stereo Speakers, Built-in Digital Microphone, Secure Digital (SD) card reader, 802.11ac Wi-Fi featuring 2x2 MU-MIMO technology (Dual-Band 2.4GHz and 5GHz), Bluetooth 4.0, 10/100/1000 Gigabit Ethernet LAN (RJ-45 port), HD Webcam (1280 x 720) supporting High Dynamic Range (HDR), 1 - USB 3.1 (Type C) port (Gen 1 up to 5 Gbps), 2 - USB 3.0 Ports (One with Power-off Charging), 1 - USB 2.0 Port, 1 - HDMI Port, 3-cell Li-ion Battery (4605 mAh), Up to 6-hours Battery Life, 5.51 lbs. | 2.5 kg (system unit only) (NH.GM4AA.001).',
+full_description: 'In the case of the Aspire VX 15, looks can kill! This soon-to-be battlefield gaming icon utilizes a hard-edged futuristic design with sleek lines and angles—and an impressive, 15.6” Full HD Display—to put you in total command of all the action. It combines a powerful 7th Gen Intel Core i7-7700HQ processor with high-performance NVIDIA GeForce GTX 1050 Ti graphics driven by the new NVIDIA Pascal architecture. The advanced cooling and stellar audio capabilities support intense gaming sessions while the illuminating iron-red keyboard adds to the drama.',
+price: 999.99,
+storefront: true,
 category_id: computers.id)
+
+picture10_1 = ProductPicture.create!(product_id: product10.id)
+picture10_1.image = File.open('app/assets/images/laptop1/001.jpg')
+picture10_1.save!
+picture10_2 = ProductPicture.create!(product_id: product10.id)
+picture10_2.image = File.open('app/assets/images/laptop1/002.jpg')
+picture10_2.save!
+picture10_3 = ProductPicture.create!(product_id: product10.id)
+picture10_3.image = File.open('app/assets/images/laptop1/003.jpg')
+picture10_3.save!
+picture10_4 = ProductPicture.create!(product_id: product10.id)
+picture10_4.image = File.open('app/assets/images/laptop1/004.jpg')
+picture10_4.save!
+picture10_5 = ProductPicture.create!(product_id: product10.id)
+picture10_5.image = File.open('app/assets/images/laptop1/006.jpg')
+picture10_5.save!
+
 
 product11 = Product.create!(
 title: 'Weber 46510001 Spirit E310 Liquid Propane Gas Grill, Black',
 brief_description: 'Redesigned in 2013, the new Spirit E-310 LP gas grill is complete with all the essential features a griller could want in an affordable package.',
 full_description: 'Redesigned in 2013, the new Spirit E-310 LP gas grill is complete with all the essential features a griller could want in an affordable package. With the control panel conveniently moved to the front, two full-use stainless steel tables allow for food platters and prep. The grill offers enough room to cook a 20-pound turkey or roast meats and vegetables at the same time. Porcelain-enameled cast-iron cooking grates provide superior heat retention and clean up easily, and the durable porcelain-enameled shroud will not fade, peel or rust. An Electronic Crossover ignition system lights the three burners with just one touch of the igniter button, and an easy-to-read fuel gauge accurately measures the amount of LP gas in the tank.',
 price: 499.00,
+storefront: true,
 category_id: garden.id
 )
 
@@ -213,6 +304,7 @@ title: 'Amish Wagon Decorative Garden Planter, Green, Weathered',
 brief_description: 'Showcase flowers & plants and create sensational seasonal displays with our Amish Country Wagon.',
 full_description: 'Showcase flowers & plants and create sensational seasonal displays with our Amish Country Wagon. Crafted from wood with rolling iron wheels. Measures 44 1/4"L (includes handle), x 14 1/2"W x 15 1/2"H. Length of the wagon is 21.75" without the handle. Some assembly required. Specify Blue, Country Red or Green.',
 price: 19.99,
+storefront: true,
 category_id: garden.id
 )
 

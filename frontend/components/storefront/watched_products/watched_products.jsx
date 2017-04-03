@@ -40,18 +40,10 @@ class WatchedProducts extends React.Component {
               <div className="frontstore-product">
                 <div>
                 <Link to={`/categories/${product.category_id}/products/${product.id}`} >
-                  <span className="product-title">{product.title}</span>
+                  <span className="product-img"><img src={product.product_pictures[0].image_url} /></span>
                 </Link>
                 </div>
-                <div className="product-descr">
-                  {this.updateDescrLength(product.brief_description)}
-                </div>
-                <div className="product-price">
-                  Price: ${product.price}
-                </div>
-                <div className="addToCart-button">
-                  <button onClick={() => this.props.addToCart(product.id, 1)}>Add to cart</button>
-                </div>
+
               </div>
             </li>
           );
@@ -79,3 +71,17 @@ class WatchedProducts extends React.Component {
 }
 
 export default withRouter(WatchedProducts);
+
+
+
+
+
+// <div className="product-descr">
+//   {this.updateDescrLength(product.brief_description)}
+// </div>
+// <div className="product-price">
+//   Price: ${product.price}
+// </div>
+// <div className="addToCart-button">
+//   <button onClick={() => this.props.addToCart(product.id, 1)}>Add to cart</button>
+// </div>

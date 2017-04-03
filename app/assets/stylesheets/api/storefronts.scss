@@ -10,15 +10,15 @@
 
 .storefront-list {
   display: flex;
-  height: 205px;
+  height: 220px;
 }
 
 
 .product-block {
-  // display: block;
   width: 33%;
   height: 200px;
   margin-left: 10px;
+  // margin: 0 auto;
 }
 
 
@@ -26,6 +26,23 @@
 
 .frontstore-product {
   height: 200px;
-  border: 1px solid #e6e6e6;
+  // border: 1px solid #e6e6e6;
   padding: 10px;
+
+
+  .product-img {
+
+    img {
+      width: 200px;
+      height: 200px;
+      display: block;
+    }
+
+  }
+
+  .product-title {
+    font-size: 13px;
+  }
+
+
 }

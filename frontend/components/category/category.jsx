@@ -20,6 +20,13 @@ class Category extends React.Component {
     }
   }
 
+  updateDescrLength(str) {
+    if (str && str.length > 200) {
+      return str.slice(0, 197) + "..."
+    }
+    return str;
+  }
+
   componentDidMount() {
     this.props.fetchCategory(this.props.params.id).then((result) => {
       this.setState({ products: result.products })
@@ -38,20 +45,27 @@ class Category extends React.Component {
           return (
             <li key={i} className="product-line">
               <div className="product-list">
-                <div>
-                <Link to={`/categories/${product.category_id}/products/${product.id}`} >
-                  <span className="product-title">{product.title}</span>
-                </Link>
+                <div className="product-picture">
+                  <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                    <span className="category-product-img"><img src={product.product_pictures[0].image_url} /></span>
+                  </Link>
                 </div>
-                <div className="product-descr">
-                  Description: {product.full_description}
+
+                <div className="category-product-info">
+                  <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                    <span className="product-title">{product.title}</span>
+                  </Link>
+                  <div className="product-descr">
+                    {this.updateDescrLength(product.brief_description)}
+                  </div>
+                  <div className="product-price">
+                    Price: ${product.price}
+                  </div>
+                  <div className="addToCart-button">
+                    <button onClick={() => this.addToCart(product.id, 1)}>Add to cart</button>
+                  </div>
                 </div>
-                <div className="product-price">
-                  Price: ${product.price}
-                </div>
-                <div className="addToCart-button">
-                  <button onClick={() => this.addToCart(product.id, 1)}>Add to cart</button>
-                </div>
+
               </div>
             </li>
           );

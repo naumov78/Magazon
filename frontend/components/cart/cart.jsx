@@ -55,13 +55,13 @@ class Cart extends React.Component {
                 <tbody>
                   <tr className="cart-product">
                     <td>
-                      <div className="cart-product-title">
+                      <div className="cart-product-image">
                         <Link to={`/categories/${product.product.category_id}/products/${product.product.id}`} >
-                          {product.product.title}
+                          <span className="cart-product-img"><img src={product.product_pictures[0].image_url} /></span>
                         </Link>
                       </div>
-                      <div className="product-cart-descr">
-                        {product.product.brief_description}
+                      <div className="cart-product-title">
+                        &nbsp;&nbsp;&nbsp;{product.product.title}
                       </div>
                     </td>
                     <td className="cart-product-price">

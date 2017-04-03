@@ -3,7 +3,6 @@
 class Api::CartProductsController < ApplicationController
 
 def create
-  debugger
   cart_product = current_user.cart.cart_products.where("product_id = ?", cart_products_params[:product_id]).first
   if cart_product.nil?
     cart_product = current_user.cart.cart_products.new(cart_products_params)
