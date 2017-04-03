@@ -102,3 +102,25 @@
 
 
 }
+
+// bought together
+
+.bought-together-container {
+  margin-top: 40px;
+}
+
+.bought-together-list {
+  margin-top: 50px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+}
+
+.single-product-block {
+  margin-left: 40px;
+}
+
+.single-product-block:first-child {
+  margin-left: 0;
+}

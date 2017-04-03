@@ -15,6 +15,15 @@ class Product extends React.Component {
     this.props.getWatchedProducts()
   }
 
+  componentWillReceiveProps(nextProps) {
+    debugger
+    if (this.props.params !== nextProps.params) {
+      this.props.fetchProduct(Number(nextProps.params.id[0]), Number(nextProps.params.id[1])).then((result) => {
+        this.setState({ product: result.product, main_picture: result.product.product_pictures[0] })
+      })
+    }
+  }
+
   componentDidMount() {
       this.props.fetchProduct(Number(this.props.params.id[0]), Number(this.props.params.id[1])).then((result) => {
         this.setState({ product: result.product, main_picture: result.product.product_pictures[0] })
@@ -67,10 +76,11 @@ class Product extends React.Component {
           <div className="product-order">
             <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.product.id, 1)}>Add to Cart</button></span>
           </div>
-        </div>
 
-        <div>
-          <BoughtTogether product={this.state.product} />
+          <div className="bought-together-container">
+            <BoughtTogether product={this.state.product} />
+          </div>
+
         </div>
 
       </div>
