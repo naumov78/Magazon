@@ -1,0 +1,68 @@
+
+
+
+
+
+.back-2-top {
+  padding: 20px 0 20px 0;
+  width: 100%;
+  background-color: #37475a;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  background-color: #37475a;
+}
+
+
+
+.back-2-top:hover {
+  background-color: #485769;
+  cursor: pointer;
+}
+
+
+.footer-text {
+  width: 80%;
+  padding: 50px;
+  margin: 0 auto;
+  display: flex;
+  color: #fff;
+}
+
+.footer-titles {
+  text-decoration: underline;
+  font-size: 1.15em;
+  padding-bottom: 20px;
+}
+
+.magazon-description {
+  width: 50%;
+  text-align: center;
+  line-height: 17px;
+  padding-right: 30px;
+  letter-spacing: 1.1px;
+}
+
+.description-text {
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  text-align: left;
+}
+
+.magazon-authors {
+  width: 50%;
+  text-align: center;
+  line-height: 17px;
+  letter-spacing: 1.1px;
+  padding-left: 30px;
+}
+
+.magazon-authors span:hover {
+  color: #ecae13;
+}
+
+.authors-text {
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  text-align: center;
+}
