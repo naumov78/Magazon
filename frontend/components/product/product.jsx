@@ -41,6 +41,16 @@ class Product extends React.Component {
     this.setState({ main_picture: this.state.product.product_pictures[idx] })
   }
 
+  getSmallImageClass(pic) {
+    if (pic.image_url === this.state.main_picture.image_url) {
+      return "small-main-image";
+    } else {
+      return "alt-product-image";
+    }
+  }
+
+
+
   render() {
     debugger
     if (this.state.product.title) {
@@ -51,9 +61,9 @@ class Product extends React.Component {
           <ul>
             {this.state.product.product_pictures.map((picture, i) => {
               return (
-                <li key={i}>
+                <li key={i} className={this.getSmallImageClass(picture)}>
                   <a onMouseOver={(e) => this.changeMainPicture(e, i)}>
-                    <img width="40" height="40" src={picture.image_url} />
+                    <img src={picture.image_url} />
                   </a>
                 </li>
               )
