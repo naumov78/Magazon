@@ -23,38 +23,53 @@
 
 .footer-text {
   width: 80%;
-  padding: 50px;
+  padding-top: 50px;
   margin: 0 auto;
   display: flex;
+  -webkit-flex-flow: row wrap;
   color: #fff;
+  justify-content: space-around;
+  /*align-items: center;*/
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-titles {
-  text-decoration: underline;
-  font-size: 1.15em;
+  /*text-decoration: underline;*/
+  font-size: 0.95em;
   padding-bottom: 20px;
 }
 
 .magazon-description {
-  width: 50%;
+  /*width: 50%;*/
   text-align: center;
   line-height: 17px;
-  padding-right: 30px;
+  /*padding-right: 30px;*/
   letter-spacing: 1.1px;
 }
 
 .description-text {
+  /*width: 500px;*/
   font-size: 11px;
   letter-spacing: 1.3px;
   text-align: left;
 }
 
 .magazon-authors {
-  width: 50%;
+  /*width: 50%;*/
   text-align: center;
   line-height: 17px;
   letter-spacing: 1.1px;
-  padding-left: 30px;
+  /*padding-left: 30px;*/
+}
+
+@media all and (max-width: 1411px) {
+  .magazon-authors {
+    margin-top: 20px;
+  }
+}
+
+.magazon-authors span {
+  padding: 0 10px;
 }
 
 .magazon-authors span:hover {

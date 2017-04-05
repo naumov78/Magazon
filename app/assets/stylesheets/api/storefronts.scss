@@ -3,21 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //
+
+
+@mixin flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 .storefront-container {
   width: 85%;
   margin: 0 auto;
 }
 
 .storefront-list {
-  display: flex;
-  height: 220px;
+  @include flex;
+  // height: 220px;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  // border: 1px solid black;
 }
 
 
 .product-block {
-  width: 33%;
+  width: 200px;
   height: 200px;
-  margin-left: 10px;
+  // margin-left: 10px;
   // margin: 0 auto;
 }
 
@@ -27,7 +41,7 @@
 .frontstore-product {
   height: 200px;
   // border: 1px solid #e6e6e6;
-  padding: 10px;
+  // padding: 10px;
 
 
   .product-img {

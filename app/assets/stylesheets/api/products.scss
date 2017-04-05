@@ -29,105 +29,181 @@
 // ===================
 
 .product-container {
-  width: 75%;
+  width: 95%;
+  // width: 1700px;
   padding-left: 1.5%;
   display: flex;
+  -webkit-flex-flow: row nowrap;
+  align-content: space-around;
+  align-items: flex-start;
+  // border: 1px solid black;
 
-  .alt-images {
-    width: 10%;
+}
+
+.alt-images {
+  // width: 10%;
+  // width: 45px;
+  // display: flex;
+  // flex-direction: column;
+}
+
+.alt-product-image {
+  margin-top: 7px;
+
+  img {
+    border: 1px solid grey;
+    border-radius: 2px;
+    width: 40px;
+    height: 40px;
   }
 
-  .alt-product-image {
-    margin-top: 7px;
+}
 
-    img {
-      border: 1px solid grey;
-      border-radius: 2px;
-      width: 40px;
-      height: 40px;
-    }
+.small-main-image {
+  margin-top: 7px;
 
+  img {
+    border-radius: 2px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e77600;
+    box-shadow: 0px 0px 4px 2px rgba(231,118,0,0.4);
+    cursor: pointer;
   }
+}
 
-  .small-main-image {
-    margin-top: 7px;
 
-    img {
-      border-radius: 2px;
-      width: 40px;
-      height: 40px;
-      border: 1px solid #e77600;
-      box-shadow: 0px 0px 4px 2px rgba(231,118,0,0.4);
-      cursor: pointer;
-    }
+.product-info-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 
+.main-image {
+  padding: 0 25px;
+  width: 522px;
+
+  img {
+    width: 100%;
+    // height: 40%;
   }
+}
+
+.product-info {
+  padding: 0 0 0 25px;
+  width: 500px;
+}
+
+@media all and (max-width: 1220px) {
 
   .main-image {
-    padding: 0 25px;
-    width: 40%;
+    padding: 0 15px;
+    width: 405px;
+    img {
+      width: 400px;
+      height: 400px;
+    }
   }
 
   .product-info {
     padding: 0 0 0 25px;
-    // border-bottom: 2px solid #006600;
-    // border: 1px solid #006600;
-    width: 50%;
-
-
-    .product-product-title {
-      font-size: 21px;
-    }
-
-    .product-product-descr {
-      padding: 10px 0 0 0;
-      color: #777;
-      font-size: .95em
-    }
-
-    .product-product-price {
-      padding: 15px 0 0 0;
-
-      .price-title {
-        font-size: 13px;
-        color: grey;
-      }
-
-      .price {
-        font-size: 17px;
-        color: #b12704;
-        font-family: 'Open Sans', sans-serif;
-      }
-
-    }
-
+    width: 400px;
   }
-
-  .product-order {
-    padding: 20px 0 0 0;
-
-    .addToCart-button {
-
-      button {
-        @include gradient;
-        border: 1px solid #a88734;
-        border-radius: 3px;
-        width: 140px;
-        height: 30px;
-        font-size: 14px;
-      }
-
-      button:hover {
-        cursor: pointer;
-        background-color: #f0c14b;
-        @include hovered-gradient;
-      }
-    }
-
-  }
-
-
 }
+
+
+@media all and (max-width: 965px) {
+  .main-image {
+    padding: 0 12px;
+    width: 350px;
+    margin: auto;
+
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  .product-info {
+    padding: 0 0 0 10px;
+    width: 400px;
+  }
+}
+
+
+@media all and (max-width: 500px) {
+  .main-image {
+    padding: 0 5px;
+    width: 205px;
+    margin: auto;
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .product-info {
+    padding: 0 0 0 10px;
+    margin: auto;
+    width: 300px;
+  }
+}
+
+
+
+
+
+.product-product-title {
+  // font-size: 21px;
+  font-size: 1.3em;
+}
+
+.product-product-descr {
+  padding: 10px 0 0 0;
+  color: #777;
+  font-size: .95em
+}
+
+.product-product-price {
+  padding: 15px 0 0 0;
+
+  .price-title {
+    font-size: 13px;
+    color: grey;
+  }
+
+  .price {
+    font-size: 17px;
+    color: #b12704;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.product-order {
+  padding: 20px 0 0 0;
+
+  .addToCart-button {
+
+    button {
+      @include gradient;
+      border: 1px solid #a88734;
+      border-radius: 3px;
+      width: 140px;
+      height: 30px;
+      font-size: 14px;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: #f0c14b;
+      @include hovered-gradient;
+    }
+  }
+}
+
+
+
 
 // bought together
 
@@ -137,7 +213,7 @@
 
 .bought-together-list {
   margin-top: 50px;
-  width: 100%;
+  // width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   display: flex;
