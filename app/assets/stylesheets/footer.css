@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.footer {
+  height: 280px;
+  background-color: #232f3e;
+}
 
 .footer-text {
   width: 80%;

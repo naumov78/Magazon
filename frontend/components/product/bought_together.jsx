@@ -6,7 +6,7 @@ const BoughtTogether = (props) => {
   if (props.product.bought_together.length > 0) {
     return (
       <div>
-        <h3>Frequently bought together</h3>
+        <p>Frequently bought together</p>
         <ul className="bought-together-list">
           {props.product.bought_together.map((product, i) => {
             return (

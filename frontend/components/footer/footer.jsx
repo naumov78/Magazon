@@ -12,12 +12,13 @@ const Footer = (props) => {
 
   debugger
   return (
-    <div>
+    <div className="footer">
       <a onClick={scrollToTop}>
         <div className="back-2-top">
           Back to top
         </div>
       </a>
+
 
       <div className="footer-text">
         <div className="magazon-description">

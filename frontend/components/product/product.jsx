@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router';
 import BoughtTogether from './bought_together';
 import GetFiftyOff from './get_fifty_off';
-
+import ShippingPrice from './shipping_price';
 
 
 class Product extends React.Component {
@@ -54,55 +54,88 @@ class Product extends React.Component {
     }
   }
 
-
+  getUserName() {
+    return (
+      `${this.props.currentUser.first_name} ${this.props.currentUser.last_name}`
+    )
+  }
 
   render() {
     debugger
     if (this.state.product.title) {
     return (
-      <div className="product-container">
+      <div className="product-page">
 
-        <div>
-          <ul className="alt-images">
-            {this.state.product.product_pictures.map((picture, i) => {
-              return (
-                <li key={i} className={this.getSmallImageClass(picture)}>
-                  <a onMouseOver={(e) => this.changeMainPicture(e, i)}>
-                    <img src={picture.image_url} />
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
+        <div className="product-container">
+
+          <div>
+            <ul className="alt-images">
+              {this.state.product.product_pictures.map((picture, i) => {
+                return (
+                  <li key={i} className={this.getSmallImageClass(picture)}>
+                    <a onMouseOver={(e) => this.changeMainPicture(e, i)}>
+                      <img src={picture.image_url} />
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+
+          <div className="product-info-container">
+
+            <div className="main-image">
+              <img src={this.state.main_picture.image_url} />
+            </div>
+
+            <div className="product-info">
+
+              <div className="product-product-title">{this.state.product.title}</div>
+
+              <div className="product-product-price">
+                <span className="price-title">Price: </span>
+                <span className="price">${Number(this.state.product.price).toFixed(2)}</span>
+                <ShippingPrice price={this.state.product.price} product={true} />
+              </div>
+                <GetFiftyOff price={this.state.product.price} />
+              <div className="stock-product">
+                In stock.
+              </div>
+              <div className="product-product-descr">{this.state.product.full_description}</div>
+            </div>
+          </div>
+
+          <div className="order-container">
+
+            <div className="order-price">
+              <span className="price order-block-price">${Number(this.state.product.price).toFixed(2)}</span>
+              <ShippingPrice price={this.state.product.price} order={true} />
+            </div>
+
+            <div className="stock-order">
+              In stock.
+            </div>
+
+            <div className="product-order">
+              <div className="addToCart-button">
+                <button onClick={() => this.addToCart(this.state.product.id, 1)}>
+                  <span className="cart-icon"><i className="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                  <span className="button-text">Add to Cart</span>
+                </button>
+              </div>
+            </div>
+
+            <div className="ship-to">
+              <div className="ship-to-title">Ship to:</div>
+              <div className="ship-to-details">{`${this.getUserName()} - ${this.props.currentUser.address.city} - ${this.props.currentUser.address.zip}`}</div>
+            </div>
+
+          </div>
+
         </div>
 
-        <div className="product-info-container">
-
-          <div className="main-image">
-            <img src={this.state.main_picture.image_url} />
-          </div>
-
-          <div className="product-info">
-
-            <div className="product-product-title">{this.state.product.title}</div>
-            <div className="product-product-descr">{this.state.product.full_description}</div>
-            <div className="product-product-price">
-              <span className="price-title">Price: </span>
-              <span className="price">${Number(this.state.product.price).toFixed(2)}</span>
-            </div>
-              <GetFiftyOff price={this.state.product.price} />
-            <div className="product-order">
-              <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.product.id, 1)}>Add to Cart</button></span>
-            </div>
-
-
-            <div className="bought-together-container">
-              <BoughtTogether product={this.state.product} />
-            </div>
-
-
-          </div>
-
+        <div className="bought-together-container">
+          <BoughtTogether product={this.state.product} />
         </div>
 
       </div>
