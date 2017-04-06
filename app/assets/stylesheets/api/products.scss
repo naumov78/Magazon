@@ -91,7 +91,7 @@
 
 .product-info {
   padding: 0 0 0 25px;
-  width: 500px;
+  width: 600px;
 }
 
 @media all and (max-width: 1220px) {
@@ -179,6 +179,37 @@
     font-family: 'Open Sans', sans-serif;
   }
 }
+
+.get-fifty-off {
+  margin-top: 15px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+
+  #get-50 {
+    font-weight: 700;
+  }
+
+  i {
+    color: #35aae0;
+    padding-right: 7px;
+    font-style: italic;
+  }
+
+  a {
+    color: #0066c0;
+  }
+
+  a:hover {
+    color: #e2593b;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+
+}
+
+
+
 
 .product-order {
   padding: 20px 0 0 0;

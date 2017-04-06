@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
 import BoughtTogether from './bought_together';
+import GetFiftyOff from './get_fifty_off';
 
 
 
@@ -89,6 +90,7 @@ class Product extends React.Component {
               <span className="price-title">Price: </span>
               <span className="price">${Number(this.state.product.price).toFixed(2)}</span>
             </div>
+              <GetFiftyOff price={this.state.product.price} />
             <div className="product-order">
               <span className="addToCart-button"><button onClick={() => this.addToCart(this.state.product.id, 1)}>Add to Cart</button></span>
             </div>

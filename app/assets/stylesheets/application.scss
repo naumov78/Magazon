@@ -14,11 +14,14 @@
  *= require_self
  */
 
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
 html {
   font-family: 'Roboto', sans-serif;
   list-style: none;
 }
+
 
 
 .main-container {
