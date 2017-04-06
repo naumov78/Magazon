@@ -430,6 +430,71 @@ picture14_4.image = File.open('app/assets/images/deck1/004.jpg')
 picture14_4.save!
 
 
+
+
+
+
+product15 = Product.create!(
+title: 'GreenWorks Pro 2601302 80V 20-Inch Cordless Snow Thrower',
+brief_description: 'GreenWorks Pro 80-Volt 20-in Cordless Electric Snow Blower with 20-inch auger width and utilizing the powerful 80V lithium ion power (Battery and Charger not included)',
+full_description: 'GreenWorks Pro 80-Volt 20-in Cordless Electric Snow Blower with 20-inch auger width and utilizing the powerful 80V lithium ion power (Battery and Charger not included)',
+price: 234.99,
+storefront: true,
+category_id: garden.id
+)
+
+fbt15 = FrequentlyBoughtTogether.create!(product_id: product15.id)
+product15.frequently_bought_together_id = fbt15.id
+product15.save!
+
+picture15_1 = ProductPicture.create!(product_id: product15.id)
+picture15_1.image = File.open('app/assets/images/snow_removal2/001.jpg')
+picture15_1.save!
+picture15_2 = ProductPicture.create!(product_id: product15.id)
+picture15_2.image = File.open('app/assets/images/snow_removal2/002.jpg')
+picture15_2.save!
+picture15_3 = ProductPicture.create!(product_id: product15.id)
+picture15_3.image = File.open('app/assets/images/snow_removal2/003.jpg')
+picture15_3.save!
+picture15_4 = ProductPicture.create!(product_id: product15.id)
+picture15_4.image = File.open('app/assets/images/snow_removal2/004.jpg')
+picture15_4.save!
+picture15_5 = ProductPicture.create!(product_id: product15.id)
+picture15_5.image = File.open('app/assets/images/snow_removal2/005.jpg')
+picture15_5.save!
+
+
+product16 = Product.create!(
+title: 'Snapper XD SXDCS82 82V Cordless 18-Inch Chainsaw',
+brief_description: 'Snapper XD SXDCS82 82V 18-Inch Cordless Chainsaw - Battery and Charger Not Included. Extra durable. Powerful. Convenient.',
+full_description: 'Snapper XD SXDCS82 82V 18-Inch Cordless Chainsaw - Battery and Charger Not Included. Extra durable. Powerful. Convenient. The industry\'s first 82V lithium ion cordless chainsaw powered by Briggs & Stratton. Brushless motor for high efficiency & longer life. Blue indicator light illuminates to let you know the unit is powered on. The Snapper XD 82V cordless chainsaw\'s rugged metal handle with comfortable, ergonomic rubber grip & touchpoints provides extra comfort for the operator. The Snapper XD 82V battery powered chainsaw offers less noise & vibration for quieter sawing & better handling. Reliable power, easy start & less maintenance with this Snapper XD 82V cordless chainsaw. This unit can only be used with the Briggs & Stratton 2.0Ah 82V lithium ion battery & rapid charger (models BSB2AH82 & BSRC82 sold separately). Hassle-free ownership at its best - no cords, gas, oil or maintenance...JUST CHARGE & GO!',
+price: 199.00,
+storefront: true,
+category_id: garden.id
+)
+
+fbt16 = FrequentlyBoughtTogether.create!(product_id: product16.id)
+product16.frequently_bought_together_id = fbt16.id
+product16.save!
+
+picture16_1 = ProductPicture.create!(product_id: product16.id)
+picture16_1.image = File.open('app/assets/images/snapper1/001.jpg')
+picture16_1.save!
+picture16_2 = ProductPicture.create!(product_id: product16.id)
+picture16_2.image = File.open('app/assets/images/snapper1/002.jpg')
+picture16_2.save!
+picture16_3 = ProductPicture.create!(product_id: product16.id)
+picture16_3.image = File.open('app/assets/images/snapper1/003.jpg')
+picture16_3.save!
+picture16_4 = ProductPicture.create!(product_id: product16.id)
+picture16_4.image = File.open('app/assets/images/snapper1/004.jpg')
+picture16_4.save!
+
+
+
+
+
+
 cart1 = Cart.create!(user_id: user1.id)
 user1.cart_id = cart1.id
 user1.save!
