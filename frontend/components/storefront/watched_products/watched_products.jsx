@@ -37,13 +37,20 @@ class WatchedProducts extends React.Component {
         {products.map((product, i) => {
           return (
             <li key={i} className="product-block">
-              <div className="frontstore-product">
+              <div className="frontstore-product watched-products">
                 <div>
-                <Link to={`/categories/${product.category_id}/products/${product.id}`} >
-                  <span className="product-img"><img src={product.product_pictures[0].image_url} /></span>
-                </Link>
+                  <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                    <span className="product-img"><img src={product.product_pictures[0].image_url} /></span>
+                  </Link>
                 </div>
-
+                <div>
+                  <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                    <span>{product.title}</span>
+                  </Link>
+                </div>
+                <div>
+                  <span>{Number(product.price).toFixed(2)}</span>
+                </div>
               </div>
             </li>
           );

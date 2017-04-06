@@ -355,6 +355,30 @@
   display: flex;
 }
 
+.bought-together {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.bt-product {
+  color: $link-blue;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+.bt-product:hover {
+  color: $link-orange;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.bought-together-price {
+  color: $dark-red;
+  font-size: 0.85em;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .single-product-block {
   margin-left: 40px;
 }
