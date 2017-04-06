@@ -14,8 +14,12 @@
  *= require_self
  */
 
+ @import "base/colors.scss";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+
+ // Base
+
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -26,7 +30,6 @@ html {
 
 .main-container {
   width: 100%;
-
 }
 
 

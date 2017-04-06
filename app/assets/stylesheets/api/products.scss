@@ -3,22 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
+@import "base/colors.scss";
 
 @mixin gradient {
-    background: #eeb72b;
-    background: -webkit-linear-gradient(#eeb72b, #f0c14b);
-    background: -o-linear-gradient(#eeb72b, #f0c14b);
-    background: -moz-linear-gradient(#eeb72b, #f0c14b);
-    background: linear-gradient(#eeb72b, #f0c14b);
+    background: $cart-dark-yellow;
+    background: -webkit-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: -o-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: -moz-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: linear-gradient($cart-dark-yellow, $cart-yellow);
 }
 
 @mixin hovered-gradient {
-    background: #f5d789;
-    background: -webkit-linear-gradient(#f5d789, #f0c14b);
-    background: -o-linear-gradient(#f5d789, #f0c14b);
-    background: -moz-linear-gradient(#f5d789, #f0c14b);
-    background: linear-gradient(#f5d789, #f0c14b);
+    background: $cart-light-yellow;
+    background: -webkit-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: -o-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: -moz-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: linear-gradient($cart-light-yellow, $cart-yellow);
 }
 
 
@@ -44,7 +44,7 @@
   -webkit-flex-flow: row nowrap;
   align-content: space-between;
   align-items: flex-start;
-  border-bottom: 0.1em solid #d4d6d6;
+  border-bottom: 0.1em solid $light-grey;
 
 }
 
@@ -55,7 +55,7 @@
   margin-top: 7px;
 
   img {
-    border: 1px solid grey;
+    border: 1px solid $dark-grey;
     border-radius: 2px;
     width: 40px;
     height: 40px;
@@ -70,7 +70,7 @@
     border-radius: 2px;
     width: 40px;
     height: 40px;
-    border: 1px solid #e77600;
+    border: 1px solid $orange;
     box-shadow: 0px 0px 4px 2px rgba(231,118,0,0.4);
     cursor: pointer;
   }
@@ -161,13 +161,13 @@
 .product-product-title {
   // font-size: 21px;
   font-size: 1.3em;
-  border-bottom: 1px solid #d4d6d6;
+  border-bottom: 1px solid $light-grey;
   padding-bottom: 15px;
 }
 
 .product-product-descr {
   padding: 15px 0 0 0;
-  color: #777;
+  color: $dark-grey;
   letter-spacing: 0.45px;
   font-size: .85em
 }
@@ -182,7 +182,7 @@
 
   .price {
     font-size: 17px;
-    color: #b12704;
+    color: $dark-red;
     font-family: 'Open Sans', sans-serif;
   }
 }
@@ -197,17 +197,17 @@
   }
 
   i {
-    color: #35aae0;
+    color: $blue;
     padding-right: 7px;
     font-style: italic;
   }
 
   a {
-    color: #0066c0;
+    color: $link-blue;
   }
 
   a:hover {
-    color: #e2593b;
+    color: $link-orange;
     cursor: pointer;
     text-decoration: underline;
   }
@@ -223,7 +223,7 @@
 }
 
 .free-shipping-order {
-  color: #767477;
+  color: $dark-grey;
   font-size: 0.80em;
 }
 
@@ -234,7 +234,7 @@
 .order-container {
   padding: 14px 18px;
   width: 206px;
-  border: 1px solid #bdc1c1;
+  border: 1px solid $light-darker-grey;
   border-radius: 3px;
   margin-left: auto;
   display: flex;
@@ -244,13 +244,13 @@
 .stock-order {
   margin: auto;
   padding-top: 10px;
-  color: #008a00;
+  color: $green;
   font-size: 0.85em;
 }
 
 .stock-product {
   padding-top: 10px;
-  color: #008a00;
+  color: $green;
   font-size: 0.95em;
 }
 
@@ -261,13 +261,13 @@
 .order-block-price {
   font-size: 0.8em;
   font-weight: 700;
-  color: #b12704;
+  color: $dark-red;
   font-family: 'Open Sans', sans-serif;
 }
 
 .product-order {
   padding: 20px 0 20px 0;
-  border-bottom: 1px solid #bdc1c1;
+  border-bottom: 1px solid $light-darker-grey;
 
   .addToCart-button {
 
@@ -275,7 +275,7 @@
 
     button {
       @include hovered-gradient;
-      border: 1px solid #a88734;
+      border: 1px solid $cart-darkest-yellow;
       border-radius: 3px;
       width: 206px;
       height: 30px;
@@ -286,7 +286,7 @@
 
     button:hover {
       cursor: pointer;
-      background-color: #f0c14b;
+      // background-color: $cart-yellow;
       @include gradient;
     }
 
@@ -299,8 +299,8 @@
   left: 2px;
   top: 2px;
   padding: 3px 5px 3px 5px;
-  background-color: #0e063d;
-  border: 1px solid #0e063d;
+  background-color: $darkest-blue;
+  border: 1px solid $darkest-blue;
   border-radius: 3px;
   // height: 10px;
 }
@@ -312,7 +312,7 @@
 .button-text {
   margin-left: 20px;
   font-size: 0.92em;
-  color: #0e063d;
+  color: $darkest-blue;
 }
 
 
@@ -341,7 +341,7 @@
 
   p {
     margin-top: 20px;
-    color: #c60;
+    color: $dark-orange;
     font-weight: 700;
     font-size: 1.15em;
   }
