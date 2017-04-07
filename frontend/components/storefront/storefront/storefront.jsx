@@ -27,15 +27,47 @@ class Storefront extends React.Component {
   }
 
   updateTitleLength(str) {
-    if (str && str.length > 55) {
-      return str.slice(0, 52) + "..."
+    if (str && str.length > 35) {
+      str = str.slice(0, 32)
+      if (str[str.length - 1] === " ") {
+        str = str.slice(0, 31);
+        return str + "...";
+      } else {
+        return str + "...";
+      }
     }
     return str;
   }
 
 
-  getProductsList() {
+  getInternalProductsList() {
     const products = this.state.products
+    return (
+      <ul className="internal-storefront-list">
+        <p>Sponsored</p>
+        {products.map((product, i) => {
+          return (
+            <li key={i} className="internal-product-block">
+              <div className="prod-details">
+                <div className="storefront-product">
+                  <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                    <div className="internal-product-img"><img src={product.product_pictures[0].image_url} /></div>
+                    <div className="prod-title">{this.updateTitleLength(product.title)}</div>
+                  </Link>
+                </div>
+                <div>
+                  <span className="bought-together-price">${Number(product.price).toFixed(2)}</span>
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  }
+
+  getExternalProductsList() {
+    const products = this.state.products.slice(0, 5)
     return (
       <ul className="storefront-list">
         {products.map((product, i) => {
@@ -56,11 +88,16 @@ class Storefront extends React.Component {
     )
   }
 
+
   render() {
-    if (this.state.products && this.props.location.pathname == "/") {
-    return (
-      <div className="storefront-container">{this.getProductsList()}</div>
-    );
+    if (this.state.products && this.props.location.pathname === "/") {
+      return (
+        <div className="storefront-container">{this.getExternalProductsList()}</div>
+      );
+    } else if (this.state.products && this.props.location.pathname !== "/") {
+      return (
+        <div>{this.getInternalProductsList()}</div>
+      );
     } else {
       return <div></div>;
     }

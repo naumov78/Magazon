@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
-import StorefrontContainer from '../storefront/storefront/storefront_container';
-import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
+
 
 
 class Category extends React.Component {
@@ -45,9 +44,10 @@ class Category extends React.Component {
         {products.map((product, i) => {
           return (
             <li key={i} className="product-line">
+              <div className="product-list">
                 <div className="product-picture">
                   <Link to={`/categories/${product.category_id}/products/${product.id}`} >
-                    <span id="image"><img src={product.product_pictures[0].image_url} /></span>
+                    <span className="category-product-img"><img src={product.product_pictures[0].image_url} /></span>
                   </Link>
                 </div>
 
@@ -55,19 +55,19 @@ class Category extends React.Component {
                   <Link to={`/categories/${product.category_id}/products/${product.id}`} >
                     <span className="product-title">{product.title}</span>
                   </Link>
-
+                  <div className="product-descr">
+                    {this.updateDescrLength(product.brief_description)}
+                  </div>
                   <div className="product-price">
                     Price:
                     <span className="price">${Number(product.price).toFixed(2)}</span>
-                  </div>
-                  <div className="product-descr">
-                    {this.updateDescrLength(product.brief_description)}
                   </div>
                   <div className="addToCart-button">
                     <button onClick={() => this.addToCart(product.id, 1)}>Add to cart</button>
                   </div>
                 </div>
 
+              </div>
             </li>
           );
         })}
@@ -78,19 +78,7 @@ class Category extends React.Component {
   render() {
     if (this.state.products) {
     return (
-      <div className="category-container">
-
-        <div className="central-block">
-            <StorefrontContainer />
-            {this.getProductsList()}
-            <StorefrontContainer />
-        </div>
-
-        <div>
-          <WatchedProductsContainer />
-        </div>
-
-      </div>
+      <div className="category-container">{this.getProductsList()}</div>
     );
     } else {
       return null;
@@ -100,10 +88,3 @@ class Category extends React.Component {
 }
 
 export default withRouter(Category);
-
-
-//
-// <div></div> // <StorefrontContainer /> dir: column
-// </div> // central block, dir: row
-//
-// <div></div> // <WatchedProductsContainer />

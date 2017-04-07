@@ -33,7 +33,7 @@ class WatchedProducts extends React.Component {
   getInternalProductsList() {
     const products = this.state.products.slice(1)
     debugger
-    if (products.length > 1) {
+    if (products.length > 0) {
     return (
       <div>
         <p>Your recently watched items</p>

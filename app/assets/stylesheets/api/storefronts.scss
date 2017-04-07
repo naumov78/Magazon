@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //
-
+@import "base/colors.scss";
 
 @mixin flex {
   display: -webkit-box;
@@ -37,7 +37,6 @@
 
 
 
-
 .frontstore-product {
   height: 200px;
   // border: 1px solid #e6e6e6;
@@ -58,5 +57,74 @@
     font-size: 13px;
   }
 
+
+}
+
+
+// internal
+
+.internal-storefront-list {
+  border: 1px solid $light-grey;
+  width: 228px;
+  padding: 10px 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  p {
+    color: $dark-grey;
+    padding: 10px 0 15px 0;
+    font-size: 13px;
+  }
+}
+
+.internal-product-block {
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid $light-grey;
+}
+
+.internal-product-block:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+.prod-details {
+  display: flex;
+  flex-direction: column;
+  // width: 230px;
+}
+
+.storefront-product {
+  display: flex;
+  flex-direction: column;
+  color: $link-blue;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+
+.prod-title {
+  color: $link-blue;
+  line-height: 1.5;
+}
+
+.prod-title:hover {
+  color: $link-orange;
+  cursor: pointer;
+}
+
+.internal-product-img {
+  // width: 230px;
+
+  // align-content: center;
+
+
+  img {
+    margin-left: 30px;
+    width: 150px;
+    height: 150px;
+  }
 
 }
