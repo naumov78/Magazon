@@ -8,7 +8,7 @@ const BoughtTogether = (props) => {
       <div>
         <p>Frequently bought together</p>
         <ul className="bought-together-list">
-          {props.product.bought_together.map((product, i) => {
+          {props.product.bought_together.slice(0,10).map((product, i) => {
             return (
               <li key={i} className="single-product-block">
                 <div className="bought-together">
