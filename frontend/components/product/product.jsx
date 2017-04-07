@@ -138,7 +138,7 @@ class Product extends React.Component {
 
         </div>
 
-        <div className="bought-together-container">
+        <div>
           <BoughtTogether product={this.state.product} />
         </div>
 

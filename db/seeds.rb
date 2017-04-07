@@ -77,6 +77,7 @@ computers = Category.create!(title: 'Computers')
 home = Category.create!(title: 'Home')
 garden = Category.create!(title: 'Garden')
 tools = Category.create!(title: 'Tools')
+sports = Category.create!(title: 'Sports')
 
 
 
@@ -492,6 +493,58 @@ picture16_4.save!
 
 
 
+product17 = Product.create!(
+title: 'Planet Eclipse Geo CSR Paintball Gun',
+brief_description: 'In the mold of the SL lines that came before it, the CSR is a heavily modified variant of the current headline Eclipse marker, the CS1.',
+full_description: 'In the mold of the SL lines that came before it, the CSR is a heavily modified variant of the current headline Eclipse marker, the CS1. It features bespoke machined components and custom accessories that can only be found on the CSR, such as the frame, body, POPS assembly and eye covers and introduces a completely new barrel system in the Shaft FL.',
+price: 1795.00,
+storefront: true,
+category_id: sports.id
+)
+
+fbt17 = FrequentlyBoughtTogether.create!(product_id: product17.id)
+product17.frequently_bought_together_id = fbt17.id
+product17.save!
+
+picture17_1 = ProductPicture.create!(product_id: product17.id)
+picture17_1.image = File.open('app/assets/images/paintball1/001.jpg')
+picture17_1.save!
+picture17_2 = ProductPicture.create!(product_id: product17.id)
+picture17_2.image = File.open('app/assets/images/paintball1/002.jpg')
+picture17_2.save!
+picture17_3 = ProductPicture.create!(product_id: product17.id)
+picture17_3.image = File.open('app/assets/images/paintball1/003.jpg')
+picture17_3.save!
+
+
+product18 = Product.create!(
+title: 'Virtue Spire 200 Electronic Paintball Loader / Hopper',
+brief_description: 'The Virtue Spire is the next generation in loader technology with a shot activated sensor, jam-proof feeding system and a tool-less design that can be taken apart and reassembled in seconds. Not only is the Spire an aggressive, lightweight, and compact design, but it also holds more paint than the leading competitors.',
+full_description: 'The Virtue Spire is the next generation in loader technology with a shot activated sensor, jam-proof feeding system and a tool-less design that can be taken apart and reassembled in seconds. Not only is the Spire an aggressive, lightweight, and compact design, but it also holds more paint than the leading competitors.',
+price: 159.95,
+storefront: true,
+category_id: sports.id
+)
+
+fbt18 = FrequentlyBoughtTogether.create!(product_id: product18.id)
+product18.frequently_bought_together_id = fbt18.id
+product18.save!
+
+picture18_1 = ProductPicture.create!(product_id: product18.id)
+picture18_1.image = File.open('app/assets/images/feeder1/001.jpg')
+picture18_1.save!
+picture18_2 = ProductPicture.create!(product_id: product18.id)
+picture18_2.image = File.open('app/assets/images/feeder1/002.jpg')
+picture18_2.save!
+picture18_3 = ProductPicture.create!(product_id: product18.id)
+picture18_3.image = File.open('app/assets/images/feeder1/003.jpg')
+picture18_3.save!
+picture18_4 = ProductPicture.create!(product_id: product18.id)
+picture18_4.image = File.open('app/assets/images/feeder1/004.jpg')
+picture18_4.save!
+picture18_5 = ProductPicture.create!(product_id: product18.id)
+picture18_5.image = File.open('app/assets/images/feeder1/005.jpg')
+picture18_5.save!
 
 
 

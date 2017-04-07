@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router';
 const BoughtTogether = (props) => {
   if (props.product.bought_together.length > 0) {
     return (
-      <div>
+      <div className="bought-together-container">
         <p>Frequently bought together</p>
         <ul className="bought-together-list">
           {props.product.bought_together.slice(0,10).map((product, i) => {
