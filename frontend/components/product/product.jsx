@@ -3,6 +3,7 @@ import { withRouter, Link } from 'react-router';
 import BoughtTogether from './bought_together';
 import GetFiftyOff from './get_fifty_off';
 import ShippingPrice from './shipping_price';
+import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
 
 
 class Product extends React.Component {
@@ -22,14 +23,17 @@ class Product extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     debugger
-    if (this.props.params !== nextProps.params) {
+    if (this.props.params.id.toString() !== nextProps.params.id.toString()) {
+      debugger
       this.props.fetchProduct(Number(nextProps.params.id[0]), Number(nextProps.params.id[1])).then((result) => {
         this.setState({ product: result.product, main_picture: result.product.product_pictures[0] }, this.scrollToTop())
+        this.props.getWatchedProducts()
       })
     }
   }
 
   componentDidMount() {
+    debugger
       this.props.fetchProduct(Number(this.props.params.id[0]), Number(this.props.params.id[1])).then((result) => {
         this.setState({ product: result.product, main_picture: result.product.product_pictures[0] })
       })
@@ -137,6 +141,8 @@ class Product extends React.Component {
         <div className="bought-together-container">
           <BoughtTogether product={this.state.product} />
         </div>
+
+          <WatchedProductsContainer />
 
       </div>
     );

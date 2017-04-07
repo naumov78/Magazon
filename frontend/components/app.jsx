@@ -18,7 +18,7 @@ const App =({ children }) => {
           <StorefrontContainer />
         </div>
         <div>
-          <WatchedProductsContainer />
+
         </div>
         <div>
           { children }
@@ -32,3 +32,5 @@ const App =({ children }) => {
 
 
 export default App;
+
+// <WatchedProductsContainer storefront={true} />

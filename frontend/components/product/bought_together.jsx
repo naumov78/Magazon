@@ -14,7 +14,7 @@ const BoughtTogether = (props) => {
                 <div className="bought-together">
                   <div className="bt-product">
                     <Link to={`/categories/${product.category_id}/products/${product.id}`}>
-                      <img width="150" height="150" src={product.product_pictures[0].image_url} />
+                      <img src={product.product_pictures[0].image_url} />
                       <span>{product.title}</span>
                     </Link>
                   </div>
@@ -23,7 +23,7 @@ const BoughtTogether = (props) => {
                   </div>
                 </div>
               </li>
-            )
+            );
           })}
         </ul>
       </div>

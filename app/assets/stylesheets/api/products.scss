@@ -347,6 +347,19 @@
   }
 }
 
+.product-watched-products-container {
+  margin-left: 1%;
+  width: 95%;
+
+  p {
+    margin-top: 20px;
+    color: $dark-orange;
+    font-weight: 700;
+    font-size: 1.15em;
+  }
+}
+
+
 .bought-together-list {
   margin-top: 50px;
   // width: 100%;
@@ -365,6 +378,12 @@
   color: $link-blue;
   font-size: 0.85em;
   line-height: 1.5;
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+
 }
 
 .bt-product:hover {

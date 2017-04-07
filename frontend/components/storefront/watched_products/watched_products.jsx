@@ -16,7 +16,9 @@ class WatchedProducts extends React.Component {
 
 
   componentDidMount() {
+    // debugger
     this.props.getWatchedProducts().then((result) => {
+      debugger
       this.setState({ products: result.watchedProducts })
     })
   }
@@ -28,48 +30,84 @@ class WatchedProducts extends React.Component {
     return str;
   }
 
-  getProductsList() {
-    const products = this.state.products.slice(0, 5)
+  getInternalProductsList() {
+    const products = this.state.products.slice(1)
     debugger
-    if (products.length > 4) {
+    if (products.length > 1) {
     return (
-      <ul className="storefront-list">
-        {products.map((product, i) => {
-          return (
-            <li key={i} className="product-block">
-              <div className="frontstore-product watched-products">
-                <div>
-                  <Link to={`/categories/${product.category_id}/products/${product.id}`} >
-                    <span className="product-img"><img src={product.product_pictures[0].image_url} /></span>
-                  </Link>
+      <div>
+        <p>Your recently watched items</p>
+        <ul className="bought-together-list">
+          {products.map((product, i) => {
+            return (
+              <li key={i} className="single-product-block">
+                <div className="bought-together">
+                  <div className="bt-product">
+                    <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                      <span className="product-img"><img src={product.product_pictures[0].image_url} /></span>
+                      <span>{product.title}</span>
+                    </Link>
+                  </div>
+                  <div>
+                    <span className="bought-together-price">${Number(product.price).toFixed(2)}</span>
+                  </div>
                 </div>
-                <div>
-                  <Link to={`/categories/${product.category_id}/products/${product.id}`} >
-                    <span>{product.title}</span>
-                  </Link>
-                </div>
-                <div>
-                  <span>{Number(product.price).toFixed(2)}</span>
-                </div>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     )
   } else {
     return null;
   }
   }
 
+
+  getExternalProductsList() {
+    const products = this.state.products.slice(0, 5)
+    debugger
+    if (products.length > 4) {
+    return (
+      <div>
+          <ul className="storefront-list">
+            {products.map((product, i) => {
+              return (
+                <li key={i} className="product-block">
+                  <div className="frontstore-product watched-products">
+                    <div>
+                      <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                        <span className="product-img"><img src={product.product_pictures[0].image_url} /></span>
+                      </Link>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+      </div>
+    )
+  } else {
+    return null;
+  }
+  }
+
+//
+
   render() {
     debugger
-    if (this.state.products && this.props.location.pathname == "/") {
-    return (
-      <div className="watched-products-container">
-        {this.getProductsList()}
-      </div>
-    );
+    if (this.state.products && this.props.location.pathname === "/") {
+      return (
+        <div>
+          {this.getExternalProductsList()}
+        </div>
+      );
+    } else if (this.state.products && this.props.location.pathname !== "/") {
+      return (
+        <div className="product-watched-products-container">
+          {this.getInternalProductsList()}
+        </div>
+      );
     } else {
       return <div></div>;
     }
@@ -78,6 +116,13 @@ class WatchedProducts extends React.Component {
 }
 
 export default withRouter(WatchedProducts);
+
+
+
+
+
+
+
 
 
 
