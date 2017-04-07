@@ -106,7 +106,7 @@ product1.frequently_bought_together_id = fbt1.id
 product1.save!
 
 picture1_1 = ProductPicture.create!(product_id: product1.id)
-picture1_1.image = File.open('app/assets/images/020.jpeg')
+picture1_1.image = File.open('app/assets/images/book1/020.jpeg')
 picture1_1.save!
 
 product2 = Product.create!(
@@ -121,7 +121,7 @@ product2.frequently_bought_together_id = fbt2.id
 product2.save!
 
 picture2_1 = ProductPicture.create!(product_id: product2.id)
-picture2_1.image = File.open('app/assets/images/021.jpg')
+picture2_1.image = File.open('app/assets/images/video1/021.jpg')
 picture2_1.save!
 
 product3 = Product.create!(
@@ -137,10 +137,10 @@ product3.frequently_bought_together_id = fbt3.id
 product3.save!
 
 picture3_1 = ProductPicture.create!(product_id: product3.id)
-picture3_1.image = File.open('app/assets/images/011.jpg')
+picture3_1.image = File.open('app/assets/images/shkaf1/011.jpg')
 picture3_1.save!
 picture3_2 = ProductPicture.create!(product_id: product3.id)
-picture3_2image = File.open('app/assets/images/012.jpg')
+picture3_2image = File.open('app/assets/images/shkaf1/012.jpg')
 picture3_2.save!
 
 product4 = Product.create!(
@@ -156,19 +156,19 @@ product4.frequently_bought_together_id = fbt4.id
 product4.save!
 
 picture4_1 = ProductPicture.create!(product_id: product4.id)
-picture4_1.image = File.open('app/assets/images/013.jpg')
+picture4_1.image = File.open('app/assets/images/shkaf2/013.jpg')
 picture4_1.save!
 picture4_2 = ProductPicture.create!(product_id: product4.id)
-picture4_2.image = File.open('app/assets/images/014.jpg')
+picture4_2.image = File.open('app/assets/images/shkaf2/014.jpg')
 picture4_2.save!
 picture4_3 = ProductPicture.create!(product_id: product4.id)
-picture4_3.image = File.open('app/assets/images/015.jpg')
+picture4_3.image = File.open('app/assets/images/shkaf2/015.jpg')
 picture4_3.save!
 picture4_4 = ProductPicture.create!(product_id: product4.id)
-picture4_4.image = File.open('app/assets/images/016.jpg')
+picture4_4.image = File.open('app/assets/images/shkaf2/016.jpg')
 picture4_4.save!
 picture4_5 = ProductPicture.create!(product_id: product4.id)
-picture4_5.image = File.open('app/assets/images/017.jpg')
+picture4_5.image = File.open('app/assets/images/shkaf2/017.jpg')
 picture4_5.save!
 
 product5 = Product.create!(
@@ -184,13 +184,13 @@ product5.frequently_bought_together_id = fbt5.id
 product5.save!
 
 picture5_1 = ProductPicture.create!(product_id: product5.id)
-picture5_1.image = File.open('app/assets/images/018.jpg')
+picture5_1.image = File.open('app/assets/images/shkaf3/018.jpg')
 picture5_1.save!
 picture5_2 = ProductPicture.create!(product_id: product5.id)
-picture5_2.image = File.open('app/assets/images/019.jpg')
+picture5_2.image = File.open('app/assets/images/shkaf3/019.jpg')
 picture5_2.save!
 picture5_3 = ProductPicture.create!(product_id: product5.id)
-picture5_3.image = File.open('app/assets/images/017.jpg')
+picture5_3.image = File.open('app/assets/images/shkaf2/017.jpg')
 picture5_3.save!
 
 product6 = Product.create!(
@@ -206,13 +206,13 @@ product6.frequently_bought_together_id = fbt6.id
 product6.save!
 
 picture6_1 = ProductPicture.create!(product_id: product6.id)
-picture6_1.image = File.open('app/assets/images/006.jpg')
+picture6_1.image = File.open('app/assets/images/kadka/006.jpg')
 picture6_1.save!
 picture6_2 = ProductPicture.create!(product_id: product6.id)
-picture6_2.image = File.open('app/assets/images/007.jpg')
+picture6_2.image = File.open('app/assets/images/kadka/007.jpg')
 picture6_2.save!
 picture6_3 = ProductPicture.create!(product_id: product6.id)
-picture6_3.image = File.open('app/assets/images/008.jpg')
+picture6_3.image = File.open('app/assets/images/kadka/008.jpg')
 picture6_3.save!
 
 product7 = Product.create!(
@@ -228,7 +228,7 @@ product7.frequently_bought_together_id = fbt7.id
 product7.save!
 
 picture7_1 = ProductPicture.create!(product_id: product7.id)
-picture7_1.image = File.open('app/assets/images/005.jpg')
+picture7_1.image = File.open('app/assets/images/kust/005.jpg')
 picture7_1.save!
 
 product8 = Product.create!(
@@ -331,16 +331,16 @@ product11.frequently_bought_together_id = fbt11.id
 product11.save!
 
 picture11_1 = ProductPicture.create!(product_id: product11.id)
-picture11_1.image = File.open('app/assets/images/001.jpg')
+picture11_1.image = File.open('app/assets/images/grill1/001.jpg')
 picture11_1.save!
 picture11_2 = ProductPicture.create!(product_id: product11.id)
-picture11_2.image = File.open('app/assets/images/002.jpg')
+picture11_2.image = File.open('app/assets/images/grill1/002.jpg')
 picture11_2.save!
 picture11_3 = ProductPicture.create!(product_id: product11.id)
-picture11_3.image = File.open('app/assets/images/003.jpg')
+picture11_3.image = File.open('app/assets/images/grill1/003.jpg')
 picture11_3.save!
 picture11_4 = ProductPicture.create!(product_id: product11.id)
-picture11_4.image = File.open('app/assets/images/004.jpg')
+picture11_4.image = File.open('app/assets/images/grill1/004.jpg')
 picture11_4.save!
 
 
@@ -358,10 +358,10 @@ product12.frequently_bought_together_id = fbt12.id
 product12.save!
 
 picture12_1 = ProductPicture.create!(product_id: product12.id)
-picture12_1.image = File.open('app/assets/images/009.jpg')
+picture12_1.image = File.open('app/assets/images/telega/009.jpg')
 picture12_1.save!
 picture12_2 = ProductPicture.create!(product_id: product12.id)
-picture12_2.image = File.open('app/assets/images/010.jpg')
+picture12_2.image = File.open('app/assets/images/telega/010.jpg')
 picture12_2.save!
 
 

@@ -102,6 +102,8 @@ class Category extends React.Component {
 export default withRouter(Category);
 
 
+// <StorefrontContainer />
+
 //
 // <div></div> // <StorefrontContainer /> dir: column
 // </div> // central block, dir: row

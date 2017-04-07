@@ -39,6 +39,15 @@ class Storefront extends React.Component {
     return str;
   }
 
+  componentWillReceiveProps(nextProps) {
+    debugger
+    if (this.props.params.id !== nextProps.params.id) {
+      this.props.getStorefront().then((result) => {
+        this.setState({ products: result.storefront })
+      })
+    }
+  }
+
 
   getInternalProductsList() {
     const products = this.state.products
