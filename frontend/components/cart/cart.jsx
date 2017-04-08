@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
+import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
 
 
 
@@ -115,24 +116,30 @@ class Cart extends React.Component {
   render() {
     if (this.getTotal() > 0) {
     return (
-      <div className="cart-container">
-      <h2>Your Cart</h2>
-        <div className="cart-product-list">{this.getProductsList()}</div>
-        <div className="total-cart-amount">
-          <span className="order-total-title">Total order amount:</span>
-          <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+        <div className="cart-container">
+        <h2>Shopping Cart</h2>
+          <div className="cart-product-list">{this.getProductsList()}</div>
+          <div className="total-cart-amount">
+            <span className="order-total-title">Total order amount:</span>
+            <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+          </div>
+          <div className="cart-buttons">
+            <span className="addToCart-button"><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>
+            <span className="addToCart-button"><Link to={'/place_order'}><button>Checkout</button></Link></span>
+          </div>
         </div>
-        <div className="cart-buttons">
-          <span><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>
-          <span><Link to={'/place_order'}><button>Checkout</button></Link></span>
-        </div>
-      </div>
-    )
-  } else {
-    return (
-      <div className="cart-container">
-      <h2>Your Cart</h2>
-        <div className="cart-product-list">You cart is empty!</div>
+      )
+    } else {
+      return (
+        <div>
+          <div className="cart-container">
+          <h2>Shopping Cart</h2>
+            <div className="cart-product-list">Your Shopping Cart is empty.</div>
+
+          </div>
+          <div className="cart-watched-products">
+            <div><WatchedProductsContainer /></div>
+          </div>
       </div>
     )
   }

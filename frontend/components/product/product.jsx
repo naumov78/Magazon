@@ -4,7 +4,7 @@ import BoughtTogether from './bought_together';
 import GetFiftyOff from './get_fifty_off';
 import ShippingPrice from './shipping_price';
 import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
-
+import ShipTo from './ship_to';
 
 class Product extends React.Component {
 
@@ -58,10 +58,12 @@ class Product extends React.Component {
     }
   }
 
-  getUserName() {
-    return (
-      `${this.props.currentUser.first_name} ${this.props.currentUser.last_name}`
-    )
+  getShipTo() {
+    if (this.props.currentUser) {
+      return <ShipTo currentUser={this.props.currentUser} />
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -129,10 +131,7 @@ class Product extends React.Component {
               </div>
             </div>
 
-            <div className="ship-to">
-              <div className="ship-to-title">Ship to:</div>
-              <div className="ship-to-details">{`${this.getUserName()} - ${this.props.currentUser.address.city} - ${this.props.currentUser.address.zip}`}</div>
-            </div>
+            {this.getShipTo()}
 
           </div>
 

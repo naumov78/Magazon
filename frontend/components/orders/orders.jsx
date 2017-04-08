@@ -26,15 +26,19 @@ class Orders extends React.Component {
     if (this.state.orders.length !== 0) {
       const orders = this.state.orders
       return (
-        <ul className="orders-list">
-          {orders.map((order, i) => {
-            return (
-              <li key={i} className="single-order-block">
-                <OrderDetails order={order} />
-              </li>
-            )
-          })}
-        </ul>
+        <div className="order-list-container">
+          <span className="order-list-title"><h2>Your Orders</h2></span>
+          <ul className="orders-list">
+
+            {orders.map((order, i) => {
+              return (
+                <li key={i}>
+                  <OrderDetails order={order} currentUser={this.props.currentUser} />
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       )
 
 

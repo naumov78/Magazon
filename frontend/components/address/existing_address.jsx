@@ -4,14 +4,14 @@ import { Link, withRouter } from 'react-router';
 class ExistingAddress extends React.Component {
   constructor(props) {
     super(props);
-    this.currentUser = this.props.currentUser
+    debugger
     this.state = {
-      user_id: currentUser.id,
-      street: currentUser.address.street,
-      street2: currentUser.address.street2,
-      city: currentUser.address.city,
-      state_id: currentUser.state.id,
-      zip: currentUser.address.zip,
+      user_id: this.props.currentUser.id,
+      street: this.props.currentUser.address.street,
+      street2: this.props.currentUser.address.street2,
+      city: this.props.currentUser.address.city,
+      state_id: this.props.currentUser.state.id,
+      zip: this.props.currentUser.address.zip,
       edit: false }
     this.changeToEdit = this.changeToEdit.bind(this)
   }

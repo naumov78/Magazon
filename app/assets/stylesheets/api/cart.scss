@@ -1,15 +1,36 @@
 
+@import "base/colors.scss";
+
+@mixin gradient {
+    background: $cart-dark-yellow;
+    background: -webkit-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: -o-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: -moz-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: linear-gradient($cart-dark-yellow, $cart-yellow);
+}
+
+@mixin hovered-gradient {
+    background: $cart-light-yellow;
+    background: -webkit-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: -o-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: -moz-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: linear-gradient($cart-light-yellow, $cart-yellow);
+}
+
+
 .cart-container {
   /*width: 900px;*/
   width: 50%;
-  padding: 0 0 50px 0;
+  padding: 0 0 250px 0;
   margin: 0 auto;
   text-align: center;
+
 }
 
 .cart-container h2 {
-  color: red;
-  font-size: 1.6em;
+  /*color: red;*/
+  font-size: 21px;
+  line-height: 1.3;
   font-weight: bold;
 }
 
@@ -66,11 +87,22 @@
   text-align: left;
   margin-left: 130px;
   /*padding: 10px 0 0 20px;*/
+
+  a {
+    color: $link-blue;
+  }
+
+  a:hover {
+    color: $link-orange;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
 }
 
-.cart-product-title a:hover {
-  color: red;
-}
+// .cart-product-title a:hover {
+//   color: red;
+// }
 
 .product-cart-descr {
   margin-left: 130px;
@@ -120,9 +152,11 @@
 }
 
 .total-cart-amount {
+  width: 962px;
   background-color: #e6f9ff;
   margin-top: 20px;
-  padding: 10px 0 10px 0;
+  line-height: 2;
+  // padding: 10px 0 10px 0;
   border-top: 1px solid #e6e6ff;
   border-bottom: 1px solid #e6e6ff;
 }
@@ -143,13 +177,16 @@
 
 
 .cart-buttons {
-  /*width: 150px;*/
-  float: right;
-  padding: 20px;
+  // float: right;
+  width: 962px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+
 }
 
 .cart-buttons span {
-  padding: 0 10px 0 10px;
+  // padding: 0 0 0 20px;
 }
 
 .address-table, .payment-table {
@@ -189,4 +226,10 @@
   width: 80%;
   text-align: left;
   font-size: 1.05em;
+}
+
+.cart-watched-products {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
 }

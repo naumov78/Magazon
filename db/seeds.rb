@@ -140,7 +140,7 @@ picture3_1 = ProductPicture.create!(product_id: product3.id)
 picture3_1.image = File.open('app/assets/images/shkaf1/011.jpg')
 picture3_1.save!
 picture3_2 = ProductPicture.create!(product_id: product3.id)
-picture3_2image = File.open('app/assets/images/shkaf1/012.jpg')
+picture3_2.image = File.open('app/assets/images/shkaf1/012.jpg')
 picture3_2.save!
 
 product4 = Product.create!(

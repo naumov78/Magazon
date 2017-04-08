@@ -2,7 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "base/colors.scss";
 
+
+.order-list-container {
+  width: 100%;
+
+}
+
+.order-list-title {
+  display: flex;
+  justify-content: center;
+
+  h2 {
+    font-size: 21px;
+  }
+}
 
 .orders-list {
   padding: 20px 0 40px 0;
@@ -12,9 +27,38 @@
 .single-order-block {
   margin: 0 auto;
   width: 45%;
-  border: 1px solid grey;
+  border: 1px solid $light-grey;
+  border-radius: 4px;
+  padding: 0 0 20px 0;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-order-title-block {
+  padding: 15px;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid $light-grey;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: $link-blue;
+  }
+
+  a:hover {
+    color: $link-orange;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+}
+
+.single-order-product-list-container {
   padding: 20px;
-  margin-top: 10px;
 }
 
 .single-order-product-list {
@@ -23,6 +67,7 @@
 
 .single-order-product-line {
   margin-top: 15px;
+  padding-bottom: 15px;
 }
 
 .order-list-product-image {
@@ -36,6 +81,10 @@
 
 }
 
+.order-product-price{
+  color: $dark-red;
+  font-family: 'Open Sans', sans-serif;
+}
 
 .product-title-descr {
   width: 500px;

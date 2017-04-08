@@ -5,11 +5,10 @@ import { Link, withRouter } from 'react-router';
 class ExistingPayment extends React.Component {
   constructor(props) {
     super(props)
-    this.currentUser = this.props.currentUser
     this.state = {
-      user_id: currentUser.id,
-      network_id: currentUser.card_network.id,
-      cardholder: currentUser.payment.cardholder,
+      user_id: this.props.currentUser.id,
+      network_id: this.props.currentUser.card_network.id,
+      cardholder: this.props.currentUser.payment.cardholder,
       card_number: "",
       expires: null,
       cvv: "",
