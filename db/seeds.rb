@@ -548,6 +548,165 @@ picture18_5.save!
 
 
 
+
+product19 = Product.create!(
+title: 'Black & Decker BDCDD220C 20V MAX Lithium 2-Speed Drill/Driver',
+brief_description: 'The BLACK+DECKER BDCDD220C 20V MAX* Lithium 2-Speed Drill/Driver is compact yet powerful and can tackle both everyday tasks and tough jobs like drilling through studs.',
+full_description: 'The BLACK+DECKER BDCDD220C 20V MAX* Lithium 2-Speed Drill/Driver is compact yet powerful and can tackle both everyday tasks and tough jobs like drilling through studs. The compact design, 30% smaller than the GC1801 Drill/Driver, allows you to fit in tighter spaces (behind appliances, inside cabinets, inside closets, etc.). This drill is lightweight at 2.64 lbs which offers less fatigue and makes it easy to move from room to room. A 2-speed transmission allows you to tackle both everyday tasks and tough applications. The keyless chuck allows for easy bit changes and an 11 position clutch helps prevent stripping screws or damaging material. This drill features an LED light which illuminates the project surface. The mid-handle design helps make the drill comfortable to use. Part of the 20V MAX* System - 1 System. Endless Tasks. Power for your Style. Includes: (1) 20V MAX* Battery, (1) Battery Charger, (1) Double Ended Bit.',
+price: 59.99,
+storefront: true,
+category_id: tools.id
+)
+
+fbt19 = FrequentlyBoughtTogether.create!(product_id: product19.id)
+product19.frequently_bought_together_id = fbt19.id
+product19.save!
+
+picture19_1 = ProductPicture.create!(product_id: product19.id)
+picture19_1.image = File.open('app/assets/images/black_decker1/001.jpg')
+picture19_1.save!
+picture19_2 = ProductPicture.create!(product_id: product19.id)
+picture19_2.image = File.open('app/assets/images/black_decker1/002.jpg')
+picture19_2.save!
+picture19_3 = ProductPicture.create!(product_id: product19.id)
+picture19_3.image = File.open('app/assets/images/black_decker1/003.jpg')
+picture19_3.save!
+picture19_4 = ProductPicture.create!(product_id: product19.id)
+picture19_4.image = File.open('app/assets/images/black_decker1/004.jpg')
+picture19_4.save!
+picture19_5 = ProductPicture.create!(product_id: product19.id)
+picture19_5.image = File.open('app/assets/images/black_decker1/005.jpg')
+picture19_5.save!
+picture19_6 = ProductPicture.create!(product_id: product19.id)
+picture19_6.image = File.open('app/assets/images/black_decker1/006.jpg')
+picture19_6.save!
+
+
+
+product20 = Product.create!(
+title: 'DEWALT D25263K D-Handle SDS Rotary Hammer with Shocks, 1-1/8"',
+brief_description: 'The D25263K 1-1/8-inch D-Handle SDS Rotary Hammer with SHOCKS offers 3 Joules of impact energy for fast drilling and chipping speed.',
+full_description: 'The D25263K 1-1/8-inch D-Handle SDS Rotary Hammer with SHOCKS offers 3 Joules of impact energy for fast drilling and chipping speed. It has a 8.5 Amp high performance motor for all your needs, and also features SHOCKS active vibration control and regulation, resulting in reduced vibration felt in the handles - a Perform & Protect feature. This Rotary Hammer has a rotating brush ring which delivers full speed/torque in forward and reverse, along with an integral clutch that reduces sudden, high torque reactions if bit jams. Includes: Rotary Hammer, 360 Side Handle, Depth Rod, Kit Box.',
+price: 188.71,
+storefront: true,
+category_id: tools.id
+)
+
+fbt20 = FrequentlyBoughtTogether.create!(product_id: product20.id)
+product20.frequently_bought_together_id = fbt20.id
+product20.save!
+
+picture20_1 = ProductPicture.create!(product_id: product20.id)
+picture20_1.image = File.open('app/assets/images/dewalt1/001.jpg')
+picture20_1.save!
+picture20_2 = ProductPicture.create!(product_id: product20.id)
+picture20_2.image = File.open('app/assets/images/dewalt1/002.jpg')
+picture20_2.save!
+picture20_3 = ProductPicture.create!(product_id: product20.id)
+picture20_3.image = File.open('app/assets/images/dewalt1/003.jpg')
+picture20_3.save!
+picture20_4 = ProductPicture.create!(product_id: product20.id)
+picture20_4.image = File.open('app/assets/images/dewalt1/004.jpg')
+picture20_4.save!
+picture20_5 = ProductPicture.create!(product_id: product20.id)
+picture20_5.image = File.open('app/assets/images/dewalt1/005.jpg')
+picture20_5.save!
+picture20_6 = ProductPicture.create!(product_id: product20.id)
+picture20_6.image = File.open('app/assets/images/dewalt1/006.jpg')
+picture20_6.save!
+
+
+
+product21 = Product.create!(
+title: 'Bosch PS31-2A 12-Volt Max Lithium-Ion 3/8-Inch 2-Speed Drill/Driver Kit with 2 Batteries, Charger and Case',
+brief_description: 'Featuring a compact, lightweight design for easy handling overhead and in tight spaces, the Bosch 12-Volt max drill/driver lets you tackle professional jobs with ease.',
+full_description: 'Featuring a compact, lightweight design for easy handling overhead and in tight spaces, the Bosch 12-Volt max drill/driver lets you tackle professional jobs with ease. Offering high torque and the convenience of two speed settings, this tool is powerful and user-friendly for fast, efficient drilling and driving. This drill/driver combines speed, power, and performance, making it ideal for professionals and do-it-yourselfers. It comes with two batteries, a charger, and a carrying case.',
+price: 96.75,
+storefront: true,
+category_id: tools.id
+)
+
+fbt21 = FrequentlyBoughtTogether.create!(product_id: product21.id)
+product21.frequently_bought_together_id = fbt21.id
+product21.save!
+
+picture21_1 = ProductPicture.create!(product_id: product21.id)
+picture21_1.image = File.open('app/assets/images/bosch1/001.jpg')
+picture21_1.save!
+picture21_2 = ProductPicture.create!(product_id: product21.id)
+picture21_2.image = File.open('app/assets/images/bosch1/002.jpg')
+picture21_2.save!
+picture21_3 = ProductPicture.create!(product_id: product21.id)
+picture21_3.image = File.open('app/assets/images/bosch1/003.jpg')
+picture21_3.save!
+
+
+
+product22 = Product.create!(
+title: 'Bare-Tool Milwaukee 2630-20 Bare-Tool 18-Volt 6-1/2-Inch Circular Saw',
+brief_description: 'Milwaukee Electric Tool Corporation introduces the new M18 61/2-Inch Circular Saw that is designed to provide powerful lightweight cutting for a variety of applications including plumbing, electrical, framing, finishing and carpentry.',
+full_description: 'Milwaukee Electric Tool Corporation introduces the new M18 61/2-Inch Circular Saw that is designed to provide powerful lightweight cutting for a variety of applications including plumbing, electrical, framing, finishing and carpentry. The 2630 is a high performance circular saw that delivers the most durability in a cordless saw. Its powerful 3,500 RPM motor easily and quickly cuts tough material such as LVL headers. Magnesium upper and lower guards provide best-in-class durability to protect the blade from drops. The soft-grip handle is ergonomically designed to provide superior comfort and balance for easily controlled cuts. An easy-to-read aircraft aluminum shoe provides a light weight durable shoe and greater accuracy in rip cuts. The 2630 features an 18-Volt XC High Capacity LITHIUM-ION battery which provides longer run-time and up to 20-Percent more torque for powerful cuts. The battery fuel gauge displays remaining run-time. Backed by Milwaukee\'s 5-year 2,000 charge warranty.',
+price: 97.90,
+storefront: true,
+category_id: tools.id
+)
+
+fbt22 = FrequentlyBoughtTogether.create!(product_id: product22.id)
+product22.frequently_bought_together_id = fbt22.id
+product22.save!
+
+picture22_1 = ProductPicture.create!(product_id: product22.id)
+picture22_1.image = File.open('app/assets/images/bare_tool1/001.jpg')
+picture22_1.save!
+
+
+
+
+product23 = Product.create!(
+title: '65-Piece Homeowner\'s Tool Kit',
+brief_description: 'A great gift idea for any new homeowner, the tool set provides the tools needed to take on fun new projects and handle everyday necessary repairs',
+full_description: 'Tackle any basic DIY project around the home with help from the 65-Piece Homeowners Tool Set. The collection includes an array of essentials—all kept neatly stored together in a handy carrying case for easy access and convenient portability.',
+price: 23.79,
+storefront: true,
+category_id: tools.id
+)
+
+fbt23 = FrequentlyBoughtTogether.create!(product_id: product23.id)
+product23.frequently_bought_together_id = fbt23.id
+product23.save!
+
+picture23_1 = ProductPicture.create!(product_id: product23.id)
+picture23_1.image = File.open('app/assets/images/hand_tool1/001.jpg')
+picture23_1.save!
+picture23_2 = ProductPicture.create!(product_id: product23.id)
+picture23_2.image = File.open('app/assets/images/hand_tool1/002.jpg')
+picture23_2.save!
+picture23_3 = ProductPicture.create!(product_id: product23.id)
+picture23_3.image = File.open('app/assets/images/hand_tool1/003.jpg')
+picture23_3.save!
+
+
+
+
+product24 = Product.create!(
+title: 'Performance Tool (W1099) 32-Piece SAE and Metric Wrench Set',
+brief_description: 'SAE and Metric standard and stubby wrenches. Mirror polished chrome vanadium steel. Improved box end design grips sides of fasteners for more torque. Includes convenient storage rack.',
+full_description: 'SAE and Metric standard and stubby wrenches. Mirror polished chrome vanadium steel. Improved box end design grips sides of fasteners for more torque. Includes convenient storage rack. SAE sizes: 1/4, 5/16, 11/32, 3/8, 7/16, 1/2, 9/16, 5/8, 11/16 and 3/4 inch. Stubby SAE sizes: 5/16, 3/8, 7/16, 1/2, 9/16 and 5/8 inch. Metric sizes: 6, 8, 10, 11, 12, 13, 14, 15, 17 and 18 millimeters. Stubby Metric sizes: 10, 11, 12, 13, 14 and 15 millimeters.',
+price: 28.98,
+storefront: true,
+category_id: tools.id
+)
+
+fbt24 = FrequentlyBoughtTogether.create!(product_id: product24.id)
+product24.frequently_bought_together_id = fbt24.id
+product24.save!
+
+picture24_1 = ProductPicture.create!(product_id: product24.id)
+picture24_1.image = File.open('app/assets/images/hand_tool2/001.jpg')
+picture24_1.save!
+
+
+
 cart1 = Cart.create!(user_id: user1.id)
 user1.cart_id = cart1.id
 user1.save!
