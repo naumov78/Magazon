@@ -57,7 +57,6 @@ class Category extends React.Component {
                   </Link>
 
                   <div className="product-price">
-                    Price:
                     <span className="price">${Number(product.price).toFixed(2)}</span>
                   </div>
                   <div className="product-descr">
@@ -93,7 +92,11 @@ class Category extends React.Component {
       </div>
     );
     } else {
-      return null;
+      return <div className="loading-page">
+        <div>
+          <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        </div>
+      </div>;
     }
   }
 

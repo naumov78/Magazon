@@ -113,6 +113,14 @@ class Cart extends React.Component {
       })
   }
 
+
+  getMessage() {
+    function returnMessage() {
+      return <div className="cart-product-list">Your Shopping Cart is empty.</div>
+    }
+    setTimeout(returnMessage, 1000)
+  }
+
   render() {
     if (this.getTotal() > 0) {
     return (
@@ -134,7 +142,8 @@ class Cart extends React.Component {
         <div>
           <div className="cart-container">
           <h2>Shopping Cart</h2>
-            <div className="cart-product-list">Your Shopping Cart is empty.</div>
+
+            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 
           </div>
           <div className="cart-watched-products">

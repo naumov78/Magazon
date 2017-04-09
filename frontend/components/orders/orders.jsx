@@ -43,7 +43,11 @@ class Orders extends React.Component {
 
 
     } else {
-      return null;
+      return <div className="loading-page">
+        <div>
+          <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        </div>
+      </div>;
     }
   }
 
