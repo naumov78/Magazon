@@ -28,9 +28,10 @@ class CartPayment extends React.Component {
           return <PaymentContainer />
         } else {
           return (
-            <div>
-              We don't have your payment method on file yet.
-              <button onClick={() => this.togglePaymentForm()}>Add Payment Method</button>
+            <div className="place-order-create-address">
+              <span className="warning-sign"><i className="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i></span>
+              <span className="no-address-warning">We don't have your payment method on file yet.</span>
+              <span className="get-payment-form-btn addToCart-button"><button onClick={() => this.togglePaymentForm()}>Add</button></span>
             </div>
           )
         }

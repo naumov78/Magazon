@@ -1,3 +1,158 @@
 // Place all the styles related to the Api::addresses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "base/colors.scss";
+
+@mixin gradient {
+    background: $cart-dark-yellow;
+    background: -webkit-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: -o-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: -moz-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: linear-gradient($cart-dark-yellow, $cart-yellow);
+}
+
+@mixin hovered-gradient {
+    background: $cart-light-yellow;
+    background: -webkit-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: -o-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: -moz-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: linear-gradient($cart-light-yellow, $cart-yellow);
+}
+
+
+.place-order-create-address {
+  // margin: 0 auto;
+  // width: 960px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.warning-sign {
+
+}
+
+.checkmark-sign {
+  padding-right: 40px;
+}
+
+.fa-exclamation-circle {
+  color: red;
+}
+
+.fa-check-circle {
+  color: green;
+}
+
+.no-address-warning {
+  color: $dark-red;
+  margin-left: -20px;
+}
+
+.get-address-form-btn {
+
+}
+
+
+.address-payment-form-container {
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 25px 10px 30px 10px;
+  border-color: $light-grey;
+  border-radius: 4px;
+}
+
+.address-payment-form {
+  display: flex;
+  flex-direction: column;
+  color: $dark-grey;
+  font-size: 0.9em;
+
+  label {
+    padding: 0 5px 0 12px;
+  }
+
+  input {
+    padding-right: 20px;
+  }
+}
+
+
+
+.payment-form-fields {
+  margin: 0 auto;
+  display: flex;
+  height: 150px;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: space-between;
+
+  input[type="submit"] {
+    margin-top: 20px;
+  }
+
+}
+
+.payment-field {
+  width: 275px;
+  // border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    // border: 1px solid black;
+    width: 125px;
+    text-align: right;
+    padding-right: 15px;
+  }
+
+
+
+  input {
+    width: 96px;
+    text-align: left;
+    // padding-right: 20px;
+  }
+
+
+
+}
+
+
+.address-street-fields {
+  width: 500px;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 30px;
+
+  input {
+    width: 188px;
+  }
+
+}
+
+
+.address-city-fields {
+  width: 500px;
+  display: flex;
+
+  justify-content: flex-start;
+  padding-bottom: 30px;
+}
+
+
+#update-address {
+  @include hovered-gradient;
+  border: 1px solid $cart-darkest-yellow;
+  border-radius: 3px;
+  width: 110px;
+  height: 20px;
+  font-size: 12px;
+}
+
+#update-address:hover {
+  cursor: pointer;
+  @include gradient;
+}

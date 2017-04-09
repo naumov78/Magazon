@@ -52,36 +52,39 @@ class Address extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={(e) => this.createAddress(e)}>
-          <div>
-            <label>Street</label>
-            <input type="text" onChange={this.update("street")} />
+      <div className="address-payment-form-container">
+        <form className="address-payment-form" onSubmit={(e) => this.createAddress(e)}>
+          <div className="address-street-fields">
+            <div>
+              <label>Street</label>
+              <input type="text" onChange={this.update("street")} value={this.state.street}/>
+            </div>
+
+            <div>
+              <label>Street2</label>
+              <input type="text" onChange={this.update("street2")} value={this.state.street2}/>
+            </div>
           </div>
 
-          <div>
-            <label>Street2</label>
-            <input type="text" onChange={this.update("street2")} />
-          </div>
+          <div className="address-city-fields">
+            <div>
+              <label>City</label>
+              <input type="text" onChange={this.update("city")} value={this.state.city}/>
+            </div>
 
-          <div>
-            <label>City</label>
-            <input type="text" onChange={this.update("city")} />
-          </div>
+            <div>
+              <label>State</label>
+              {this.getStateList()}
+            </div>
 
-          <div>
-            <label>State</label>
-            {this.getStateList()}
+            <div>
+              <label>ZIP</label>
+              <input type="text" onChange={this.update("zip")} value={this.state.zip}/>
+            </div>
           </div>
-
-          <div>
-            <label>ZIP</label>
-            <input type="text" onChange={this.update("zip")} />
-          </div>
-
-          <div>
-            <input type="submit" value="Add address" />
-          </div>
+            <div>
+              <input id="update-address" type="submit" value="Add address" />
+            </div>
 
         </form>
       </div>

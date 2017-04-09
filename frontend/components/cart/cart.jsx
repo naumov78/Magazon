@@ -76,18 +76,20 @@ class Cart extends React.Component {
                       ${Number(product.product.price).toFixed(2)}
                     </td>
                     <td className="cart-product-quantity">
-                      {product.quantity}
+                      <span className="decrease">
+                        <button onClick={() => this.removeFromCart(product.product.id, -1)}>
+                          <i className="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                      </span>
+                      <span>{product.quantity}</span>
+                      <span className="increase">
+                        <button onClick={() => this.addToCart(product.product.id, 1)}>
+                          <i className="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                      </span>
                     </td>
                     <td className="cart-product-total">
                       ${product.total_price.toFixed(2)}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colSpan="4" >
-                      <div className="cart-product-buttons">
-                        <span id="remove-btn"><button onClick={() => this.removeFromCart(product.product.id, -1)}>Remove item</button></span>
-                        <span id="add-btn"><button onClick={() => this.addToCart(product.product.id, 1)}>Add item</button></span>
-                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -121,6 +123,9 @@ class Cart extends React.Component {
     })
   }
 
+  getTaxAmount() {
+    return ((this.getTotal()*0.08875).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
+  }
 
 
   render() {
@@ -150,9 +155,25 @@ class Cart extends React.Component {
           <div className="cart-container">
           <h2>Shopping Cart</h2>
             <div className="cart-product-list">{this.getProductsList()}</div>
-            <div className="total-cart-amount">
-              <span className="order-total-title">Total order amount:</span>
-              <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+            <div className="cart-totals">
+              <div className="total-cart-amount">
+                <div className="total-line">
+                  <span className="order-total-title">Total before tax:</span>
+                  <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+                </div>
+              </div>
+              <div className="total-cart-amount">
+                <div className="total-line">
+                  <span className="order-total-title">Estimated tax to be collected:</span>
+                  <span className="order-total-amount">${this.getTaxAmount()}</span>
+                </div>
+              </div>
+              <div className="total-cart-amount">
+                <div id="order-total" className="total-line">
+                  <span className="order-total-title">Order total:</span>
+                  <span className="order-total-amount">${(Number(this.getTotal()) + Number(this.getTaxAmount())).toFixed(2)}</span>
+                </div>
+              </div>
             </div>
             <div className="cart-buttons">
               <span className="addToCart-button"><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>
@@ -167,3 +188,14 @@ class Cart extends React.Component {
 
 
 export default withRouter(Cart);
+
+
+
+// <tr>
+//   <td colSpan="4" >
+//     <div className="cart-product-buttons">
+//       <span id="remove-btn"><button onClick={() => this.removeFromCart(product.product.id, -1)}>Remove item</button></span>
+//       <span id="add-btn"><button onClick={() => this.addToCart(product.product.id, 1)}>Add item</button></span>
+//     </div>
+//   </td>
+// </tr>

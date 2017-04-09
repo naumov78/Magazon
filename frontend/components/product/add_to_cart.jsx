@@ -13,6 +13,11 @@ class AddToCart extends React.Component {
     this.props.addToCart(id, quantity)
   }
 
+  componentWillReceiveProps(nextProps) {
+    debugger
+    this.setState({ product: nextProps.product })
+  }
+
   getShipTo() {
     if (this.props.currentUser) {
       return <ShipTo currentUser={this.props.currentUser} />

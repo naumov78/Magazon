@@ -29,8 +29,9 @@ class CartAddress extends React.Component {
         } else {
           return (
             <div className="place-order-create-address">
-              We don't have your address on file yet.
-              <button onClick={() => this.toggleAddressForm()}>Add Address</button>
+              <span className="warning-sign"><i className="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i></span>
+              <span className="no-address-warning">We don't have your address on file yet.</span>
+              <span className="get-address-form-btn addToCart-button"><button onClick={() => this.toggleAddressForm()}>Add</button></span>
             </div>
           )
         }

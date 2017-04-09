@@ -60,36 +60,39 @@ class ExistingAddress extends React.Component {
   render() {
     if (this.state.edit) {
       return (
-        <div>
-          <form onSubmit={(e) => this.updateAddress(e)}>
-            <div>
-              <label>Street</label>
-              <input type="text" onChange={this.update("street")} value={this.state.street}/>
+        <div className="address-payment-form-container">
+          <form className="address-payment-form" onSubmit={(e) => this.updateAddress(e)}>
+            <div className="address-street-fields">
+              <div>
+                <label>Street</label>
+                <input type="text" onChange={this.update("street")} value={this.state.street}/>
+              </div>
+
+              <div>
+                <label>Street2</label>
+                <input type="text" onChange={this.update("street2")} value={this.state.street2}/>
+              </div>
             </div>
 
-            <div>
-              <label>Street2</label>
-              <input type="text" onChange={this.update("street2")} value={this.state.street2}/>
-            </div>
+            <div className="address-city-fields">
+              <div>
+                <label>City</label>
+                <input type="text" onChange={this.update("city")} value={this.state.city}/>
+              </div>
 
-            <div>
-              <label>City</label>
-              <input type="text" onChange={this.update("city")} value={this.state.city}/>
-            </div>
+              <div>
+                <label>State</label>
+                {this.getStateList()}
+              </div>
 
-            <div>
-              <label>State</label>
-              {this.getStateList()}
+              <div>
+                <label>ZIP</label>
+                <input type="text" onChange={this.update("zip")} value={this.state.zip}/>
+              </div>
             </div>
-
-            <div>
-              <label>ZIP</label>
-              <input type="text" onChange={this.update("zip")} value={this.state.zip}/>
-            </div>
-
-            <div>
-              <input type="submit" value="Update address" />
-            </div>
+              <div>
+                <input id="update-address" type="submit" value="Update address" />
+              </div>
 
           </form>
         </div>
@@ -100,15 +103,16 @@ class ExistingAddress extends React.Component {
           <table className="address-table">
             <tbody>
               <tr>
+                <td><span className="checkmark-sign"><i className="fa fa-check-circle fa-lg" aria-hidden="true"></i></span></td>
                 <td id="place-order-num" className="placeorder-titles">1</td>
                 <td id="place-order-title" className="placeorder-titles">Shipping address</td>
                 <td className="customer-info">
-                  <div>{`${this.props.currentUser.first_name}  ${this.props.currentUser.last_name}`}</div>
-                  <div>{`${this.props.currentUser.address.street} ${this.props.currentUser.address.street2}`}</div>
-                  <div>{`${this.props.currentUser.address.city}, ${this.props.currentUser.state.state}, ${this.props.currentUser.address.zip}`}</div>
+                  <div className="existing-address">{`${this.props.currentUser.first_name}  ${this.props.currentUser.last_name}`}</div>
+                  <div className="existing-address">{`${this.props.currentUser.address.street} ${this.props.currentUser.address.street2}`}</div>
+                  <div className="existing-address">{`${this.props.currentUser.address.city}, ${this.props.currentUser.state.state}, ${this.props.currentUser.address.zip}`}</div>
                 </td>
                 <td>
-                  <button onClick={this.changeToEdit}>Change</button>
+                  <span className="addToCart-button"><button onClick={this.changeToEdit}>Change</button></span>
                 </td>
               </tr>
             </tbody>

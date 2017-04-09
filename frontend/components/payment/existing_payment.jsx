@@ -59,38 +59,38 @@ class ExistingPayment extends React.Component {
   render() {
     if (this.state.edit) {
       return (
-        <div>
-          <form onSubmit={(e) => this.updatePayment(e)}>
+        <div className="address-payment-form-container">
+          <form className="address-payment-form" onSubmit={(e) => this.updatePayment(e)}>
+            <div className="payment-form-fields">
+              <div className="payment-field">
+                <label>Card type</label>
+                {this.getNetworksList()}
+              </div>
 
-            <div>
-              <label>State</label>
-              {this.getNetworksList()}
+              <div className="payment-field">
+                <label>Cardholder Name</label>
+                <input type="text" onChange={this.update("cardholder")} value={this.state.cardholder}/>
+              </div>
+
+              <div className="payment-field">
+                <label>Card Number</label>
+                <input type="text" onChange={this.update("card_number")} />
+              </div>
+
+              <div className="payment-field">
+                <label>Expiration Date</label>
+                <input type="text" onChange={this.update("expires")} />
+              </div>
+
+              <div className="payment-field">
+                <label>CVC code</label>
+                <input type="text" onChange={this.update("cvv")} />
+              </div>
+
+              <div>
+                <input id="update-address" type="submit" value="Update card" />
+              </div>
             </div>
-
-            <div>
-              <label>Cardholder Name</label>
-              <input type="text" onChange={this.update("cardholder")} value={this.state.cardholder}/>
-            </div>
-
-            <div>
-              <label>Card Number</label>
-              <input type="text" onChange={this.update("card_number")} />
-            </div>
-
-            <div>
-              <label>Expiration Date</label>
-              <input type="text" onChange={this.update("expires")} />
-            </div>
-
-            <div>
-              <label>CVV code</label>
-              <input type="text" onChange={this.update("cvv")} />
-            </div>
-
-            <div>
-              <input type="submit" value="Update card" />
-            </div>
-
           </form>
         </div>
       )
@@ -100,13 +100,14 @@ class ExistingPayment extends React.Component {
           <table className="payment-table">
             <tbody>
               <tr>
+                <td><span className="checkmark-sign"><i className="fa fa-check-circle fa-lg" aria-hidden="true"></i></span></td>
                 <td id="place-order-num" className="placeorder-titles">2</td>
                 <td id="place-order-title" className="placeorder-titles">Payment method</td>
                 <td className="customer-info">
-                  <div>{`${this.props.currentUser.card_network.network} ending in ${this.props.currentUser.payment.card_number.slice(this.props.currentUser.payment.card_number.length - 4, this.props.currentUser.payment.card_number.length)}`}</div>
+                  <div className="existing-payment">{`${this.props.currentUser.card_network.network} ending in ${this.props.currentUser.payment.card_number.slice(this.props.currentUser.payment.card_number.length - 4, this.props.currentUser.payment.card_number.length)}`}</div>
                 </td>
                 <td>
-                  <button onClick={this.changeToEdit}>Change</button>
+                  <span className="addToCart-button"><button onClick={this.changeToEdit}>Change</button></span>
                 </td>
               </tr>
             </tbody>

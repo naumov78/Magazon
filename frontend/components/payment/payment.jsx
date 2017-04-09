@@ -53,38 +53,38 @@ class Payment extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={(e) => this.createPayment(e)}>
+      <div className="address-payment-form-container">
+        <form className="address-payment-form" onSubmit={(e) => this.createPayment(e)}>
+          <div className="payment-form-fields">
+            <div className="payment-field">
+              <label>Card type</label>
+              {this.getNetworksList()}
+            </div>
 
-          <div>
-            <label>State</label>
-            {this.getNetworksList()}
+            <div className="payment-field">
+              <label>Cardholder Name</label>
+              <input type="text" onChange={this.update("cardholder")} value={this.state.cardholder}/>
+            </div>
+
+            <div className="payment-field">
+              <label>Card Number</label>
+              <input type="text" onChange={this.update("card_number")} />
+            </div>
+
+            <div className="payment-field">
+              <label>Expiration Date</label>
+              <input type="text" onChange={this.update("expires")} />
+            </div>
+
+            <div className="payment-field">
+              <label>CVC code</label>
+              <input type="text" onChange={this.update("cvv")} />
+            </div>
+
+            <div>
+              <input id="update-address" type="submit" value="Add card" />
+            </div>
           </div>
-
-          <div>
-            <label>Cardholder Name</label>
-            <input type="text" onChange={this.update("cardholder")} value={this.state.cardholder}/>
-          </div>
-
-          <div>
-            <label>Card Number</label>
-            <input type="text" onChange={this.update("card_number")} />
-          </div>
-
-          <div>
-            <label>Expiration Date</label>
-            <input type="text" onChange={this.update("expires")} />
-          </div>
-
-          <div>
-            <label>CVV code</label>
-            <input type="text" onChange={this.update("cvv")} />
-          </div>
-
-          <div>
-            <input type="submit" value="Add card" />
-          </div>
-
         </form>
       </div>
     )

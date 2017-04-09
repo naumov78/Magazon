@@ -100,6 +100,21 @@ class PlaceOrder extends React.Component {
     )
   }
 
+  getTaxAmount() {
+    return ((this.getTotal()*0.08875).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
+  }
+
+  getPlaceOrderButton() {
+    if (this.props.currentUser.address_id && this.props.currentUser.payment_id ) {
+      return (
+        <span className="addToCart-button"><button onClick={(e) => this.createOrder(e)}>Place order</button></span>
+      );
+    } else {
+      return (
+        <span className="inactive-button"><button>Place order</button></span>
+      );
+    }
+  }
 
   render() {
     debugger
@@ -112,12 +127,28 @@ class PlaceOrder extends React.Component {
 
           <div className="cart-product-list">{this.getProductsList()}</div>
 
-          <div className="total-cart-amount">
-            <span className="order-total-title">Total order amount:</span>
-            <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+          <div className="cart-totals">
+            <div className="total-cart-amount">
+              <div className="total-line">
+                <span className="order-total-title">Total before tax:</span>
+                <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+              </div>
+            </div>
+            <div className="total-cart-amount">
+              <div className="total-line">
+                <span className="order-total-title">Estimated tax to be collected:</span>
+                <span className="order-total-amount">${this.getTaxAmount()}</span>
+              </div>
+            </div>
+            <div className="total-cart-amount">
+              <div id="order-total" className="total-line">
+                <span className="order-total-title">Order total:</span>
+                <span className="order-total-amount">${(Number(this.getTotal()) + Number(this.getTaxAmount())).toFixed(2)}</span>
+              </div>
+            </div>
           </div>
-          <div className="cart-buttons">
-            <span><button onClick={(e) => this.createOrder(e)}>Place order</button></span>
+          <div id="place-btn" className="cart-buttons">
+            {this.getPlaceOrderButton()}
           </div>
         </div>
       )
