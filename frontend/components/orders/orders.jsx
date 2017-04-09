@@ -7,14 +7,18 @@ class Orders extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { orders: [] }
+    this.state = { orders: [], empty: false }
   }
 
   componentWillMount() {
     debugger
     this.props.fetchAllOrders().then((result) => {
       debugger
-      this.setState({ orders: result.orders })
+      if (result.orders.length === 0) {
+        this.setState({ empty: true })
+      } else {
+        this.setState({ orders: result.orders })
+      }
     })
   }
 
@@ -23,38 +27,43 @@ class Orders extends React.Component {
   }
 
   getAllOrders() {
-    if (this.state.orders.length !== 0) {
-      const orders = this.state.orders
-      return (
-        <div className="order-list-container">
-          <span className="order-list-title"><h2>Your Orders</h2></span>
-          <ul className="orders-list">
+    const orders = this.state.orders
+    return (
+      <div className="order-list-container">
+        <span className="order-list-title"><h2>Your Orders</h2></span>
+        <ul className="orders-list">
 
-            {orders.map((order, i) => {
-              return (
-                <li key={i}>
-                  <OrderDetails order={order} currentUser={this.props.currentUser} />
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      )
-
-
-    } else {
-      return <div className="loading-page">
-        <div>
-          <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-        </div>
-      </div>;
-    }
+          {orders.map((order, i) => {
+            return (
+              <li key={i}>
+                <OrderDetails order={order} currentUser={this.props.currentUser} />
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    )
   }
 
 
   render() {
-    debugger
-    return <div>{this.getAllOrders()}</div>
+
+    if (!this.state.empty && this.state.orders.length === 0) {
+      return (
+      <div className="loading-page">
+        <div>
+          <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        </div>
+      </div>
+      );
+    } else if (this.state.empty) {
+      return (
+        <div> You have no orders </div>
+      );
+    } else if (this.state.orders.length > 0) {
+      return <div>{this.getAllOrders()}</div>
+    }
+
   }
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTimeout from 'react-timeout';
 import { withRouter, Link } from 'react-router';
 import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
 
@@ -8,12 +9,17 @@ class Cart extends React.Component {
 
   constructor(props) {
   super(props);
-  this.state = { products: [] }
+  this.state = { products: [], empty: false }
+  this.getMessage = this.getMessage.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchCart(this.props.currentUser.cart_id).then((result) => {
-      this.setState({ products: result.cart })
+      if (result.cart.length === 0) {
+        this.setState({ empty: true })
+      } else {
+        this.setState({ products: result.cart })
+      }
     })
   }
 
@@ -109,53 +115,67 @@ class Cart extends React.Component {
 
   emptyCart(cart_id) {
     this.props.emptyCart(cart_id).then((result) => {
+      if (result.cart.length === 0) {
+        this.setState({ empty: true })
+      } else {
         this.setState({ products: result.cart })
-      })
+      }
+    })
   }
 
 
   getMessage() {
     function returnMessage() {
-      return <div className="cart-product-list">Your Shopping Cart is empty.</div>
+      return
     }
     setTimeout(returnMessage, 1000)
   }
 
   render() {
-    if (this.getTotal() > 0) {
-    return (
-        <div className="cart-container">
-        <h2>Shopping Cart</h2>
-          <div className="cart-product-list">{this.getProductsList()}</div>
-          <div className="total-cart-amount">
-            <span className="order-total-title">Total order amount:</span>
-            <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
-          </div>
-          <div className="cart-buttons">
-            <span className="addToCart-button"><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>
-            <span className="addToCart-button"><Link to={'/place_order'}><button>Checkout</button></Link></span>
+
+    if (!this.state.empty && this.state.products.length === 0) {
+      return (
+        <div className="loading-page">
+          <div>
+            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
           </div>
         </div>
-      )
-    } else {
+      );
+    } else if (this.state.empty) {
       return (
         <div>
           <div className="cart-container">
           <h2>Shopping Cart</h2>
-
-            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-
+            <div className="cart-product-list">Your Shopping Cart is empty.</div>
           </div>
+          <div className="empty-cart"></div>
           <div className="cart-watched-products">
-            <div><WatchedProductsContainer /></div>
+            <WatchedProductsContainer />
           </div>
       </div>
-    )
+      );
+    } else if (this.state.products.length > 0) {
+      return (
+          <div className="cart-container">
+          <h2>Shopping Cart</h2>
+            <div className="cart-product-list">{this.getProductsList()}</div>
+            <div className="total-cart-amount">
+              <span className="order-total-title">Total order amount:</span>
+              <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+            </div>
+            <div className="cart-buttons">
+              <span className="addToCart-button"><button onClick={() => this.emptyCart(this.props.currentUser.cart_id)}>Empty Cart</button></span>
+              <span className="addToCart-button"><Link to={'/place_order'}><button>Checkout</button></Link></span>
+            </div>
+          </div>
+        )
+    }
   }
-  }
-
 
 }
 
 
 export default withRouter(Cart);
+
+
+// <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>

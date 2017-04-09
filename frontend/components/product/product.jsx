@@ -124,7 +124,7 @@ class Product extends React.Component {
 
             <div className="product-order">
               <div className="addToCart-button">
-                <button onClick={() => this.addToCart(this.state.product.id, 1)}>
+                <button id="add-to-cart" onClick={() => this.addToCart(this.state.product.id, 1)}>
                   <span className="cart-icon"><i className="fa fa-shopping-cart" aria-hidden="true"></i></span>
                   <span className="button-text">Add to Cart</span>
                 </button>

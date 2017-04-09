@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
   }
 
   renderSignUpErrors(){
-    //if (this.props.errors){
+    if (this.props.errors){
 
     return(
       <ul className="signup-errors">
@@ -43,9 +43,9 @@ class SessionForm extends React.Component {
         ))}
       </ul>
     );
-  // } else {
-  //   return null;
-  // }
+  } else {
+    return null;
+  }
   }
 
   // componentDidUpdate(prevProps, prevState){
@@ -57,6 +57,7 @@ class SessionForm extends React.Component {
   render() {
 
     const link = (this.props.formType === 'signup' ? 'signin' : 'signup');
+    debugger
     if (this.props.formType === 'signup'){
     return (
       <section className='signup-container'>
@@ -66,7 +67,7 @@ class SessionForm extends React.Component {
           </div>
       <div className="signup-form">
           <h1 className="signup-header">Sign Up</h1>
-            <form>
+            <form onSubmit={this.handleSubmit}>
             <label className="form-labels">First Name</label>
               <input type="text"
                 onChange={this.handleChange("first_name")}
@@ -87,23 +88,25 @@ class SessionForm extends React.Component {
                 onChange={this.handleChange("password")}
                 value={this.state.password}
                 className="form-inputs"/><br />
+              <input type="submit" className="signup-submit" value="Create Your Magazon Account" />
+
             </form>
-            <button onClick={this.handleSubmit} className="signup-submit">
-              Create Your Magazon Account
-            </button>
+
               <div className="signup-divider">
                 <h5>
-                  Already have an account
+                  {`Already have an account?`}
                 </h5>
               </div>
-              <button className="signup-submit signin-submit">
-                <Link to={`/${link}`}>Sign In</Link>
-              </button>
-
+              <Link to={`/${link}`}>
+                <button className="signup-submit signin-submit">
+                  Sign In
+                </button>
+              </Link>
         </div>
     </section>
     );
   } else {
+    debugger
     return (
       <section className='signup-container'>
         <img src={ window.asset.logo } className="signup-logo"/>
@@ -112,7 +115,7 @@ class SessionForm extends React.Component {
           </div>
           <div className="signup-form signin-form">
               <h1 className="signup-header">Sign In</h1>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                   <label className="form-labels">Email</label>
                   <input type="text"
                     onChange={this.handleChange("email")}
@@ -123,18 +126,20 @@ class SessionForm extends React.Component {
                     onChange={this.handleChange("password")}
                     value={this.state.password}
                     className="form-inputs"/><br />
+                  <input type="submit" className="signup-submit" value="Sign In" />
+
                 </form>
-                <button onClick={this.handleSubmit} className="signup-submit">
-                  Sign In
-                </button>
+
                   <div className="signup-divider">
                     <h5>
-                      Don't have an account
+                      {`Don't have an account?`}
                     </h5>
                   </div>
-                  <button className="signup-submit signin-submit">
-                    <Link to={`/${link}`}>Create Your Magazon Account</Link>
-                  </button>
+                  <Link to={`/${link}`}>
+                    <button className="signup-submit signin-submit">
+                      Create Your Magazon Account
+                    </button>
+                  </Link>
 
             </div>
       </section>
@@ -144,3 +149,11 @@ class SessionForm extends React.Component {
 }
 
 export default SessionForm;
+
+// <button onClick={this.handleSubmit} className="signup-submit">
+//   Create Your Magazon Account
+// </button>
+
+// <button onClick={this.handleSubmit} className="signup-submit">
+//   Sign In
+// </button>
