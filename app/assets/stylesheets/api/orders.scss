@@ -23,6 +23,15 @@
   padding: 20px 0 40px 0;
 }
 
+.order-details-container {
+  text-align: center;
+
+  h2 {
+    font-size: 21px;
+    padding-bottom: 50px;
+  }
+
+}
 
 .single-order-block {
   margin: 0 auto;
@@ -56,6 +65,33 @@
   }
 
 }
+
+.order-page-title-block {
+  width: 930px;
+  padding: 15px;
+  background-color: #f6f6f6;
+  border: 1px solid $light-grey;
+  border-radius: 4px;
+  color: #555;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: $link-blue;
+  }
+
+  a:hover {
+    color: $link-orange;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+}
+
+
 
 .single-order-product-list-container {
   padding: 20px;

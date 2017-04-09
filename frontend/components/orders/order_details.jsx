@@ -8,7 +8,7 @@ import { withRouter, Link } from 'react-router';
 const OrderDetails = (props) => {
   const posted = getDate(props.order.posted)
   const order_id = props.order.order_id
-  const total_amount = props.order.total_amount
+  const total_amount = props.order.total_amount + props.order.total_amount * 0.08875;
   const status = props.order.status
   const products = props.order.products
 
@@ -47,6 +47,10 @@ const OrderDetails = (props) => {
     );
   }
 
+  function getOrderNum(order_id) {
+    return order_id * 6532497 + ' - ' + order_id * 165
+  }
+
   return (
     <div className="single-order-block">
       <div className="single-order-title-block">
@@ -54,10 +58,10 @@ const OrderDetails = (props) => {
         <div>order placed <br />{posted}</div>
         <div>Status <br /><span className={getStatusStyle()}>{status}</span></div>
         <div>
-          total <br />$ {Number(props.order.total_amount).toFixed(2)}
+          total <br />$ {Number(total_amount).toFixed(2)}
         </div>
         <div>ship to <br /> {getUserName()}</div>
-        <div><Link to={`/orders/${order_id}`}>Order #: {order_id * 6532497 + ' - ' + order_id * 165}</Link></div>
+        <div><Link to={`/orders/${order_id}`}>Order #: {getOrderNum(order_id)}</Link></div>
       </div>
       <div className="single-order-product-list-container">
         <ul className="single-order-product-list">

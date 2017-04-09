@@ -26,7 +26,6 @@ class PlaceOrder extends React.Component {
       for(let i = 0; i < this.state.products.length; i++) {
         total += this.state.products[i].total_price
       }
-      debugger
       return total;
     }
   }
@@ -35,11 +34,8 @@ class PlaceOrder extends React.Component {
 
   createOrder(e) {
     e.preventDefault();
-    debugger
     this.props.updateBoughtTogether();
-    debugger
     this.props.createOrder().then((result) => {
-      debugger
       this.props.router.push(`/orders/${result.order[0].order_id}`)
     });
   }
@@ -62,7 +58,6 @@ class PlaceOrder extends React.Component {
           </table>
         </li>
         {products.map((product, i) => {
-          debugger
           return (
             <li key={i} className="cart-product-line">
               <table className="single-product-in-cart">

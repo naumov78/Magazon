@@ -8,19 +8,23 @@ class Order extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { products: [] }
+    this.state = { products: [], order_id: null, posted: null, status: null, total_amount: null, order: null }
   }
 
   componentWillMount() {
-    debugger
+    window.scrollTo(0, 0);
     this.props.fetchOrder(Number(this.props.params.id)).then((result) => {
       debugger
-      this.setState({ products: result.order })
+      this.setState({ products: result.order,
+        order_id: result.order_id,
+        posted: result.posted,
+        status: result.status,
+        total_amount: result.total_amount,
+        order: result.products })
     })
   }
 
   componentDidMount() {
-    debugger
   }
 
   getTotal() {
@@ -35,6 +39,21 @@ class Order extends React.Component {
     }
   }
 
+  getUserName() {
+    return (
+      `${this.props.currentUser.first_name} ${this.props.currentUser.last_name}`
+    );
+  }
+
+  getOrderDate(posted) {
+      const date = new Date(posted);
+      let monthNames = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      debugger
+      const Mon = monthNames[date.getMonth()];
+      const Day = date.getDate();
+      const Yr = 1900 + date.getYear();
+      return `${Mon} ${Day}, ${Yr}`
+  }
 
   getProductsList() {
     if (!this.props.currentUser) { return null }
@@ -66,7 +85,9 @@ class Order extends React.Component {
                         </Link>
                       </div>
                       <div className="cart-product-title">
-                        {product.title}
+                        <Link to={`/categories/${product.category_id}/products/${product.id}`} >
+                          {product.title}
+                        </Link>
                       </div>
                       <div className="product-cart-descr">
                         {product.brief_description}
@@ -91,16 +112,84 @@ class Order extends React.Component {
     )
   }
 
+  getStatusStyle() {
+    switch (this.state.status) {
+    case "Received":
+      return "received-order"
+    case "Pending":
+      return "pending-order"
+    case "Unshipped":
+      return "unshipped-order"
+    case "Shipped":
+      return "shipped-order"
+    case "Delivered":
+      return "delivered-order"
+    case "Canceled":
+      return "canceled-order"
+    default:
+      return
+    }
+  }
+
+  getTaxAmount() {
+    return ((this.getTotal()*0.08875).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
+  }
+
+  getOrderNum(order_id) {
+    return order_id * 6532497 + ' - ' + order_id * 165
+  }
+
+  // getTitleMessage() {
+  //   if (this.props.fromOrderList) {
+  //
+  //   } else {
+  //     return (
+  //       <div>
+  //         <h3>{`Thank you for your order! Your Order #${this.getOrderNum(Number(this.props.params.id))} has been placed.`}</h3>
+  //       </div>
+  //     );
+  //   }
+  // }
+
 
   render() {
+
     if (this.getTotal() > 0) {
     return (
-      <div className="cart-container">
-      <h3>Thank you for your order! Your Order had been placed. </h3>
-        <div className="cart-product-list">{this.getProductsList()}</div>
-        <div className="total-cart-amount">
-          <span className="order-total-title">Total order amount:</span>
-          <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+      <div className="order-details-container">
+        <h2>Order Details</h2>
+        <div className="cart-container">
+          <div className="order-page-title-block">
+            <div>order placed <br />{this.getOrderDate(this.state.posted)}</div>
+            <div>Status <br /><span className={this.getStatusStyle()}>{this.state.status}</span></div>
+            <div>
+              total <br />$ {Number(this.state.total_amount * 1.08875).toFixed(2)}
+            </div>
+            <div>ship to <br /> {this.getUserName()}</div>
+            <div>Order #: {this.getOrderNum(this.state.order_id)}</div>
+          </div>
+
+          <div className="cart-product-list">{this.getProductsList()}</div>
+            <div className="cart-totals">
+              <div className="total-cart-amount">
+                <div className="total-line">
+                  <span className="order-total-title">Total before tax:</span>
+                  <span className="order-total-amount">${this.getTotal().toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</span>
+                </div>
+              </div>
+              <div className="total-cart-amount">
+                <div className="total-line">
+                  <span className="order-total-title">Estimated tax to be collected:</span>
+                  <span className="order-total-amount">${this.getTaxAmount()}</span>
+                </div>
+              </div>
+              <div className="total-cart-amount">
+                <div id="order-total" className="total-line">
+                  <span className="order-total-title">Order total:</span>
+                  <span className="order-total-amount">${(Number(this.getTotal()) + Number(this.getTaxAmount())).toFixed(2)}</span>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     )

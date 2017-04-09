@@ -12,7 +12,7 @@ class Api::OrdersController < ApplicationController
 
   def show
     update_status(params[:id])
-    @order = Order.find(params[:id]).order_products
+    @order = Order.find(params[:id]) #.order_products
   end
 
   def create
