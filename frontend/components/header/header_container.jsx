@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchCart: (cart_id) => dispatch(fetchCart(cart_id)),
+    fetchCart: (cart_id) => dispatch(fetchCart(cart_id))
   });
 }
 

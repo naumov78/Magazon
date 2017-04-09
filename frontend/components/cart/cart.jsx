@@ -103,7 +103,11 @@ class Cart extends React.Component {
 
   removeFromCart(id, quantity) {
     this.props.updateCartProduct(id, quantity).then((result) => {
-        this.setState({ products: result.cart })
+        if (result.cart.length === 0) {
+          this.setState({ empty: true })
+        } else {
+          this.setState({ products: result.cart })
+        }
       })
   }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { logout } from '../actions/session_actions';
+import HeaderContainer from './header/header_container';
 import CategoriesContainer from './categories/categories_container';
 import SessionStatusContainer from './session_status/session_status_container';
 import StorefrontContainer from './storefront/storefront/storefront_container';
@@ -16,8 +17,10 @@ const App =({ children }) => {
     return(
       <div id="top" className="main-container">
         <nav>
-          <SessionStatusContainer />
-          <CategoriesContainer />
+          <HeaderContainer>
+            <SessionStatusContainer />
+            <CategoriesContainer />
+          </HeaderContainer>
         </nav>
         <div>
           <MainStorefront indexPage={indexPage} />
