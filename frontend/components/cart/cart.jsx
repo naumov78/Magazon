@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactTimeout from 'react-timeout';
 import { withRouter, Link } from 'react-router';
 import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
 
@@ -10,7 +9,6 @@ class Cart extends React.Component {
   constructor(props) {
   super(props);
   this.state = { products: [], empty: false }
-  this.getMessage = this.getMessage.bind(this);
   }
 
   componentWillMount() {
@@ -124,15 +122,8 @@ class Cart extends React.Component {
   }
 
 
-  getMessage() {
-    function returnMessage() {
-      return
-    }
-    setTimeout(returnMessage, 1000)
-  }
 
   render() {
-
     if (!this.state.empty && this.state.products.length === 0) {
       return (
         <div className="loading-page">
@@ -176,6 +167,3 @@ class Cart extends React.Component {
 
 
 export default withRouter(Cart);
-
-
-// <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>

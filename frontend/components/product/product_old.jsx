@@ -4,7 +4,7 @@ import BoughtTogether from './bought_together';
 import GetFiftyOff from './get_fifty_off';
 import ShippingPrice from './shipping_price';
 import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
-import AddToCartContainer from './add_to_cart_container';
+import ShipTo from './ship_to';
 
 class Product extends React.Component {
 
@@ -22,7 +22,9 @@ class Product extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    debugger
     if (this.props.params.id.toString() !== nextProps.params.id.toString()) {
+      debugger
       this.props.fetchProduct(Number(nextProps.params.id[0]), Number(nextProps.params.id[1])).then((result) => {
         this.setState({ product: result.product, main_picture: result.product.product_pictures[0] }, this.scrollToTop())
         this.props.getWatchedProducts()
@@ -31,12 +33,19 @@ class Product extends React.Component {
   }
 
   componentDidMount() {
+    debugger
       this.props.fetchProduct(Number(this.props.params.id[0]), Number(this.props.params.id[1])).then((result) => {
         this.setState({ product: result.product, main_picture: result.product.product_pictures[0] })
       })
   }
 
+  addToCart(id, quantity) {
+    debugger
+    this.props.addToCart(id, quantity)
+  }
+
   changeMainPicture(e, idx) {
+    debugger
     e.preventDefault();
     this.setState({ main_picture: this.state.product.product_pictures[idx] })
   }
@@ -49,11 +58,22 @@ class Product extends React.Component {
     }
   }
 
+  getShipTo() {
+    if (this.props.currentUser) {
+      return <ShipTo currentUser={this.props.currentUser} />
+    } else {
+      return null;
+    }
+  }
+
   render() {
+    debugger
     if (this.state.product.title) {
     return (
       <div className="product-page">
+
         <div className="product-container">
+
           <div>
             <ul className="alt-images">
               {this.state.product.product_pictures.map((picture, i) => {
@@ -67,22 +87,23 @@ class Product extends React.Component {
               })}
             </ul>
           </div>
+
           <div className="product-info-container">
+
             <div className="main-image">
               <img src={this.state.main_picture.image_url} />
             </div>
+
             <div className="product-info">
+
               <div className="product-product-title">{this.state.product.title}</div>
+
               <div className="product-product-price">
                 <span className="price-title">Price: </span>
                 <span className="price">${Number(this.state.product.price).toFixed(2)}</span>
-
                 <ShippingPrice price={this.state.product.price} product={true} />
-
               </div>
-
                 <GetFiftyOff price={this.state.product.price} />
-
               <div className="stock-product">
                 In stock.
               </div>
@@ -90,13 +111,34 @@ class Product extends React.Component {
             </div>
           </div>
 
-          <AddToCartContainer product={this.state.product} />
+          <div className="order-container">
+
+            <div className="order-price">
+              <span className="price order-block-price">${Number(this.state.product.price).toFixed(2)}</span>
+              <ShippingPrice price={this.state.product.price} order={true} />
+            </div>
+
+            <div className="stock-order">
+              In stock.
+            </div>
+
+            <div className="product-order">
+              <div className="addToCart-button">
+                <button id="add-to-cart" onClick={() => this.addToCart(this.state.product.id, 1)}>
+                  <span className="cart-icon"><i className="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                  <span className="button-text">Add to Cart</span>
+                </button>
+              </div>
+            </div>
+
+            {this.getShipTo()}
+
+          </div>
 
         </div>
+
         <div>
-
           <BoughtTogether product={this.state.product} />
-
         </div>
 
           <WatchedProductsContainer />
@@ -104,16 +146,15 @@ class Product extends React.Component {
       </div>
     );
   } else {
-    return (
-      <div className="loading-page">
-        <div>
-          <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-        </div>
+    return <div className="loading-page">
+      <div>
+        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
       </div>
-    );
+    </div>;
   }
 }
 
 }
+
 
 export default withRouter(Product);
