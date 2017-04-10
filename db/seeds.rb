@@ -105,7 +105,7 @@ fbt1 = FrequentlyBoughtTogether.create!(product_id: product1.id)
 product1.frequently_bought_together_id = fbt1.id
 product1.save!
 
-picture1_1 = ProductPicture.create!(product_id: product1.id, image: File.open(File.join(Rails.root, 'app', 'assets', 'images', 'book1', '020.jpeg')) )
+picture1_1 = ProductPicture.create!(product_id: product1.id, image: "https://s3.amazonaws.com/magazon/garden/deck1/001.jpg" )
 # picture1_1.image = Rails.root.join("app/assets/images/book1/020.jpeg").open
 # picture1_1.image = File.open(Rails.root.join('app', 'assets', 'images', 'book1', '020.jpeg'))
 # picture1_1.save!
@@ -121,9 +121,9 @@ fbt2 = FrequentlyBoughtTogether.create!(product_id: product2.id)
 product2.frequently_bought_together_id = fbt2.id
 product2.save!
 
-picture2_1 = ProductPicture.create!(product_id: product2.id)
-picture2_1.image = File.open(File.join(Rails.root, 'app/assets/images/video1/021.jpg'))
-picture2_1.save!
+picture2_1 = ProductPicture.create!(product_id: product2.id, image: "http://alex-naumov.me/magazon/deck1/004.jpg")
+# picture2_1.image = File.open(File.join(Rails.root, 'app/assets/images/video1/021.jpg'))
+# picture2_1.save!
 
 product3 = Product.create!(
 title: 'Sauder Beginnings 4-Drawer Chest, Cinnamon Cherry',
