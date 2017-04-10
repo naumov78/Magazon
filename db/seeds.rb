@@ -107,7 +107,7 @@ product1.save!
 
 picture1_1 = ProductPicture.create!(product_id: product1.id)
 # picture1_1.image = Rails.root.join("app/assets/images/book1/020.jpeg").open
-picture1_1.image = File.join(Rails.root, 'app/assets/images/book1/', '020.jpeg')
+picture1_1.image = File.join(Rails.root, 'app/assets/images/book1/020.jpeg')
 picture1_1.save!
 
 product2 = Product.create!(
