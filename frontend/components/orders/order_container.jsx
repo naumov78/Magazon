@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Order from './order';
 import { fetchOrder } from '../../actions/order_actions';
-
+import { refreshCurrentUser } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -12,9 +12,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  debugger
   return ({
-    fetchOrder: (id) => dispatch(fetchOrder(id))
+    fetchOrder: (id) => dispatch(fetchOrder(id)),
+    refreshCurrentUser: () => dispatch(refreshCurrentUser())
   });
 }
 

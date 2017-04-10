@@ -2,9 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "base/colors.scss";
 
 .watched-products-container {
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: -10px;
+
+  p {
+    color: $dark-orange;
+    padding-top: 15px;
+    font-weight: 700;
+    font-size: 1.05em;
+  }
+
 }

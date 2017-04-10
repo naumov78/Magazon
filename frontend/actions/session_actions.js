@@ -41,3 +41,12 @@ export function logout(){
     );
   };
 }
+
+
+export const refreshCurrentUser = () => {
+  return (dispatch) => {
+    return APIUtil.refreshCurrentUser().then((user) => {
+      return dispatch(receiveCurrentUser(user));
+    });
+  }
+}

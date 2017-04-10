@@ -14,7 +14,6 @@ const OrderReducer = (state = initialState, action) => {
     case RECEIVE_ORDER:
       return merge({}, state, { products: action.order })
     case RECEIVE_ALL_ORDERS:
-    debugger
       return merge({}, state, { orders: action.orders })
     default:
       return state;

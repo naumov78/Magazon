@@ -17,6 +17,14 @@ class MainStorefront extends React.Component {
     this.props.getStorefront();
   }
 
+  getComponent() {
+    if (this.props.currentUser) {
+      return <WatchedProductsContainer />
+    } else {
+      return <StorefrontContainer />
+    }
+  }
+
   getContent() {
     if (this.props.indexPage) {
       return (
@@ -29,7 +37,7 @@ class MainStorefront extends React.Component {
 
           <div className="lower-row">
             <SmallBanner smallBanners={ this.props.smallBanners } />
-            <WatchedProductsContainer />
+            {this.getComponent()}
           </div>
         </div>
       )

@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router';
 import StorefrontContainer from '../storefront/storefront/storefront_container';
 import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
+import SmallBanner from '../storefront/small_banner';
 
 
 class Category extends React.Component {
@@ -74,15 +75,23 @@ class Category extends React.Component {
     )
   }
 
+  // <SmallBanner smallBanners={this.props.smallBanners} />
+
   render() {
     if (this.state.products) {
     return (
       <div className="category-container">
 
         <div className="central-block">
+          <div className="left-col">
+
             <StorefrontContainer />
+          </div>
             {this.getProductsList()}
+          <div className="right-col">
             <StorefrontContainer />
+
+          </div>
         </div>
 
         <div>
@@ -104,6 +113,7 @@ class Category extends React.Component {
 
 export default withRouter(Category);
 
+// <SmallBanner smallBanners={this.props.smallBanners} />
 
 // <StorefrontContainer />
 

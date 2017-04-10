@@ -6,11 +6,16 @@ import ShippingPrice from './shipping_price';
 import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
 import AddToCartContainer from './add_to_cart_container';
 
+
 class Product extends React.Component {
 
   constructor(props) {
   super(props);
   this.state = { product: {}, main_picture: null}
+  }
+
+  componentWillMount() {
+    this.scrollToTop()
   }
 
   componentWillUnmount() {

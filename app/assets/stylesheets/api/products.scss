@@ -35,15 +35,15 @@
 .product-page {
   display: flex;
   -webkit-flex-flow: column nowrap;
-  justify-content: space-around;
   padding-bottom: 50px;
 }
 
 
 .product-container {
-  width: 95%;
+  width: 99%;
   padding-bottom: 20px;
-  margin-left: 1%;
+  margin: 0 auto;
+  // margin-left: 1%;
   display: flex;
   -webkit-flex-flow: row nowrap;
   align-content: space-between;
@@ -235,6 +235,17 @@
 
 
 // order container
+
+.order-banner-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 65px;
+
+}
+
+.product-banner{
+  margin-top: 70px;
+}
 
 .order-container {
   padding: 14px 18px;

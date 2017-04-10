@@ -65,11 +65,12 @@ class WatchedProducts extends React.Component {
 
 
   getExternalProductsList() {
-    const products = this.state.products.slice(0, 7)
+    const products = this.state.products.slice(0, 6)
     debugger
     if (products.length > 4) {
     return (
       <div>
+        <p>Your recently watched items</p>
           <ul className="watched-products-list">
             {products.map((product, i) => {
               return (

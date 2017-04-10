@@ -14,7 +14,6 @@ class Order extends React.Component {
   componentWillMount() {
     window.scrollTo(0, 0);
     this.props.fetchOrder(Number(this.props.params.id)).then((result) => {
-      debugger
       this.setState({ products: result.order,
         order_id: result.order_id,
         posted: result.posted,
@@ -25,7 +24,9 @@ class Order extends React.Component {
   }
 
   componentDidMount() {
+    this.props.refreshCurrentUser();
   }
+
 
   getTotal() {
     if (this.state.products.length === 0) {
@@ -153,7 +154,7 @@ class Order extends React.Component {
 
 
   render() {
-
+    debugger
     if (this.getTotal() > 0) {
     return (
       <div className="order-details-container">

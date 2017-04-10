@@ -7,7 +7,7 @@ import { addToCart } from '../../actions/cart_actions';
 
 const mapStateToProps = (state) => {
   return ({
-
+    smallBanners: state.storefront.smallBanners
   })
 }
 
