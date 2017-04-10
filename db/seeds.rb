@@ -106,7 +106,7 @@ product1.frequently_bought_together_id = fbt1.id
 product1.save!
 
 picture1_1 = ProductPicture.create!(product_id: product1.id)
-picture1_1.image = File.open('app/assets/images/book1/020.jpeg')
+picture1_1.image = File.open(File.join(Rails.root, 'app/assets/images/book1/020.jpeg'))
 picture1_1.save!
 
 product2 = Product.create!(
@@ -121,7 +121,7 @@ product2.frequently_bought_together_id = fbt2.id
 product2.save!
 
 picture2_1 = ProductPicture.create!(product_id: product2.id)
-picture2_1.image = File.open('app/assets/images/video1/021.jpg')
+picture2_1.image = File.open(File.join(Rails.root, 'app/assets/images/video1/021.jpg'))
 picture2_1.save!
 
 product3 = Product.create!(
@@ -137,10 +137,10 @@ product3.frequently_bought_together_id = fbt3.id
 product3.save!
 
 picture3_1 = ProductPicture.create!(product_id: product3.id)
-picture3_1.image = File.open('app/assets/images/shkaf1/011.jpg')
+picture3_1.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf1/011.jpg'))
 picture3_1.save!
 picture3_2 = ProductPicture.create!(product_id: product3.id)
-picture3_2.image = File.open('app/assets/images/shkaf1/012.jpg')
+picture3_2.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf1/012.jpg'))
 picture3_2.save!
 
 product4 = Product.create!(
@@ -156,19 +156,19 @@ product4.frequently_bought_together_id = fbt4.id
 product4.save!
 
 picture4_1 = ProductPicture.create!(product_id: product4.id)
-picture4_1.image = File.open('app/assets/images/shkaf2/013.jpg')
+picture4_1.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf2/013.jpg'))
 picture4_1.save!
 picture4_2 = ProductPicture.create!(product_id: product4.id)
-picture4_2.image = File.open('app/assets/images/shkaf2/014.jpg')
+picture4_2.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf2/014.jpg'))
 picture4_2.save!
 picture4_3 = ProductPicture.create!(product_id: product4.id)
-picture4_3.image = File.open('app/assets/images/shkaf2/015.jpg')
+picture4_3.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf2/015.jpg'))
 picture4_3.save!
 picture4_4 = ProductPicture.create!(product_id: product4.id)
-picture4_4.image = File.open('app/assets/images/shkaf2/016.jpg')
+picture4_4.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf2/016.jpg'))
 picture4_4.save!
 picture4_5 = ProductPicture.create!(product_id: product4.id)
-picture4_5.image = File.open('app/assets/images/shkaf2/017.jpg')
+picture4_5.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf2/017.jpg'))
 picture4_5.save!
 
 product5 = Product.create!(
@@ -184,13 +184,13 @@ product5.frequently_bought_together_id = fbt5.id
 product5.save!
 
 picture5_1 = ProductPicture.create!(product_id: product5.id)
-picture5_1.image = File.open('app/assets/images/shkaf3/018.jpg')
+picture5_1.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf3/018.jpg'))
 picture5_1.save!
 picture5_2 = ProductPicture.create!(product_id: product5.id)
-picture5_2.image = File.open('app/assets/images/shkaf3/019.jpg')
+picture5_2.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf3/019.jpg'))
 picture5_2.save!
 picture5_3 = ProductPicture.create!(product_id: product5.id)
-picture5_3.image = File.open('app/assets/images/shkaf2/017.jpg')
+picture5_3.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf2/017.jpg'))
 picture5_3.save!
 
 product6 = Product.create!(
@@ -206,13 +206,13 @@ product6.frequently_bought_together_id = fbt6.id
 product6.save!
 
 picture6_1 = ProductPicture.create!(product_id: product6.id)
-picture6_1.image = File.open('app/assets/images/kadka/006.jpg')
+picture6_1.image = File.open(File.join(Rails.root, 'app/assets/images/kadka/006.jpg'))
 picture6_1.save!
 picture6_2 = ProductPicture.create!(product_id: product6.id)
-picture6_2.image = File.open('app/assets/images/kadka/007.jpg')
+picture6_2.image = File.open(File.join(Rails.root, 'app/assets/images/kadka/007.jpg'))
 picture6_2.save!
 picture6_3 = ProductPicture.create!(product_id: product6.id)
-picture6_3.image = File.open('app/assets/images/kadka/008.jpg')
+picture6_3.image = File.open(File.join(Rails.root, 'app/assets/images/kadka/008.jpg'))
 picture6_3.save!
 
 product7 = Product.create!(
@@ -228,7 +228,7 @@ product7.frequently_bought_together_id = fbt7.id
 product7.save!
 
 picture7_1 = ProductPicture.create!(product_id: product7.id)
-picture7_1.image = File.open('app/assets/images/kust/005.jpg')
+picture7_1.image = File.open(File.join(Rails.root, 'app/assets/images/kust/005.jpg'))
 picture7_1.save!
 
 product8 = Product.create!(
@@ -244,22 +244,22 @@ product8.frequently_bought_together_id = fbt8.id
 product8.save!
 
 picture8_1 = ProductPicture.create!(product_id: product8.id)
-picture8_1.image = File.open('app/assets/images/catan/001.jpg')
+picture8_1.image = File.open(File.join(Rails.root, 'app/assets/images/catan/001.jpg'))
 picture8_1.save!
 picture8_2 = ProductPicture.create!(product_id: product8.id)
-picture8_2.image = File.open('app/assets/images/catan/002.jpg')
+picture8_2.image = File.open(File.join(Rails.root, 'app/assets/images/catan/002.jpg'))
 picture8_2.save!
 picture8_3 = ProductPicture.create!(product_id: product8.id)
-picture8_3.image = File.open('app/assets/images/catan/003.jpg')
+picture8_3.image = File.open(File.join(Rails.root, 'app/assets/images/catan/003.jpg'))
 picture8_3.save!
 picture8_4 = ProductPicture.create!(product_id: product8.id)
-picture8_4.image = File.open('app/assets/images/catan/004.jpg')
+picture8_4.image = File.open(File.join(Rails.root, 'app/assets/images/catan/004.jpg'))
 picture8_4.save!
 picture8_5 = ProductPicture.create!(product_id: product8.id)
-picture8_5.image = File.open('app/assets/images/catan/005.jpg')
+picture8_5.image = File.open(File.join(Rails.root, 'app/assets/images/catan/005.jpg'))
 picture8_5.save!
 picture8_6 = ProductPicture.create!(product_id: product8.id)
-picture8_6.image = File.open('app/assets/images/catan/006.jpg')
+picture8_6.image = File.open(File.join(Rails.root, 'app/assets/images/catan/006.jpg'))
 picture8_6.save!
 
 
@@ -276,16 +276,16 @@ product9.frequently_bought_together_id = fbt9.id
 product9.save!
 
 picture9_1 = ProductPicture.create!(product_id: product9.id)
-picture9_1.image = File.open('app/assets/images/7wonders/001.jpg')
+picture9_1.image = File.open(File.join(Rails.root, 'app/assets/images/7wonders/001.jpg'))
 picture9_1.save!
 picture9_2 = ProductPicture.create!(product_id: product9.id)
-picture9_2.image = File.open('app/assets/images/7wonders/002.jpg')
+picture9_2.image = File.open(File.join(Rails.root, 'app/assets/images/7wonders/002.jpg'))
 picture9_2.save!
 picture9_3 = ProductPicture.create!(product_id: product9.id)
-picture9_3.image = File.open('app/assets/images/7wonders/003.jpg')
+picture9_3.image = File.open(File.join(Rails.root, 'app/assets/images/7wonders/003.jpg'))
 picture9_3.save!
 picture9_4 = ProductPicture.create!(product_id: product9.id)
-picture9_4.image = File.open('app/assets/images/7wonders/004.jpg')
+picture9_4.image = File.open(File.join(Rails.root, 'app/assets/images/7wonders/004.jpg'))
 picture9_4.save!
 
 product10 = Product.create!(
@@ -301,19 +301,19 @@ product10.frequently_bought_together_id = fbt10.id
 product10.save!
 
 picture10_1 = ProductPicture.create!(product_id: product10.id)
-picture10_1.image = File.open('app/assets/images/laptop1/001.jpg')
+picture10_1.image = File.open(File.join(Rails.root, 'app/assets/images/laptop1/001.jpg'))
 picture10_1.save!
 picture10_2 = ProductPicture.create!(product_id: product10.id)
-picture10_2.image = File.open('app/assets/images/laptop1/002.jpg')
+picture10_2.image = File.open(File.join(Rails.root, 'app/assets/images/laptop1/002.jpg'))
 picture10_2.save!
 picture10_3 = ProductPicture.create!(product_id: product10.id)
-picture10_3.image = File.open('app/assets/images/laptop1/003.jpg')
+picture10_3.image = File.open(File.join(Rails.root, 'app/assets/images/laptop1/003.jpg'))
 picture10_3.save!
 picture10_4 = ProductPicture.create!(product_id: product10.id)
-picture10_4.image = File.open('app/assets/images/laptop1/004.jpg')
+picture10_4.image = File.open(File.join(Rails.root, 'app/assets/images/laptop1/004.jpg'))
 picture10_4.save!
 picture10_5 = ProductPicture.create!(product_id: product10.id)
-picture10_5.image = File.open('app/assets/images/laptop1/006.jpg')
+picture10_5.image = File.open(File.join(Rails.root, 'app/assets/images/laptop1/006.jpg'))
 picture10_5.save!
 
 
@@ -331,16 +331,16 @@ product11.frequently_bought_together_id = fbt11.id
 product11.save!
 
 picture11_1 = ProductPicture.create!(product_id: product11.id)
-picture11_1.image = File.open('app/assets/images/grill1/001.jpg')
+picture11_1.image = File.open(File.join(Rails.root, 'app/assets/images/grill1/001.jpg'))
 picture11_1.save!
 picture11_2 = ProductPicture.create!(product_id: product11.id)
-picture11_2.image = File.open('app/assets/images/grill1/002.jpg')
+picture11_2.image = File.open(File.join(Rails.root, 'app/assets/images/grill1/002.jpg'))
 picture11_2.save!
 picture11_3 = ProductPicture.create!(product_id: product11.id)
-picture11_3.image = File.open('app/assets/images/grill1/003.jpg')
+picture11_3.image = File.open(File.join(Rails.root, 'app/assets/images/grill1/003.jpg'))
 picture11_3.save!
 picture11_4 = ProductPicture.create!(product_id: product11.id)
-picture11_4.image = File.open('app/assets/images/grill1/004.jpg')
+picture11_4.image = File.open(File.join(Rails.root, 'app/assets/images/grill1/004.jpg'))
 picture11_4.save!
 
 
@@ -358,10 +358,10 @@ product12.frequently_bought_together_id = fbt12.id
 product12.save!
 
 picture12_1 = ProductPicture.create!(product_id: product12.id)
-picture12_1.image = File.open('app/assets/images/telega/009.jpg')
+picture12_1.image = File.open(File.join(Rails.root, 'app/assets/images/telega/009.jpg'))
 picture12_1.save!
 picture12_2 = ProductPicture.create!(product_id: product12.id)
-picture12_2.image = File.open('app/assets/images/telega/010.jpg')
+picture12_2.image = File.open(File.join(Rails.root, 'app/assets/images/telega/010.jpg'))
 picture12_2.save!
 
 
@@ -379,28 +379,28 @@ product13.frequently_bought_together_id = fbt13.id
 product13.save!
 
 picture13_1 = ProductPicture.create!(product_id: product13.id)
-picture13_1.image = File.open('app/assets/images/snow_removal1/001.jpg')
+picture13_1.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/001.jpg'))
 picture13_1.save!
 picture13_2 = ProductPicture.create!(product_id: product13.id)
-picture13_2.image = File.open('app/assets/images/snow_removal1/002.jpg')
+picture13_2.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/002.jpg'))
 picture13_2.save!
 picture13_3 = ProductPicture.create!(product_id: product13.id)
-picture13_3.image = File.open('app/assets/images/snow_removal1/003.jpg')
+picture13_3.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/003.jpg'))
 picture13_3.save!
 picture13_4 = ProductPicture.create!(product_id: product13.id)
-picture13_4.image = File.open('app/assets/images/snow_removal1/004.jpg')
+picture13_4.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/004.jpg'))
 picture13_4.save!
 picture13_5 = ProductPicture.create!(product_id: product13.id)
-picture13_5.image = File.open('app/assets/images/snow_removal1/005.jpg')
+picture13_5.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/005.jpg'))
 picture13_5.save!
 picture13_6 = ProductPicture.create!(product_id: product13.id)
-picture13_6.image = File.open('app/assets/images/snow_removal1/006.jpg')
+picture13_6.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/006.jpg'))
 picture13_6.save!
 picture13_7 = ProductPicture.create!(product_id: product13.id)
-picture13_7.image = File.open('app/assets/images/snow_removal1/007.jpg')
+picture13_7.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/007.jpg'))
 picture13_7.save!
 picture13_8 = ProductPicture.create!(product_id: product13.id)
-picture13_8.image = File.open('app/assets/images/snow_removal1/008.jpg')
+picture13_8.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/008.jpg'))
 picture13_8.save!
 
 
@@ -418,16 +418,16 @@ product14.frequently_bought_together_id = fbt14.id
 product14.save!
 
 picture14_1 = ProductPicture.create!(product_id: product14.id)
-picture14_1.image = File.open('app/assets/images/deck1/001.jpg')
+picture14_1.image = File.open(File.join(Rails.root, 'app/assets/images/deck1/001.jpg'))
 picture14_1.save!
 picture14_2 = ProductPicture.create!(product_id: product14.id)
-picture14_2.image = File.open('app/assets/images/deck1/002.jpg')
+picture14_2.image = File.open(File.join(Rails.root, 'app/assets/images/deck1/002.jpg'))
 picture14_2.save!
 picture14_3 = ProductPicture.create!(product_id: product14.id)
-picture14_3.image = File.open('app/assets/images/deck1/003.jpg')
+picture14_3.image = File.open(File.join(Rails.root, 'app/assets/images/deck1/003.jpg'))
 picture14_3.save!
 picture14_4 = ProductPicture.create!(product_id: product14.id)
-picture14_4.image = File.open('app/assets/images/deck1/004.jpg')
+picture14_4.image = File.open(File.join(Rails.root, 'app/assets/images/deck1/004.jpg'))
 picture14_4.save!
 
 
@@ -449,19 +449,19 @@ product15.frequently_bought_together_id = fbt15.id
 product15.save!
 
 picture15_1 = ProductPicture.create!(product_id: product15.id)
-picture15_1.image = File.open('app/assets/images/snow_removal2/001.jpg')
+picture15_1.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal2/001.jpg'))
 picture15_1.save!
 picture15_2 = ProductPicture.create!(product_id: product15.id)
-picture15_2.image = File.open('app/assets/images/snow_removal2/002.jpg')
+picture15_2.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal2/002.jpg'))
 picture15_2.save!
 picture15_3 = ProductPicture.create!(product_id: product15.id)
-picture15_3.image = File.open('app/assets/images/snow_removal2/003.jpg')
+picture15_3.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal2/003.jpg'))
 picture15_3.save!
 picture15_4 = ProductPicture.create!(product_id: product15.id)
-picture15_4.image = File.open('app/assets/images/snow_removal2/004.jpg')
+picture15_4.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal2/004.jpg'))
 picture15_4.save!
 picture15_5 = ProductPicture.create!(product_id: product15.id)
-picture15_5.image = File.open('app/assets/images/snow_removal2/005.jpg')
+picture15_5.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal2/005.jpg'))
 picture15_5.save!
 
 
@@ -479,16 +479,16 @@ product16.frequently_bought_together_id = fbt16.id
 product16.save!
 
 picture16_1 = ProductPicture.create!(product_id: product16.id)
-picture16_1.image = File.open('app/assets/images/snapper1/001.jpg')
+picture16_1.image = File.open(File.join(Rails.root, 'app/assets/images/snapper1/001.jpg'))
 picture16_1.save!
 picture16_2 = ProductPicture.create!(product_id: product16.id)
-picture16_2.image = File.open('app/assets/images/snapper1/002.jpg')
+picture16_2.image = File.open(File.join(Rails.root, 'app/assets/images/snapper1/002.jpg'))
 picture16_2.save!
 picture16_3 = ProductPicture.create!(product_id: product16.id)
-picture16_3.image = File.open('app/assets/images/snapper1/003.jpg')
+picture16_3.image = File.open(File.join(Rails.root, 'app/assets/images/snapper1/003.jpg'))
 picture16_3.save!
 picture16_4 = ProductPicture.create!(product_id: product16.id)
-picture16_4.image = File.open('app/assets/images/snapper1/004.jpg')
+picture16_4.image = File.open(File.join(Rails.root, 'app/assets/images/snapper1/004.jpg'))
 picture16_4.save!
 
 
@@ -507,13 +507,13 @@ product17.frequently_bought_together_id = fbt17.id
 product17.save!
 
 picture17_1 = ProductPicture.create!(product_id: product17.id)
-picture17_1.image = File.open('app/assets/images/paintball1/001.jpg')
+picture17_1.image = File.open(File.join(Rails.root, 'app/assets/images/paintball1/001.jpg'))
 picture17_1.save!
 picture17_2 = ProductPicture.create!(product_id: product17.id)
-picture17_2.image = File.open('app/assets/images/paintball1/002.jpg')
+picture17_2.image = File.open(File.join(Rails.root, 'app/assets/images/paintball1/002.jpg'))
 picture17_2.save!
 picture17_3 = ProductPicture.create!(product_id: product17.id)
-picture17_3.image = File.open('app/assets/images/paintball1/003.jpg')
+picture17_3.image = File.open(File.join(Rails.root, 'app/assets/images/paintball1/003.jpg'))
 picture17_3.save!
 
 
@@ -531,19 +531,19 @@ product18.frequently_bought_together_id = fbt18.id
 product18.save!
 
 picture18_1 = ProductPicture.create!(product_id: product18.id)
-picture18_1.image = File.open('app/assets/images/feeder1/001.jpg')
+picture18_1.image = File.open(File.join(Rails.root, 'app/assets/images/feeder1/001.jpg'))
 picture18_1.save!
 picture18_2 = ProductPicture.create!(product_id: product18.id)
-picture18_2.image = File.open('app/assets/images/feeder1/002.jpg')
+picture18_2.image = File.open(File.join(Rails.root, 'app/assets/images/feeder1/002.jpg'))
 picture18_2.save!
 picture18_3 = ProductPicture.create!(product_id: product18.id)
-picture18_3.image = File.open('app/assets/images/feeder1/003.jpg')
+picture18_3.image = File.open(File.join(Rails.root, 'app/assets/images/feeder1/003.jpg'))
 picture18_3.save!
 picture18_4 = ProductPicture.create!(product_id: product18.id)
-picture18_4.image = File.open('app/assets/images/feeder1/004.jpg')
+picture18_4.image = File.open(File.join(Rails.root, 'app/assets/images/feeder1/004.jpg'))
 picture18_4.save!
 picture18_5 = ProductPicture.create!(product_id: product18.id)
-picture18_5.image = File.open('app/assets/images/feeder1/005.jpg')
+picture18_5.image = File.open(File.join(Rails.root, 'app/assets/images/feeder1/005.jpg'))
 picture18_5.save!
 
 
@@ -563,22 +563,22 @@ product19.frequently_bought_together_id = fbt19.id
 product19.save!
 
 picture19_1 = ProductPicture.create!(product_id: product19.id)
-picture19_1.image = File.open('app/assets/images/black_decker1/001.jpg')
+picture19_1.image = File.open(File.join(Rails.root, 'app/assets/images/black_decker1/001.jpg'))
 picture19_1.save!
 picture19_2 = ProductPicture.create!(product_id: product19.id)
-picture19_2.image = File.open('app/assets/images/black_decker1/002.jpg')
+picture19_2.image = File.open(File.join(Rails.root, 'app/assets/images/black_decker1/002.jpg'))
 picture19_2.save!
 picture19_3 = ProductPicture.create!(product_id: product19.id)
-picture19_3.image = File.open('app/assets/images/black_decker1/003.jpg')
+picture19_3.image = File.open(File.join(Rails.root, 'app/assets/images/black_decker1/003.jpg'))
 picture19_3.save!
 picture19_4 = ProductPicture.create!(product_id: product19.id)
-picture19_4.image = File.open('app/assets/images/black_decker1/004.jpg')
+picture19_4.image = File.open(File.join(Rails.root, 'app/assets/images/black_decker1/004.jpg'))
 picture19_4.save!
 picture19_5 = ProductPicture.create!(product_id: product19.id)
-picture19_5.image = File.open('app/assets/images/black_decker1/005.jpg')
+picture19_5.image = File.open(File.join(Rails.root, 'app/assets/images/black_decker1/005.jpg'))
 picture19_5.save!
 picture19_6 = ProductPicture.create!(product_id: product19.id)
-picture19_6.image = File.open('app/assets/images/black_decker1/006.jpg')
+picture19_6.image = File.open(File.join(Rails.root, 'app/assets/images/black_decker1/006.jpg'))
 picture19_6.save!
 
 
@@ -597,22 +597,22 @@ product20.frequently_bought_together_id = fbt20.id
 product20.save!
 
 picture20_1 = ProductPicture.create!(product_id: product20.id)
-picture20_1.image = File.open('app/assets/images/dewalt1/001.jpg')
+picture20_1.image = File.open(File.join(Rails.root, 'app/assets/images/dewalt1/001.jpg'))
 picture20_1.save!
 picture20_2 = ProductPicture.create!(product_id: product20.id)
-picture20_2.image = File.open('app/assets/images/dewalt1/002.jpg')
+picture20_2.image = File.open(File.join(Rails.root, 'app/assets/images/dewalt1/002.jpg'))
 picture20_2.save!
 picture20_3 = ProductPicture.create!(product_id: product20.id)
-picture20_3.image = File.open('app/assets/images/dewalt1/003.jpg')
+picture20_3.image = File.open(File.join(Rails.root, 'app/assets/images/dewalt1/003.jpg'))
 picture20_3.save!
 picture20_4 = ProductPicture.create!(product_id: product20.id)
-picture20_4.image = File.open('app/assets/images/dewalt1/004.jpg')
+picture20_4.image = File.open(File.join(Rails.root, 'app/assets/images/dewalt1/004.jpg'))
 picture20_4.save!
 picture20_5 = ProductPicture.create!(product_id: product20.id)
-picture20_5.image = File.open('app/assets/images/dewalt1/005.jpg')
+picture20_5.image = File.open(File.join(Rails.root, 'app/assets/images/dewalt1/005.jpg'))
 picture20_5.save!
 picture20_6 = ProductPicture.create!(product_id: product20.id)
-picture20_6.image = File.open('app/assets/images/dewalt1/006.jpg')
+picture20_6.image = File.open(File.join(Rails.root, 'app/assets/images/dewalt1/006.jpg'))
 picture20_6.save!
 
 
@@ -631,13 +631,13 @@ product21.frequently_bought_together_id = fbt21.id
 product21.save!
 
 picture21_1 = ProductPicture.create!(product_id: product21.id)
-picture21_1.image = File.open('app/assets/images/bosch1/001.jpg')
+picture21_1.image = File.open(File.join(Rails.root, 'app/assets/images/bosch1/001.jpg'))
 picture21_1.save!
 picture21_2 = ProductPicture.create!(product_id: product21.id)
-picture21_2.image = File.open('app/assets/images/bosch1/002.jpg')
+picture21_2.image = File.open(File.join(Rails.root, 'app/assets/images/bosch1/002.jpg'))
 picture21_2.save!
 picture21_3 = ProductPicture.create!(product_id: product21.id)
-picture21_3.image = File.open('app/assets/images/bosch1/003.jpg')
+picture21_3.image = File.open(File.join(Rails.root, 'app/assets/images/bosch1/003.jpg'))
 picture21_3.save!
 
 
@@ -656,7 +656,7 @@ product22.frequently_bought_together_id = fbt22.id
 product22.save!
 
 picture22_1 = ProductPicture.create!(product_id: product22.id)
-picture22_1.image = File.open('app/assets/images/bare_tool1/001.jpg')
+picture22_1.image = File.open(File.join(Rails.root, 'app/assets/images/bare_tool1/001.jpg'))
 picture22_1.save!
 
 
@@ -676,13 +676,13 @@ product23.frequently_bought_together_id = fbt23.id
 product23.save!
 
 picture23_1 = ProductPicture.create!(product_id: product23.id)
-picture23_1.image = File.open('app/assets/images/hand_tool1/001.jpg')
+picture23_1.image = File.open(File.join(Rails.root, 'app/assets/images/hand_tool1/001.jpg'))
 picture23_1.save!
 picture23_2 = ProductPicture.create!(product_id: product23.id)
-picture23_2.image = File.open('app/assets/images/hand_tool1/002.jpg')
+picture23_2.image = File.open(File.join(Rails.root, 'app/assets/images/hand_tool1/002.jpg'))
 picture23_2.save!
 picture23_3 = ProductPicture.create!(product_id: product23.id)
-picture23_3.image = File.open('app/assets/images/hand_tool1/003.jpg')
+picture23_3.image = File.open(File.join(Rails.root, 'app/assets/images/hand_tool1/003.jpg'))
 picture23_3.save!
 
 
@@ -702,7 +702,7 @@ product24.frequently_bought_together_id = fbt24.id
 product24.save!
 
 picture24_1 = ProductPicture.create!(product_id: product24.id)
-picture24_1.image = File.open('app/assets/images/hand_tool2/001.jpg')
+picture24_1.image = File.open(File.join(Rails.root, 'app/assets/images/hand_tool2/001.jpg'))
 picture24_1.save!
 
 
