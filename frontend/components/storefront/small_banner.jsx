@@ -11,7 +11,7 @@ const SmallBanner = (props) => {
   const banner = smallBanners[random]
   debugger
   return (
-    <div>
+    <div className="small-banner">
       <img src={banner.image_url} />
     </div>
   )

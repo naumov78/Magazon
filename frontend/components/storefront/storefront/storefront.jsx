@@ -3,6 +3,7 @@ import { withRouter, Link } from 'react-router';
 
 
 
+
 class Storefront extends React.Component {
 
   constructor(props) {
@@ -76,7 +77,7 @@ class Storefront extends React.Component {
   }
 
   getExternalProductsList() {
-    const products = this.state.products.slice(0, 5)
+    const products = this.state.products.slice(0, 6)
     return (
       <ul className="storefront-list">
         {products.map((product, i) => {

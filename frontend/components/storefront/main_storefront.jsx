@@ -22,11 +22,13 @@ class MainStorefront extends React.Component {
       return (
         <div>
           <BigBanner bigBanners={ this.props.bigBanners } />
-          <div>
+          <div className="upper-row">
             <StorefrontContainer />
-          </div>
             <SmallBanner smallBanners={ this.props.smallBanners } />
-          <div>
+          </div>
+
+          <div className="lower-row">
+            <SmallBanner smallBanners={ this.props.smallBanners } />
             <WatchedProductsContainer />
           </div>
         </div>

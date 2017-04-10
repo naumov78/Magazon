@@ -14,13 +14,26 @@
 }
 
 .storefront-container {
-  width: 85%;
+  width: 80%;
+  margin-top: 15px;
+}
+
+.upper-row {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  display: flex;
+}
+.lower-row {
+  width: 99%;
   margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
 }
 
 .storefront-list {
   @include flex;
-  // height: 220px;
+  height: 250px;
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
@@ -127,4 +140,30 @@
     height: 150px;
   }
 
+}
+
+.small-banner {
+
+  img {
+    border: 1px solid #e6e6e6;
+  }
+}
+
+.small-banner:hover {
+  cursor: pointer;
+}
+
+.big-banner {
+  width: 99%;
+  display: flex;
+  justify-content: center;
+
+  img {
+    border: 1px solid #e6e6e6;
+  }
+
+}
+
+.big-banner:hover {
+  cursor: pointer;
 }

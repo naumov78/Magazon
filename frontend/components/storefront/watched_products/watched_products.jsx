@@ -65,7 +65,7 @@ class WatchedProducts extends React.Component {
 
 
   getExternalProductsList() {
-    const products = this.state.products.slice(0, 5)
+    const products = this.state.products.slice(0, 7)
     debugger
     if (products.length > 4) {
     return (

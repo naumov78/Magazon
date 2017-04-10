@@ -3,7 +3,13 @@ import React from 'react';
 const BigBanner = (props) => {
   debugger
   if (props.bigBanners.length === 0) {
-    return null;
+    return (
+      <div className="loading-page">
+        <div>
+          <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        </div>
+      </div>
+    );
   }
   const bigBanners = props.bigBanners
   const i = bigBanners.length
