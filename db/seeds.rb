@@ -138,10 +138,10 @@ product3.frequently_bought_together_id = fbt3.id
 product3.save!
 
 picture3_1 = ProductPicture.create!(product_id: product3.id)
-picture3_1.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf1/011.jpg'))
+picture3_1.image.url = "http://alex-naumov.me/magazon/deck1/004.jpg"
 picture3_1.save!
 picture3_2 = ProductPicture.create!(product_id: product3.id)
-picture3_2.image = File.open(File.join(Rails.root, 'app/assets/images/shkaf1/012.jpg'))
+picture3_2.image.url = "https://s3.amazonaws.com/magazon/garden/deck1/001.jpg"
 picture3_2.save!
 
 product4 = Product.create!(
