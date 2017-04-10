@@ -1,16 +1,12 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-
-
-
 const Footer = (props) => {
 
   function scrollToTop() {
     window.scrollTo(0, 0)
   }
 
-  debugger
   return (
     <div className="footer">
       <a onClick={scrollToTop}>

@@ -5,7 +5,6 @@ const initialState = {
   cart: []
 }
 
-
 const CartReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {

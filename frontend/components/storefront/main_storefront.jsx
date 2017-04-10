@@ -5,8 +5,6 @@ import WatchedProductsContainer from './watched_products/watched_products_contai
 import SmallBanner from './small_banner';
 import BigBanner from './big_banner';
 
-
-
 class MainStorefront extends React.Component {
 
   constructor(props) {
@@ -47,7 +45,6 @@ class MainStorefront extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div>
         {this.getContent()}

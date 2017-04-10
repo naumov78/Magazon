@@ -6,7 +6,6 @@ json.storefront storefront do |product|
   end
 end
 
-
 json.small_banners small_banners do |banner|
   json.image_url banner.image.url
 end

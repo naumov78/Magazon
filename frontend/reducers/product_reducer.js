@@ -3,7 +3,6 @@ import merge from 'lodash/merge';
 
 const initialState = {}
 
-
 const ProductReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {

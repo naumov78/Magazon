@@ -10,12 +10,10 @@ class AddToCart extends React.Component {
   }
 
   addToCart(id, quantity) {
-    debugger
     this.props.addToCart(id, quantity)
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     this.setState({ product: nextProps.product })
   }
 

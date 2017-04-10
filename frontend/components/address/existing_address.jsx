@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router';
 class ExistingAddress extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = {
       user_id: this.props.currentUser.id,
       street: this.props.currentUser.address.street,

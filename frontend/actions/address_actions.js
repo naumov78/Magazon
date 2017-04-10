@@ -4,7 +4,6 @@ export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const receiveUser = (user) => {
-  debugger
   return {
     type: RECEIVE_USER,
     user
@@ -18,7 +17,6 @@ export const receiveErrors = (errors) => {
   }
 }
 
-
 export const createAddress = (address) => {
   return (dispatch) => {
     return APIUtil.createAddress(address).then((user) => {
@@ -26,7 +24,6 @@ export const createAddress = (address) => {
     });
   };
 }
-
 
 export const updateAddress = (address, address_id) => {
   return (dispatch) => {

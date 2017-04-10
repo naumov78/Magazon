@@ -11,9 +11,7 @@ class Orders extends React.Component {
   }
 
   componentWillMount() {
-    debugger
     this.props.fetchAllOrders().then((result) => {
-      debugger
       if (result.orders.length === 0) {
         this.setState({ empty: true })
       } else {
@@ -22,9 +20,6 @@ class Orders extends React.Component {
     })
   }
 
-  componentDidMount() {
-    debugger
-  }
 
   getAllOrders() {
     const orders = this.state.orders
@@ -63,7 +58,6 @@ class Orders extends React.Component {
     } else if (this.state.orders.length > 0) {
       return <div>{this.getAllOrders()}</div>
     }
-
   }
 
 

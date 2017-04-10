@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter, Link } from 'react-router';
 
 
-
 class WatchedProducts extends React.Component {
 
   constructor(props) {
@@ -16,9 +15,7 @@ class WatchedProducts extends React.Component {
 
 
   componentDidMount() {
-    // debugger
     this.props.getWatchedProducts().then((result) => {
-      debugger
       this.setState({ products: result.watchedProducts })
     })
   }
@@ -32,7 +29,6 @@ class WatchedProducts extends React.Component {
 
   getInternalProductsList() {
     const products = this.state.products.slice(1)
-    debugger
     if (products.length > 0) {
     return (
       <div>
@@ -66,8 +62,7 @@ class WatchedProducts extends React.Component {
 
   getExternalProductsList() {
     const products = this.state.products.slice(0, 6)
-    debugger
-    if (products.length > 4) {
+    if (products.length > 2) {
     return (
       <div>
         <p>Your recently watched items</p>
@@ -93,10 +88,8 @@ class WatchedProducts extends React.Component {
   }
   }
 
-//
 
   render() {
-    debugger
     if (this.state.products && this.props.location.pathname === "/") {
       return (
         <div className="watched-products-container">
@@ -117,24 +110,3 @@ class WatchedProducts extends React.Component {
 }
 
 export default withRouter(WatchedProducts);
-
-
-
-
-
-
-
-
-
-
-
-
-// <div className="product-descr">
-//   {this.updateDescrLength(product.brief_description)}
-// </div>
-// <div className="product-price">
-//   Price: ${product.price}
-// </div>
-// <div className="addToCart-button">
-//   <button onClick={() => this.props.addToCart(product.id, 1)}>Add to cart</button>
-// </div>

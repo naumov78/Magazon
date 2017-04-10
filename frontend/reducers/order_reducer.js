@@ -1,12 +1,10 @@
 import { RECEIVE_ORDER, RECEIVE_ALL_ORDERS } from '../actions/order_actions';
 import merge from 'lodash/merge';
 
-
 const initialState = {
   products: [],
   orders: []
 }
-
 
 const OrderReducer = (state = initialState, action) => {
   Object.freeze(state);

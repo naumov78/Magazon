@@ -18,11 +18,6 @@
 
 class Product < ActiveRecord::Base
 
-  # has_many :product_categories,
-  # class_name: "ProductCategory",
-  # primary_key: :id,
-  # foreign_key: :product_id
-
   belongs_to :category
 
   has_many :watched_products_lists,

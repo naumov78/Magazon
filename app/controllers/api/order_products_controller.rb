@@ -21,5 +21,4 @@ class Api::OrderProductsController < ApplicationController
     params.require(:order_product).permit(:order_id, :product_id, :quantity)
   end
 
-
 end

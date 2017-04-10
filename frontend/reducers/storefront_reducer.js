@@ -7,7 +7,6 @@ const initialState = {
   bigBanners: []
 }
 
-
 const StorefrontReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {

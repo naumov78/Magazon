@@ -6,7 +6,6 @@ import { createOrder } from '../../actions/order_actions';
 import { updateBoughtTogether } from '../../actions/product_actions';
 
 
-
 const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser

@@ -84,13 +84,15 @@ class Payment extends React.Component {
             <div>
               <input id="update-address" type="submit" value="Add card" />
             </div>
+            <div className="cc-warning">
+              Please, DO NOT enter real credit card details!<br />
+            Magazon IS NOT a real store.
+            </div>
           </div>
         </form>
       </div>
     )
   }
-
-
 
 }
 

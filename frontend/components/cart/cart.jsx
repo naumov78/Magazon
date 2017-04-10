@@ -3,7 +3,6 @@ import { withRouter, Link } from 'react-router';
 import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
 
 
-
 class Cart extends React.Component {
 
   constructor(props) {
@@ -192,14 +191,3 @@ class Cart extends React.Component {
 
 
 export default withRouter(Cart);
-
-
-
-// <tr>
-//   <td colSpan="4" >
-//     <div className="cart-product-buttons">
-//       <span id="remove-btn"><button onClick={() => this.removeFromCart(product.product.id, -1)}>Remove item</button></span>
-//       <span id="add-btn"><button onClick={() => this.addToCart(product.product.id, 1)}>Add item</button></span>
-//     </div>
-//   </td>
-// </tr>

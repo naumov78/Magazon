@@ -17,7 +17,6 @@ class Api::AddressesController < ApplicationController
     end
   end
 
-
   def update
     address = Address.find(current_user.address_id)
     if address.update_attributes(address_params)
@@ -27,8 +26,6 @@ class Api::AddressesController < ApplicationController
       render json: address.errors.full_messages, status: 422
     end
   end
-
-
 
   private
 

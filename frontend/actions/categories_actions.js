@@ -28,7 +28,6 @@ export const fetchAllCategories = () => {
 };
 
 
-
 export const fetchCategory = (id) => {
   return (dispatch) => {
     return APIUtil.fetchCategory(id).then((category) => {

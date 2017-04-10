@@ -2,8 +2,6 @@ import React from 'react';
 import { withRouter, Link } from 'react-router';
 
 
-
-
 class Order extends React.Component {
 
   constructor(props) {
@@ -53,7 +51,6 @@ class Order extends React.Component {
   getOrderDate(posted) {
       const date = new Date(posted);
       let monthNames = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      debugger
       const Mon = monthNames[date.getMonth()];
       const Day = date.getDate();
       const Yr = 1900 + date.getYear();
@@ -144,21 +141,7 @@ class Order extends React.Component {
     return order_id * 6532497 + ' - ' + order_id * 165
   }
 
-  // getTitleMessage() {
-  //   if (this.props.fromOrderList) {
-  //
-  //   } else {
-  //     return (
-  //       <div>
-  //         <h3>{`Thank you for your order! Your Order #${this.getOrderNum(Number(this.props.params.id))} has been placed.`}</h3>
-  //       </div>
-  //     );
-  //   }
-  // }
-
-
   render() {
-    debugger
     if (this.getTotal() > 0) {
     return (
       <div className="order-details-container">

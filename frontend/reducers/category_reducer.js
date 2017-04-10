@@ -5,7 +5,6 @@ const initialState = {
   products: []
 }
 
-
 const CategoryReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {

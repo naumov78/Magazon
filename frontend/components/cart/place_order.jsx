@@ -4,7 +4,6 @@ import CartAddressContainer from './cart_address_container';
 import CartPaymentContainer from './cart_payment_container';
 
 
-
 class PlaceOrder extends React.Component {
 
   constructor(props) {
@@ -29,7 +28,6 @@ class PlaceOrder extends React.Component {
       return total;
     }
   }
-
 
 
   createOrder(e) {
@@ -103,7 +101,10 @@ class PlaceOrder extends React.Component {
   getPlaceOrderButton() {
     if (this.props.currentUser.address_id && this.props.currentUser.payment_id ) {
       return (
-        <span className="addToCart-button"><button onClick={(e) => this.createOrder(e)}>Place order</button></span>
+        <div className="addToCart-button place-order-btn-block">
+          <div id="btn"><button onClick={(e) => this.createOrder(e)}>Place order</button></div>
+          <div className="cc-warning">Magazon is a fake store. Products are not going to be shipped.</div>
+        </div>
       );
     } else {
       return (
@@ -113,7 +114,6 @@ class PlaceOrder extends React.Component {
   }
 
   render() {
-    debugger
     if (this.getTotal() > 0) {
       return (
         <div className="cart-container">
@@ -146,6 +146,7 @@ class PlaceOrder extends React.Component {
           <div id="place-btn" className="cart-buttons">
             {this.getPlaceOrderButton()}
           </div>
+
         </div>
       )
     } else {
@@ -163,17 +164,3 @@ class PlaceOrder extends React.Component {
 
 
 export default withRouter(PlaceOrder);
-
-
-
-
-
-//
-// <tr>
-//   <td colSpan="4" >
-//     <div className="cart-product-buttons">
-//       <span id="remove-btn"><button onClick={() => this.removeFromCart(product.product.id, -1)}>Remove item</button></span>
-//       <span id="add-btn"><button onClick={() => this.addToCart(product.product.id, 1)}>Add item</button></span>
-//     </div>
-//   </td>
-// </tr>

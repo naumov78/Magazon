@@ -1,7 +1,6 @@
 import * as APIUtilCart from '../util/cart_api_util';
 import * as APIUtil from '../util/cart_products_api_util';
 
-
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_CART = "RECEIVE_CART";
@@ -63,7 +62,6 @@ export const removeFromCart = (product_id, quantity) => {
   }
 }
 
-
 export const fetchCart = (cart_id) => {
   return (dispatch) => {
     return APIUtilCart.fetchCart(cart_id).then((cart) => {
@@ -71,7 +69,6 @@ export const fetchCart = (cart_id) => {
     })
   }
 }
-
 
 export const emptyCart = (cart_id) => {
   return (dispatch) => {

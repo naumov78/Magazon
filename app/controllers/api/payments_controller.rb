@@ -7,8 +7,7 @@ class Api::PaymentsController < ApplicationController
     cardholder: payment_params[:cardholder],
     card_number: payment_params[:card_number],
     expires: payment_params[:expires],
-    cvv: payment_params[:cvv],
-    )
+    cvv: payment_params[:cvv])
     if payment.save
       @user = current_user
       @user.update_attribute("payment_id", payment.id)

@@ -18,7 +18,6 @@ const App =({ children }) => {
       <div id="top" className="main-container">
         <nav>
           <HeaderContainer>
-            <SessionStatusContainer />
             <CategoriesContainer />
           </HeaderContainer>
         </nav>

@@ -11,11 +11,6 @@
 
 class Category < ActiveRecord::Base
 
-  # has_many :category_products,
-  # class_name: "ProductCategory",
-  # primary_key: :id,
-  # foreign_key: :category_id
-
-  has_many :products #, through: :category_products
+  has_many :products
 
 end

@@ -1,10 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
 
-
-
-
-
 const OrderDetails = (props) => {
   const posted = getDate(props.order.posted)
   const order_id = props.order.order_id
@@ -15,7 +11,6 @@ const OrderDetails = (props) => {
   function getDate(posted) {
       const date = new Date(posted);
       let monthNames = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      debugger
       const Mon = monthNames[date.getMonth()];
       const Day = date.getDate();
       const Yr = 1900 + date.getYear();
@@ -104,14 +99,3 @@ const OrderDetails = (props) => {
 }
 
 export default withRouter(OrderDetails);
-
-
-
-
-// <tr>
-//   <td>
-//     <div>
-//       Order total: $ {props.order.total_amount}
-//     </div>
-//   </td>
-// </tr>

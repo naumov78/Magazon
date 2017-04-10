@@ -12,7 +12,7 @@ class Api::OrdersController < ApplicationController
 
   def show
     update_status(params[:id])
-    @order = Order.find(params[:id]) #.order_products
+    @order = Order.find(params[:id])
   end
 
   def create
@@ -30,7 +30,7 @@ class Api::OrdersController < ApplicationController
     cart.each do |cart_product|
       cart_product.delete
     end
-    @order = order #.order_products
+    @order = order
     render 'api/orders/show'
   end
 
@@ -38,7 +38,7 @@ class Api::OrdersController < ApplicationController
   def update
     order = Order.find(params[:id])
     order.update_attribute("status_id", order_params[:status_id])
-    @order = order #.order_products
+    @order = order
     render 'api/orders/show'
   end
 

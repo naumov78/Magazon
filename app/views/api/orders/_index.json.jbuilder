@@ -1,5 +1,4 @@
 
-
 json.orders orders do |order|
 json.total_amount order.total_amount.to_f
 json.status OrderStatus.find(order.status_id).status

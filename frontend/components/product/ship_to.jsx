@@ -7,7 +7,6 @@ const ShipTo = (props) => {
       `${props.currentUser.first_name} ${props.currentUser.last_name}`
     );
   }
-  debugger
   if (props.currentUser.address_id) {
     return (
       <div className="ship-to">

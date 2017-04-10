@@ -5,7 +5,6 @@ const initialState = {
   watchedProducts: []
 }
 
-
 const WatchedProductsReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {

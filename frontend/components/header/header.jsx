@@ -2,8 +2,6 @@ import React from 'react';
 import { withRouter, Link } from 'react-router';
 import SearchBar from './search_bar';
 
-
-
 class Header extends React.Component {
 
   constructor(props) {
@@ -36,7 +34,7 @@ class Header extends React.Component {
     if (this.state.categoryMenu) {
       return (
         <div onMouseLeave={this.hideCategoryMenu} className="category-menu-container">
-          {this.props.children[1]}
+          {this.props.children}
         </div>
       )
     } else {
@@ -49,7 +47,6 @@ class Header extends React.Component {
       let total = 0
       const cart = store.getState().cart.cart
       let i = 0
-      debugger
       while (typeof cart[i] !== "undefined") {
           total += cart[i].quantity
           i++;
@@ -98,7 +95,6 @@ class Header extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="header-container">
         <div className="logo">

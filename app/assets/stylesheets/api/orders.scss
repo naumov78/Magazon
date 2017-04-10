@@ -4,10 +4,8 @@
 
 @import "base/colors.scss";
 
-
 .order-list-container {
   width: 100%;
-
 }
 
 .order-list-title {
@@ -30,7 +28,6 @@
     font-size: 21px;
     padding-bottom: 50px;
   }
-
 }
 
 .single-order-block {
@@ -63,7 +60,6 @@
     cursor: pointer;
     text-decoration: underline;
   }
-
 }
 
 .order-page-title-block {
@@ -88,10 +84,7 @@
     cursor: pointer;
     text-decoration: underline;
   }
-
 }
-
-
 
 .single-order-product-list-container {
   padding: 20px;
@@ -114,7 +107,6 @@
     height: 100px;
     display: block;
   }
-
 }
 
 .order-product-price{
@@ -165,4 +157,13 @@
   font-weight: bold;
   font-size: 1.06em;
   color: #cc0000;
+}
+.place-order-btn-block {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+#btn {
+  text-align: right;
 }

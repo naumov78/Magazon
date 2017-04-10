@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
 @import "base/colors.scss";
 
 @mixin gradient {
@@ -22,7 +21,6 @@
     background: linear-gradient($cart-light-yellow, $cart-yellow);
 }
 
-
 .category-container {
   width: 99%;
   display: flex;
@@ -31,14 +29,11 @@
   padding-bottom: 50px;
 }
 
-
 .central-block {
   display: flex;
   justify-content: flex-start;
   border-bottom: 1px solid $light-grey;
 }
-
-
 
 .left-col {
   display: flex;
@@ -59,9 +54,7 @@
   margin: 0 auto;
 }
 
-
 // ======  category content ======= //
-
 
 .category-list {
   display: flex;
@@ -69,7 +62,6 @@
   padding: 0 200px 0 100px;
   width: 1200px;
 }
-
 
 .product-line {
   padding: 10px 0 10px 0;
@@ -83,10 +75,6 @@
 .product-line:last-child {
   border-bottom: 0;
 }
-
-// .product-list {
-//   padding: 20px;
-// }
 
 .product_picture {
   // padding: 20px;
@@ -127,13 +115,9 @@
   padding: 5px 0 0 0;
 
   .price {
-    // padding-left: 10px;
     font-size: 17px;
-    // color: $dark-red;
     font-family: 'Open Sans', sans-serif;
   }
-
-
 }
 
 .addToCart-button {
@@ -152,7 +136,6 @@
     cursor: pointer;
     @include gradient;
   }
-
 }
 
 .inactive-button {

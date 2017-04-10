@@ -21,16 +21,9 @@
     background: linear-gradient($cart-light-yellow, $cart-yellow);
 }
 
-
 .place-order-create-address {
-  // margin: 0 auto;
-  // width: 960px;
   display: flex;
   justify-content: space-between;
-}
-
-.warning-sign {
-
 }
 
 .checkmark-sign {
@@ -49,11 +42,6 @@
   color: $dark-red;
   margin-left: -20px;
 }
-
-.get-address-form-btn {
-
-}
-
 
 .address-payment-form-container {
   width: 600px;
@@ -79,12 +67,10 @@
   }
 }
 
-
-
 .payment-form-fields {
   margin: 0 auto;
   display: flex;
-  height: 150px;
+  height: 200px !important;
   flex-direction: column;
   align-content: flex-start;
   justify-content: space-between;
@@ -92,34 +78,33 @@
   input[type="submit"] {
     margin-top: 20px;
   }
-
 }
 
 .payment-field {
+  margin-top: 15px;
   width: 275px;
-  // border: 1px solid black;
   display: flex;
   justify-content: space-between;
 
   label {
-    // border: 1px solid black;
     width: 125px;
     text-align: right;
     padding-right: 15px;
+    padding-top: 3px;
   }
-
-
 
   input {
     width: 96px;
+    height: 12px;
     text-align: left;
-    // padding-right: 20px;
   }
-
-
-
 }
 
+.cc-warning {
+  color: red;
+  font-size: 12px;
+  padding-top: 15px;
+}
 
 .address-street-fields {
   width: 500px;
@@ -130,18 +115,14 @@
   input {
     width: 188px;
   }
-
 }
-
 
 .address-city-fields {
   width: 500px;
   display: flex;
-
   justify-content: flex-start;
   padding-bottom: 30px;
 }
-
 
 #update-address {
   @include hovered-gradient;

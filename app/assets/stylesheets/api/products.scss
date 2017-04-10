@@ -21,7 +21,6 @@
     background: linear-gradient($cart-light-yellow, $cart-yellow);
 }
 
-
 #cart {
   margin-left: 10px;
 }
@@ -30,26 +29,20 @@
   border: 0;
 }
 
-// ===================
-
 .product-page {
   display: flex;
   -webkit-flex-flow: column nowrap;
   padding-bottom: 50px;
 }
-
-
 .product-container {
   width: 99%;
   padding-bottom: 20px;
   margin: 0 auto;
-  // margin-left: 1%;
   display: flex;
   -webkit-flex-flow: row nowrap;
   align-content: space-between;
   align-items: flex-start;
   border-bottom: 0.1em solid $light-grey;
-
 }
 
 .alt-images {
@@ -64,7 +57,6 @@
     width: 40px;
     height: 40px;
   }
-
 }
 
 .small-main-image {
@@ -79,7 +71,6 @@
     cursor: pointer;
   }
 }
-
 
 .product-info-container {
   display: flex;
@@ -120,7 +111,6 @@
   }
 }
 
-
 @media all and (max-width: 965px) {
   .main-image {
     padding: 0 12px;
@@ -159,12 +149,7 @@
   }
 }
 
-
-
-
-
 .product-product-title {
-  // font-size: 21px;
   font-size: 1.3em;
   border-bottom: 1px solid $light-grey;
   padding-bottom: 15px;
@@ -216,8 +201,6 @@
     cursor: pointer;
     text-decoration: underline;
   }
-
-
 }
 
 // shipping-price
@@ -232,15 +215,12 @@
   font-size: 0.80em;
 }
 
-
-
 // order container
 
 .order-banner-container {
   display: flex;
   flex-direction: column;
   margin-left: 65px;
-
 }
 
 .product-banner{
@@ -287,8 +267,6 @@
 
   .addToCart-button {
 
-    // padding: 0;
-
     button {
       @include hovered-gradient;
       border: 1px solid $cart-darkest-yellow;
@@ -302,12 +280,9 @@
 
     button:hover {
       cursor: pointer;
-      // background-color: $cart-yellow;
       @include gradient;
     }
-
   }
-
 }
 
 .cart-icon {
@@ -318,7 +293,6 @@
   background-color: $darkest-blue;
   border: 1px solid $darkest-blue;
   border-radius: 3px;
-  // height: 10px;
 }
 
 .fa-shopping-cart {
@@ -330,7 +304,6 @@
   font-size: 0.92em;
   color: $darkest-blue;
 }
-
 
 // ship-to
 
@@ -347,7 +320,6 @@
   margin-top: 10px;
   font-size: 0.85em;
 }
-
 
 // bought together
 
@@ -401,7 +373,6 @@
     width: 150px;
     height: 150px;
   }
-
 }
 
 .bt-product:hover {

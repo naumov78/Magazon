@@ -8,8 +8,7 @@ class SessionForm extends React.Component {
       first_name: '',
       last_name: '',
       email: '',
-      password: '',
-
+      password: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -20,7 +19,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
-      //let id = this.props.currentUser.id;
       this.props.router.push('/');
     });
   }
@@ -58,16 +56,9 @@ class SessionForm extends React.Component {
     });
   }
 
-  // componentDidUpdate(prevProps, prevState){
-  //   if (this.props.errors !== prevProps.errors){
-  //     this.renderSignUpErrors();
-  //   }
-  // }
-
   render() {
 
     const link = (this.props.formType === 'signup' ? 'signin' : 'signup');
-    debugger
     if (this.props.formType === 'signup'){
     return (
       <section className='signup-container'>
@@ -115,7 +106,6 @@ class SessionForm extends React.Component {
     </section>
     );
   } else {
-    debugger
     return (
       <section className='signup-container'>
         <img src={ window.asset.logo } className="signup-logo"/>
@@ -158,11 +148,3 @@ class SessionForm extends React.Component {
 }
 
 export default SessionForm;
-
-// <button onClick={this.handleSubmit} className="signup-submit">
-//   Create Your Magazon Account
-// </button>
-
-// <button onClick={this.handleSubmit} className="signup-submit">
-//   Sign In
-// </button>

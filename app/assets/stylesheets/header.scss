@@ -28,9 +28,6 @@
   justify-content: flex-start;
 }
 
-
-
-
 .categories-search-container {
   display: flex;
   flex-direction: column;
@@ -39,7 +36,6 @@
 }
 
 .search-bar {
-
 padding-top: 40px;
 padding-left: 50px;
 
@@ -50,9 +46,7 @@ padding-left: 50px;
     font-size: 15px;
     padding: 3px 10px 6px 3px;
   }
-
 }
-
 
 .search-icon {
   padding: 5px 7px 7px 7px;
@@ -61,12 +55,10 @@ padding-left: 50px;
   background-color: $cart-yellow;
 }
 
-
 .categories-button {
   position: absolute;
   top: 96px;
   left: -50px;
-  // padding: 3px 7px;
 
   .caret-down-icon {
     padding-left: 3px;
@@ -87,9 +79,7 @@ padding-left: 50px;
     padding: 3px 7px;
     cursor: pointer;
   }
-
 }
-
 
 .cart-info {
   position: absolute;
@@ -102,12 +92,10 @@ padding-left: 50px;
   position: relative;
 }
 
-
 .fa-shopping-cart {
   color: #fff;
   padding-right: 10px;
 }
-
 
 #cart-items {
   position: absolute;
@@ -135,7 +123,6 @@ padding-left: 50px;
   padding: 4px 9px 4px 9px;
 }
 
-
 .welcome-message {
   position: absolute;
   top: 64px;
@@ -153,7 +140,6 @@ padding-left: 50px;
   font-size: 14px;
 }
 
-
 .logout-button {
   padding: 10px 0 0 0;
 
@@ -170,7 +156,6 @@ padding-left: 50px;
     cursor: pointer;
     @include gradient;
   }
-
 }
 
 .no-welcome-message {

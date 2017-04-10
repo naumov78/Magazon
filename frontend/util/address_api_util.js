@@ -8,7 +8,6 @@ export const createAddress = (address) => {
   })
 }
 
-
 export const updateAddress = (address, address_id) => {
   return $.ajax({
     method: "PATCH",

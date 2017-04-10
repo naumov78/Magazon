@@ -21,5 +21,4 @@ class WatchedList < ActiveRecord::Base
 
   has_many :products, through: :watched_products
 
-
 end

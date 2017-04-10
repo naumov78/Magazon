@@ -7,6 +7,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
+
   def create
     @user = User.create(user_params)
     if @user.save
@@ -21,6 +22,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
+
   def update
     @user = current_user
     if (@user)
@@ -33,14 +35,14 @@ class Api::UsersController < ApplicationController
     end
   end
 
+
   def show
     @user = current_user
   end
 
-  def destroy
-  end
 
   private
+
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password)
     end

@@ -9,8 +9,8 @@ import ShipTo from './ship_to';
 class Product extends React.Component {
 
   constructor(props) {
-  super(props);
-  this.state = { product: {}, main_picture: null}
+    super(props);
+    this.state = { product: {}, main_picture: null}
   }
 
   componentWillUnmount() {
@@ -22,9 +22,7 @@ class Product extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (this.props.params.id.toString() !== nextProps.params.id.toString()) {
-      debugger
       this.props.fetchProduct(Number(nextProps.params.id[0]), Number(nextProps.params.id[1])).then((result) => {
         this.setState({ product: result.product, main_picture: result.product.product_pictures[0] }, this.scrollToTop())
         this.props.getWatchedProducts()
@@ -33,19 +31,16 @@ class Product extends React.Component {
   }
 
   componentDidMount() {
-    debugger
       this.props.fetchProduct(Number(this.props.params.id[0]), Number(this.props.params.id[1])).then((result) => {
         this.setState({ product: result.product, main_picture: result.product.product_pictures[0] })
       })
   }
 
   addToCart(id, quantity) {
-    debugger
     this.props.addToCart(id, quantity)
   }
 
   changeMainPicture(e, idx) {
-    debugger
     e.preventDefault();
     this.setState({ main_picture: this.state.product.product_pictures[idx] })
   }
@@ -67,7 +62,6 @@ class Product extends React.Component {
   }
 
   render() {
-    debugger
     if (this.state.product.title) {
     return (
       <div className="product-page">

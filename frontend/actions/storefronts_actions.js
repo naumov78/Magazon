@@ -1,6 +1,5 @@
 import * as StoreFrontAPIUtil from '../util/storefront_api_util';
 
-
 export const RECEIVE_STOREFRONT = "RECEIVE_STOREFRONT"
 
 export const receiveStorefront = (storefront) => {
@@ -11,7 +10,6 @@ export const receiveStorefront = (storefront) => {
     bigBanners: storefront.big_banners
   }
 };
-
 
 
 export const getStorefront = () => {

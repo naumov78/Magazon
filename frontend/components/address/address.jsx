@@ -1,8 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
 
-
-
 class Address extends React.Component {
 
   constructor(props) {
@@ -32,9 +30,6 @@ class Address extends React.Component {
     )
   }
 
-  componentWillReceiveProps(nextProps) {
-    debugger
-  }
 
   createAddress(e) {
     e.preventDefault();
@@ -91,10 +86,6 @@ class Address extends React.Component {
     )
   }
 
-
-
 }
-
-
 
 export default withRouter(Address)

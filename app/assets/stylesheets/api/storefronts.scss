@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//
 @import "base/colors.scss";
 
 @mixin flex {
@@ -37,7 +36,6 @@
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  // border: 1px solid black;
 }
 
 .watched-products-list {
@@ -51,17 +49,10 @@
 .product-block {
   width: 200px;
   height: 200px;
-  // margin-left: 10px;
-  // margin: 0 auto;
 }
-
-
 
 .frontstore-product {
   height: 200px;
-  // border: 1px solid #e6e6e6;
-  // padding: 10px;
-
 
   .product-img {
 
@@ -70,16 +61,12 @@
       height: 200px;
       display: block;
     }
-
   }
 
   .product-title {
     font-size: 13px;
   }
-
-
 }
-
 
 // internal
 
@@ -109,11 +96,9 @@
   padding-bottom: 0;
 }
 
-
 .prod-details {
   display: flex;
   flex-direction: column;
-  // width: 230px;
 }
 
 .storefront-product {
@@ -123,7 +108,6 @@
   font-size: 0.85em;
   line-height: 1.5;
 }
-
 
 .prod-title {
   color: $link-blue;
@@ -136,17 +120,12 @@
 }
 
 .internal-product-img {
-  // width: 230px;
-
-  // align-content: center;
-
 
   img {
     margin-left: 30px;
     width: 150px;
     height: 150px;
   }
-
 }
 
 .small-banner {
@@ -168,7 +147,6 @@
   img {
     border: 1px solid #e6e6e6;
   }
-
 }
 
 .big-banner:hover {

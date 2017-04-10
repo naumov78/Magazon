@@ -1,8 +1,6 @@
 
 @import "base/colors.scss";
 
-
-
 .back-2-top {
   padding: 20px 0 20px 0;
   width: 100%;
@@ -12,8 +10,6 @@
   font-size: 13px;
   background-color: $footer-blue;
 }
-
-
 
 .back-2-top:hover {
   background-color: $footer-light-blue;
@@ -33,37 +29,30 @@
   -webkit-flex-flow: row wrap;
   color: #fff;
   justify-content: space-around;
-  /*align-items: center;*/
   font-family: 'Open Sans', sans-serif;
 }
 
 .footer-titles {
-  /*text-decoration: underline;*/
   font-size: 0.95em;
   padding-bottom: 20px;
 }
 
 .magazon-description {
-  /*width: 50%;*/
   text-align: center;
   line-height: 17px;
-  /*padding-right: 30px;*/
   letter-spacing: 1.1px;
 }
 
 .description-text {
-  /*width: 500px;*/
   font-size: 11px;
   letter-spacing: 1.3px;
   text-align: left;
 }
 
 .magazon-authors {
-  /*width: 50%;*/
   text-align: center;
   line-height: 17px;
   letter-spacing: 1.1px;
-  /*padding-left: 30px;*/
 }
 
 @media all and (max-width: 1411px) {

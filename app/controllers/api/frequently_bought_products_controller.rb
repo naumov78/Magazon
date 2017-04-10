@@ -1,8 +1,5 @@
 
-
-
 class Api::FrequentlyBoughtProductsController < ApplicationController
-
 
   def create
     cart = CartProduct.where(cart_id: current_user.cart_id).order(created_at: :desc)

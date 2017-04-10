@@ -2,24 +2,12 @@ import React from 'react';
 import { withRouter, Link } from 'react-router';
 
 
-
-
 class Storefront extends React.Component {
 
   constructor(props) {
-  super(props);
-  this.state = { products: [] }
+    super(props);
+    this.state = { products: [] }
   }
-
-
-  // componentWillReceiveProps(nextProps) {
-  //   let id = nextProps.params.id
-  //   if (id !== this.props.params.id) {
-  //     this.props.fetchCategory(id).then((result) => {
-  //       this.setState({ products: result.products })
-  //   });
-  //   }
-  // }
 
   componentDidMount() {
     this.props.getStorefront().then((result) => {
@@ -41,7 +29,6 @@ class Storefront extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (this.props.params.id !== nextProps.params.id) {
       this.props.getStorefront().then((result) => {
         this.setState({ products: result.storefront })
@@ -81,7 +68,6 @@ class Storefront extends React.Component {
     return (
       <ul className="storefront-list">
         {products.map((product, i) => {
-          debugger
           return (
             <li key={i} className="product-block">
               <div className="frontstore-product">
@@ -116,22 +102,3 @@ class Storefront extends React.Component {
 }
 
 export default withRouter(Storefront);
-
-
-
-
-
-
-// <div className="product-title">
-//   {this.updateTitleLength(product.title)}
-// </div>
-// <div className="product-price">
-//   Price: ${product.price}
-// </div>
-
-
-
-
-// <div className="addToCart-button">
-//   <button onClick={() => this.props.addToCart(product.id, 1)}>Add to cart</button>
-// </div>
