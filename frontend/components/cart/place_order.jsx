@@ -36,6 +36,7 @@ class PlaceOrder extends React.Component {
     e.preventDefault();
     this.props.updateBoughtTogether();
     this.props.createOrder().then((result) => {
+      this.props.fetchCart(this.props.currentUser.cart_id)
       this.props.router.push(`/orders/${result.order[0].order_id}`)
     });
   }

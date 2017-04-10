@@ -6,7 +6,9 @@ export const RECEIVE_STOREFRONT = "RECEIVE_STOREFRONT"
 export const receiveStorefront = (storefront) => {
   return {
     type: RECEIVE_STOREFRONT,
-    storefront: storefront.storefront
+    storefront: storefront.storefront,
+    smallBanners: storefront.small_banners,
+    bigBanners: storefront.big_banners
   }
 };
 
