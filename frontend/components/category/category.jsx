@@ -75,7 +75,7 @@ class Category extends React.Component {
     )
   }
 
-  // <SmallBanner smallBanners={this.props.smallBanners} />
+
 
   render() {
     if (this.state.products) {
@@ -84,13 +84,17 @@ class Category extends React.Component {
 
         <div className="central-block">
           <div className="left-col">
-
-            <StorefrontContainer />
+            <SmallBanner smallBanners={this.props.smallBanners} />
+            <div className="category-left-sponsored">
+              <StorefrontContainer />
+            </div>
           </div>
             {this.getProductsList()}
           <div className="right-col">
-            <StorefrontContainer />
-
+            <div className="category-right-sponsored">
+              <StorefrontContainer />
+            </div>
+            <SmallBanner smallBanners={this.props.smallBanners} />
           </div>
         </div>
 
@@ -113,7 +117,7 @@ class Category extends React.Component {
 
 export default withRouter(Category);
 
-// <SmallBanner smallBanners={this.props.smallBanners} />
+
 
 // <StorefrontContainer />
 

@@ -41,9 +41,13 @@ class Order extends React.Component {
   }
 
   getUserName() {
-    return (
-      `${this.props.currentUser.first_name} ${this.props.currentUser.last_name}`
-    );
+    if (this.props.currentUser) {
+      return (
+        `${this.props.currentUser.first_name} ${this.props.currentUser.last_name}`
+      );
+    } else {
+      return null;
+    }
   }
 
   getOrderDate(posted) {

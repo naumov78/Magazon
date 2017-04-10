@@ -40,10 +40,24 @@
 
 
 
+.left-col {
+  display: flex;
+  flex-direction: column;
+}
 
+.right-col {
+  display: flex;
+  flex-direction: column;
+}
 
+.category-left-sponsored {
+  padding-top: 15px;
+  margin: 0 auto;
+}
 
-
+.category-right-sponsored {
+  margin: 0 auto;
+}
 
 
 // ======  category content ======= //

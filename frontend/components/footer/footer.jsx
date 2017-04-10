@@ -25,7 +25,7 @@ const Footer = (props) => {
             <div className="footer-titles">About Magazon</div>
             <div className="description-text">
               Magazon is a full stack project based on Amazon.com.<br />
-              The content (product descriptions and product images) is the property of Amazon.com, Inc. and
+            The content (images, product descriptions and product images) is the property of Amazon.com, Inc. and
               used only for educational purposes.
             </div>
         </div>
