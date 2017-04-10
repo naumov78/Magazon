@@ -40,6 +40,13 @@
   // border: 1px solid black;
 }
 
+.watched-products-list {
+  @include flex;
+  height: 250px;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .product-block {
   width: 200px;

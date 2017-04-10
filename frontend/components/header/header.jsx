@@ -45,14 +45,18 @@ class Header extends React.Component {
   }
 
   getProductsInCart() {
-    let total = 0
-    const cart = store.getState().cart.cart
-    let i = 0
-    while (typeof cart[i] !== "undefined") {
-        total += cart[i].quantity
-        i++;
-      }
-    this.setState({ productsInCart: total })
+    if (this.props.currentUser) {
+      let total = 0
+      const cart = store.getState().cart.cart
+      let i = 0
+      while (typeof cart[i] !== "undefined") {
+          total += cart[i].quantity
+          i++;
+        }
+      this.setState({ productsInCart: total })
+    } else {
+      return null;
+    }
   }
 
   getOrdersButton() {
@@ -82,7 +86,13 @@ class Header extends React.Component {
         </div>
       )
     } else {
-      return null;
+      return (
+        <div className="no-welcome-message">
+          <Link to={"/signin"}>
+            <span className="login-button"><button>Sign In</button></span>
+          </Link>
+        </div>
+      )
     }
   }
 

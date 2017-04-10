@@ -70,7 +70,7 @@ class WatchedProducts extends React.Component {
     if (products.length > 4) {
     return (
       <div>
-          <ul className="storefront-list">
+          <ul className="watched-products-list">
             {products.map((product, i) => {
               return (
                 <li key={i} className="product-block">
@@ -98,7 +98,7 @@ class WatchedProducts extends React.Component {
     debugger
     if (this.state.products && this.props.location.pathname === "/") {
       return (
-        <div>
+        <div className="watched-products-container">
           {this.getExternalProductsList()}
         </div>
       );

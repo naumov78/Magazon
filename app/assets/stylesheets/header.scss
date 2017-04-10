@@ -172,3 +172,33 @@ padding-left: 50px;
   }
 
 }
+
+.no-welcome-message {
+  position: absolute;
+  top: 84px;
+  left: 1470px;
+  color: #fff;
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-button {
+  padding: 10px 0 0 0;
+
+  button {
+    @include hovered-gradient;
+    border: 1px solid $cart-darkest-yellow;
+    border-radius: 3px;
+    width: 110px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    @include gradient;
+  }
+}
