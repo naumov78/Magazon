@@ -9,11 +9,14 @@ class Header extends React.Component {
   constructor(props) {
   super(props);
   this.categories = null;
-  this.state = { productsInCart: 0, categoryMenu: false }
+  this.state = { productsInCart: this.props.cart.length, categoryMenu: false }
   this.showCategoryMenu = this.showCategoryMenu.bind(this);
   this.hideCategoryMenu = this.hideCategoryMenu.bind(this);
   }
 
+  componentWillMount() {
+    this.props.fetchCart()
+  }
 
   componentWillReceiveProps() {
     this.getProductsInCart()
@@ -52,6 +55,37 @@ class Header extends React.Component {
     this.setState({ productsInCart: total })
   }
 
+  getOrdersButton() {
+    if (this.props.currentUser) {
+      if (this.props.currentUser.orders.length > 0) {
+        return (
+          <div className="orders-button">
+            <Link to={"/orders"}>
+              <p>Orders</p>
+            </Link>
+          </div>
+        )
+      } else {
+        return null;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  getWelcomeMessage() {
+    if (this.props.currentUser) {
+      return (
+        <div className="welcome-message">
+          <span className="welcome-message-text">{`Hello, ${this.props.currentUser.first_name}`}</span>
+          <span className="logout-button"><button onClick={() => this.props.logout()}>Logout</button></span>
+        </div>
+      )
+    } else {
+      return null;
+    }
+  }
+
   render() {
     debugger
     return (
@@ -62,19 +96,32 @@ class Header extends React.Component {
           </Link>
         </div>
 
-        <div>
-          <div className="categories-search-container">
-            <SearchBar />
-          </div>
+        <div className="categories-search-container">
+
+          <SearchBar />
 
           <div className="categories-button">
-            <p onMouseOver={this.showCategoryMenu}>Departments</p>
+            <p onMouseOver={this.showCategoryMenu}>
+              Departments
+              <span className="caret-down-icon"><i className="fa fa-caret-down" aria-hidden="true"></i></span>
+            </p>
             {this.getCategoryMenu()}
           </div>
         </div>
+          {this.getWelcomeMessage()}
+          {this.getOrdersButton()}
 
-        <div>
-          <div>Products in cart: { this.state.productsInCart }</div>
+        <div className="cart-info">
+          <div>
+            <Link to={"/cart"}>
+              <span>
+                <i className="fa fa-shopping-cart fa-4x" aria-hidden="true"></i> Cart
+              </span>
+              <span id="cart-items">
+                { this.state.productsInCart }
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     )

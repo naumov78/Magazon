@@ -48,6 +48,16 @@ class SessionForm extends React.Component {
   }
   }
 
+  demoSignIn() {
+    const user = {
+      email: "smith@gmail.com",
+      password: "123456"
+    }
+    this.props.processForm(user).then(() => {
+      this.props.router.push('/');
+    });
+  }
+
   // componentDidUpdate(prevProps, prevState){
   //   if (this.props.errors !== prevProps.errors){
   //     this.renderSignUpErrors();
@@ -89,7 +99,6 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 className="form-inputs"/><br />
               <input type="submit" className="signup-submit" value="Create Your Magazon Account" />
-
             </form>
 
               <div className="signup-divider">
@@ -129,7 +138,7 @@ class SessionForm extends React.Component {
                   <input type="submit" className="signup-submit" value="Sign In" />
 
                 </form>
-
+                  <button className="signup-submit" onClick={() => this.demoSignIn()}>Demo Account</button>
                   <div className="signup-divider">
                     <h5>
                       {`Don't have an account?`}

@@ -1,5 +1,5 @@
 .signup-container {
-  height: 600px;
+  height: 630px;
   width: 600px;
   margin: 0 auto;
 }
@@ -15,7 +15,7 @@
   font-family: Arial, sans-serif;
   height: 410px;
   width: 296px;
-  padding: 20px 42px 20px 26px;
+  padding: 20px 42px 40px 26px;
   margin: 0 auto;
   position: relative;
   border-radius: 4px;

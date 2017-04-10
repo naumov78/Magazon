@@ -2,7 +2,9 @@
 class Api::CartsController < ApplicationController
 
   def show
-    @cart = CartProduct.where(cart_id: current_user.cart_id).order(created_at: :desc)
+    if current_user
+      @cart = CartProduct.where(cart_id: current_user.cart_id).order(created_at: :desc)
+    end
   end
 
 

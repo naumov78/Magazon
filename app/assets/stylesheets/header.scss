@@ -1,14 +1,31 @@
 
 @import "base/colors.scss";
 
+@mixin gradient {
+    background: $cart-dark-yellow;
+    background: -webkit-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: -o-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: -moz-linear-gradient($cart-dark-yellow, $cart-yellow);
+    background: linear-gradient($cart-dark-yellow, $cart-yellow);
+}
+
+@mixin hovered-gradient {
+    background: $cart-light-yellow;
+    background: -webkit-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: -o-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: -moz-linear-gradient($cart-light-yellow, $cart-yellow);
+    background: linear-gradient($cart-light-yellow, $cart-yellow);
+}
+
 .header-container {
+  position: relative;
   margin-top: 30px;
   margin-bottom: 50px;
   width: 100%;
   height: 120px;
   background-color: #232f3e;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 
@@ -17,15 +34,17 @@
 .categories-search-container {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  left: 370px;
 }
 
 .search-bar {
 
 padding-top: 40px;
+padding-left: 50px;
 
   input {
-    width: 1150px;
-    // line-height: 2.1;
+    width: 950px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     font-size: 15px;
@@ -45,9 +64,15 @@ padding-top: 40px;
 
 .categories-button {
   position: absolute;
-  top: 124px;
-  left: 320px;
+  top: 96px;
+  left: -50px;
   // padding: 3px 7px;
+
+  .caret-down-icon {
+    padding-left: 3px;
+    margin-top: 2px;
+    color: #547091;
+  }
 
   p {
     color: #fff;
@@ -61,6 +86,89 @@ padding-top: 40px;
     border: 1px solid #3d526b;
     padding: 3px 7px;
     cursor: pointer;
+  }
+
+}
+
+
+.cart-info {
+  position: absolute;
+  top: 3px;
+  left: 1470px;
+  padding-right: 30px;
+  padding-top: 50px;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+}
+
+
+.fa-shopping-cart {
+  color: #fff;
+  padding-right: 10px;
+}
+
+
+#cart-items {
+  position: absolute;
+  top: 66px;
+  left: 27px;
+  color: $dark-orange;
+  font-size: 22px;
+}
+
+.orders-button {
+  position: absolute;
+  top: 94px;
+  left: 1650px;
+  color: #fff;
+  font-weight: 700;
+  padding: 5px 10px 5px 10px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+}
+
+.orders-button:hover {
+  padding: 3px 7px 3px 7px;
+  border: 1px solid #3d526b;
+  padding: 4px 9px 4px 9px;
+}
+
+
+.welcome-message {
+  position: absolute;
+  top: 64px;
+  left: 1470px;
+  color: #fff;
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-message-text {
+  color: $light-grey;
+  font-size: 14px;
+}
+
+
+.logout-button {
+  padding: 10px 0 0 0;
+
+  button {
+    @include hovered-gradient;
+    border: 1px solid $cart-darkest-yellow;
+    border-radius: 3px;
+    width: 110px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    @include gradient;
   }
 
 }

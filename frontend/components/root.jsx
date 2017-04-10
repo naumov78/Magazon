@@ -20,7 +20,15 @@ const Root = ({ store }) => {
       replace('/');
     }
   };
-    return (
+
+  const _ensureLogIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+      if (!currentUser) {
+        replace('/signin');
+      }
+  };
+
+  return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path='/signup' component={ SessionFormContainer} onEnter={ _redirectIfLoggedIn }>
@@ -30,12 +38,12 @@ const Root = ({ store }) => {
             <Route path='/users/:id' component={ UserContainer }/>
             <Route path='/categories/:id' component={ CategoryContainer } />
             <Route path='/categories/:id/products/:id' component={ ProductContainer } />
-            <Route path='/cart' component={ CartContainer } />
+            <Route path='/cart' component={ CartContainer } onEnter={ _ensureLogIn } />
             <Route path='/cart_address' component={ CartAddressContainer } />
             <Route path='/cart_payment' component={ CartPaymentContainer } />
             <Route path='/place_order' component={ PlaceOrderContainer } />
             <Route path='/orders/:id' component={ OrderContainer } />
-            <Route path='/orders' component= { OrdersContainer } />
+            <Route path='/orders' component= { OrdersContainer } onEnter={ _ensureLogIn }/>
         </Route>
       </Router>
     </Provider>
