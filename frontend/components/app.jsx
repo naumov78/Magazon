@@ -3,7 +3,6 @@ import { withRouter } from 'react-router';
 import { logout } from '../actions/session_actions';
 import HeaderContainer from './header/header_container';
 import CategoriesContainer from './categories/categories_container';
-import SessionStatusContainer from './session_status/session_status_container';
 import StorefrontContainer from './storefront/storefront/storefront_container';
 import WatchedProductsContainer from './storefront/watched_products/watched_products_container';
 import Footer from './footer/footer';

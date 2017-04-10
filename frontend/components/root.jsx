@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 import SessionFormContainer from './session/session_form_container';
-import UserContainer from './user/user_container';
 import CategoryContainer from './category/category_container';
 import ProductContainer from './product/product_container';
 import CartContainer from './cart/cart_container';

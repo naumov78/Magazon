@@ -16,6 +16,13 @@
   "bugs": {
     "url": "https://github.com/naumov78/magazon/issues"
   },
+  "engines": {
+     "node": "6.2.1",
+     "npm": "3.9.3"
+   },
+   "scripts": {
+     "postinstall": "./node_modules/.bin/webpack"
+   },
   "homepage": "https://github.com/naumov78/magazon#readme",
   "dependencies": {
     "babel-core": "^6.18.2",
