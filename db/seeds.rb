@@ -105,7 +105,7 @@ fbt1 = FrequentlyBoughtTogether.create!(product_id: product1.id)
 product1.frequently_bought_together_id = fbt1.id
 product1.save!
 
-picture1_1 = ProductPicture.create!(product_id: product1.id, image: "https://s3.amazonaws.com/magazon/garden/deck1/001.jpg" )
+picture1_1 = ProductPicture.create!(product_id: product1.id, image: File.open('/public/001.jpg') )
 # picture1_1.image = Rails.root.join("app/assets/images/book1/020.jpeg").open
 # picture1_1.image = File.open(Rails.root.join('app', 'assets', 'images', 'book1', '020.jpeg'))
 # picture1_1.save!
