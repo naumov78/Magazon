@@ -70,9 +70,7 @@ Visa = Network.create!(network: "Visa")
 
 books = Category.create!(title: 'Books')
 movies = Category.create!(title: 'Movies')
-music = Category.create!(title: 'Music')
 games = Category.create!(title: 'Games')
-electronics = Category.create!(title: 'Electroniics')
 computers = Category.create!(title: 'Computers')
 home = Category.create!(title: 'Home')
 garden = Category.create!(title: 'Garden')
@@ -105,10 +103,10 @@ fbt1 = FrequentlyBoughtTogether.create!(product_id: product1.id)
 product1.frequently_bought_together_id = fbt1.id
 product1.save!
 
-picture1_1 = ProductPicture.create!(product_id: product1.id, image: File.open('/public/001.jpg') )
+picture1_1 = ProductPicture.create!(product_id: product1.id)
 # picture1_1.image = Rails.root.join("app/assets/images/book1/020.jpeg").open
-# picture1_1.image = File.open(Rails.root.join('app', 'assets', 'images', 'book1', '020.jpeg'))
-# picture1_1.save!
+picture1_1.image = File.open(Rails.root.join('app', 'assets', 'images', 'book1', '020.jpeg'))
+picture1_1.save!
 
 product2 = Product.create!(
 title: 'Beauty and the Beast: 25th Anniversary Edition - (BD+DVD+DIGITAL HD) [Blu-ray]',
@@ -705,6 +703,497 @@ product24.save!
 picture24_1 = ProductPicture.create!(product_id: product24.id)
 picture24_1.image = File.open(File.join(Rails.root, 'app/assets/images/hand_tool2/001.jpg'))
 picture24_1.save!
+
+
+
+product25 = Product.create!(
+title: 'Qooltek Multipurpose Laser Level laser measure Line 8ft+ Measure Tape Ruler ',
+brief_description: 'Use this Multipurpose Laser Level for hanging pictures, installing shelving,laying flooring, hanging wallpaper and more.',
+full_description: 'Use this Multipurpose Laser Level for hanging pictures, installing shelving,laying flooring, hanging wallpaper and more. The tape measure is an 8-foot measure that includes imperial and metric linear measures, with graduations down to 1/32” and 1mm.',
+price: 13.98,
+storefront: true,
+category_id: tools.id
+)
+
+fbt25 = FrequentlyBoughtTogether.create!(product_id: product25.id)
+product25.frequently_bought_together_id = fbt25.id
+product25.save!
+
+picture25_1 = ProductPicture.create!(product_id: product25.id)
+picture25_1.image = File.open(File.join(Rails.root, 'app/assets/images/level1/level1.jpg'))
+picture25_1.save!
+picture25_2 = ProductPicture.create!(product_id: product25.id)
+picture25_2.image = File.open(File.join(Rails.root, 'app/assets/images/level1/level2.jpg'))
+picture25_2.save!
+picture25_3 = ProductPicture.create!(product_id: product25.id)
+picture25_3.image = File.open(File.join(Rails.root, 'app/assets/images/level1/level3.jpg'))
+picture25_3.save!
+
+
+
+product26 = Product.create!(
+title: 'Rubbermaid RM-3W Folding 3-Step Steel Frame Stool with Hand Grip and Plastic Steps',
+brief_description: 'The Rubbermaid RM-3W 3-Step Steel Stool is perfect tool when you need a little extra height for items in the kitchen, bathroom, office or garage. Designed with a solid steel frame, plastic steps, hand grip and a 200-pound weight capacity, you\'ll feel safe and comfortable getting to those hard to reach places.',
+full_description: 'The Rubbermaid RM-3W 3-Step Steel Stool is perfect tool when you need a little extra height for items in the kitchen, bathroom, office or garage. Designed with a solid steel frame, plastic steps, hand grip and a 200-pound weight capacity, you\'ll feel safe and comfortable getting to those hard to reach places. The step stool features non-marring feet, large standing platform that automatically locks in place and a convenient handgrip making the stool easy to climb and carry. The RM-3W measures 44.75-inches (L) by 21-inches (H) by 3-inches (W) with a highest standing height of 27.25-inches and weighs approximately 13.25-pounds. The durable steel stool has a silver finish, 8.9-foot reach height, type III duty rating and folds up for easy storage. Rubbermaid products aim to simplify everyday life by consumer and commercial products that touch millions of people every day where they work, live and play. The Rubbermaid RM-3W 3-Step Steel Stool comes with a 1-year limited warranty. As a licensed manufacturer of Rubbermaid Step Stools, Tricam is a leading consumer products company who continues to lead the industry with innovative, patented designs throughout their entire product line. Tricam\'s products include household step stools, lawn and garden carts, replacement tires and tire tubes.',
+price: 39.21,
+storefront: true,
+category_id: tools.id
+)
+
+fbt26 = FrequentlyBoughtTogether.create!(product_id: product26.id)
+product26.frequently_bought_together_id = fbt26.id
+product26.save!
+
+picture26_1 = ProductPicture.create!(product_id: product26.id)
+picture26_1.image = File.open(File.join(Rails.root, 'app/assets/images/ledder1/ladder1.jpg'))
+picture26_1.save!
+picture26_2 = ProductPicture.create!(product_id: product26.id)
+picture26_2.image = File.open(File.join(Rails.root, 'app/assets/images/ledder1/ladder2.jpg'))
+picture26_2.save!
+picture26_3 = ProductPicture.create!(product_id: product26.id)
+picture26_3.image = File.open(File.join(Rails.root, 'app/assets/images/ledder1/ladder3.jpg'))
+picture26_3.save!
+
+
+
+product27 = Product.create!(
+title: 'Xtend & Climb 785P Aluminum Telescoping Ladder Type I Professional Series, 15.5-Foot',
+brief_description: 'This Xtend & Climb ladder features heavy-duty construction and is designed to hold up to professional use, making it a great choice for contractors or the serious do-it-yourselfer.',
+full_description: 'This Xtend & Climb ladder features heavy-duty construction and is designed to hold up to professional use, making it a great choice for contractors or the serious do-it-yourselfer. The ladder extends in 1-ft. increments and folds to 36 1/2in.H when not in use, so it stores virtually anywhere. OSHA and ANSI approved. It features rugged aerospace engineered 6061 aluminum alloy construction with a clean-touch anodized finish. Also includes a no-pinch closure system, nonslip end caps and integrated carry handle.',
+price: 216.91,
+storefront: true,
+category_id: tools.id
+)
+
+fbt27 = FrequentlyBoughtTogether.create!(product_id: product27.id)
+product27.frequently_bought_together_id = fbt27.id
+product27.save!
+
+picture27_1 = ProductPicture.create!(product_id: product27.id)
+picture27_1.image = File.open(File.join(Rails.root, 'app/assets/images/ladder2/ladder2_1.jpg'))
+picture27_1.save!
+
+
+product28 = Product.create!(
+title: 'Yost BV-4 Bench Vise, 4", Blue',
+brief_description: 'The Yost BV-4 4" bench vise is an all-purpose bench vise. A staple for any home workshop, no matter what your job is. Built for durability and dependability, this vise is constructed from 30,000 PSI cast iron.',
+full_description: 'The Yost BV-4 4" bench vise is an all-purpose bench vise. A staple for any home workshop, no matter what your job is. Built for durability and dependability, this vise is constructed from 30,000 PSI cast iron. The replaceable serrated jaws will prevent objects from moving around once you have clamped them in place. A large anvil on the back of the vise is perfect for forming and shaping metal pieces. The anvil is machined to provide a smooth work surface. The 120 degree swivel base allows this vise to be positioned in to clamp parts with ease. The dual lockdowns on the vise are designed to keep the vise in place once in position. The acme threaded main screw provides smooth operation.',
+price: 30.60,
+storefront: true,
+category_id: tools.id
+)
+
+fbt28 = FrequentlyBoughtTogether.create!(product_id: product28.id)
+product28.frequently_bought_together_id = fbt28.id
+product28.save!
+
+picture28_1 = ProductPicture.create!(product_id: product28.id)
+picture28_1.image = File.open(File.join(Rails.root, 'app/assets/images/tiski1/tiski1.jpg'))
+picture28_1.save!
+
+
+
+product29 = Product.create!(
+title: 'WEN 4276 6-Inch Bench Grinder',
+brief_description: 'Remember when you spent all that money replacing dull rusty tools? From deburring ragged edges to cleaning objects to sharpening blades, the WEN 6-inch Bench Grinder is the ideal companion for any workshop.',
+full_description: 'Remember when you spent all that money replacing dull rusty tools? From deburring ragged edges to cleaning objects to sharpening blades, the WEN 6-inch Bench Grinder is the ideal companion for any workshop. These machines allow for simple resuscitation of dull blades, scissors, screwdrivers, and more. Compact yet powerful, the WEN 6-Inch Bench Grinder provides reliability even in the face of the most difficult tasks.',
+price: 39.43,
+storefront: true,
+category_id: tools.id
+)
+
+fbt29 = FrequentlyBoughtTogether.create!(product_id: product29.id)
+product29.frequently_bought_together_id = fbt29.id
+product29.save!
+
+picture29_1 = ProductPicture.create!(product_id: product29.id)
+picture29_1.image = File.open(File.join(Rails.root, 'app/assets/images/stanok1/stanok1.jpg'))
+picture29_1.save!
+picture29_2 = ProductPicture.create!(product_id: product29.id)
+picture29_2.image = File.open(File.join(Rails.root, 'app/assets/images/stanok1/stanok2.jpg'))
+picture29_2.save!
+picture29_3 = ProductPicture.create!(product_id: product29.id)
+picture29_3.image = File.open(File.join(Rails.root, 'app/assets/images/stanok1/stanok3.jpg'))
+picture29_3.save!
+
+
+
+
+product30 = Product.create!(
+title: 'Mpow SNR 34dB Safety Ear Muffs, Professional Noise Cancelling, Hearing Protection, Ear Defenders',
+brief_description: 'Softly padded headband and swivel cup design help you find the perfect fit and comfortable wearing without any irritation.',
+full_description: 'Softly padded headband and swivel cup design help you find the perfect fit and comfortable wearing without any irritation. Compact folding design for convenient storage and a travel drawstring bag is included for easy packing.',
+price: 11.99,
+storefront: true,
+category_id: tools.id
+)
+
+fbt30 = FrequentlyBoughtTogether.create!(product_id: product30.id)
+product30.frequently_bought_together_id = fbt30.id
+product30.save!
+
+picture30_1 = ProductPicture.create!(product_id: product30.id)
+picture30_1.image = File.open(File.join(Rails.root, 'app/assets/images/headphones1/headphones1.jpg'))
+picture30_1.save!
+picture30_2 = ProductPicture.create!(product_id: product30.id)
+picture30_2.image = File.open(File.join(Rails.root, 'app/assets/images/headphones1/headphones2.jpg'))
+picture30_2.save!
+picture30_3 = ProductPicture.create!(product_id: product30.id)
+picture30_3.image = File.open(File.join(Rails.root, 'app/assets/images/headphones1/headphones3.jpg'))
+picture30_3.save!
+
+
+product31 = Product.create!(
+title: 'Kidde FA110 Multi Purpose Fire Extinguisher 1A10BC',
+brief_description: 'This recreational home fire extinguisher is a UL-listed unit that keeps small fires from spreading and growing. It’s non-rechargeable and designed for single use.',
+full_description: 'This recreational home fire extinguisher is a UL-listed unit that keeps small fires from spreading and growing. It’s non-rechargeable and designed for single use.^^Features Lightweight Aluminum Body Tough Nylon Valve Assembly Pressure Gauge for At-a-Glance Status Multipurpose Dry Chemical^^Suitable Uses Class A Fires (Trash, Wood, and Paper)Class B Fires (Liquids and Gases)Class C Fires (Energized Electrical Equipment) Model#: FA110.',
+price: 19.98,
+storefront: true,
+category_id: tools.id
+)
+
+fbt31 = FrequentlyBoughtTogether.create!(product_id: product31.id)
+product31.frequently_bought_together_id = fbt31.id
+product31.save!
+
+picture31_1 = ProductPicture.create!(product_id: product31.id)
+picture31_1.image = File.open(File.join(Rails.root, 'app/assets/images/fire1/fire1.jpg'))
+picture31_1.save!
+picture31_2 = ProductPicture.create!(product_id: product31.id)
+picture31_2.image = File.open(File.join(Rails.root, 'app/assets/images/fire1/fire2.jpg'))
+picture31_2.save!
+picture31_3 = ProductPicture.create!(product_id: product31.id)
+picture31_3.image = File.open(File.join(Rails.root, 'app/assets/images/fire1/fire3.jpg'))
+picture31_3.save!
+
+
+
+product32 = Product.create!(
+title: 'Streamlight 69260 TLR-1 HL Weapon Mount Tactical Flashlight Light 800 Lumens with Strobe',
+brief_description: 'Streamlight 69260 TLR-1 HL High Lumen Rail-Mounted Tactical Light. The TLR-1 HL provides a 800 lumen blast of light for maximum illumination while clearing a room or searching an alley.',
+full_description: 'Streamlight 69260 TLR-1 HL High Lumen Rail-Mounted Tactical Light. The TLR-1 HL provides a 800 lumen blast of light for maximum illumination while clearing a room or searching an alley. Its wide beam pattern, lights up large areas so you can identify who or what is nearby. C4 LED delivers 12,000 candela peak beam intensity; 800 lumens. TIR optic produces a concentrated beam with optimum peripheral illumination. Runs 1.25-Hours. Solid-state current regulation for consistent illumination level. It has an ambidextrous momentary/steady On-Off switch. Double tap momentary paddle to activate strobe. Securely fits a broad range of weapons; includes keys for Glock-style, Picatinny, Beretta 90two, S&W 99 and S&W TSW. Mounts directly to handguns with Glock-style rails and to all MIL-STD-1913 (Picatinny) rails. One handed snap-on and tighten interface keeps hands away from muzzle when attaching/detaching. Made up of 6000 series machined aircraft aluminum with anodized finish and shock-mounted glass lens. Tethered battery door and latch mechanism prevents battery door loss while providing easy battery replacement. Operating temperature: -40 to +120 Degree Fahrenheit. IPX7 waterproof to 1-meter for 30-Minutes. User programmable strobe can be enabled/disabled. Powered by two 3V CR123A lithium batteries (included). Serialized for positive identification. Length: 3.39-Inch (8.61 cm); Weight: 4.18-Ounce (118.6 grams). Comes with a limited lifetime warranty.',
+price: 120.00,
+storefront: true,
+category_id: tools.id
+)
+
+fbt32 = FrequentlyBoughtTogether.create!(product_id: product32.id)
+product32.frequently_bought_together_id = fbt32.id
+product32.save!
+
+picture32_1 = ProductPicture.create!(product_id: product32.id)
+picture32_1.image = File.open(File.join(Rails.root, 'app/assets/images/light1/light1.jpg'))
+picture32_1.save!
+picture32_2 = ProductPicture.create!(product_id: product32.id)
+picture32_2.image = File.open(File.join(Rails.root, 'app/assets/images/light1/light2.jpg'))
+picture32_2.save!
+picture32_3 = ProductPicture.create!(product_id: product32.id)
+picture32_3.image = File.open(File.join(Rails.root, 'app/assets/images/light1/light3.jpg'))
+picture32_3.save!
+
+
+
+product33 = Product.create!(
+title: 'SKIL 75540 4-3/8-Inch by 40T Carbide Flooring Blade',
+brief_description: 'The product is 4-3/8" 40T Carb Blade. Easy to use. The product is manufactured in China.',
+full_description: 'The product is 4-3/8" 40T Carb Blade. Easy to use. The product is manufactured in China. For use with Skil 3600-02 Flooring Saw. Great for cutting laminate floor, solid wood floor, and engineered wood floor.',
+price: 6.99,
+storefront: true,
+category_id: tools.id
+)
+
+fbt33 = FrequentlyBoughtTogether.create!(product_id: product33.id)
+product33.frequently_bought_together_id = fbt33.id
+product33.save!
+
+picture33_1 = ProductPicture.create!(product_id: product33.id)
+picture33_1.image = File.open(File.join(Rails.root, 'app/assets/images/saw_disk1/saw_disk1.jpg'))
+picture33_1.save!
+
+
+
+
+product34 = Product.create!(
+title: 'Pfister LG46M0BY Marielle 2-Handle Mini-Widespread Bathroom Faucet in Tuscan Bronze',
+brief_description: 'A touch of old world craftsmanship is artfully reflected in the marielle® bathroom collection. This traditional French country design is highlighted by a high-arc spout and two conical handles.',
+full_description: 'A touch of old world craftsmanship is artfully reflected in the marielle® bathroom collection. This traditional French country design is highlighted by a high-arc spout and two conical handles. The unique 4 inch lavatory faucet can be installed as either a traditional centerset or mini-widespread faucet.',
+price: 175.58,
+storefront: true,
+category_id: home.id
+)
+
+fbt34 = FrequentlyBoughtTogether.create!(product_id: product34.id)
+product34.frequently_bought_together_id = fbt34.id
+product34.save!
+
+picture34_1 = ProductPicture.create!(product_id: product34.id)
+picture34_1.image = File.open(File.join(Rails.root, 'app/assets/images/kran1/kran1.jpg'))
+picture34_1.save!
+picture34_2 = ProductPicture.create!(product_id: product34.id)
+picture34_2.image = File.open(File.join(Rails.root, 'app/assets/images/kran1/kran2.jpg'))
+picture34_2.save!
+
+
+
+
+product35 = Product.create!(
+title: 'Kwikset 912 Z-Wave SmartCode Electronic Touchpad Deadbolt w/Tustin Lever',
+brief_description: 'Step up to designer styles and superior security with Kwikset Signature Series products. Add a level of security and style to your home with the SmartCode touchpad electronic lever.',
+full_description: 'Step up to designer styles and superior security with Kwikset Signature Series products. Add a level of security and style to your home with the SmartCode touchpad electronic lever. Designed with a sleek style to complement your home\'s interior, you can lock up your home office, wine cellar or storage room and never have to worry about keys. To gain entry, simply enter your personalized access code, while locking is as easy as touching a button. SmartCode is easy to install, program and use and operates on 4 AA batteries. It also features SmartKey re-key technology as the back-up keyway. Both knobs/levers can be locked or unlocked by key on the outside, or turn button on the inside. SmartKey Re-key Technology allows you to control who has access to your home. Re-key the lock yourself in seconds in 3 easy steps. Have you recently moved or had a child lose a key? It\’s time to re-key. SmartKey provides the highest level of residential security and features BumpGuard to protect against lock bumping. The crisp, clean appearance of the Satin Nickel finish adds to the overall look of the product and brings a modern feel.Per instructions, can only re-key to Kwikset KW1 keyway. Cannot rekey to Schlage or other keyways.',
+price: 143.12,
+storefront: true,
+category_id: home.id
+)
+
+fbt35 = FrequentlyBoughtTogether.create!(product_id: product35.id)
+product35.frequently_bought_together_id = fbt35.id
+product35.save!
+
+picture35_1 = ProductPicture.create!(product_id: product35.id)
+picture35_1.image = File.open(File.join(Rails.root, 'app/assets/images/lock1/lock1.jpg'))
+picture35_1.save!
+picture35_2 = ProductPicture.create!(product_id: product35.id)
+picture35_2.image = File.open(File.join(Rails.root, 'app/assets/images/lock1/lock2.jpg'))
+picture35_2.save!
+picture35_3 = ProductPicture.create!(product_id: product35.id)
+picture35_3.image = File.open(File.join(Rails.root, 'app/assets/images/lock1/lock3.jpg'))
+picture35_3.save!
+
+
+
+product36 = Product.create!(
+title: 'Progress Lighting P4202-84 6-Light Le Jardin Chandelier',
+brief_description: 'Progress Lighting P4202-84 Six-light chandelier with weathered sand stone glass and leaf accents. Espresso Le Jardin Collection Espresso 6-light Chandelier Le Jardin is a dramatic blend of traditional craftsmanship and styling.',
+full_description: 'Progress Lighting P4202-84 Six-light chandelier with weathered sand stone glass and leaf accents. Espresso Le Jardin Collection Espresso 6-light Chandelier Le Jardin is a dramatic blend of traditional craftsmanship and styling. Sweeping into a unique scroll design, leaves stem naturally into the open spaces for a delightful play of light and shadow. Richly weathered sand stone glass shades are subtly scalloped to highlight the antiqued finish. Espresso finish Weathered sandstone glass 28 In. Diameter x 32 In. Height Uses (6) 100-watt medium base bulbs',
+price: 282.99,
+storefront: true,
+category_id: home.id
+)
+
+fbt36 = FrequentlyBoughtTogether.create!(product_id: product36.id)
+product36.frequently_bought_together_id = fbt36.id
+product36.save!
+
+picture36_1 = ProductPicture.create!(product_id: product36.id)
+picture36_1.image = File.open(File.join(Rails.root, 'app/assets/images/lamp1/lamp1.jpg'))
+picture36_1.save!
+
+
+
+
+product37 = Product.create!(
+title: 'Brentwood TS-337 Single Hot Plate, 10-Inch by 10.5-Inch by 3.25-Inch, Chrome',
+brief_description: 'Brentwood\'S ts-337 electric single hot plate features a power light indicator, easyto clean chromed housing and 1000 watts of power. Perfect for dorm rooms.',
+full_description: 'Brentwood\'S ts-337 electric single hot plate features a power light indicator, easyto clean chromed housing and 1000 watts of power. Perfect for dorm rooms.',
+price: 14.78,
+storefront: true,
+category_id: home.id
+)
+
+fbt37 = FrequentlyBoughtTogether.create!(product_id: product37.id)
+product37.frequently_bought_together_id = fbt37.id
+product37.save!
+
+picture37_1 = ProductPicture.create!(product_id: product37.id)
+picture37_1.image = File.open(File.join(Rails.root, 'app/assets/images/plitka1/plitka1.jpg'))
+picture37_1.save!
+
+
+
+
+product38 = Product.create!(
+title: '15 Piece Nonstick Cookware Set - Colored Kitchen Pots and Pans Set Nonstick with Cooking Utensils',
+brief_description: 'Cookware set includes: 14 x 6.5cm saucepan with glass lid capacity: 1.1qt, 16 x 7cm saucepan with glass lid capacity: 1.5qt, 18 x 8cm saucepan with glass lid capacity: 2.1 QT, 24 x 11cm stockpot with glass lid capacity: 5.3 QT, 20 x 4cm frypan / 8'' and 26 x 5cm frypan / 10''. 5 pieces FDA grade nylon tools (slotted spoon - slotted spatula- pasta server- ladle- potato masher).',
+full_description: 'Cookware set includes: 14 x 6.5cm saucepan with glass lid capacity: 1.1qt, 16 x 7cm saucepan with glass lid capacity: 1.5qt, 18 x 8cm saucepan with glass lid capacity: 2.1 QT, 24 x 11cm stockpot with glass lid capacity: 5.3 QT, 20 x 4cm frypan / 8'' and 26 x 5cm frypan / 10''. 5 pieces FDA grade nylon tools (slotted spoon - slotted spatula- pasta server- ladle- potato masher).',
+price: 40.99,
+storefront: true,
+category_id: home.id
+)
+
+fbt38 = FrequentlyBoughtTogether.create!(product_id: product38.id)
+product38.frequently_bought_together_id = fbt38.id
+product38.save!
+
+picture38_1 = ProductPicture.create!(product_id: product38.id)
+picture38_1.image = File.open(File.join(Rails.root, 'app/assets/images/cookware_set1/cookware_set1.jpg'))
+picture38_1.save!
+picture38_2 = ProductPicture.create!(product_id: product38.id)
+picture38_2.image = File.open(File.join(Rails.root, 'app/assets/images/cookware_set1/cookware_set2.jpg'))
+picture38_2.save!
+
+
+product39 = Product.create!(
+title: 'TableCraft Coca-Cola CC304 Vending Machine Toothpick Dispenser',
+brief_description: 'Relive the nostalgia of your childhood with this officially sanctioned vending machine style toothpick dispenser from Coca-Cola! The classic design evokes soda fountains, laughter and wholesome fun in our fast-paced modern society.',
+full_description: 'Relive the nostalgia of your childhood with this officially sanctioned vending machine style toothpick dispenser from Coca-Cola! The classic design evokes soda fountains, laughter and wholesome fun in our fast-paced modern society.',
+price: 14.85,
+storefront: true,
+category_id: home.id
+)
+
+fbt39 = FrequentlyBoughtTogether.create!(product_id: product39.id)
+product39.frequently_bought_together_id = fbt39.id
+product39.save!
+
+picture39_1 = ProductPicture.create!(product_id: product39.id)
+picture39_1.image = File.open(File.join(Rails.root, 'app/assets/images/coke1/coke1.jpg'))
+picture39_1.save!
+picture39_2 = ProductPicture.create!(product_id: product39.id)
+picture39_2.image = File.open(File.join(Rails.root, 'app/assets/images/coke1/coke2.jpg'))
+picture39_2.save!
+
+
+product40 = Product.create!(
+title: 'Villeroy & Boch French Garden Kitchen Tea kettle 67oz (2 liter)',
+brief_description: 'Whistling tea kettle',
+full_description: 'Whistling tea kettle',
+price: 42.98,
+storefront: true,
+category_id: home.id
+)
+
+fbt40 = FrequentlyBoughtTogether.create!(product_id: product40.id)
+product40.frequently_bought_together_id = fbt40.id
+product40.save!
+
+picture40_1 = ProductPicture.create!(product_id: product40.id)
+picture40_1.image = File.open(File.join(Rails.root, 'app/assets/images/kettle1/kettle1.jpg'))
+picture40_1.save!
+
+
+
+product41 = Product.create!(
+title: 'Hamilton Beach 12-Cup Stack and Snap Food Processor',
+brief_description: 'Whether you are cooking for two or prepping a large family meal, the Hamilton Beach Stack & Snap 12 Cup Food Processor takes the guesswork out of food processing with a simple function guide that shows you which blade to use and which button to press.',
+full_description: 'Whether you are cooking for two or prepping a large family meal, the Hamilton Beach Stack & Snap 12 Cup Food Processor takes the guesswork out of food processing with a simple function guide that shows you which blade to use and which button to press. Designed to be uniquely simple - there\'s no twisting, turning or locking required when assembling the food processor. Chop, slice, shred, mix and puree just about anything with the powerful 450 Watt motor. There is no max liquid fill line on this food processor, so you can process liquids without worrying about leaks because the bowl is sealed. The large-capacity bowl holds 12 cups and has a pour spout to reduce messy drips. This processor has a Big Mouth feed tube that saves you time by reducing the need for pre-cutting. In-bowl blade storage, cord storage and dishwasher-safe parts make for easy cleaning and storage.',
+price: 47.99,
+storefront: true,
+category_id: home.id
+)
+
+fbt41 = FrequentlyBoughtTogether.create!(product_id: product41.id)
+product41.frequently_bought_together_id = fbt41.id
+product41.save!
+
+picture41_1 = ProductPicture.create!(product_id: product41.id)
+picture41_1.image = File.open(File.join(Rails.root, 'app/assets/images/food1/food1.jpg'))
+picture41_1.save!
+picture41_2 = ProductPicture.create!(product_id: product41.id)
+picture41_2.image = File.open(File.join(Rails.root, 'app/assets/images/food1/food2.jpg'))
+picture41_2.save!
+picture41_3 = ProductPicture.create!(product_id: product41.id)
+picture41_3.image = File.open(File.join(Rails.root, 'app/assets/images/food1/food3.jpg'))
+picture41_3.save!
+picture41_4 = ProductPicture.create!(product_id: product41.id)
+picture41_4.image = File.open(File.join(Rails.root, 'app/assets/images/food1/food4.jpg'))
+picture41_4.save!
+picture41_5 = ProductPicture.create!(product_id: product41.id)
+picture41_5.image = File.open(File.join(Rails.root, 'app/assets/images/food1/food5.jpg'))
+picture41_5.save!
+
+
+
+product42 = Product.create!(
+title: 'KitchenAid KV25GOXER Professional 5 Plus 5-Quart Stand Mixer, Empire Red',
+brief_description: 'The Professional 5 Plus has a powerful 450-watt motor that delivers enough power to handle the heaviest mixtures, and mixes large batches easily. This special bowl lift model has brackets on the bowl that fit over support pins on the stand mixer, which is than lifted up by a handle on the right side of the mixer to lock the bowl in place while mixing (this design is made to handle heavy mixtures and large recipes).',
+full_description: 'The Professional 5 Plus has a powerful 450-watt motor that delivers enough power to handle the heaviest mixtures, and mixes large batches easily. This special bowl lift model has brackets on the bowl that fit over support pins on the stand mixer, which is than lifted up by a handle on the right side of the mixer to lock the bowl in place while mixing (this design is made to handle heavy mixtures and large recipes). The 5-quart polished stainless steel bowl is dishwasher safe. Its ergonomically designed handle is contoured to fit the hand and makes lifting the bowl more comfortable. This mixer also features a unique mixing action: the beater spins clockwise as the shaft spins counter clockwise, moving the beater to 67 different points around the bowl. This distinctive mixing action creates a thorough blend of ingredients and eliminates the need to rotate the bowl. 10 speeds allow the user to select the right speed for the mixing job, from very high to a very slow stir. The flat beater, dough hook, and professional wire whip add to the versatility of the mixer. In addition, the Soft Start mixing feature helps prevent ingredient splash-out and "flour puff" at startup, while "Overload Reset" helps eliminate overheating of the motor. A hinged hub cover flips up, allowing easy installation of attachments and never leaves the mixer.',
+price: 228.23,
+storefront: true,
+category_id: home.id
+)
+
+fbt42 = FrequentlyBoughtTogether.create!(product_id: product42.id)
+product42.frequently_bought_together_id = fbt42.id
+product42.save!
+
+picture42_1 = ProductPicture.create!(product_id: product42.id)
+picture42_1.image = File.open(File.join(Rails.root, 'app/assets/images/mixer1/mixer1.jpg'))
+picture42_1.save!
+picture42_2 = ProductPicture.create!(product_id: product42.id)
+picture42_2.image = File.open(File.join(Rails.root, 'app/assets/images/mixer1/mixer2.jpg'))
+picture42_2.save!
+picture42_3 = ProductPicture.create!(product_id: product42.id)
+picture42_3.image = File.open(File.join(Rails.root, 'app/assets/images/mixer1/mixer3.jpg'))
+picture42_3.save!
+picture42_4 = ProductPicture.create!(product_id: product42.id)
+picture42_4.image = File.open(File.join(Rails.root, 'app/assets/images/mixer1/mixer4.jpg'))
+picture42_4.save!
+picture42_5 = ProductPicture.create!(product_id: product42.id)
+picture42_5.image = File.open(File.join(Rails.root, 'app/assets/images/mixer1/mixer5.jpg'))
+picture42_5.save!
+
+
+
+
+product43 = Product.create!(
+title: 'KitchenAid KEK1222PT 1.25-Liter Electric Kettle - Pistachio',
+brief_description: 'The KitchenAid Electric Kettle is simple to use and offers a stylish compact footprint for your countertop.',
+full_description: 'The KitchenAid Electric Kettle is simple to use and offers a stylish compact footprint for your countertop.',
+price: 79.05,
+storefront: true,
+category_id: home.id
+)
+
+fbt43 = FrequentlyBoughtTogether.create!(product_id: product43.id)
+product43.frequently_bought_together_id = fbt43.id
+product43.save!
+
+picture43_1 = ProductPicture.create!(product_id: product43.id)
+picture43_1.image = File.open(File.join(Rails.root, 'app/assets/images/kettle2/kettle2_1.jpg'))
+picture43_1.save!
+picture43_2 = ProductPicture.create!(product_id: product43.id)
+picture43_2.image = File.open(File.join(Rails.root, 'app/assets/images/kettle2/kettle2_2.jpg'))
+picture43_2.save!
+picture43_3 = ProductPicture.create!(product_id: product43.id)
+picture43_3.image = File.open(File.join(Rails.root, 'app/assets/images/kettle2/kettle2_3.jpg'))
+picture43_3.save!
+picture43_4 = ProductPicture.create!(product_id: product43.id)
+picture43_4.image = File.open(File.join(Rails.root, 'app/assets/images/kettle2/kettle2_4.jpg'))
+picture43_4.save!
+
+
+product44 = Product.create!(
+title: 'PanSaver EZ Clean Multi-Use Cooking Bags Slow Cooker Liners, 25 Count',
+brief_description: 'Ovenable (400ºF/204ºC) PanSaver EZ Clean Multi-Use Cooking Bags /Slow Cooker Liners Are Used in Food Preparation, Cooking and Holding, to Prevent Food From "Baking-on" and "Burning-on" to the Pot, Pan or Slow cooker. PanSaver Pan Liners are Convenient, Time Saving Kitchen Aids Which Will Improve the Food You Serve As Well As Reduce Your Costs. 25 Liners and Ties Per Box',
+full_description: 'Ovenable (400ºF/204ºC) PanSaver EZ Clean Multi-Use Cooking Bags /Slow Cooker Liners Are Used in Food Preparation, Cooking and Holding, to Prevent Food From "Baking-on" and "Burning-on" to the Pot, Pan or Slow cooker. PanSaver Pan Liners are Convenient, Time Saving Kitchen Aids Which Will Improve the Food You Serve As Well As Reduce Your Costs. 25 Liners and Ties Per Box',
+price: 14.14,
+storefront: true,
+category_id: home.id
+)
+
+fbt44 = FrequentlyBoughtTogether.create!(product_id: product44.id)
+product44.frequently_bought_together_id = fbt44.id
+product44.save!
+
+picture44_1 = ProductPicture.create!(product_id: product44.id)
+picture44_1.image = File.open(File.join(Rails.root, 'app/assets/images/slowcooker1/slowcooker1.jpg'))
+picture44_1.save!
+
+
+
+
+product45 = Product.create!(
+title: 'Totally Bamboo 3 Piece Bamboo Cutting Board Set, For Meat & Veggie Prep, Serve Bread, Crackers & Cheese, Cocktail Bar Board',
+brief_description: 'Don\'t be caught again without an extra cutting board. This set from Totally Bamboo includes three versatile 100% bamboo cutting boards. The boards measure 6" by 8", 8-1/2" by 11" and 9-1/2" by 13" and each one is only 3/8" thick.',
+full_description: 'Don\'t be caught again without an extra cutting board. This set from Totally Bamboo includes three versatile 100% bamboo cutting boards. The boards measure 6" by 8", 8-1/2" by 11" and 9-1/2" by 13" and each one is only 3/8" thick. Plenty of functional surface area to work on but lightweight, easy to maneuver and store. Made from bamboo, they are durable, long lasting and safe for food prep and will not damage the blade of your knives. In order to extend the life of the cutting boards, we suggest hand washing with warm water and occasionally using Totally Bamboo\'s Revitalizing Oil to maintain the beauty of your boards. Every Totally Bamboo piece is distinctively attractive and super durable. Bamboo is the natural alternative for all things wood, substantially stronger than hard woods often used for cutting boards. It is the fastest growing plant on our planet and does not require any special care to grow. In fact, it is a grass that produces more oxygen than a hard wood forest of comparable size, therefore reducing carbon dioxide gases associated with climate change. It also prevents soil erosion through its widespread root system and large canopy. At Totally Bamboo, we are proud to use "Moso" timber which is harvested at the optimum age of 5 years from our own bamboo forests. Our goal is continuous improvement through design, developing new, unique and innovative products which appeal to the environmentally conscious.',
+price: 12.99,
+storefront: true,
+category_id: home.id
+)
+
+fbt45 = FrequentlyBoughtTogether.create!(product_id: product45.id)
+product45.frequently_bought_together_id = fbt45.id
+product45.save!
+
+picture45_1 = ProductPicture.create!(product_id: product45.id)
+picture45_1.image = File.open(File.join(Rails.root, 'app/assets/images/boards1/boards1.jpg'))
+picture45_1.save!
+picture45_2 = ProductPicture.create!(product_id: product45.id)
+picture45_2.image = File.open(File.join(Rails.root, 'app/assets/images/boards1/boards2.jpg'))
+picture45_2.save!
+picture45_3 = ProductPicture.create!(product_id: product45.id)
+picture45_3.image = File.open(File.join(Rails.root, 'app/assets/images/boards1/boards3.jpg'))
+picture45_3.save!
 
 
 
