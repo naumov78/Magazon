@@ -78,6 +78,20 @@ tools = Category.create!(title: 'Tools')
 sports = Category.create!(title: 'Sports')
 
 
+SmallBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'small_banners', '001.jpg')))
+SmallBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'small_banners', '002.jpg')))
+SmallBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'small_banners', '003.jpg')))
+SmallBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'small_banners', '004.jpg')))
+SmallBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'small_banners', '005.jpg')))
+BigBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'big_banners', '001.jpg')))
+BigBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'big_banners', '002.jpg')))
+BigBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'big_banners', '003.jpg')))
+BigBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'big_banners', '004.jpg')))
+BigBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'big_banners', '005.jpg')))
+BigBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'big_banners', '006.jpg')))
+BigBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'big_banners', '007.png')))
+BigBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'big_banners', '008.jpg')))
+BigBanner.create!(image: File.open(Rails.root.join('app', 'assets', 'images', 'big_banners', '009.jpg')))
 
 user1 = User.create!(first_name: "Bob", last_name: "Smith", email: "smith@gmail.com", password: "123456")
 address1 = Address.create!(user_id: user1.id, street: "2755 East 21st St.", street2: "Apt. #3", city: "Brooklyn", state_id: NewYork.id, zip: 11235)
@@ -119,9 +133,9 @@ fbt2 = FrequentlyBoughtTogether.create!(product_id: product2.id)
 product2.frequently_bought_together_id = fbt2.id
 product2.save!
 
-picture2_1 = ProductPicture.create!(product_id: product2.id, image: "http://alex-naumov.me/magazon/deck1/004.jpg")
-# picture2_1.image = File.open(File.join(Rails.root, 'app/assets/images/video1/021.jpg'))
-# picture2_1.save!
+picture2_1 = ProductPicture.create!(product_id: product2.id)
+picture2_1.image = File.open(File.join(Rails.root, 'app/assets/images/video1/021.jpg'))
+picture2_1.save!
 
 product3 = Product.create!(
 title: 'Sauder Beginnings 4-Drawer Chest, Cinnamon Cherry',
