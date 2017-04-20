@@ -1215,5 +1215,5 @@ cart1 = Cart.create!(user_id: user1.id)
 user1.cart_id = cart1.id
 user1.save!
 
-CartProduct.create(cart_id: cart1.id, product_id: product4.id)
-CartProduct.create(cart_id: cart1.id, product_id: product5.id)
+# CartProduct.create(cart_id: cart1.id, product_id: product4.id)
+# CartProduct.create(cart_id: cart1.id, product_id: product5.id)
