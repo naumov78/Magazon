@@ -107,17 +107,22 @@ class Header extends React.Component {
 
           <SearchBar />
 
-          <div className="categories-button">
-            <p onMouseOver={this.showCategoryMenu}>
-              Departments
-              <span className="caret-down-icon"><i className="fa fa-caret-down" aria-hidden="true"></i></span>
-            </p>
-            {this.getCategoryMenu()}
+          <div className="header-buttons">
+            <div className="categories-button">
+              <p onMouseOver={this.showCategoryMenu}>
+                Departments
+                <span className="caret-down-icon"><i className="fa fa-caret-down" aria-hidden="true"></i></span>
+              </p>
+              {this.getCategoryMenu()}
+            </div>
+            <div>
+              {this.getWelcomeMessage()}
+            </div>
+            <div>
+              {this.getOrdersButton()}
+            </div>
           </div>
         </div>
-          {this.getWelcomeMessage()}
-          {this.getOrdersButton()}
-
         <div className="cart-info">
           <div>
             <Link to={"/cart"}>
