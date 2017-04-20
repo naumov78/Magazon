@@ -15,11 +15,11 @@ const App =({ children }) => {
   }
     return(
       <div id="top" className="main-container">
-        <nav>
+        <div>
           <HeaderContainer>
             <CategoriesContainer />
           </HeaderContainer>
-        </nav>
+        </div>
         <div>
           <MainStorefrontContainer indexPage={indexPage} />
         </div>
