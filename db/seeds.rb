@@ -67,6 +67,13 @@ Discover = Network.create!(network: "Discover")
 MasterCard = Network.create!(network: "MasterCard")
 Visa = Network.create!(network: "Visa")
 
+OrderStatus.create!(status: "Received")
+OrderStatus.create!(status: "Pending")
+OrderStatus.create!(status: "Unshipped")
+OrderStatus.create!(status: "Shipped")
+OrderStatus.create!(status: "Delivered")
+OrderStatus.create!(status: "Canceled")
+
 
 books = Category.create!(title: 'Books')
 movies = Category.create!(title: 'Movies')
@@ -118,7 +125,6 @@ product1.frequently_bought_together_id = fbt1.id
 product1.save!
 
 picture1_1 = ProductPicture.create!(product_id: product1.id)
-# picture1_1.image = Rails.root.join("app/assets/images/book1/020.jpeg").open
 picture1_1.image = File.open(Rails.root.join('app', 'assets', 'images', 'book1', 'book1.jpeg'))
 picture1_1.save!
 
