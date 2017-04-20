@@ -413,7 +413,7 @@ picture13_7 = ProductPicture.create!(product_id: product13.id)
 picture13_7.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/snow_removal1_7.jpg'))
 picture13_7.save!
 picture13_8 = ProductPicture.create!(product_id: product13.id)
-picture13_8.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/008.jpg'))
+picture13_8.image = File.open(File.join(Rails.root, 'app/assets/images/snow_removal1/snow_removal1_8.jpg'))
 picture13_8.save!
 
 
