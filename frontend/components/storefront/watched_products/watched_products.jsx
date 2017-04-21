@@ -29,7 +29,7 @@ class WatchedProducts extends React.Component {
 
   getInternalProductsList() {
     const products = this.state.products.slice(1)
-    if (products.length > 0) {
+    if (this.props.currentUser && products.length > 0) {
     return (
       <div>
         <p>Your recently watched items</p>
@@ -62,7 +62,7 @@ class WatchedProducts extends React.Component {
 
   getExternalProductsList() {
     const products = this.state.products.slice(0, 6)
-    if (products.length > 2) {
+    if (this.props.currentUser && products.length > 2) {
     return (
       <div>
         <p>Your recently watched items</p>
