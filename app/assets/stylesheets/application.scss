@@ -29,6 +29,14 @@ html {
   flex-direction: column;
 }
 
+@media (max-width: 1600px) {
+  .main-container {
+    width: 1600px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .footer-container {
   width: 99%;
   height: 300px;

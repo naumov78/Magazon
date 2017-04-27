@@ -32,7 +32,7 @@
 
 .storefront-list {
   @include flex;
-  height: 250px;
+  // height: 250px;
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
@@ -40,7 +40,7 @@
 
 .watched-products-list {
   @include flex;
-  height: 250px;
+  // height: 250px;
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
@@ -129,7 +129,7 @@
 }
 
 .small-banner {
-
+  width: 300px;
   img {
     border: 1px solid #e6e6e6;
   }
