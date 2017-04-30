@@ -6,11 +6,11 @@ class Search extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { query: "", products: null }
+    this.state = { query: "", products: null, searchResults: this.props.searchResults }
+    this.hideSearchResults = this.hideSearchResults.bind(this);
   }
 
   update(field) {
-    debugger
     return(e) => this.setState({
       [field]: e.currentTarget.value
     }, this.searchProduct);
@@ -18,27 +18,31 @@ class Search extends React.Component {
 
   searchProduct() {
     const query = this.state.query;
-    debugger
     if (query === "") {
       return;
     } else {
-      debugger
       this.props.searchProduct(query).then((result) => {
-        debugger
-        this.setState({ products: result.products })
+        this.setState({ products: result.products, searchResults: true })
       })
     }
   }
 
-  getProductList() {
+  componentWillReceiveProps(nextProps) {
     debugger
+  }
+
+  hideSearchResults() {
+    this.setState({searchResults: false, query: "" })
+  }
+
+  getProductList() {
     const products = this.state.products;
     return (
       <ul>
         {products.map((product, i) => {
           return (
             <li key={i}>
-              <Link to={`/categories/${product.category_id}/products/${product.id}`}>
+              <Link to={`/categories/${product.category_id}/products/${product.id}`} onClick={this.hideSearchResults}>
                 {product.title}
               </Link>
             </li>
@@ -49,7 +53,8 @@ class Search extends React.Component {
   }
 
   render() {
-    if (!this.state.products) {
+    if (!this.state.searchResults) {
+      debugger
       return (
         <div className="search-bar">
           <form>

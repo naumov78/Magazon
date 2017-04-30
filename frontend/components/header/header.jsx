@@ -7,7 +7,7 @@ class Header extends React.Component {
   constructor(props) {
   super(props);
   this.categories = null;
-  this.state = { productsInCart: this.props.cart.length, categoryMenu: false }
+  this.state = { productsInCart: this.props.cart.length, categoryMenu: false, searchResults: false }
   this.showCategoryMenu = this.showCategoryMenu.bind(this);
   this.hideCategoryMenu = this.hideCategoryMenu.bind(this);
   }
@@ -18,7 +18,7 @@ class Header extends React.Component {
 
   componentWillReceiveProps() {
     this.getProductsInCart()
-    this.setState({ categoryMenu: false })
+    this.setState({ categoryMenu: false, searchResults: false})
   }
 
   showCategoryMenu() {
@@ -105,7 +105,7 @@ class Header extends React.Component {
 
         <div className="categories-search-container">
 
-          <SearchContainer />
+          <SearchContainer searchResults={this.state.searchResults}/>
 
           <div className="header-buttons">
             <div className="categories-button">
