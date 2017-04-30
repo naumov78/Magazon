@@ -19,4 +19,13 @@ class Api::ProductsController < ApplicationController
   end
 
 
+  def search
+    if params[:query]
+      @products = Product.where("title ~ ?", params[:query])
+    else
+      @products = Product.none
+    end
+    render 'api/products/products'
+  end
+
 end

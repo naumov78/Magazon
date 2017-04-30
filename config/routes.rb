@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
     get "carts/:id/delete_all", to: "carts#delete_all"
 
+    resources :products, except: [:index, :create, :new, :edit, :update, :show, :destroy] do
+        get "search", on: :collection
+    end
+
     resources :categories, only: [:index, :show] do
       resources :products, only: [:show]
     end

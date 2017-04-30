@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
-import SearchBar from './search_bar';
+import SearchContainer from './search_container';
 
 class Header extends React.Component {
 
@@ -105,7 +105,7 @@ class Header extends React.Component {
 
         <div className="categories-search-container">
 
-          <SearchBar />
+          <SearchContainer />
 
           <div className="header-buttons">
             <div className="categories-button">

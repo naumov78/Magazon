@@ -13,3 +13,12 @@ export const updateBoughtTogether = () => {
     url: `/api/frequently_bought_products`
   })
 }
+
+
+export const searchProduct = (query) => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/products/search",
+    data: {query}
+  })
+}
