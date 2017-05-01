@@ -21,7 +21,7 @@ class Api::ProductsController < ApplicationController
 
   def search
     if params[:query]
-      @products = Product.where("title ~ ?", params[:query])
+      @products = Product.where("lower(title) ~ ?", params[:query].downcase).includes(:product_pictures)
     else
       @products = Product.none
     end

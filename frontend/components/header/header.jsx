@@ -18,7 +18,7 @@ class Header extends React.Component {
 
   componentWillReceiveProps() {
     this.getProductsInCart()
-    this.setState({ categoryMenu: false, searchResults: false})
+    this.setState({ categoryMenu: false, searchResults: false })
   }
 
   showCategoryMenu() {
@@ -104,23 +104,22 @@ class Header extends React.Component {
         </div>
 
         <div className="categories-search-container">
+          <SearchContainer searchResults={this.state.searchResults} />
+        </div>
 
-          <SearchContainer searchResults={this.state.searchResults}/>
-
-          <div className="header-buttons">
-            <div className="categories-button">
-              <p onMouseOver={this.showCategoryMenu}>
-                Departments
-                <span className="caret-down-icon"><i className="fa fa-caret-down" aria-hidden="true"></i></span>
-              </p>
-              {this.getCategoryMenu()}
-            </div>
-            <div>
-              {this.getWelcomeMessage()}
-            </div>
-            <div>
-              {this.getOrdersButton()}
-            </div>
+        <div className="header-buttons">
+          <div className="categories-button">
+            <p onMouseOver={this.showCategoryMenu}>
+              Departments
+              <span className="caret-down-icon"><i className="fa fa-caret-down" aria-hidden="true"></i></span>
+            </p>
+            {this.getCategoryMenu()}
+          </div>
+          <div>
+            {this.getWelcomeMessage()}
+          </div>
+          <div>
+            {this.getOrdersButton()}
           </div>
         </div>
         <div className="cart-info">
