@@ -30,21 +30,6 @@ class Search extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   document.addEventListener('click', this.handleOutsideClick.bind(this), true)
-  // }
-  //
-  // componentWilUnmount() {
-  //   document.removeEventListener('click', this.handleOutsideClick.bind(this), true)
-  // }
-  //
-  // handleOutsideClick(e) {
-  //   const element = ReactDom.findDOMNode(this)
-  //
-  //   if ((!element || !element.contains(e.target))) {
-  //     this.hideSearchResults();
-  //   }
-  // }
 
   hideSearchResults() {
     this.setState({searchResults: false, query: "" })

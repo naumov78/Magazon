@@ -42,7 +42,7 @@
 }
 
 .categories-search-container {
-  z-index: 5;
+  // z-index: 5;
 }
 
 .search-bar {
@@ -145,6 +145,7 @@ width: 1050px;
   padding: 5px 10px 5px 10px;
   font-size: 15px;
   letter-spacing: 0.8px;
+  z-index: 100;
 }
 
 .welcome-message-text {
@@ -203,7 +204,7 @@ width: 1050px;
   width: 964px;
   border: 1px solid $light-grey;
   box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
-  z-index: 5;
+  // z-index: 5;
 
   ul {
     li {
