@@ -42,7 +42,8 @@
 }
 
 .categories-search-container {
-  // z-index: 5;
+  z-index: 5;
+  height: 70px;
 }
 
 .search-bar {
@@ -69,7 +70,6 @@ width: 1050px;
 
 .header-buttons {
   display: flex;
-
 }
 
 .categories-button {
@@ -125,7 +125,6 @@ width: 1050px;
   color: #fff;
   font-weight: 700;
   margin-top: 92px;
-  // margin-left: -100px;
   padding: 5px 10px 5px 10px;
   font-weight: 700;
   font-size: 15px;
@@ -204,7 +203,7 @@ width: 1050px;
   width: 964px;
   border: 1px solid $light-grey;
   box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
-  // z-index: 5;
+  z-index: 5000;
 
   ul {
     li {
