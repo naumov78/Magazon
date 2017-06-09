@@ -219,10 +219,12 @@ width: 1050px;
 }
 
 .search-results-line {
-
+  position: relative;
 
   #title {
-
+    position: absolute;
+    top: 40%;
+    left: 70px;
   }
 
   &:hover {
@@ -237,6 +239,7 @@ width: 1050px;
 
   img {
     padding: 0 10px 0 10px;
+    display: inline-block;
     width: 50px;
     height: 50px;
   }
