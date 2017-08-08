@@ -61,7 +61,6 @@ class ExistingPayment extends React.Component {
       cardholder: this.state.cardholder,
       card_number: this.state.card_number,
       expires: this.getExpirationDateProperFormat(),
-      // expires: this.state.expires,
       cvv: Number(this.state.cvv)
     }
     this.props.updatePayment(payment, currentUser.payment_id).then(() => this.setState({ edit: false }));
