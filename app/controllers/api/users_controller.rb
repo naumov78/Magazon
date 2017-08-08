@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
 
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
       cart = Cart.create!(user_id: @user.id)
       @user.update_attribute(:cart_id, cart.id)

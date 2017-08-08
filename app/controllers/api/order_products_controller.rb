@@ -1,7 +1,7 @@
 class Api::OrderProductsController < ApplicationController
 
   def create
-    order_product = OrderProduct.create!(
+    order_product = OrderProduct.new(
     order_id: order_product_params[:order_id],
     product_id: order_product_params[:product_id],
     quantity: order_product_params[:quantity])
