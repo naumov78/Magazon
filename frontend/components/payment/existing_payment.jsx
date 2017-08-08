@@ -42,6 +42,17 @@ class ExistingPayment extends React.Component {
     this.setState({ edit: true })
   }
 
+  getExpirationDateProperFormat() {
+    const formDate = this.state.expires.split("/");
+    if (formDate.length === 2) {
+      const month = formDate[0];
+      const year =  formDate[1];
+      return new Date('20' + year, month - 1, 1);
+    } else {
+      return new Date(this.state.expires);
+    }
+  }
+
   updatePayment(e) {
     e.preventDefault();
     const payment = {
@@ -49,7 +60,7 @@ class ExistingPayment extends React.Component {
       network_id: this.state.network_id,
       cardholder: this.state.cardholder,
       card_number: this.state.card_number,
-      expires: this.state.expires,
+      expires: this.getExpirationDateProperFormat(),
       cvv: Number(this.state.cvv)
     }
     this.props.updatePayment(payment, currentUser.payment_id).then(() => this.setState({ edit: false }));
