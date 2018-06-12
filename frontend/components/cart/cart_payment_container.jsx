@@ -7,7 +7,7 @@ import CartPayment from './cart_payment';
 const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser
-  })
+  });
 }
 
 const mapDispatchToProps = (dispatch) => {

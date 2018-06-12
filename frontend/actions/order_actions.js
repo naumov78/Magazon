@@ -3,7 +3,6 @@ import * as APIUtil from '../util/orders_api_util';
 export const RECEIVE_ORDER = "RECEIVE_ORDER";
 export const RECEIVE_ALL_ORDERS = "RECEIVE_ALL_ORDERS";
 
-
 export const receiveOrder = (order) => {
   return {
     type: RECEIVE_ORDER,
@@ -12,15 +11,15 @@ export const receiveOrder = (order) => {
     status: order.status,
     total_amount: order.total_amount,
     order: order.products
-  }
-}
+  };
+};
 
 export const receiveAllOrders = (orders) => {
   return {
     type: RECEIVE_ALL_ORDERS,
     orders: orders.orders
-  }
-}
+  };
+};
 
 export const createOrder = () => {
   return (dispatch) => {
@@ -28,7 +27,7 @@ export const createOrder = () => {
       return dispatch(receiveOrder(order));
     });
   };
-}
+};
 
 export const fetchOrder = (id) => {
   return (dispatch) => {
@@ -36,12 +35,12 @@ export const fetchOrder = (id) => {
       return dispatch(receiveOrder(order));
     });
   };
-}
+};
 
 export const fetchAllOrders = () => {
   return (dispatch) => {
     return APIUtil.fetchAllOrders().then((orders) => {
       return dispatch(receiveAllOrders(orders))
-    })
-  }
-}
+    });
+  };
+};

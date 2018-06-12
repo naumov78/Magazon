@@ -14,8 +14,8 @@ export const receiveProducts = (products) => {
   return {
     type: RECEIVE_PRODUCTS,
     products
-  }
-}
+  };
+};
 
 export const fetchProduct = (category_id, product_id) => {
   return (dispatch) => {
@@ -25,7 +25,6 @@ export const fetchProduct = (category_id, product_id) => {
   };
 };
 
-
 export const updateBoughtTogether = () => {
   return (dispatch) => {
     return APIUtil.updateBoughtTogether().then((product) => {
@@ -33,7 +32,6 @@ export const updateBoughtTogether = () => {
     });
   };
 };
-
 
 export const searchProduct = (query) => {
   return (dispatch) => {

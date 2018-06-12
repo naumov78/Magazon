@@ -5,9 +5,9 @@ import * as APIUtil from '../util/session_api_util';
 
 export const receiveCurrentUser = (currentUser) => {
   return {
-  type: RECEIVE_CURRENT_USER,
-  currentUser
-  }
+    type: RECEIVE_CURRENT_USER,
+    currentUser
+  };
 };
 
 export const receiveErrors = (errors) => ({
@@ -22,7 +22,7 @@ export function signup(user){
       (errors) => dispatch(receiveErrors(errors))
     );
   };
-}
+};
 
 export function signin(user){
   return (dispatch) => {
@@ -31,7 +31,7 @@ export function signin(user){
       (errors) => dispatch(receiveErrors(errors))
     );
   };
-}
+};
 
 export function logout(){
   return (dispatch) => {
@@ -40,13 +40,12 @@ export function logout(){
       (errors) => dispatch(receiveErrors(errors))
     );
   };
-}
-
+};
 
 export const refreshCurrentUser = () => {
   return (dispatch) => {
     return APIUtil.refreshCurrentUser().then((user) => {
       return dispatch(receiveCurrentUser(user));
     });
-  }
-}
+  };
+};

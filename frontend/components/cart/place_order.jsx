@@ -14,7 +14,7 @@ class PlaceOrder extends React.Component {
   componentWillMount() {
     this.props.fetchCart(this.props.currentUser.cart_id).then((result) => {
       this.setState({ products: result.cart })
-    })
+    });
   }
 
   getTotal() {
@@ -88,10 +88,10 @@ class PlaceOrder extends React.Component {
                 </tbody>
               </table>
             </li>
-          )
+          );
         })}
       </ul>
-    )
+    );
   }
 
   getTaxAmount() {

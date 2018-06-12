@@ -14,19 +14,16 @@ export const receiveCategory = ({products}) => {
   return {
     type: RECEIVE_CATEGORY,
     products
-  }
-}
-
+  };
+};
 
 export const fetchAllCategories = () => {
   return (dispatch) => {
     return APIUtil.fetchAllCategories().then((categories) => {
       return dispatch(receiveCategories(categories));
-
     });
   };
 };
-
 
 export const fetchCategory = (id) => {
   return (dispatch) => {

@@ -22,7 +22,7 @@ class CartAddress extends React.Component {
           <div>
             <ExistingAddressContainer />
           </div>
-        )
+        );
       } else {
         if (this.state.showAddressForm) {
           return <AddressContainer />

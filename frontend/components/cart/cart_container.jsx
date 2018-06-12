@@ -7,7 +7,7 @@ import { addToCart, updateCartProduct, removeFromCart, fetchCart, emptyCart } fr
 const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser
-  })
+  });
 }
 
 const mapDispatchToProps = (dispatch) => {

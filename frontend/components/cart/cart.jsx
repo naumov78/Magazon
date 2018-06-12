@@ -20,7 +20,6 @@ class Cart extends React.Component {
     })
   }
 
-
   getTotal() {
     if (this.state.products.length === 0) {
       return null;
@@ -32,7 +31,6 @@ class Cart extends React.Component {
       return total;
     }
   }
-
 
   getProductsList() {
     if (!this.props.currentUser) { return null }
@@ -129,7 +127,6 @@ class Cart extends React.Component {
   getTaxAmount() {
     return ((this.getTotal()*0.08875).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
   }
-
 
   render() {
     if (!this.state.empty && this.state.products.length === 0) {

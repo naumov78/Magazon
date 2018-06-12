@@ -17,7 +17,6 @@ export const receiveErrors = (errors) => {
   }
 }
 
-
 export const createPayment = (payment) => {
   return (dispatch) => {
     return APIUtil.createPayment(payment).then((user) => {
@@ -25,7 +24,6 @@ export const createPayment = (payment) => {
     });
   };
 }
-
 
 export const updatePayment = (payment, payment_id) => {
   return (dispatch) => {
