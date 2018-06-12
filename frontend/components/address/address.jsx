@@ -27,7 +27,7 @@ class Address extends React.Component {
           return (<option key={i} value={state.id}>{state.state}</option>);
         })}
       </select>
-    )
+    );
   }
 
 
@@ -83,7 +83,7 @@ class Address extends React.Component {
 
         </form>
       </div>
-    )
+    );
   }
 
 }

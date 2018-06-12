@@ -22,7 +22,7 @@ class CartPayment extends React.Component {
           <div>
             <ExistingPaymentContainer />
           </div>
-        )
+        );
       } else {
         if (this.state.showPaymentForm) {
           return <PaymentContainer />

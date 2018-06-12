@@ -8,7 +8,7 @@ export const receiveStorefront = (storefront) => {
     storefront: storefront.storefront,
     smallBanners: storefront.small_banners,
     bigBanners: storefront.big_banners
-  }
+  };
 };
 
 
@@ -18,4 +18,4 @@ export const getStorefront = () => {
       return dispatch(receiveStorefront(storefront));
     });
   };
-}
+};

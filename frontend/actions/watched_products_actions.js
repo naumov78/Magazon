@@ -6,7 +6,7 @@ export const receiveWatchedProducts = (watchedProducts) => {
   return {
     type: RECEIVE_WATCHED_PRODUCTS,
     watchedProducts: watchedProducts.watched_products
-  }
+  };
 };
 
 
@@ -16,4 +16,4 @@ export const getWatchedProducts = () => {
       return dispatch(receiveWatchedProducts(watchedProducts));
     });
   };
-}
+};
