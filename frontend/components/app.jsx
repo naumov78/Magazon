@@ -8,10 +8,10 @@ import WatchedProductsContainer from './storefront/watched_products/watched_prod
 import Footer from './footer/footer';
 import MainStorefrontContainer from './storefront/main_storefront_container';
 
-const App =({ children }) => {
-  let indexPage = false
+const App = ({ children }) => {
+  let indexPage = false;
   if (!children) {
-    indexPage = true
+    indexPage = true;
   }
     return(
       <div id="top" className="main-container">

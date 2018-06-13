@@ -3,23 +3,22 @@ import { withRouter, Link } from 'react-router';
 
 
 class WatchedProducts extends React.Component {
-
   constructor(props) {
-  super(props);
-  this.state = { products: [] }
+    super(props);
+    this.state = { products: [] }
+  }
+
+  componentDidMount() {
+    this.props.getWatchedProducts();
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ products: nextProps.watchedProducts })
+    if (this.state.products !== nextProps.watchedProducts) {
+      this.setState({ products: nextProps.watchedProducts });
+    }
   }
 
-
-  componentDidMount() {
-    this.props.getWatchedProducts().then((result) => {
-      this.setState({ products: result.watchedProducts })
-    })
-  }
-
+  // TODO: use ellipsis
   updateDescrLength(str) {
     if (str && str.length > 200) {
       return str.slice(0, 197) + "..."
@@ -31,7 +30,7 @@ class WatchedProducts extends React.Component {
     const products = this.state.products.slice(1)
     if (this.props.currentUser && products.length > 0) {
     return (
-      <div>
+      <div className="product-watched-products-container">
         <p>Your recently watched items</p>
         <ul className="bought-together-list">
           {products.map((product, i) => {
@@ -64,7 +63,7 @@ class WatchedProducts extends React.Component {
     const products = this.state.products.slice(0, 6)
     if (this.props.currentUser && products.length > 2) {
     return (
-      <div>
+      <div className="watched-products-container">
         <p>Your recently watched items</p>
           <ul className="watched-products-list">
             {products.map((product, i) => {
@@ -88,23 +87,13 @@ class WatchedProducts extends React.Component {
   }
   }
 
-
   render() {
-    if (this.state.products && this.props.location.pathname === "/") {
-      return (
-        <div className="watched-products-container">
-          {this.getExternalProductsList()}
-        </div>
-      );
-    } else if (this.state.products && this.props.location.pathname !== "/") {
-      return (
-        <div className="product-watched-products-container">
-          {this.getInternalProductsList()}
-        </div>
-      );
-    } else {
-      return <div></div>;
-    }
+    return (
+      <div>
+        {this.state.products && this.props.indexPage && this.getExternalProductsList()}
+        {this.state.products && !this.props.indexPage && this.getInternalProductsList()}
+      </div>
+    );
   }
 
 }

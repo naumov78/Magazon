@@ -5,10 +5,10 @@ import { getWatchedProducts } from '../../../actions/watched_products_actions';
 import { addToCart } from '../../../actions/cart_actions';
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({watchedProducts, session}) => {
   return ({
-    watchedProducts: state.watchedProducts.watchedProducts,
-    currentUser: state.session.currentUser
+    watchedProducts: watchedProducts.watchedProducts,
+    currentUser: session.currentUser
   })
 }
 

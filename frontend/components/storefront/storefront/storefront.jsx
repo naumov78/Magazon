@@ -7,14 +7,15 @@ class Storefront extends React.Component {
   constructor(props) {
     super(props);
     this.state = { products: [] }
+    // the number of product images to be displayed in storefront on index page
+    this.storefrontProductNumber = 6;
   }
 
   componentDidMount() {
-    this.props.getStorefront().then((result) => {
-      this.setState({ products: result.storefront })
-    })
+    this.props.getStorefront();
   }
 
+  // TODO: use ellipsis
   updateTitleLength(str) {
     if (str && str.length > 35) {
       str = str.slice(0, 32)
@@ -29,16 +30,19 @@ class Storefront extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (this.state.products !== nextProps.storefront.products) {
+      this.setState({ products: nextProps.storefront.products });
+    }
     if (this.props.params.id !== nextProps.params.id) {
-      this.props.getStorefront().then((result) => {
-        this.setState({ products: result.storefront })
-      })
+      this.props.getStorefront();
     }
   }
 
-
+  /**
+  * Display product cards on both sides of internal page
+  */
   getInternalProductsList() {
-    const products = this.state.products
+    const {products} = this.state;
     return (
       <ul className="internal-storefront-list">
         <p>Sponsored</p>
@@ -63,8 +67,11 @@ class Storefront extends React.Component {
     )
   }
 
+  /**
+  * Display product images on index page ()
+  */
   getExternalProductsList() {
-    const products = this.state.products.slice(0, 6)
+    const products = this.state.products.slice(0, this.storefrontProductNumber);
     return (
       <ul className="storefront-list">
         {products.map((product, i) => {
@@ -84,19 +91,13 @@ class Storefront extends React.Component {
     )
   }
 
-
   render() {
-    if (this.state.products && this.props.location.pathname === "/") {
-      return (
-        <div className="storefront-container">{this.getExternalProductsList()}</div>
-      );
-    } else if (this.state.products && this.props.location.pathname !== "/") {
-      return (
-        <div>{this.getInternalProductsList()}</div>
-      );
-    } else {
-      return <div></div>;
-    }
+    return (
+      <div>
+        {this.state.products && this.props.indexPage && this.getExternalProductsList()}
+        {this.state.products && !this.props.indexPage && this.getInternalProductsList()}
+      </div>
+    );
   }
 
 }

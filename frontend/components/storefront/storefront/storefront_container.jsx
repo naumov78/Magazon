@@ -5,11 +5,9 @@ import { getStorefront } from '../../../actions/storefronts_actions';
 import { addToCart } from '../../../actions/cart_actions';
 
 
-const mapStateToProps = (state) => {
-  return ({
-    storefront: state.storefront
-  })
-}
+const mapStateToProps = ({storefront}) => ({
+  storefront
+});
 
 const mapDispatchToProps = (dispatch) => {
   return ({

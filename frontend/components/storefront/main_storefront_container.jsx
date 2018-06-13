@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import MainStorefront from './main_storefront';
 import { getStorefront } from '../../actions/storefronts_actions';
 
-
+// TODO: refactor 
 const mapStateToProps = (state) => {
   return ({
     currentUser: state.session.currentUser,

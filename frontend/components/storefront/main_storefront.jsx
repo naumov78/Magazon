@@ -7,19 +7,12 @@ import BigBanner from './big_banner';
 
 class MainStorefront extends React.Component {
 
-  constructor(props) {
-    super(props)
-  }
-
-  componentWillMount() {
-    this.props.getStorefront();
-  }
 
   getComponent() {
     if (this.props.currentUser) {
-      return <WatchedProductsContainer />
+      return <WatchedProductsContainer indexPage={ this.props.indexPage } />
     } else {
-      return <StorefrontContainer />
+      return <StorefrontContainer indexPage={ this.props.indexPage } />
     }
   }
 
@@ -29,7 +22,7 @@ class MainStorefront extends React.Component {
         <div>
           <BigBanner bigBanners={ this.props.bigBanners } />
           <div className="upper-row">
-            <StorefrontContainer />
+            <StorefrontContainer indexPage={ this.props.indexPage } />
             <SmallBanner smallBanners={ this.props.smallBanners } />
           </div>
 
@@ -53,6 +46,5 @@ class MainStorefront extends React.Component {
   }
 
 }
-
 
 export default MainStorefront;
