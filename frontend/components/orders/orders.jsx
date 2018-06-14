@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
-import OrderDetails from './order_details';
+import OrderDetails from './OrderDetails';
 
 
 class Orders extends React.Component {

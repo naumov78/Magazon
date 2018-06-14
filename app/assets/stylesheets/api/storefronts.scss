@@ -15,13 +15,25 @@
 .storefront-container {
   width: 80%;
   margin-top: 15px;
+  // display: flex;
+  // justify-content: space-between;
+  // flex-wrap: nowrap;
+  border: 1px solid red;
 }
 
 .upper-row {
   margin-top: 30px;
   margin-bottom: 40px;
+  padding: 0 15px 0 15px;
   display: flex;
+  justify-content: flex-end;
+  border: 1px solid green;
+
+  div:first-child {
+    margin-right: 30px;
+  }
 }
+
 .lower-row {
   width: 99%;
   margin: 0 auto;
@@ -32,7 +44,7 @@
 
 .storefront-list {
   @include flex;
-  -webkit-flex-flow: row wrap;
+  // -webkit-flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
 }

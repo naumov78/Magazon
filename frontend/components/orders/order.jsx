@@ -6,7 +6,14 @@ class Order extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { products: [], order_id: null, posted: null, status: null, total_amount: null, order: null }
+    this.state = {
+      products: [],
+      order_id: null,
+      posted: null,
+      status: null,
+      total_amount: null,
+      order: null,
+    }
   }
 
   componentWillMount() {

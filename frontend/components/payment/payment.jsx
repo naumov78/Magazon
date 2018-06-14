@@ -2,12 +2,17 @@ import React from 'react';
 import { withRouter, Link } from 'react-router';
 
 
-
 class Payment extends React.Component {
-
   constructor(props) {
-  super(props);
-  this.state = { user_id: null, network_id: null, cardholder: this.getCardHolderName(), card_number: "", expires: null, cvv: "" }
+    super(props);
+    this.state = {
+      user_id: null,
+      network_id: null,
+      cardholder: this.getCardHolderName(),
+      card_number: "",
+      expires: null,
+      cvv: "",
+    }
   }
 
   update(field) {
