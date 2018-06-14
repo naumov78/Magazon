@@ -1,10 +1,10 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
-import BoughtTogether from './bought_together';
-import GetFiftyOff from './get_fifty_off';
-import ShippingPrice from './shipping_price';
-import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
-import AddToCartContainer from './add_to_cart_container';
+import BoughtTogether from './BoughtTogether';
+import GetFiftyOff from './GetFiftyOff';
+import ShippingPrice from './ShippingPrice';
+import WatchedProductsContainer from '../storefront/watched_products/WatchedProducts.container';
+import AddToCartContainer from './AddToCart.container';
 
 
 class Product extends React.Component {

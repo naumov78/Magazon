@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
-import StorefrontContainer from '../storefront/storefront/storefront_container';
-import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
-import SmallBanner from '../storefront/small_banner';
+import StorefrontContainer from '../storefront/storefront/Storefront.container';
+import WatchedProductsContainer from '../storefront/watched_products/WatchedProducts.container';
+import SmallBanner from '../storefront/SmallBanner';
 
 
 class Category extends React.Component {

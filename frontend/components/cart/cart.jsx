@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
-import WatchedProductsContainer from '../storefront/watched_products/watched_products_container';
+import WatchedProductsContainer from '../storefront/watched_products/WatchedProducts.container';
 
 
 class Cart extends React.Component {

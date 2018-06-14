@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router';
-import SearchContainer from './search_container';
+import SearchContainer from './Search.container';
 
 class Header extends React.Component {
 

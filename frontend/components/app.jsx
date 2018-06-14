@@ -1,12 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { logout } from '../actions/session_actions';
-import HeaderContainer from './header/header_container';
-import CategoriesContainer from './categories/categories_container';
-import StorefrontContainer from './storefront/storefront/storefront_container';
-import WatchedProductsContainer from './storefront/watched_products/watched_products_container';
+import { logout } from '../actions/session.actions';
+import HeaderContainer from './header/Header.container';
+import CategoriesContainer from './categories/Categories.container';
+import StorefrontContainer from './storefront/storefront/Storefront.container';
+import WatchedProductsContainer from './storefront/watched_products/WatchedProducts.container';
 import Footer from './footer/footer';
-import MainStorefrontContainer from './storefront/main_storefront_container';
+import MainStorefrontContainer from './storefront/MainStorefront.container';
 
 const App = ({ children }) => {
   let indexPage = false;

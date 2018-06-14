@@ -1,16 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
-import SessionFormContainer from './session/session_form_container';
-import CategoryContainer from './category/category_container';
-import ProductContainer from './product/product_container';
-import CartContainer from './cart/cart_container';
-import CartAddressContainer from './cart/cart_address_container';
-import CartPaymentContainer from './cart/cart_payment_container';
-import PlaceOrderContainer from './cart/place_order_container';
-import OrderContainer from './orders/order_container';
-import OrdersContainer from './orders/orders_container';
-import App from './app';
+import SessionFormContainer from './session/SessionForm.container';
+import CategoryContainer from './category/Category.container';
+import ProductContainer from './product/Product.container';
+import CartContainer from './cart/Cart.container';
+import CartAddressContainer from './cart/CartAddress.container';
+import CartPaymentContainer from './cart/CartPayment.container';
+import PlaceOrderContainer from './cart/PlaceOrder.container';
+import OrderContainer from './orders/Order.container';
+import OrdersContainer from './orders/Orders.container';
+import App from './App';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
