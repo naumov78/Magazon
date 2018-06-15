@@ -4,12 +4,10 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 
-export const receiveCurrentUser = (currentUser) => {
-  return {
-    type: RECEIVE_CURRENT_USER,
-    currentUser
-  };
-};
+export const receiveCurrentUser = (currentUser) => ({
+  type: RECEIVE_CURRENT_USER,
+  currentUser
+});
 
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
@@ -22,8 +20,8 @@ export function signup(user){
       (currentUser) => dispatch(receiveCurrentUser(currentUser)),
       (errors) => dispatch(receiveErrors(errors))
     );
-  };
-};
+  }
+}
 
 export function signin(user){
   return (dispatch) => {
@@ -31,8 +29,8 @@ export function signin(user){
       (currentUser) => dispatch(receiveCurrentUser(currentUser)),
       (errors) => dispatch(receiveErrors(errors))
     );
-  };
-};
+  }
+}
 
 export function logout(){
   return (dispatch) => {
@@ -40,13 +38,13 @@ export function logout(){
       (currentUser) => dispatch(receiveCurrentUser(null)),
       (errors) => dispatch(receiveErrors(errors))
     );
-  };
-};
+  }
+}
 
 export const refreshCurrentUser = () => {
   return (dispatch) => {
     return APIUtil.refreshCurrentUser().then((user) => {
       return dispatch(receiveCurrentUser(user));
     });
-  };
-};
+  }
+}
