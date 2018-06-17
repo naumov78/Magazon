@@ -1,8 +1,7 @@
+import axios from 'axios';
 
 
 export const getStorefront = () => {
-  return $.ajax({
-    method: "GET",
-    url: '/api/storefronts'
-  })
+  return axios.get('/api/storefronts')
+    .then(res => res.data);
 }

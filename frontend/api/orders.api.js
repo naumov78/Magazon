@@ -1,24 +1,17 @@
+import axios from 'axios';
 
 
 export const createOrder = () => {
-  return $.ajax({
-    method: "POST",
-    url: '/api/orders'
-  })
+  return axios.post('/api/orders')
+    .then(res => res.data);
 }
-
 
 export const fetchOrder = (id) => {
-  return $.ajax({
-    method: "GET",
-    url: `/api/orders/${id}`
-  })
+  return axios.get(`/api/orders/${id}`)
+    .then(res => res.data);
 }
 
-
 export const fetchAllOrders = () => {
-  return $.ajax({
-    method: "GET",
-    url: '/api/orders'
-  })
+  return axios.get('/api/orders')
+    .then(res => res.data.orders);
 }
