@@ -9,16 +9,21 @@ import StorefrontReducer from './storefront.reducer';
 import WatchedProductsReducer from './watchedProducts.reducer';
 import OrderReducer from './order.reducer';
 
-const RootReducer = combineReducers({
-  session: SessionReducer,
-  categories: CategoriesReducer,
-  category: CategoryReducer,
-  product: ProductReducer,
-  products: ProductsReducer,
-  cart: CartReducer,
-  storefront: StorefrontReducer,
-  watchedProducts: WatchedProductsReducer,
-  order: OrderReducer
-});
+/*
+* Export for use in test
+*/
+export function createCombineReducer() {
+  return ({
+    session: SessionReducer,
+    categories: CategoriesReducer,
+    category: CategoryReducer,
+    product: ProductReducer,
+    products: ProductsReducer,
+    cart: CartReducer,
+    storefront: StorefrontReducer,
+    watchedProducts: WatchedProductsReducer,
+    order: OrderReducer
+  });
+}
 
-export default RootReducer;
+export default combineReducers(createCombineReducer());
