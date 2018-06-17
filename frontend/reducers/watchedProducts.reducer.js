@@ -1,5 +1,4 @@
 import { RECEIVE_WATCHED_PRODUCTS } from '../actions/watchedProducts.actions';
-import merge from 'lodash/merge';
 
 const initialState = {
   watchedProducts: []
@@ -9,7 +8,7 @@ const WatchedProductsReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_WATCHED_PRODUCTS:
-      return merge({}, state, { watchedProducts: action.watchedProducts });
+      return Object.assign({}, state, { watchedProducts: action.watchedProducts });
     default:
       return state;
   }
