@@ -1,24 +1,17 @@
+import axios from 'axios';
+
 
 export const fetchProduct = (category_id, product_id) => {
-  return $.ajax({
-    method: "GET",
-    url: `/api/categories/${category_id}/products/${product_id}`
-  })
+  return axios.get(`/api/categories/${category_id}/products/${product_id}`)
+    .then(res => res.data);
 }
-
 
 export const updateBoughtTogether = () => {
-  return $.ajax({
-    method: "POST",
-    url: `/api/frequently_bought_products`
-  })
+  return axios.post(`/api/frequently_bought_products`)
+    .then(res => res.data);
 }
 
-
 export const searchProduct = (query) => {
-  return $.ajax({
-    method: "GET",
-    url: "/api/products/search",
-    data: {query}
-  })
+  return axios.get("/api/products/search", query)
+    .then(res => res.data);
 }

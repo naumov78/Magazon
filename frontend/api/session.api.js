@@ -1,30 +1,21 @@
+import axios from 'axios';
+
+
 export const signup = (user) => {
-  return $.ajax({
-    method: "POST",
-    url: "api/users",
-    data: { user }
-  });
-};
+  return axios.post('api/users', user)
+    .then(res => res.data);
+}
 
 export const signin = (user) => {
-  return $.ajax({
-    method: "POST",
-    url: "api/session",
-    data: { user }
-  });
-};
+  return axios.post('api/session', user)
+    .then(res => res.data);
+}
 
 export const logout = () => {
-  return $.ajax({
-    method: "DELETE",
-    url: "api/session"
-  });
-};
-
+  return axios.delete('api/session');
+}
 
 export const refreshCurrentUser = () => {
-  return $.ajax({
-    method: "GET",
-    url: "/api/users/1"
-  })
+  return axios.get('/api/users/1')
+    .then(res => res.data);
 }

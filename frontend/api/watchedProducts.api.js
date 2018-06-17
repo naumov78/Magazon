@@ -1,8 +1,7 @@
+import axios from 'axios';
 
 
 export const getWatchedProducts = () => {
-  return $.ajax({
-    method: "GET",
-    url: '/api/watched_products'
-  })
+  return axios.get('/api/watched_products')
+    .then(res => res.data);
 }

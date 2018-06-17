@@ -1,18 +1,12 @@
+import axios from 'axios';
 
 
 export const createPayment = (payment) => {
-  return $.ajax({
-    method: "POST",
-    url: `/api/users/${payment.user_id}/payments`,
-    data: {payment}
-  })
+  return axios.post(`/api/users/${payment.user_id}/payments`, payment)
+    .then(res => res.data);
 }
 
-
 export const updatePayment = (payment, payment_id) => {
-  return $.ajax({
-    method: "PATCH",
-    url: `/api/users/${payment.user_id}/payments/${payment_id}`,
-    data: {payment}
-  })
+  return axios.patch(`/api/users/${payment.user_id}/payments/${payment_id}`, payment)
+    .then(res => res.data);
 }
